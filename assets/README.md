@@ -32,7 +32,11 @@ Os arquivos `.gitkeep` são apenas marcadores para as pastas aparecerem no GitHu
 
 ## Importante: etapa de conexão
 
-**A versão atual do `index.html` permanece intacta e ainda mostra as imagens externas.** Subir um arquivo nesta pasta **não muda imediatamente** a imagem exibida no site. Depois de enviar as imagens, é preciso atualizar o HTML para usar os caminhos locais (ou configurar um carregador com fallback). Essa etapa será feita sem apagar as fichas, o ranking ou as tags já cadastradas.
+**O `index.html` já está conectado a estas pastas.** Quando você publicar `poster.webp`, `poster-mini.webp` ou imagens `cenas/01.webp`, o site passará a preferir esses arquivos locais automaticamente, após o GitHub Pages atualizar. Se um arquivo local não existir ou falhar, o site tentará a imagem externa cadastrada na ficha. Se ambos faltarem, mostra o nome da série em fundo colorido.
+
+A galeria usa `cenas/01.webp`, `02.webp` etc. Se a série ainda não tinha links de cenas, a galeria aparece assim que existir ao menos `01.webp` (o site verifica isso ao abrir a ficha). Use numeração contínua, sem pular números.
+
+Para ver os arquivos novos no celular ou computador após o upload, atualize o navegador. O site só lê imagens do repositório **publicadas** no Pages; arquivos ainda não enviados não aparecem. **O ranking e as alterações de fichas continuam salvos no navegador** e não são sincronizados com o GitHub.
 
 Exemplos de caminhos relativos ao `index.html`:
 
