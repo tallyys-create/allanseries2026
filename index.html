@@ -2598,16 +2598,79 @@ function cardPosterUrl(url){
   const src=String(url||'');
   return src.replace(/^https:\/\/image\.tmdb\.org\/t\/p\/original\//,'https://image.tmdb.org/t/p/w342/');
 }
-function setupPoster(img,show){
-  if(!img)return;
+/* Imagens do GitHub Pages: primeiro assets/, depois os links externos da ficha.
+   Os caminhos são relativos ao index.html, inclusive em Pages de projeto. */
+const assetCheck=new Map();
+const localGalleryCount=new Map();
+const localGalleryProbe=new Map();
+function assetFolder(show){
+  return show&&/^[a-z0-9-]+$/.test(show.id||'')?'assets/series/'+show.id+'/':'';
+}
+function posterCandidates(show,mini=false){
+  const folder=assetFolder(show),src=String(show.image||'');
   const original=DEFAULT_SHOWS.find(s=>s.id===show.id);
-  // Respect user-chosen images. Only try backup links for the starter set.
   const isDefault=original&&original.image===show.image;
-  const candidates=[cardPosterUrl(show.image),show.image,...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])].filter(Boolean);
-  let i=0;
-  img.onerror=()=>{i++;if(i<candidates.length){img.src=candidates[i];return;}img.style.display='none';};
-  img.onload=()=>{img.style.display='block';};
-  if(candidates.length)img.src=candidates[0];
+  return [
+    ...(folder?(mini?[folder+'poster-mini.webp',folder+'poster.webp']:[folder+'poster.webp',folder+'poster-mini.webp']):[]),
+    ...(mini?[cardPosterUrl(src),src]:[src]),
+    ...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])
+  ].filter(Boolean);
+}
+function sceneCandidates(show,index){
+  const folder=assetFolder(show);
+  const local=folder+'cenas/'+String(index+1).padStart(2,'0')+'.webp';
+  const external=Array.isArray(show.gallery)?show.gallery.filter(v=>typeof v==='string'&&v.trim())[index]:'';
+  return [folder?local:'',external].filter(Boolean);
+}
+function imageWithFallback(img,candidates,handlers={}){
+  if(!img)return;
+  let urls=[...new Set(candidates.filter(Boolean))];
+  urls=urls.filter(url=>!url.startsWith('assets/')||assetCheck.get(url)!==false);
+  let index=0;
+  img.onload=()=>{
+    if(urls[index]?.startsWith('assets/'))assetCheck.set(urls[index],true);
+    img.style.display='block';
+    if(handlers.onload)handlers.onload();
+  };
+  img.onerror=()=>{
+    const broken=urls[index];
+    if(broken?.startsWith('assets/'))assetCheck.set(broken,false);
+    index++;
+    if(index<urls.length){img.src=urls[index];return}
+    img.removeAttribute('src');img.style.display='none';
+    if(handlers.onerror)handlers.onerror();
+  };
+  if(urls.length){img.src=urls[0]}else{
+    img.removeAttribute('src');img.style.display='none';
+    if(handlers.onerror)handlers.onerror();
+  }
+}
+function setupPoster(img,show,mini=true){
+  imageWithFallback(img,posterCandidates(show,mini));
+}
+/* Quando a ficha não tinha galeria externa, detecta fotos 01.webp, 02.webp etc.
+   A consulta é feita somente ao abrir a ficha, não ao carregar as 78 capas. */
+function probeLocalGallery(show){
+  const folder=assetFolder(show);
+  if(!folder||localGalleryCount.has(show.id)||localGalleryProbe.has(show.id))return;
+  const task=(async()=>{
+    let count=0;
+    for(let i=0;i<20;i++){
+      const src=folder+'cenas/'+String(i+1).padStart(2,'0')+'.webp';
+      const exists=await new Promise(resolve=>{
+        const im=new Image();
+        im.onload=()=>{assetCheck.set(src,true);resolve(true)};
+        im.onerror=()=>{assetCheck.set(src,false);resolve(false)};
+        im.src=src;
+      });
+      if(!exists)break;
+      count++;
+    }
+    localGalleryCount.set(show.id,count);
+    const externalCount=Array.isArray(show.gallery)?show.gallery.filter(Boolean).length:0;
+    if(count>externalCount&&modalType==='details'&&activeId===show.id)openDetails(show.id);
+  })().finally(()=>localGalleryProbe.delete(show.id));
+  localGalleryProbe.set(show.id,task);
 }
 const KEY='allanwoodtv-catalogo-completo-fichas-v1'; const LEGACY_KEYS=[];let state;let history=[];let modalType=null;let activeId=null;let draggedId=null;let editingId=null;let galleryTimer=null;let galleryIndex=0;let galleryPaused=false;let libraryLimit=24;const LIBRARY_BATCH=24;const $=(id)=>document.getElementById(id);const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const normalizeSearch=(s)=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();const showSearchBlob=(show)=>normalizeSearch([show.title,...(Array.isArray(show.aliases)?show.aliases:[]),show.country,show.platform,show.genre,...(Array.isArray(show.tags)?show.tags:[])].join(' '));
 const matchesSearch=(show,q)=>{if(!q)return true;const blob=showSearchBlob(show),words=blob.split(' ');return q.split(' ').every(term=>term.length<=2?words.includes(term):blob.includes(term))};
@@ -2670,7 +2733,7 @@ function locationOf(id){return state.locations[id]||'pool'}
 function isJudged(id){return state.tiers.some(t=>t.id===locationOf(id))}
 function visibleShows(){return state.shows.filter(s=>locationOf(s.id)!=='unwatched')}
 function counts(){const visible=visibleShows();const sorted=visible.filter(s=>isJudged(s.id)).length;$('totalCount').textContent=visible.length;$('rankedCount').textContent=sorted;$('pendingCount').textContent=visible.length-sorted;$('undoBtn').disabled=!history.length;const hidden=state.shows.filter(s=>locationOf(s.id)==='unwatched').length;const manage=$('manageUnwatchedBtn');if(manage){manage.hidden=!hidden;manage.textContent=`↩ Não assistidas (${hidden})`;}}
-function imgHtml(show){const src=show.image||'';return `<div class="cardfallback" style="--fallback:${esc(show.tint||'#885780')}">${esc(show.title)}</div>${src?`<img src="${esc(cardPosterUrl(src))}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">`:''}`}
+function imgHtml(show){return `<div class="cardfallback" style="--fallback:${esc(show.tint||'#885780')}">${esc(show.title)}</div><img alt="" loading="lazy" decoding="async">`}
 function showCard(show,under=false){const card=document.createElement('button');card.type='button';card.className='series-card';card.draggable=true;card.dataset.id=show.id;card.title=`${show.title} · Clique para abrir a ficha`;card.style.setProperty('--fallback',show.tint||'#885780');card.setAttribute('aria-label',`Abrir ficha de ${show.title}`);card.innerHTML=imgHtml(show)+'<span class="cardtitle">'+esc(show.title)+'</span>';setupPoster(card.querySelector('img'),show);card.addEventListener('click',()=>openDetails(show.id));card.addEventListener('dragstart',ev=>{draggedId=show.id;ev.dataTransfer.effectAllowed='move';ev.dataTransfer.setData('text/plain',show.id);setTimeout(()=>card.classList.add('dragging'),0)});card.addEventListener('dragend',()=>{draggedId=null;card.classList.remove('dragging');document.querySelectorAll('.drag-over').forEach(x=>x.classList.remove('drag-over'))});if(!under)return card;const item=document.createElement('div');item.className='library-item';item.append(card);const caption=document.createElement('div');caption.className='title-under';caption.textContent=show.title;item.append(caption);return item}
 function render(){
   counts();const board=$('tierboard');board.innerHTML='';
@@ -2754,7 +2817,7 @@ function openModal(content){stopGallery();$('modalBody').innerHTML=content;$('mo
 function closeModal(){stopGallery();modalType=null;activeId=null;editingId=null;$('modalback').classList.remove('open');$('modalBody').innerHTML='';document.body.style.overflow=''}
 function currentShow(){return state.shows.find(s=>s.id===activeId)}
 function stopGallery(){if(galleryTimer){clearInterval(galleryTimer);galleryTimer=null;}}
-function carouselSlides(show){return Array.isArray(show.gallery)&&show.gallery.length?show.gallery.filter(s=>typeof s==='string'&&s.trim()):[show.image].filter(Boolean)}
+function carouselSlides(show){const external=Array.isArray(show.gallery)?show.gallery.filter(s=>typeof s==='string'&&s.trim()):[];const count=Math.max(external.length,localGalleryCount.get(show.id)||0);return Array.from({length:count},(_,i)=>external[i]||'')}
 function updateGallery(next,auto=false){
   if(modalType!=='details')return;
   const s=currentShow();if(!s)return;
@@ -2763,9 +2826,10 @@ function updateGallery(next,auto=false){
   const photo=$('galleryImg');const fallback=$('galleryFallback');
   if(!photo)return;
   photo.style.opacity='0';photo.style.display='block';
-  photo.onload=()=>{photo.style.display='block';photo.style.opacity='1';fallback.style.display='none'};
-  photo.onerror=()=>{photo.style.display='none';fallback.style.display='grid'};
-  photo.src=images[galleryIndex];
+  imageWithFallback(photo,sceneCandidates(s,galleryIndex),{
+    onload:()=>{photo.style.opacity='1';fallback.style.display='none'},
+    onerror:()=>{photo.style.display='none';fallback.style.display='grid'}
+  });
   photo.alt=`Cena ${galleryIndex+1} de ${images.length} de ${s.title}`;
   $('galleryCount').textContent=`${galleryIndex+1} / ${images.length}`;
   document.querySelectorAll('[data-gallery-dot]').forEach(b=>{
@@ -2787,12 +2851,12 @@ function openDetails(id){
   const loc=locationOf(id);
   const options=[{id:'pool',name:'↩ Fila de espera'},...state.tiers.map(t=>({id:t.id,name:t.name}))];
   const chips=[s.year,s.country,s.episodes,s.genre,s.platform].filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
-  const hasSceneGallery=Array.isArray(s.gallery)&&s.gallery.some(u=>typeof u==='string'&&u.trim());
-  const images=hasSceneGallery?carouselSlides(s):[];
+  const images=carouselSlides(s);
+  const hasSceneGallery=images.length>0;
   const dots=images.map((u,i)=>`<button type="button" class="gallery-dot ${i===0?'active':''}" data-gallery-dot="${i}" aria-label="Ver imagem ${i+1}" aria-pressed="${i===0}"></button>`).join('');
   openModal(`<div class="details-layout gallery-layout"><div class="gallery-side">
     <div class="gallery-media ${hasSceneGallery?'':'poster-only-media'}">
-      <div class="gallery-poster"><div class="poster-image"><div class="poster-fallback">${esc(s.title)}<small>CAPA INDISPONÍVEL</small></div><img src="${esc(s.image||'')}" alt="Pôster de ${esc(s.title)}" onerror="this.style.display='none'"></div>${hasSceneGallery?'<div class="poster-name">PÔSTER</div>':''}</div>
+      <div class="gallery-poster"><div class="poster-image"><div class="poster-fallback">${esc(s.title)}<small>CAPA INDISPONÍVEL</small></div><img id="detailPosterImage" alt="Pôster de ${esc(s.title)}"></div>${hasSceneGallery?'<div class="poster-name">PÔSTER</div>':''}</div>
       ${hasSceneGallery?`<div class="gallery-scenes"><div class="gallery-topline"><span>✦ CENAS DA SÉRIE</span><span class="gallery-count" id="galleryCount">${images.length?'1 / '+images.length:''}</span></div>
         <div class="gallery-stage" id="galleryStage">
           <div id="galleryFallback" class="gallery-fallback">${esc(s.title)}<small>Imagem indisponível</small></div>
@@ -2810,6 +2874,8 @@ function openDetails(id){
     <div class="rank-actions"><div class="mini-label">Qual é o veredito do Allan?</div><div class="rank-pills">${options.map(o=>`<button type="button" class="rank-pill ${loc===o.id?'active':''}" data-rank="${esc(o.id)}">${esc(o.name)}</button>`).join('')}<button type="button" class="rank-pill not-watched" id="unwatchedBtn">◌ Não assistido</button></div></div>
     <div class="detailfooter"><button class="button" id="editShowBtn">✎ Editar ficha</button><button class="button" id="nextPendingBtn" type="button">→ Próxima pendente</button></div>
     </div></div>`);
+  setupPoster($('detailPosterImage'),s,false);
+  probeLocalGallery(s);
   if(images.length){updateGallery(0,true);restartGallery()}
   if(images.length>1){
     $('galleryPrev').onclick=()=>updateGallery(galleryIndex-1);
@@ -2867,7 +2933,8 @@ function manageUnwatched(){
   const hidden=state.shows.filter(show=>locationOf(show.id)==='unwatched').sort((a,b)=>normalizeSearch(a.title).localeCompare(normalizeSearch(b.title),'pt-BR'));
   if(!hidden.length){toast('Nenhuma série marcada como não assistida.');return}
   modalType='unwatched';activeId=null;
-  openModal(`<div class="modalform"><div class="detail-kicker">ALLANWOODTV</div><h2>Não assistidas</h2><div class="unwatched-list">${hidden.map(s=>`<div class="unwatched-row"><img src="${esc(s.image||'')}" alt="" onerror="this.style.visibility='hidden'"><strong>${esc(s.title)}</strong><button type="button" class="button small" data-restore-unwatched="${esc(s.id)}">↩ Recuperar</button></div>`).join('')}</div><div class="formactions"><button class="button" type="button" id="closeUnwatchedBtn">Fechar</button></div></div>`);
+  openModal(`<div class="modalform"><div class="detail-kicker">ALLANWOODTV</div><h2>Não assistidas</h2><div class="unwatched-list">${hidden.map(s=>`<div class="unwatched-row"><img alt="" loading="lazy"><strong>${esc(s.title)}</strong><button type="button" class="button small" data-restore-unwatched="${esc(s.id)}">↩ Recuperar</button></div>`).join('')}</div><div class="formactions"><button class="button" type="button" id="closeUnwatchedBtn">Fechar</button></div></div>`);
+  document.querySelectorAll('.unwatched-row img').forEach((img,i)=>setupPoster(img,hidden[i],true));
   $('closeUnwatchedBtn').onclick=closeModal;
   document.querySelectorAll('[data-restore-unwatched]').forEach(b=>b.onclick=()=>{
     const id=b.dataset.restoreUnwatched;checkpoint();state.locations[id]='pool';save();render();manageUnwatched();toast('Série devolvida ao catálogo.');
@@ -2886,6 +2953,7 @@ function download(blob,name){const a=document.createElement('a');const url=URL.c
 function round(ctx,x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
 function textWrap(ctx,text,maxWidth,maxLines=3){let words=String(text).split(' '),lines=[],cur='';for(let word of words){let n=cur?cur+' '+word:word;if(ctx.measureText(n).width>maxWidth&&cur){lines.push(cur);cur=word}else cur=n}if(cur)lines.push(cur);return lines.slice(0,maxLines)}
 async function loadCanvasImage(url){if(!url)return null;return new Promise(resolve=>{const im=new Image();if(!url.startsWith('data:'))im.crossOrigin='anonymous';const tm=setTimeout(()=>resolve(null),6000);im.onload=()=>{clearTimeout(tm);resolve(im)};im.onerror=()=>{clearTimeout(tm);resolve(null)};im.src=url})}
+async function loadCanvasPoster(show){for(const url of [...new Set(posterCandidates(show,true))]){const img=await loadCanvasImage(url);if(img)return img}return null}
 async function exportPng(){
  const judged=state.shows.filter(s=>isJudged(s.id));
  if(!judged.length){toast('Classifique ao menos uma série antes de salvar a imagem.');return}
@@ -2907,7 +2975,7 @@ async function exportPng(){
  ctx.fillStyle='#fff8eb';ctx.font='bold 69px Arial';ctx.fillText('O TRIBUNAL DO ALLAN',margin,135);
  ctx.fillStyle='#c9d7c5';ctx.font='23px Arial';ctx.fillText('O ranking das séries e reacts da live',margin,179);
  // Small derivatives reduce memory and improve export speed; an external provider can block CORS.
- const loaded=new Map(await Promise.all(judged.map(async show=>[show.id,await loadCanvasImage(cardPosterUrl(show.image))])));
+ const loaded=new Map(await Promise.all(judged.map(async show=>[show.id,await loadCanvasPoster(show)])));
  let y=header;
  for(const {tier,shows,lines,height} of rows){
    ctx.fillStyle='#243327';round(ctx,margin,y,W-2*margin,height,17);ctx.fill();
