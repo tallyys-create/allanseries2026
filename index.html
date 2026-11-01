@@ -274,6 +274,140 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
   .tierboard .tier .tier-dock .series-card{flex:0 0 auto!important;width:76px!important;height:104px!important}
   .tierboard .tier .tier-hint{font-size:12px!important}
 }
+
+/* AllanWoodTV: ficha definitiva — Palco do Julgamento */
+.modal:has(.court-stage){width:min(1190px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:hidden;background:#17251b;border:1px solid #82b77948;border-radius:24px}
+.modal:has(.court-stage) #modalBody{min-width:0}
+.modal:has(.court-stage)>.closex{top:18px;right:20px;z-index:9;width:38px;height:38px;background:#0d1a13;border:1px solid #c5d9bb55}
+.court-stage{display:flex;flex-direction:column;max-height:calc(100dvh - 28px);position:relative;color:#f4f7ef}
+.court-head{padding:24px 30px 18px;flex:0 0 auto;background:linear-gradient(105deg,#203a28 0%,#1c2d21 59%,#2e2c1d 100%);border-bottom:1px solid #ffffff18}
+.court-headline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-right:48px}
+.court-eyebrow{font:900 10px 'DM Sans',sans-serif;letter-spacing:.18em;color:#9aeba2}
+.court-edition{font:800 9px 'DM Sans',sans-serif;letter-spacing:.07em;color:#e2bb78;border:1px solid #d8a45455;border-radius:40px;padding:4px 9px}
+.court-head h2{font:900 clamp(28px,3.3vw,43px)/1.05 'Outfit','DM Sans',sans-serif;letter-spacing:-.045em;margin:9px 55px 9px 0;overflow-wrap:anywhere;color:#fff8e9}
+.court-meta{display:flex;gap:6px;flex-wrap:wrap}
+.court-meta span{border:1px solid #a0ce9c34;background:#91cc9020;border-radius:16px;color:#d8ead6;font-size:10px;font-weight:800;padding:5px 10px}
+.court-main{min-height:0;flex:1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+.court-media{min-width:0;padding:22px 21px 17px;background:radial-gradient(ellipse at 30% 24%,#24513765,transparent 72%),#13221a;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.court-media-row{display:flex;align-items:center;justify-content:center;gap:14px;width:100%}
+.court-poster{flex:0 0 27%;min-width:0;max-width:178px;display:flex;flex-direction:column;gap:10px;align-items:center}
+.court-poster-image{width:100%;aspect-ratio:2/3;position:relative;border-radius:13px;overflow:hidden;border:1px solid #ffffff42;box-shadow:0 15px 35px #0006;background:#263b2a}
+.court-poster-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.court-poster-image>.poster-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;background:linear-gradient(145deg,#87b966,#243f29);font-size:13px;font-weight:900}
+.court-poster-caption{color:#b4cdb3;font-size:9px;font-weight:900;letter-spacing:.13em}
+.court-carousel{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px}
+.court-carousel-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;letter-spacing:.11em;color:#99e2a3;font-weight:900}
+.court-carousel-heading span{color:#e5cfac;white-space:nowrap;letter-spacing:.03em}
+.court-screen.gallery-stage{height:auto!important;min-height:0!important;aspect-ratio:16/9;flex:none;position:relative;overflow:hidden;border-radius:14px;border:1px solid #a6d1a12b;background:#25382a}
+.court-screen .court-blur-bg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);object-fit:cover;filter:blur(22px) brightness(.48) saturate(1.25);z-index:0;pointer-events:none}
+.court-screen .court-scene-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;transition:opacity .18s}
+.court-screen .gallery-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:15px;color:#e7e5d8;z-index:2;background:#27392b}
+.court-screen .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:35px;height:41px;background:#0c1d16ba;border-radius:10px;border:1px solid #ffffff33;color:#fff}
+.court-screen .gallery-prev{left:8px}.court-screen .gallery-next{right:8px}
+.court-carousel-controls{display:flex;justify-content:space-between;align-items:center;gap:9px;min-height:31px}
+.court-carousel-controls .gallery-dots{display:flex;justify-content:flex-start;align-items:center;gap:6px;flex-wrap:wrap}
+.court-carousel-controls .court-play{font-size:10px;padding:6px 10px}
+.court-media-row.court-solo .court-poster{flex:0 0 auto;width:min(200px,48%);max-width:200px}
+.court-media-row.court-solo .court-poster-image{box-shadow:0 16px 45px #0008}
+.court-visual-caption{color:#83b38e;font-size:10px;letter-spacing:.04em;text-align:center}
+.court-info{min-width:0;min-height:0;padding:22px 27px;display:flex;flex-direction:column;gap:16px;overflow-y:auto;scrollbar-color:#7aaa8652 transparent}
+.court-info-heading{display:flex;align-items:center;gap:9px;letter-spacing:.11em;font-size:10px;font-weight:900;color:#9bdfa7}
+.court-info-line{display:block;width:20px;height:2px;background:#ffae43}
+.court-story h3,.court-memory h3{margin:0 0 7px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.085em;color:#ffb65b}
+.court-story p,.court-memory p{margin:0;font-size:13px;line-height:1.68;color:#e6ede3}
+.court-memory{border-radius:12px;padding:15px 16px;background:linear-gradient(145deg,#314a2a80,#2336255c);border:1px solid #75a66d63}
+.court-memory h3{color:#c8f0ab}
+.court-more{margin-top:0;border-top:1px solid #d9f3cb33;padding-top:11px;font-size:12px;flex:0 0 auto}
+.court-more summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px;align-items:center;color:#b4ecb9;font-weight:800;list-style:none;min-height:30px}
+.court-more summary::-webkit-details-marker{display:none}
+.court-more[open] summary span{transform:rotate(45deg)}
+.court-more-body{display:grid;gap:9px;padding:11px 2px 2px;color:#bacdb8}
+.court-more-body p{margin:0;line-height:1.45}
+.court-tagline{display:flex;gap:5px;flex-wrap:wrap}
+.court-tagline span{border:1px solid #d6a74d3e;color:#f0c47a;border-radius:5px;padding:3px 6px;font-size:10px}
+.court-footer{position:relative;flex:0 0 auto;background:#1d2d20;border-top:1px solid #b3dca630;box-shadow:0 -8px 20px #07120d3a;padding:14px 22px;z-index:4}
+.court-footer-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.court-current{min-width:0;flex:0 1 230px;display:flex;flex-direction:column;gap:2px}
+.court-current small{font-size:9px;letter-spacing:.1em;font-weight:900;color:#94b89b}
+.court-current strong{font-size:12px;color:#f3e3c2;overflow-wrap:anywhere}
+.court-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:7px}
+.court-actions button{white-space:nowrap;border-radius:10px;padding:11px 13px;font-size:11px;font-weight:900;min-height:42px;transition:filter .15s}
+.court-actions button:hover{filter:brightness(1.12)}
+.court-secondary{background:#ffffff0b;border:1px solid #ffffff28;color:#e9eee5}
+.court-no{background:#273027;color:#c7d2c2}
+.court-primary{background:linear-gradient(125deg,#ffbe54,#ff922b);color:#251909;border:0;min-width:142px;box-shadow:0 5px 16px #ff9a3033}
+.court-primary.on{box-shadow:0 0 0 2px #e6b35d}
+.court-verdict-menu[hidden]{display:none!important}
+.court-verdict-menu{position:absolute;bottom:calc(100% + 8px);right:18px;width:min(660px,calc(100% - 36px));max-height:min(65vh,470px);overflow-y:auto;background:#14221a;border:1px solid #e9bd685c;box-shadow:0 20px 55px #000b;padding:15px;border-radius:15px;z-index:6}
+.court-verdict-title{display:flex;align-items:center;justify-content:space-between;color:#fff0d2;margin-bottom:10px;font-size:13px}
+.court-verdict-title button{border:1px solid #fff3;background:#ffffff10;color:#f4f8f0;border-radius:8px;padding:4px 9px}
+.court-verdict-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.court-verdict-choice{display:flex;align-items:stretch;gap:9px;min-width:0;min-height:59px;background:#253428;color:#f4f9f1;text-align:left;border:1px solid #9cbd934b;border-radius:9px;overflow:hidden;padding:0}
+.court-verdict-choice:hover,.court-verdict-choice.selected{border-color:#ffc376;background:#384c35}
+.court-verdict-color{display:block;width:8px;min-width:8px;background:var(--verdict)}
+.court-verdict-text{min-width:0;display:flex;flex-direction:column;gap:3px;justify-content:center;padding:8px 6px 8px 0}
+.court-verdict-text b{font-size:11px;line-height:1.2;overflow-wrap:anywhere}
+.court-verdict-text small{font-size:10px;line-height:1.25;color:#c8d6c5;overflow-wrap:anywhere}
+.court-back-pool{border:1px solid #bcd0b137;border-radius:8px;background:#ffffff0b;color:#d9e5d4;padding:9px 12px;width:100%;text-align:center;margin-top:8px;font-size:11px;font-weight:800}
+@media(max-width:950px){
+ .modal:has(.court-stage){width:min(730px,calc(100vw - 18px));max-height:calc(100dvh - 18px);overflow-y:auto}
+ .court-stage{max-height:none;min-height:0}
+ .court-main{display:flex;flex-direction:column;overflow:visible}
+ .court-info{overflow:visible;padding:18px 23px 25px;gap:12px}
+ .court-footer{position:sticky;bottom:0}
+ .court-media{padding:20px}
+ .court-media-row{max-width:670px;margin:auto}
+}
+@media(max-width:650px){
+ .modalback{padding:0;align-items:end}
+ .modal:has(.court-stage){width:100%!important;max-height:97dvh!important;border-radius:18px 18px 0 0!important;overflow-y:auto!important}
+ .court-head{padding:19px 17px 13px}
+ .court-head h2{font-size:clamp(24px,7vw,35px);margin:9px 38px 8px 0}
+ .court-eyebrow{font-size:9px;letter-spacing:.1em}
+ .court-edition{font-size:8px;padding:3px 6px}
+ .court-meta span{font-size:9px;padding:4px 7px}
+ .court-media{padding:13px 11px}
+ .court-media-row{gap:9px}
+ .court-poster{flex-basis:31%;gap:7px}
+ .court-poster-caption{font-size:8px}
+ .court-carousel{gap:6px}
+ .court-carousel-heading{font-size:9px}
+ .court-screen.gallery-stage{border-radius:9px}
+ .court-screen .gallery-arrow{width:26px;height:32px;font-size:14px}
+ .court-screen .gallery-prev{left:4px}.court-screen .gallery-next{right:4px}
+ .court-carousel-controls{gap:4px}
+ .court-carousel-controls .gallery-dots{gap:4px}
+ .court-carousel-controls .gallery-dot{width:7px;height:7px}
+ .court-carousel-controls .court-play{padding:5px 7px;font-size:9px}
+ .court-media-row.court-solo .court-poster{width:min(175px,68%);max-width:175px}
+ .court-visual-caption{display:none}
+ .court-info{padding:17px 17px 25px;gap:13px}
+ .court-story p,.court-memory p{font-size:12px;line-height:1.55}
+ .court-memory{padding:12px}
+ .court-footer{padding:10px 11px calc(10px + env(safe-area-inset-bottom))}
+ .court-footer-row{flex-direction:column;align-items:stretch;gap:5px}
+ .court-current{flex:0 0 auto;display:flex;flex-direction:row;align-items:center;gap:8px}
+ .court-current strong{font-size:10px}
+ .court-current small{font-size:8px}
+ .court-actions{display:grid;grid-template-columns:1fr 1fr 1fr 1.45fr;gap:5px;width:100%;justify-content:stretch}
+ .court-actions button{white-space:normal;min-width:0;min-height:43px;padding:7px 3px;font-size:10px;line-height:1.1}
+ .court-actions #editShowBtn,.court-actions #nextPendingBtn{display:block}
+ .court-actions #unwatchedBtn{font-size:9px;padding:6px 3px}
+ .court-primary{min-width:0}
+ .court-verdict-menu{width:calc(100% - 16px);right:8px;padding:10px;max-height:65dvh}
+ .court-verdict-grid{gap:5px}
+ .court-verdict-text b{font-size:10px}
+ .court-verdict-text small{font-size:9px}
+ .court-verdict-choice{min-height:60px}
+}
+@media(max-width:360px){
+ .court-headline .court-edition{display:none}
+ .court-current{max-width:none}
+ .court-actions{grid-template-columns:1fr 1fr 1.2fr}
+ .court-actions #nextPendingBtn{display:none}
+ .court-poster-caption{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -2952,7 +3086,7 @@ function updateGallery(next,auto=false){
   if(!photo)return;
   photo.style.opacity='0';photo.style.display='block';
   imageWithFallback(photo,sceneCandidates(s,galleryIndex),{
-    onload:()=>{photo.style.opacity='1';fallback.style.display='none'},
+    onload:()=>{photo.style.opacity='1';fallback.style.display='none';const bg=$('galleryBackdrop');if(bg)bg.src=photo.currentSrc||photo.src},
     onerror:()=>{photo.style.display='none';fallback.style.display='grid'}
   });
   photo.alt=`Cena ${galleryIndex+1} de ${images.length} de ${s.title}`;
@@ -2970,37 +3104,94 @@ function restartGallery(){
     if(modalType==='details'&&!document.hidden)updateGallery(galleryIndex+1,true);
   },2700);
 }
+
 function openDetails(id){
-  const s=state.shows.find(x=>x.id===id);if(!s||locationOf(id)==='unwatched')return;
-  modalType='details';activeId=id;galleryIndex=0;galleryPaused=false;
+  const s=state.shows.find(x=>x.id===id);
+  if(!s||locationOf(id)==='unwatched')return;
+  modalType='details'; activeId=id; galleryIndex=0; galleryPaused=false;
   if(galleryDirectoryFailed)probeLocalGallery(s);
   else if(!galleryDirectoryRequest)loadGalleryDirectory();
   const loc=locationOf(id);
-  const options=[{id:'pool',name:'↩ Fila de espera'},...state.tiers.map(t=>({id:t.id,name:t.name}))];
-  const chips=[s.year,s.country,s.episodes,s.genre,s.platform].filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
-  const images=carouselSlides(s);
-  const hasSceneGallery=images.length>0;
-  const dots=images.map((u,i)=>`<button type="button" class="gallery-dot ${i===0?'active':''}" data-gallery-dot="${i}" aria-label="Ver imagem ${i+1}" aria-pressed="${i===0}"></button>`).join('');
-  openModal(`<div class="details-layout gallery-layout"><div class="gallery-side">
-    <div class="gallery-media ${hasSceneGallery?'':'poster-only-media'}">
-      <div class="gallery-poster"><div class="poster-image"><div class="poster-fallback">${esc(s.title)}<small>CAPA INDISPONÍVEL</small></div><img id="detailPosterImage" alt="Pôster de ${esc(s.title)}"></div>${hasSceneGallery?'<div class="poster-name">PÔSTER</div>':''}</div>
-      ${hasSceneGallery?`<div class="gallery-scenes"><div class="gallery-topline"><span>✦ CENAS DA SÉRIE</span><span class="gallery-count" id="galleryCount">${images.length?'1 / '+images.length:''}</span></div>
-        <div class="gallery-stage" id="galleryStage">
-          <div id="galleryFallback" class="gallery-fallback">${esc(s.title)}<small>Imagem indisponível</small></div>
-          <img id="galleryImg" alt="Cena de ${esc(s.title)}" draggable="false">
-          ${images.length>1?'<button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Imagem anterior">❮</button><button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Próxima imagem">❯</button>':''}
+  const choices=state.tiers.map((t,i)=>({id:t.id,name:t.name,color:t.color,description:t.description,index:i+1}));
+  const verdict=state.tiers.find(t=>t.id===loc);
+  const meta=[s.year,s.country,s.episodes,s.genre].filter(Boolean);
+  const images=carouselSlides(s),hasGallery=images.length>0;
+  const dots=images.map((u,i)=>`<button type="button" class="gallery-dot ${i===0?'active':''}" data-gallery-dot="${i}" aria-label="Ver cena ${i+1}" aria-pressed="${i===0}"></button>`).join('');
+  const stats=meta.map(v=>`<span>${esc(v)}</span>`).join('');
+  const extraTags=Array.isArray(s.tags)?s.tags.filter(Boolean).slice(0,14):[];
+  openModal(`<div class="court-stage">
+    <header class="court-head">
+      <div class="court-headline"><span class="court-eyebrow">✦ ALLANWOODTV · O TRIBUNAL</span></div>
+      <h2>${esc(s.title)}</h2>
+      <div class="court-meta">${stats}</div>
+    </header>
+    <div class="court-main">
+      <section class="court-media" aria-label="Imagens de ${esc(s.title)}">
+        <div class="court-media-row ${hasGallery?'':'court-solo'}">
+          <div class="court-poster">
+            <div class="court-poster-image">
+              <div class="poster-fallback">${esc(s.title)}<small>PÔSTER INDISPONÍVEL</small></div>
+              <img id="detailPosterImage" alt="Pôster de ${esc(s.title)}">
+            </div>
+            <span class="court-poster-caption">PÔSTER OFICIAL</span>
+          </div>
+          ${hasGallery?`<div class="court-carousel">
+            <div class="court-carousel-heading"><strong>✦ CENAS DA SÉRIE</strong><span id="galleryCount">1 / ${images.length}</span></div>
+            <div class="court-screen gallery-stage" id="galleryStage">
+              <img class="court-blur-bg" id="galleryBackdrop" alt="" aria-hidden="true">
+              <div class="gallery-fallback" id="galleryFallback">${esc(s.title)}<small>Imagem indisponível</small></div>
+              <img class="court-scene-image" id="galleryImg" alt="Cena de ${esc(s.title)}" draggable="false">
+              ${images.length>1?'<button id="galleryPrev" class="gallery-arrow gallery-prev" type="button" aria-label="Cena anterior">❮</button><button id="galleryNext" class="gallery-arrow gallery-next" type="button" aria-label="Próxima cena">❯</button>':''}
+            </div>
+            <div class="court-carousel-controls">
+              <div class="gallery-dots" aria-label="Selecionar cena">${dots}</div>
+              <button id="galleryPlay" type="button" class="button small court-play" ${images.length<2?'disabled':''}>⏸ Pausar</button>
+            </div>
+          </div>`:''}
         </div>
-      </div>`:''}
+        <div class="court-visual-caption">${hasGallery?'O pôster e os melhores momentos lado a lado.':'Pôster em destaque.'}</div>
+      </section>
+      <section class="court-info">
+        <div class="court-info-heading"><span class="court-info-line"></span><span>RELEMBRE ANTES DO VEREDITO</span></div>
+        <div class="court-story">
+          <h3>A história</h3>
+          <p>${esc(s.description||'Sinopse não cadastrada.')}</p>
+        </div>
+        ${s.memory?`<div class="court-memory">
+          <h3>✦ Para lembrar no react</h3>
+          <p>${esc(s.memory)}</p>
+        </div>`:''}
+        ${s.platform||extraTags.length||s.aliases?.length?`<details class="court-more">
+          <summary>Mais informações <span>＋</span></summary>
+          <div class="court-more-body">
+            ${s.platform?`<p><b>Canal / plataforma:</b> ${esc(s.platform)}</p>`:''}
+            ${s.aliases?.length?`<p><b>Nomes alternativos:</b> ${esc(s.aliases.join(', '))}</p>`:''}
+            ${extraTags.length?`<div class="court-tagline">${extraTags.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>`:''}
+          </div>
+        </details>`:''}
+      </section>
     </div>
-    ${hasSceneGallery?`<div class="gallery-controls"><div class="gallery-dots" aria-label="Escolher imagem">${dots}</div>
-      <button type="button" class="gallery-play button small" id="galleryPlay" ${images.length<2?'disabled':''}>⏸ Pausar</button>
-    </div>`:''}
-    </div><div class="details-copy"><div class="detail-kicker">✦ O TRIBUNAL DO ALLAN</div><h2>${esc(s.title)}</h2>
-    <div class="chiprow">${chips}</div>${Array.isArray(s.tags)&&s.tags.length?`<div class="tag-row">${s.tags.filter(t=>!['BL','LGBTQ+','Disney Channel','Disney Plus','Nick','Japonesa','Tailandesa','K-drama'].includes(t)).slice(0,8).map(t=>`<span class="tag-chip">#${esc(t)}</span>`).join('')}</div>`:''}<div><div class="mini-label" style="margin-bottom:7px">A história</div><p>${esc(s.description||'Sinopse não cadastrada.')}</p></div>
-    ${s.memory?`<div class="memory-box"><div class="mini-label" style="margin-bottom:6px">💬 Para lembrar no react</div><div>${esc(s.memory)}</div></div>`:''}
-    <div class="rank-actions"><div class="mini-label">Qual é o veredito do Allan?</div><div class="rank-pills">${options.map(o=>`<button type="button" class="rank-pill ${loc===o.id?'active':''}" data-rank="${esc(o.id)}">${esc(o.name)}</button>`).join('')}<button type="button" class="rank-pill not-watched" id="unwatchedBtn">◌ Não assistido</button></div></div>
-    <div class="detailfooter"><button class="button" id="editShowBtn">✎ Editar ficha</button><button class="button" id="nextPendingBtn" type="button">→ Próxima pendente</button></div>
-    </div></div>`);
+    <footer class="court-footer">
+      <div class="court-footer-row">
+        <div class="court-current"><small>VEREDITO ATUAL</small><strong>${esc(verdict?verdict.name:'Aguardando julgamento')}</strong></div>
+        <div class="court-actions">
+          <button type="button" class="court-secondary" id="editShowBtn">✎ Editar</button>
+          <button type="button" class="court-secondary" id="nextPendingBtn">Próxima →</button>
+          <button type="button" class="court-secondary court-no" id="unwatchedBtn">Não assistido</button>
+          <button type="button" class="court-primary" id="judgeToggleBtn" aria-expanded="false" aria-controls="verdictMenu">⚖ Dar veredito <span>⌄</span></button>
+        </div>
+      </div>
+      <div class="court-verdict-menu" id="verdictMenu" hidden>
+        <div class="court-verdict-title"><strong>⚖ Qual é a sentença?</strong><button type="button" id="verdictCloseBtn" aria-label="Fechar opções">✕</button></div>
+        <div class="court-verdict-grid">
+          ${choices.map(c=>`<button type="button" class="court-verdict-choice ${loc===c.id?'selected':''}" style="--verdict:${esc(c.color)}" data-rank="${esc(c.id)}">
+            <span class="court-verdict-color"></span><span class="court-verdict-text"><b>${esc(c.name)}</b><small>${esc(c.description||'')}</small></span>
+          </button>`).join('')}
+        </div>
+        <button type="button" class="court-back-pool" data-rank="pool">↩ Voltar para aguardando julgamento</button>
+      </div>
+    </footer>
+  </div>`);
   setupPoster($('detailPosterImage'),s,false);
   probeLocalGallery(s);
   if(images.length){updateGallery(0,true);restartGallery()}
@@ -3013,11 +3204,22 @@ function openDetails(id){
     stage.addEventListener('touchstart',e=>{x0=e.touches[0]?.clientX??null},{passive:true});
     stage.addEventListener('touchend',e=>{if(x0===null)return;const dx=(e.changedTouches[0]?.clientX??x0)-x0;if(Math.abs(dx)>45)updateGallery(galleryIndex+(dx<0?1:-1));x0=null},{passive:true});
   }
+  const menu=$('verdictMenu'),toggle=$('judgeToggleBtn');
+  const setMenu=open=>{menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.classList.toggle('on',open)};
+  toggle.onclick=()=>setMenu(menu.hidden);
+  $('verdictCloseBtn').onclick=()=>setMenu(false);
   document.querySelectorAll('[data-rank]').forEach(b=>b.addEventListener('click',()=>{move(id,b.dataset.rank);closeModal()}));
   $('editShowBtn').onclick=()=>openShowForm(id);
- $('nextPendingBtn').onclick=()=>{const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort((a,b)=>a.title.localeCompare(b.title,'pt-BR'));const pos=queue.findIndex(x=>x.id===id);const next=queue[(pos+1+queue.length)%queue.length];if(next)openDetails(next.id);else toast('Não há séries aguardando julgamento.');};
- 
-  $('unwatchedBtn').onclick=()=>{checkpoint();state.locations[id]='unwatched';save();closeModal();render();toast(`${s.title} marcada como não assistida.`)};
+  $('nextPendingBtn').onclick=()=>{
+    const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort((a,b)=>a.title.localeCompare(b.title,'pt-BR'));
+    const pos=queue.findIndex(x=>x.id===id);
+    const next=queue[(pos+1+queue.length)%queue.length];
+    if(next)openDetails(next.id);else toast('Não há séries aguardando julgamento.');
+  };
+  $('unwatchedBtn').onclick=()=>{
+    if(!confirm('Marcar "'+s.title+'" como não assistida e retirá-la do ranking?'))return;
+    checkpoint();state.locations[id]='unwatched';save();closeModal();render();toast(s.title+' marcada como não assistida.');
+  };
 }
 function formField(label,id,value='',wide=false,type='text'){return `<div class="field ${wide?'wide':''}"><label for="${id}">${label}</label>${type==='textarea'?`<textarea class="input" id="${id}">${esc(value)}</textarea>`:`<input class="input" id="${id}" type="${type}" value="${esc(value)}">`}</div>`}
 function openShowForm(id=null){
