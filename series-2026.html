@@ -446,6 +446,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 <link rel="stylesheet" href="live-usability.css?v=1">
 <link rel="stylesheet" href="mobile-drag.css?v=2">
 <link rel="stylesheet" href="portal-shared.css?v=1">
+<link rel="stylesheet" href="tier-global.css?v=1">
 </head>
 <body>
 <div class="backdrop"></div>
@@ -478,7 +479,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  </div>
 </section>
  <div class="ranking-workspace" id="rankingWorkspace">
- <section class="ranking-panel" aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">A sentença final <span style="color:#ff9a30">✦</span></h2><p>Arraste as capas para as categorias. Clique em uma série para ver a galeria de cenas e relembrar a história.</p></div><div class="toolbar"><button class="button small layout-switch" id="layoutToggleBtn" type="button" aria-pressed="false" title="Mostrar catálogo à direita dos tiers">▣ Catálogo lateral</button><label class="size-picker" for="tierCardSize">Capas <select id="tierCardSize" aria-label="Tamanho das capas nos tiers"><option value="small">Pequenas</option><option value="medium">Médias</option><option value="large">Grandes</option></select></label><button class="button small focus-switch" id="focusToggleBtn" type="button" aria-pressed="false">⛶ Modo foco</button><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de séries"></div></section>
+ <section class="ranking-panel" aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">A sentença final <span style="color:#ff9a30">✦</span></h2><p>Arraste as capas para as categorias. Clique em uma série para ver a galeria de cenas e relembrar a história.</p></div><div class="toolbar"><button class="button small layout-switch" id="layoutToggleBtn" type="button" aria-pressed="false" title="Mostrar catálogo à direita dos tiers">▣ Catálogo lateral</button><label class="size-picker" for="tierCardSize">Capas <select id="tierCardSize" aria-label="Tamanho das capas nos tiers"><option value="small">Pequenas</option><option value="medium">Médias</option><option value="large">Grandes</option><option value="xlarge">Extragrandes</option></select></label><button class="button small focus-switch" id="focusToggleBtn" type="button" aria-pressed="false">⛶ Modo foco</button><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de séries"></div></section>
  <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 Aguardando julgamento</h2><div class="hint">Toque para abrir a ficha. No celular, segure a capa para arrastar até um veredito.</div></div><div class="library-controls"><button class="button" id="restoreShowsBtn" title="Recuperar as séries originais excluídas, sem alterar o ranking">↺ Recuperar séries excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Nova série</button></div></div><div class="library-sticky-tools" aria-label="Busca e filtros rápidos"><input id="searchInput" type="search" class="input search" placeholder="Buscar série ou nome alternativo..." aria-label="Buscar série"><button type="button" id="stickyFiltersBtn" class="sticky-filter-button" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Filtros</button></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button type="button" class="filters-trigger" id="openFiltersBtn" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Mostrar filtros</button><button class="quick-filter" type="button" data-quick-tag="Boys Love">Boys Love</button><button class="quick-filter" type="button" data-quick-tag="Japão">Japão</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Netflix">Netflix</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div> <div id="libraryGrid" class="library-grid" aria-label="Séries encontradas"></div>
  <div class="library-more"><button class="button" id="showMoreBtn" type="button" hidden>＋ Mostrar mais séries</button><span id="shownCount" aria-live="polite"></span></div></section>
  </div>
@@ -503,6 +504,21 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
   </div>
 </dialog>
 <div class="modalback" id="modalback" role="presentation"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Ficha da série"><button class="closex" id="modalClose" aria-label="Fechar">×</button><div id="modalBody"></div></div></div>
+
+<dialog id="galleryFullscreenDialog" class="scene-lightbox" aria-label="Cenas ampliadas da série">
+ <header class="scene-lightbox-head">
+   <div class="scene-lightbox-meta"><span class="scene-lightbox-kicker">✦ ALLANWOODTV · GALERIA</span><strong id="sceneFullscreenTitle" class="scene-lightbox-title">Cenas da série</strong></div>
+   <button id="sceneFullscreenClose" class="scene-lightbox-close" type="button" aria-label="Fechar tela cheia">✕ Fechar</button>
+ </header>
+ <div class="scene-lightbox-stage" id="sceneFullscreenStage">
+   <img id="sceneFullscreenBackdrop" class="scene-lightbox-backdrop" alt="" aria-hidden="true">
+   <p id="sceneFullscreenFallback" class="scene-lightbox-fallback">Não foi possível carregar esta cena.</p>
+   <img id="sceneFullscreenImage" class="scene-lightbox-photo" alt="" draggable="false">
+   <button type="button" id="sceneFullscreenPrev" class="scene-lightbox-arrow scene-lightbox-prev" aria-label="Cena anterior">❮</button>
+   <button type="button" id="sceneFullscreenNext" class="scene-lightbox-arrow scene-lightbox-next" aria-label="Próxima cena">❯</button>
+ </div>
+ <footer class="scene-lightbox-foot"><span id="sceneFullscreenCounter">1 / 1</span><span class="scene-lightbox-tip">Use ← → ou deslize para mudar de cena</span></footer>
+</dialog>
 <button id="exitLiveBtn" type="button" class="button exit-live" hidden>✕ Sair do modo live</button><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 (()=>{'use strict';
@@ -2817,10 +2833,6 @@ const BACKUP_POSTERS={
     "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTDcW4DkdujVcQ5gLHfa2iioWgx8GjLNuCTM5JMzNG3PtWfPfbYEN27vwwbpDsaGk6FNgBGAVE1ZQ1FKdkmk_NupCBoNm5WsCU-zhwwDPe7_7SfZ.jpg?r=30b"
   ]
 };
-function cardPosterUrl(url){
-  const src=String(url||'');
-  return src.replace(/^https:\/\/image\.tmdb\.org\/t\/p\/original\//,'https://image.tmdb.org/t/p/w342/');
-}
 /* Imagens do GitHub Pages: primeiro assets/, depois os links externos da ficha.
    Os caminhos são relativos ao index.html, inclusive em Pages de projeto. */
 const assetCheck=new Map();
@@ -2836,8 +2848,8 @@ function posterCandidates(show,mini=false){
   const original=DEFAULT_SHOWS.find(s=>s.id===show.id);
   const isDefault=original&&original.image===show.image;
   return [
-    ...(folder?(mini?[folder+'poster-mini.webp',folder+'poster.webp']:[folder+'poster.webp',folder+'poster-mini.webp']):[]),
-    ...(mini?[cardPosterUrl(src),src]:[src]),
+    ...(folder?[folder+'poster.webp']:[]),
+    ...(src?[src]:[]),
     ...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])
   ].filter(Boolean);
 }
@@ -3523,11 +3535,85 @@ function move(id,to,before=null){
   toast(to==='pool'?'Série devolvida para a fila.':'Veredito registrado! ✦');
 }
 
-function openModal(content){stopGallery();$('modalBody').innerHTML=content;$('modalback').classList.add('open');document.body.style.overflow='hidden';$('modal').scrollTop=0;$('modalClose').focus()}
-function closeModal(){stopGallery();modalType=null;activeId=null;editingId=null;$('modalback').classList.remove('open');$('modalBody').innerHTML='';document.body.style.overflow=''}
+function openModal(content){closeSceneFullscreen();stopGallery();$('modalBody').innerHTML=content;$('modalback').classList.add('open');document.body.style.overflow='hidden';$('modal').scrollTop=0;$('modalClose').focus()}
+function closeModal(){closeSceneFullscreen();stopGallery();modalType=null;activeId=null;editingId=null;$('modalback').classList.remove('open');$('modalBody').innerHTML='';document.body.style.overflow=''}
 function currentShow(){return state.shows.find(s=>s.id===activeId)}
 function stopGallery(){if(galleryTimer){clearInterval(galleryTimer);galleryTimer=null;}}
 function carouselSlides(show){const local=localGalleryFiles.get(show.id)||[];if(local.length)return local;return Array.isArray(show.gallery)?show.gallery.filter(s=>typeof s==='string'&&s.trim()):[]}
+
+/* Galeria ampliada compartilhada. Dialog em camada superior, funciona em
+   desktop e mobile sem depender da Fullscreen API do navegador. */
+let galleryFullscreenOpen=false;
+function syncSceneFullscreen(){
+  const dialog=$('galleryFullscreenDialog');
+  if(!dialog||!dialog.open||modalType!=='details')return;
+  const s=currentShow();
+  if(!s)return;
+  const imgs=carouselSlides(s),num=imgs.length;
+  if(!num)return;
+  const index=galleryIndex;
+  $('sceneFullscreenTitle').textContent=s.title;
+  $('sceneFullscreenCounter').textContent=(index+1)+' / '+num;
+  $('sceneFullscreenPrev').hidden=num<2;
+  $('sceneFullscreenNext').hidden=num<2;
+  const image=$('sceneFullscreenImage'),backdrop=$('sceneFullscreenBackdrop');
+  const fallback=$('sceneFullscreenFallback');
+  image.style.display='block';
+  fallback.style.display='none';
+  image.alt='Cena '+(index+1)+' de '+num+' de '+s.title;
+  imageWithFallback(image,sceneCandidates(s,index),{
+    onload:()=>{
+      if(!galleryFullscreenOpen)return;
+      fallback.style.display='none';backdrop.src=image.currentSrc||image.src;
+      backdrop.style.display='block';
+    },
+    onerror:()=>{image.style.display='none';backdrop.style.display='none';fallback.style.display='block'}
+  });
+}
+function openSceneFullscreen(){
+  if(modalType!=='details'||!currentShow()||!carouselSlides(currentShow()).length)return;
+  const dialog=$('galleryFullscreenDialog');
+  if(!dialog||dialog.open)return;
+  galleryFullscreenOpen=true;
+  stopGallery();
+  dialog.showModal();
+  syncSceneFullscreen();
+  $('sceneFullscreenClose').focus();
+}
+function closeSceneFullscreen(){
+  const dialog=$('galleryFullscreenDialog');
+  if(dialog?.open)dialog.close();
+  galleryFullscreenOpen=false;
+}
+function initSceneFullscreen(){
+  const dialog=$('galleryFullscreenDialog');
+  $('sceneFullscreenClose').onclick=()=>dialog.close();
+  $('sceneFullscreenPrev').onclick=()=>updateGallery(galleryIndex-1);
+  $('sceneFullscreenNext').onclick=()=>updateGallery(galleryIndex+1);
+  dialog.addEventListener('close',()=>{
+    galleryFullscreenOpen=false;
+    if(modalType==='details'&&!galleryPaused)restartGallery();
+  });
+  dialog.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'){event.preventDefault();updateGallery(galleryIndex-1)}
+    if(event.key==='ArrowRight'){event.preventDefault();updateGallery(galleryIndex+1)}
+  });
+  const stage=$('sceneFullscreenStage');
+  let start=null;
+  stage.addEventListener('touchstart',event=>{
+    if(event.touches.length===1)start={x:event.touches[0].clientX,y:event.touches[0].clientY};
+    else start=null;
+  },{passive:true});
+  stage.addEventListener('touchend',event=>{
+    if(!start)return;
+    const touch=event.changedTouches[0];
+    const dx=touch.clientX-start.x,dy=touch.clientY-start.y;
+    if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.2)
+      updateGallery(galleryIndex+(dx<0?1:-1));
+    start=null;
+  },{passive:true});
+}
+
 function updateGallery(next,auto=false){
   if(modalType!=='details')return;
   const s=currentShow();if(!s)return;
@@ -3546,11 +3632,12 @@ function updateGallery(next,auto=false){
     const active=Number(b.dataset.galleryDot)===galleryIndex;
     b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));
   });
+  if(galleryFullscreenOpen)syncSceneFullscreen();
   if(!auto)restartGallery();
 }
 function restartGallery(){
   stopGallery();
-  const s=currentShow();if(!s||carouselSlides(s).length<2||modalType!=='details'||galleryPaused)return;
+  const s=currentShow();if(!s||carouselSlides(s).length<2||modalType!=='details'||galleryPaused||galleryFullscreenOpen)return;
   galleryTimer=setInterval(()=>{
     if(modalType==='details'&&!document.hidden)updateGallery(galleryIndex+1,true);
   },2700);
@@ -3587,7 +3674,7 @@ function openDetails(id){
             <span class="court-poster-caption">PÔSTER OFICIAL</span>
           </div>
           ${hasGallery?`<div class="court-carousel">
-            <div class="court-carousel-heading"><strong>✦ CENAS DA SÉRIE</strong><span id="galleryCount">1 / ${images.length}</span></div>
+            <div class="court-carousel-heading"><strong>✦ CENAS DA SÉRIE</strong><span id="galleryCount">1 / ${images.length}</span><button type="button" class="scene-expand" id="galleryExpandBtn" aria-label="Ver cenas ampliadas em tela cheia" aria-controls="galleryFullscreenDialog" aria-haspopup="dialog">⛶ Tela cheia</button></div>
             <div class="court-screen gallery-stage" id="galleryStage">
               <img class="court-blur-bg" id="galleryBackdrop" alt="" aria-hidden="true">
               <div class="gallery-fallback" id="galleryFallback">${esc(s.title)}<small>Imagem indisponível</small></div>
@@ -3644,7 +3731,7 @@ function openDetails(id){
   </div>`);
   setupPoster($('detailPosterImage'),s,false);
   probeLocalGallery(s);
-  if(images.length){updateGallery(0,true);restartGallery()}
+  if(images.length){updateGallery(0,true);restartGallery();$('galleryExpandBtn').onclick=openSceneFullscreen;}
   if(images.length>1){
     $('galleryPrev').onclick=()=>updateGallery(galleryIndex-1);
     $('galleryNext').onclick=()=>updateGallery(galleryIndex+1);
@@ -3720,7 +3807,7 @@ function manageUnwatched(){
     if(!state.shows.some(s=>locationOf(s.id)==='unwatched'))closeModal();
   });
 }
-function bind(){
+function bind(){initSceneFullscreen();
   $('signOutAllanBtn').onclick=()=>{
     try{sessionStorage.removeItem('allanwoodtv-host-session-v1')}catch{}
     location.href='./';
@@ -3744,8 +3831,8 @@ function bind(){
 /* Tamanho de capas configurável sem alterar o ranking. */
 const TIER_CARD_SIZE_KEY='allanwoodtv-tamanho-capas-v1';
 function setTierCardSize(value){
-  const size=['small','medium','large'].includes(value)?value:'medium';
-  document.body.classList.remove('tier-size-small','tier-size-medium','tier-size-large');
+  const size=['small','medium','large','xlarge'].includes(value)?value:'medium';
+  document.body.classList.remove('tier-size-small','tier-size-medium','tier-size-large','tier-size-xlarge');
   document.body.classList.add('tier-size-'+size);
   $('tierCardSize').value=size;
   try{localStorage.setItem(TIER_CARD_SIZE_KEY,size)}catch{}
