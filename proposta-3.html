@@ -2854,10 +2854,6 @@ const BACKUP_POSTERS={
     "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTDcW4DkdujVcQ5gLHfa2iioWgx8GjLNuCTM5JMzNG3PtWfPfbYEN27vwwbpDsaGk6FNgBGAVE1ZQ1FKdkmk_NupCBoNm5WsCU-zhwwDPe7_7SfZ.jpg?r=30b"
   ]
 };
-function cardPosterUrl(url){
-  const src=String(url||'');
-  return src.replace(/^https:\/\/image\.tmdb\.org\/t\/p\/original\//,'https://image.tmdb.org/t/p/w342/');
-}
 /* Imagens do GitHub Pages: primeiro assets/, depois os links externos da ficha.
    Os caminhos são relativos ao index.html, inclusive em Pages de projeto. */
 const assetCheck=new Map();
@@ -2873,8 +2869,8 @@ function posterCandidates(show,mini=false){
   const original=DEFAULT_SHOWS.find(s=>s.id===show.id);
   const isDefault=original&&original.image===show.image;
   return [
-    ...(folder?(mini?[folder+'poster-mini.webp',folder+'poster.webp']:[folder+'poster.webp',folder+'poster-mini.webp']):[]),
-    ...(mini?[cardPosterUrl(src),src]:[src]),
+    ...(folder?[folder+'poster.webp']:[]),
+    ...(src?[src]:[]),
     ...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])
   ].filter(Boolean);
 }
