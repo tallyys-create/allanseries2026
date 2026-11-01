@@ -3561,8 +3561,10 @@ function initSceneFullscreen(){
     if(modalType==='details'&&!galleryPaused)restartGallery();
   });
   dialog.addEventListener('keydown',event=>{
-    if(event.key==='ArrowLeft'){event.preventDefault();updateGallery(galleryIndex-1)}
-    if(event.key==='ArrowRight'){event.preventDefault();updateGallery(galleryIndex+1)}
+    // O Escape deve fechar apenas a janela das cenas, não a ficha inteira.
+    if(event.key==='Escape')event.stopPropagation();
+    if(event.key==='ArrowLeft'){event.preventDefault();event.stopPropagation();updateGallery(galleryIndex-1)}
+    if(event.key==='ArrowRight'){event.preventDefault();event.stopPropagation();updateGallery(galleryIndex+1)}
   });
   const stage=$('sceneFullscreenStage');
   let start=null;
