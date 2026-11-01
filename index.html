@@ -436,6 +436,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 </style>
 <link rel="stylesheet" href="layout-modes.css?v=2">
 <link rel="stylesheet" href="live-usability.css?v=1">
+<link rel="stylesheet" href="mobile-drag.css?v=1">
 </head>
 <body>
 <div class="backdrop"></div>
@@ -469,7 +470,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 </section>
  <div class="ranking-workspace" id="rankingWorkspace">
  <section class="ranking-panel" aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">A sentença final <span style="color:#ff9a30">✦</span></h2><p>Arraste as capas para as categorias. Clique em uma série para ver a galeria de cenas e relembrar a história.</p></div><div class="toolbar"><button class="button small layout-switch" id="layoutToggleBtn" type="button" aria-pressed="false" title="Mostrar catálogo à direita dos tiers">▣ Catálogo lateral</button><label class="size-picker" for="tierCardSize">Capas <select id="tierCardSize" aria-label="Tamanho das capas nos tiers"><option value="small">Pequenas</option><option value="medium">Médias</option><option value="large">Grandes</option></select></label><button class="button small focus-switch" id="focusToggleBtn" type="button" aria-pressed="false">⛶ Modo foco</button><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de séries"></div></section>
- <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 Aguardando julgamento</h2><div class="hint">Escolha uma capa para abrir sua ficha, ou arraste para o ranking.</div></div><div class="library-controls"><button class="button" id="restoreShowsBtn" title="Recuperar as séries originais excluídas, sem alterar o ranking">↺ Recuperar séries excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Nova série</button></div></div><div class="library-sticky-tools" aria-label="Busca e filtros rápidos"><input id="searchInput" type="search" class="input search" placeholder="Buscar série ou nome alternativo..." aria-label="Buscar série"><button type="button" id="stickyFiltersBtn" class="sticky-filter-button" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Filtros</button></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button type="button" class="filters-trigger" id="openFiltersBtn" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Mostrar filtros</button><button class="quick-filter" type="button" data-quick-tag="Boys Love">Boys Love</button><button class="quick-filter" type="button" data-quick-tag="Japão">Japão</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Netflix">Netflix</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div> <div id="libraryGrid" class="library-grid" aria-label="Séries encontradas"></div>
+ <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 Aguardando julgamento</h2><div class="hint">Toque para abrir a ficha. No celular, segure a capa para arrastar até um veredito.</div></div><div class="library-controls"><button class="button" id="restoreShowsBtn" title="Recuperar as séries originais excluídas, sem alterar o ranking">↺ Recuperar séries excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Nova série</button></div></div><div class="library-sticky-tools" aria-label="Busca e filtros rápidos"><input id="searchInput" type="search" class="input search" placeholder="Buscar série ou nome alternativo..." aria-label="Buscar série"><button type="button" id="stickyFiltersBtn" class="sticky-filter-button" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Filtros</button></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button type="button" class="filters-trigger" id="openFiltersBtn" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Mostrar filtros</button><button class="quick-filter" type="button" data-quick-tag="Boys Love">Boys Love</button><button class="quick-filter" type="button" data-quick-tag="Japão">Japão</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Netflix">Netflix</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div> <div id="libraryGrid" class="library-grid" aria-label="Séries encontradas"></div>
  <div class="library-more"><button class="button" id="showMoreBtn" type="button" hidden>＋ Mostrar mais séries</button><span id="shownCount" aria-live="polite"></span></div></section>
  </div>
  <footer class="bottomline"><span>✦ ALLANWOODTV · AO VIVO NA TWITCH</span><div><button class="linklike" id="manageUnwatchedBtn" hidden>↩ Não assistidas</button><button class="linklike" id="backupBtn">Baixar backup do ranking</button><button class="linklike" id="importBtn">Importar backup</button><input type="file" id="backupFile" hidden accept="application/json,.json"></div></footer>
@@ -3118,6 +3119,210 @@ function renderLibrary(){
 }
 
 
+
+/* Arrasto por toque prolongado para celular e tablet.
+   Toque comum = abrir ficha. Deslizar antes da ativação = rolar a página.
+   Após segurar por 380 ms, a capa acompanha o dedo; somente soltar
+   sobre um tier ou o catálogo altera o ranking. */
+let mobileTouchPending=null;
+let mobileTouchDrag=null;
+let blockTouchClickUntil=0;
+function touchForId(list,id){
+  return Array.from(list).find(touch=>touch.identifier===id)||null;
+}
+function cancelPendingMobileTouch(){
+  if(!mobileTouchPending)return;
+  clearTimeout(mobileTouchPending.timer);
+  mobileTouchPending.card.draggable=mobileTouchPending.originalDraggable;
+  mobileTouchPending=null;
+}
+function positionMobileGhost(x,y){
+  const dragging=mobileTouchDrag;if(!dragging)return;
+  const maxX=Math.max(6,window.innerWidth-100);
+  const px=Math.max(6,Math.min(maxX,x-44));
+  const py=Math.max(6,Math.min(Math.max(6,window.innerHeight-155),y-142));
+  dragging.ghost.style.transform='translate3d('+px+'px,'+py+'px,0)';
+}
+function mobileDropArea(x,y){
+  const hit=document.elementFromPoint(x,y);
+  if(!hit)return null;
+  const tier=hit.closest('.tier');
+  if(tier&&tier.closest('#tierboard'))
+    return {zone:tier,target:tier.dataset.tier};
+  if(hit.closest('#librarySection'))
+    return {zone:$('libraryGrid'),target:'pool'};
+  return null;
+}
+function refreshMobileDropArea(x,y){
+  if(!mobileTouchDrag)return;
+  const chosen=mobileDropArea(x,y);
+  mobileTouchDrag.destination=chosen;
+  document.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'));
+  if(!chosen){
+    dragPreview?.remove();dragPreview=null;dragPreviewType=null;
+    document.querySelectorAll('.tier-hint').forEach(el=>el.style.removeProperty('display'));
+    return;
+  }
+  if(chosen.target==='pool'){
+    $('libraryGrid').classList.add('drag-over');
+  }else{
+    chosen.zone.classList.add('drag-over');
+  }
+  previewPosition(chosen.zone,chosen.target,{clientX:x,clientY:y});
+}
+function beginMobileTouchDrag(){
+  const press=mobileTouchPending;
+  if(!press||mobileTouchDrag)return;
+  mobileTouchPending=null;
+  clearTimeout(press.timer);
+  if(!document.contains(press.card)){
+    press.card.draggable=press.originalDraggable;return;
+  }
+  finishDragPreview();
+  draggedId=press.id;
+  dragCard=press.card;
+  dragOrigin=press.library?press.card.closest('.library-item'):press.card;
+  const ghost=document.createElement('div');
+  ghost.className='touch-drag-ghost';
+  ghost.setAttribute('aria-hidden','true');
+  const poster=press.card.cloneNode(true);
+  poster.removeAttribute('id');
+  poster.removeAttribute('data-id');
+  poster.draggable=false;
+  poster.tabIndex=-1;
+  ghost.appendChild(poster);
+  const name=document.createElement('div');
+  name.className='touch-drag-title';
+  name.textContent=state.shows.find(s=>s.id===press.id)?.title||'Série';
+  const help=document.createElement('div');
+  help.className='touch-drag-instruction';
+  help.textContent='Arraste para julgar';
+  ghost.append(name,help);
+  document.body.append(ghost);
+  mobileTouchDrag={
+    id:press.id,card:press.card,touchId:press.touchId,
+    originalDraggable:press.originalDraggable,
+    fromX:press.x,fromY:press.y,x:press.x,y:press.y,
+    moved:false,destination:null,ghost
+  };
+  dragOrigin?.classList.add('mobile-drag-source');
+  document.body.classList.add('drag-reordering','mobile-dragging');
+  positionMobileGhost(press.x,press.y);
+  blockTouchClickUntil=Date.now()+1000;
+}
+function stopMobileTouchDrag(){
+  const active=mobileTouchDrag;
+  mobileTouchDrag=null;
+  if(active){
+    active.card.draggable=active.originalDraggable;
+    active.ghost.remove();
+  }
+  dragOrigin?.classList.remove('mobile-drag-source');
+  document.body.classList.remove('mobile-dragging');
+  finishDragPreview();
+  blockTouchClickUntil=Date.now()+700;
+}
+function finishMobileTouchDrag(x,y,cancelled=false){
+  if(!mobileTouchDrag)return;
+  const active=mobileTouchDrag;
+  let destination=null,before=null;
+  if(!cancelled&&active.moved){
+    refreshMobileDropArea(x,y);
+    destination=mobileTouchDrag.destination;
+    if(destination&&destination.target!=='pool'&&dragPreview){
+      let next=dragPreview.nextElementSibling;
+      while(next&&(next===dragOrigin||!next.classList.contains('series-card')))
+        next=next.nextElementSibling;
+      before=next?.dataset.id||null;
+    }
+  }
+  const id=active.id;
+  stopMobileTouchDrag();
+  if(destination)move(id,destination.target,before);
+}
+function initMobileTouchDrag(){
+  if(!window.matchMedia('(pointer:coarse)').matches)return;
+  document.addEventListener('touchstart',event=>{
+    if(event.touches.length!==1){
+      if(mobileTouchDrag)finishMobileTouchDrag(0,0,true);
+      cancelPendingMobileTouch();return;
+    }
+    if(mobileTouchDrag)return;
+    const card=event.target.closest?.('.series-card');
+    if(!card||!card.closest('#tierboard,#libraryGrid'))return;
+    cancelPendingMobileTouch();
+    const t=event.touches[0];
+    const info={
+      card,id:card.dataset.id,library:!!card.closest('#libraryGrid'),
+      touchId:t.identifier,x:t.clientX,y:t.clientY,
+      originalDraggable:card.draggable,timer:null
+    };
+    card.draggable=false;
+    mobileTouchPending=info;
+    info.timer=setTimeout(()=>beginMobileTouchDrag(),380);
+  },{passive:true,capture:true});
+  document.addEventListener('touchmove',event=>{
+    if(mobileTouchPending){
+      const t=touchForId(event.touches,mobileTouchPending.touchId);
+      if(!t||event.touches.length!==1||
+        Math.hypot(t.clientX-mobileTouchPending.x,t.clientY-mobileTouchPending.y)>12){
+        cancelPendingMobileTouch();return;
+      }
+    }
+    const drag=mobileTouchDrag;
+    if(!drag)return;
+    const t=touchForId(event.touches,drag.touchId);
+    if(!t||event.touches.length!==1){
+      finishMobileTouchDrag(0,0,true);return;
+    }
+    if(event.cancelable)event.preventDefault();
+    drag.x=t.clientX;drag.y=t.clientY;
+    positionMobileGhost(drag.x,drag.y);
+    if(!drag.moved&&Math.hypot(drag.x-drag.fromX,drag.y-drag.fromY)>8){
+      drag.moved=true;
+      startDragAutoScroll({clientX:drag.x,clientY:drag.y});
+    }
+    if(drag.moved){
+      trackDragAutoScroll({clientX:drag.x,clientY:drag.y});
+      refreshMobileDropArea(drag.x,drag.y);
+    }
+  },{passive:false,capture:true});
+  document.addEventListener('touchend',event=>{
+    if(mobileTouchPending&&touchForId(event.changedTouches,mobileTouchPending.touchId))
+      cancelPendingMobileTouch();
+    if(!mobileTouchDrag)return;
+    const t=touchForId(event.changedTouches,mobileTouchDrag.touchId);
+    if(!t)return;
+    if(event.cancelable)event.preventDefault();
+    finishMobileTouchDrag(t.clientX,t.clientY);
+  },{passive:false,capture:true});
+  document.addEventListener('touchcancel',event=>{
+    if(mobileTouchPending&&touchForId(event.changedTouches,mobileTouchPending.touchId))
+      cancelPendingMobileTouch();
+    if(mobileTouchDrag)finishMobileTouchDrag(0,0,true);
+  },{passive:true,capture:true});
+  document.addEventListener('click',event=>{
+    if(Date.now()<blockTouchClickUntil&&event.target.closest?.('.series-card')){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  },true);
+  document.addEventListener('contextmenu',event=>{
+    if((mobileTouchPending||mobileTouchDrag)&&event.target.closest?.('.series-card'))
+      event.preventDefault();
+  },true);
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&mobileTouchDrag){
+      finishMobileTouchDrag(0,0,true);
+      event.stopImmediatePropagation();
+    }
+  },true);
+  window.addEventListener('blur',()=>{
+    cancelPendingMobileTouch();
+    if(mobileTouchDrag)finishMobileTouchDrag(0,0,true);
+  });
+}
+
 /* Prévia de posição durante o arrasto (desktop): nenhuma alteração é salva
    até o soltar. O card original continua como origem do evento dragend. */
 
@@ -3149,6 +3354,9 @@ function stepDragAutoScroll(){
     const speed=edgeScrollSpeed(y,0,window.innerHeight,86);
     if(speed)window.scrollBy(0,speed);
   }
+  // No toque, o conteúdo rola debaixo do dedo, então recalculamos o tier
+  // também quando o dedo está parado perto da borda.
+  if(mobileTouchDrag?.moved)refreshMobileDropArea(x,y);
   dragScrollRAF=requestAnimationFrame(stepDragAutoScroll);
 }
 function startDragAutoScroll(event){
@@ -3503,7 +3711,7 @@ function manageUnwatched(){
     if(!state.shows.some(s=>locationOf(s.id)==='unwatched'))closeModal();
   });
 }
-function bind(){initCatalogLayout();initTierCardSize();initFocusToggle();document.addEventListener('dragover',trackDragAutoScroll,true);
+function bind(){initCatalogLayout();initTierCardSize();initFocusToggle();initMobileTouchDrag();document.addEventListener('dragover',trackDragAutoScroll,true);
  const filtersDialog=$('filtersDialog');
  $('openFiltersBtn').onclick=()=>filtersDialog.showModal();
  $('stickyFiltersBtn').onclick=()=>filtersDialog.showModal();
