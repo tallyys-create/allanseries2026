@@ -408,6 +408,31 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  .court-poster-caption{display:none}
 }
 
+
+/* Arrastar com prévia ao vivo: a capa aparece no lugar onde será solta. */
+.drag-reordering .live-drag-origin{
+  position:absolute!important;left:-9999px!important;top:-9999px!important;
+  width:0!important;height:0!important;min-width:0!important;min-height:0!important;
+  margin:0!important;padding:0!important;opacity:0!important;
+  pointer-events:none!important;overflow:hidden!important;flex:0 0 0!important;
+}
+.live-drag-preview{pointer-events:none!important;user-select:none!important}
+.tier-dock>.live-drag-preview{
+  border:2px dashed #ffc568!important;background:#ffad3a24!important;
+  box-shadow:0 0 0 3px #ffc56822,0 8px 24px #0008!important;
+  border-radius:11px;opacity:.8;transform:scale(.97);
+  animation:preview-enter .15s ease-out;
+}
+.library-grid>.live-drag-preview .series-card{
+  border:2px dashed #ffc568!important;box-shadow:0 0 0 3px #ffc56822!important;
+  opacity:.8;
+}
+.drag-reordering .tier.drag-over{border-color:#ffbc65b3;background:#2c372a}
+.drag-reordering .tier-body.drag-over{background:#ffb34713}
+.drag-reordering .library-grid.drag-over{outline:2px dashed #ffad3a65;outline-offset:5px;border-radius:10px}
+@keyframes preview-enter{from{opacity:.4;transform:scale(.91)}to{opacity:.8;transform:scale(.97)}}
+@media(prefers-reduced-motion:reduce){.tier-dock>.live-drag-preview{animation:none}}
+
 </style>
 </head>
 <body>
@@ -2993,7 +3018,24 @@ function isJudged(id){return state.tiers.some(t=>t.id===locationOf(id))}
 function visibleShows(){return state.shows.filter(s=>locationOf(s.id)!=='unwatched')}
 function counts(){const visible=visibleShows();const sorted=visible.filter(s=>isJudged(s.id)).length;$('totalCount').textContent=visible.length;$('rankedCount').textContent=sorted;$('pendingCount').textContent=visible.length-sorted;$('undoBtn').disabled=!history.length;const hidden=state.shows.filter(s=>locationOf(s.id)==='unwatched').length;const manage=$('manageUnwatchedBtn');if(manage){manage.hidden=!hidden;manage.textContent=`↩ Não assistidas (${hidden})`;}}
 function imgHtml(show){return `<div class="cardfallback" style="--fallback:${esc(show.tint||'#885780')}">${esc(show.title)}</div><img alt="" loading="lazy" decoding="async">`}
-function showCard(show,under=false){const card=document.createElement('button');card.type='button';card.className='series-card';card.draggable=true;card.dataset.id=show.id;card.title=`${show.title} · Clique para abrir a ficha`;card.style.setProperty('--fallback',show.tint||'#885780');card.setAttribute('aria-label',`Abrir ficha de ${show.title}`);card.innerHTML=imgHtml(show)+'<span class="cardtitle">'+esc(show.title)+'</span>';setupPoster(card.querySelector('img'),show);card.addEventListener('click',()=>openDetails(show.id));card.addEventListener('dragstart',ev=>{draggedId=show.id;ev.dataTransfer.effectAllowed='move';ev.dataTransfer.setData('text/plain',show.id);setTimeout(()=>card.classList.add('dragging'),0)});card.addEventListener('dragend',()=>{draggedId=null;card.classList.remove('dragging');document.querySelectorAll('.drag-over').forEach(x=>x.classList.remove('drag-over'))});if(!under)return card;const item=document.createElement('div');item.className='library-item';item.append(card);const caption=document.createElement('div');caption.className='title-under';caption.textContent=show.title;item.append(caption);return item}
+
+function showCard(show,under=false){
+  const card=document.createElement('button');
+  card.type='button';card.className='series-card';card.draggable=true;
+  card.dataset.id=show.id;card.title=`${show.title} · Clique para abrir a ficha`;
+  card.style.setProperty('--fallback',show.tint||'#885780');
+  card.setAttribute('aria-label',`Abrir ficha de ${show.title}`);
+  card.innerHTML=imgHtml(show)+'<span class="cardtitle">'+esc(show.title)+'</span>';
+  setupPoster(card.querySelector('img'),show);
+  card.addEventListener('click',()=>{if(!draggedId)openDetails(show.id)});
+  card.addEventListener('dragstart',ev=>startDragPreview(ev,card,show.id,under));
+  card.addEventListener('dragend',finishDragPreview);
+  if(!under)return card;
+  const item=document.createElement('div');item.className='library-item';item.append(card);
+  const caption=document.createElement('div');caption.className='title-under';caption.textContent=show.title;
+  item.append(caption);
+  return item;
+}
 function render(){
   counts();const board=$('tierboard');board.innerHTML='';
   state.tiers.forEach((tier,index)=>{
@@ -3010,7 +3052,7 @@ function render(){
     if(!shows.length){const hint=document.createElement('div');hint.className='tier-hint';hint.textContent='＋ Solte uma série aqui';dock.append(hint)}
     else shows.forEach(s=>dock.append(showCard(s)));
     // Accept dropping anywhere in the row's body, including over its explanation.
-    installDrop(body,tier.id);body.append(explanation,dock);row.append(label,body);board.append(row);
+    installDrop(row,tier.id);body.append(explanation,dock);row.append(label,body);board.append(row);
   });renderLibrary();
 }
 function legible(hex){let s=(hex||'').replace('#','');if(s.length!==6)return '#fff';const [r,g,b]=[0,2,4].map(i=>parseInt(s.slice(i,i+2),16)/255);const lin=[r,g,b].map(x=>x<.04045?x/12.92:Math.pow((x+.055)/1.055,2.4));return lin[0]*.2126+lin[1]*.7152+lin[2]*.0722>.42?'#281321':'#fff'}
@@ -3058,7 +3100,140 @@ function renderLibrary(){
  document.querySelectorAll('[data-quick-tag]').forEach(b=>b.classList.toggle('is-active',normalizeSearch(b.dataset.quickTag)===q&&!!q));
 }
 
-function installDrop(zone,override){zone.ondragover=ev=>{ev.preventDefault();ev.dataTransfer.dropEffect='move';zone.closest('.tier')?.classList.add('drag-over');if(override)zone.classList.add('drag-over')};zone.ondragleave=ev=>{if(!zone.contains(ev.relatedTarget)){zone.closest('.tier')?.classList.remove('drag-over');zone.classList.remove('drag-over')}};zone.ondrop=ev=>{ev.preventDefault();ev.stopPropagation();const id=ev.dataTransfer.getData('text/plain')||draggedId;const target=override||zone.dataset.target;const card=ev.target.closest('.series-card');const before=card&&card.dataset.id!==id?card.dataset.id:null;move(id,target,before);zone.closest('.tier')?.classList.remove('drag-over');zone.classList.remove('drag-over')}}
+
+/* Prévia de posição durante o arrasto (desktop): nenhuma alteração é salva
+   até o soltar. O card original continua como origem do evento dragend. */
+let dragOrigin=null;
+let dragCard=null;
+let dragPreview=null;
+let dragPreviewType=null;
+let dragDropped=false;
+function startDragPreview(ev,card,id,fromLibrary){
+  if(!ev.dataTransfer)return;
+  finishDragPreview();
+  draggedId=id;dragCard=card;
+  dragOrigin=fromLibrary?card.closest('.library-item'):card;
+  dragDropped=false;
+  ev.dataTransfer.effectAllowed='move';
+  ev.dataTransfer.setData('text/plain',id);
+  document.body.classList.add('drag-reordering');
+  // O navegador captura primeiro a imagem que acompanha o cursor.
+  setTimeout(()=>{if(draggedId===id&&dragOrigin)dragOrigin.classList.add('live-drag-origin')},0);
+}
+function finishDragPreview(){
+  dragPreview?.remove();dragPreview=null;dragPreviewType=null;
+  dragOrigin?.classList.remove('live-drag-origin');
+  dragOrigin=null;dragCard=null;draggedId=null;dragDropped=false;
+  document.body.classList.remove('drag-reordering');
+  document.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'));
+  document.querySelectorAll('.tier-hint').forEach(el=>el.style.removeProperty('display'));
+}
+function createDragPreview(isPool){
+  if(!dragCard)return null;
+  const clone=dragCard.cloneNode(true);
+  clone.classList.remove('dragging','live-drag-origin');
+  clone.classList.add('live-drag-preview');
+  clone.removeAttribute('id');clone.draggable=false;clone.tabIndex=-1;
+  clone.setAttribute('aria-hidden','true');clone.removeAttribute('data-id');
+  if(!isPool)return clone;
+  const item=document.createElement('div');
+  item.className='library-item live-drag-preview';
+  item.append(clone);
+  const name=state.shows.find(s=>s.id===draggedId)?.title||'';
+  const caption=document.createElement('div');caption.className='title-under';caption.textContent=name;
+  item.append(caption);
+  return item;
+}
+function tierInsertionAnchor(dock,clientX,clientY){
+  const cards=[...dock.children].filter(el=>el.classList.contains('series-card')
+    &&el!==dragPreview&&el!==dragOrigin);
+  if(!cards.length)return null;
+  // As linhas das capas podem se quebrar conforme o tamanho da tela.
+  const rows=[];
+  for(const card of cards){
+    const rect=card.getBoundingClientRect();
+    let row=rows.find(r=>Math.abs(r.top-rect.top)<12);
+    if(!row){row={top:rect.top,bottom:rect.bottom,items:[]};rows.push(row)}
+    row.items.push({el:card,rect});
+    row.bottom=Math.max(row.bottom,rect.bottom);
+  }
+  rows.sort((a,b)=>a.top-b.top);
+  for(let i=0;i<rows.length;i++){
+    const row=rows[i];
+    if(clientY<=row.bottom+6){
+      const next=row.items.find(it=>clientX<it.rect.left+it.rect.width/2);
+      if(next)return next.el;
+      return rows[i+1]?.items[0]?.el||null;
+    }
+  }
+  return null;
+}
+function previewPosition(zone,target,ev){
+  if(!draggedId||!dragCard)return;
+  const isPool=target==='pool';
+  const dock=isPool?$('libraryGrid'):zone.querySelector('.tier-dock');
+  if(!dock)return;
+  const type=isPool?'pool':'tier';
+  if(!dragPreview||dragPreviewType!==type){
+    dragPreview?.remove();
+    dragPreview=createDragPreview(isPool);
+    dragPreviewType=type;
+  }
+  if(!dragPreview)return;
+  let anchor=null;
+  if(isPool){
+    // O catálogo é alfabético: respeitar a posição após o soltar.
+    const name=state.shows.find(s=>s.id===draggedId)?.title||'';
+    const peers=[...dock.children].filter(el=>el.classList.contains('library-item')
+      &&el!==dragPreview&&el!==dragOrigin);
+    anchor=peers.find(el=>(el.querySelector('.title-under')?.textContent||'')
+      .localeCompare(name,'pt-BR',{sensitivity:'base'})>0)||null;
+  }else{
+    // Evita oscilações quando o cursor já está dentro da posição prevista.
+    if(dragPreview.parentElement===dock){
+      const r=dragPreview.getBoundingClientRect();
+      if(ev.clientX>=r.left&&ev.clientX<=r.right
+        &&ev.clientY>=r.top&&ev.clientY<=r.bottom)return;
+    }
+    anchor=tierInsertionAnchor(dock,ev.clientX,ev.clientY);
+    dock.querySelector('.tier-hint')?.style.setProperty('display','none');
+  }
+  if(anchor!==dragPreview&&!(dragPreview.parentElement===dock&&dragPreview.nextElementSibling===anchor)){
+    dock.insertBefore(dragPreview,anchor);
+  }
+}
+function installDrop(zone,target){
+  zone.ondragover=ev=>{
+    if(!draggedId)return;
+    ev.preventDefault();
+    if(ev.dataTransfer)ev.dataTransfer.dropEffect='move';
+    zone.closest('.tier')?.classList.add('drag-over');
+    zone.classList.add('drag-over');
+    previewPosition(zone,target,ev);
+  };
+  zone.ondragleave=ev=>{
+    if(!zone.contains(ev.relatedTarget)){
+      zone.closest('.tier')?.classList.remove('drag-over');
+      zone.classList.remove('drag-over');
+    }
+  };
+  zone.ondrop=ev=>{
+    if(!draggedId)return;
+    ev.preventDefault();ev.stopPropagation();
+    const id=draggedId;
+    previewPosition(zone,target,ev);
+    let before=null;
+    if(target!=='pool'&&dragPreview){
+      let sibling=dragPreview.nextElementSibling;
+      while(sibling&&(sibling===dragOrigin||!sibling.classList.contains('series-card')))
+        sibling=sibling.nextElementSibling;
+      before=sibling?.dataset.id||null;
+    }
+    dragDropped=true;
+    finishDragPreview();
+    move(id,target,before);
+  };
+}
 function move(id,to,before=null){
   const item=state.shows.find(s=>s.id===id);
   if(!item||locationOf(id)==='unwatched'||!(to==='pool'||state.tiers.some(t=>t.id===to)))return;
