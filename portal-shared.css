@@ -31,3 +31,5 @@
   .viewer-name-label{width:100%;justify-content:space-between}
   .viewer-name-label input{max-width:none;flex:1 1 150px}
 }
+
+.portal-signout{border:1px solid #d7b46a64;border-radius:10px;padding:10px 13px;background:#523b224f;color:#ffd593;min-height:39px;font:800 11px 'DM Sans',system-ui,sans-serif;cursor:pointer}.portal-signout:hover{background:#ffb753;color:#272011}
