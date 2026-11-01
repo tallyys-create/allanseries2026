@@ -434,6 +434,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){.tier-dock>.live-drag-preview{animation:none}}
 
 </style>
+<link rel="stylesheet" href="layout-modes.css">
 </head>
 <body>
 <div class="backdrop"></div>
@@ -465,8 +466,9 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
   <div class="court-stamp"><span>VEREDITO</span><strong>DO ALLAN</strong><span class="stamp-stars">★ ★ ★</span></div>
  </div>
 </section>
- <section aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">A sentença final <span style="color:#ff9a30">✦</span></h2><p>Arraste as capas para as categorias. Clique em uma série para ver a galeria de cenas e relembrar a história.</p></div><div class="toolbar"><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de séries"></div></section>
- <section class="library" id="librarySection" style="margin-top:26px"><div class="library-head"><div><h2 id="libraryTitle">🎬 Aguardando julgamento</h2><div class="hint">Escolha uma capa para abrir sua ficha, ou arraste para o ranking.</div></div><div class="library-controls"><input id="searchInput" type="search" class="input search" placeholder="Buscar série ou nome alternativo..." aria-label="Buscar série"><button class="button" id="restoreShowsBtn" title="Recuperar as séries originais excluídas, sem alterar o ranking">↺ Recuperar séries excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Nova série</button></div></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button class="quick-filter" type="button" data-quick-tag="Boys Love">Boys Love</button><button class="quick-filter" type="button" data-quick-tag="Japão">Japão</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Netflix">Netflix</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div><div class="filter-toolbar" aria-label="Filtros do catálogo">
+ <div class="ranking-workspace" id="rankingWorkspace">
+ <section class="ranking-panel" aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">A sentença final <span style="color:#ff9a30">✦</span></h2><p>Arraste as capas para as categorias. Clique em uma série para ver a galeria de cenas e relembrar a história.</p></div><div class="toolbar"><button class="button small layout-switch" id="layoutToggleBtn" type="button" aria-pressed="false" title="Mostrar catálogo à direita dos tiers">▣ Catálogo lateral</button><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de séries"></div></section>
+ <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 Aguardando julgamento</h2><div class="hint">Escolha uma capa para abrir sua ficha, ou arraste para o ranking.</div></div><div class="library-controls"><input id="searchInput" type="search" class="input search" placeholder="Buscar série ou nome alternativo..." aria-label="Buscar série"><button class="button" id="restoreShowsBtn" title="Recuperar as séries originais excluídas, sem alterar o ranking">↺ Recuperar séries excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Nova série</button></div></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button class="quick-filter" type="button" data-quick-tag="Boys Love">Boys Love</button><button class="quick-filter" type="button" data-quick-tag="Japão">Japão</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Netflix">Netflix</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div><div class="filter-toolbar" aria-label="Filtros do catálogo">
  <label>País <select class="input" id="countryFilter" aria-label="Filtrar por país"><option value="">Todos</option></select></label>
  <label>Gênero <select class="input" id="genreFilter" aria-label="Filtrar por gênero"><option value="">Todos</option><option>Boys Love</option><option>Romance</option><option>Drama</option><option>Comédia</option><option>Suspense</option><option>Anime</option><option>Musical</option><option>Fantasia</option><option>Terror</option><option>Ficção científica</option></select></label>
  <label>Plataforma <select class="input" id="platformFilter" aria-label="Filtrar por plataforma"><option value="">Todas</option><option>Netflix</option><option>Disney</option><option>Prime Video</option><option>HBO</option><option>Nickelodeon</option><option>GMMTV</option><option>YouTube</option><option>Viki</option><option>Globo</option></select></label>
@@ -475,6 +477,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  </div>
  <div id="libraryGrid" class="library-grid" aria-label="Séries encontradas"></div>
  <div class="library-more"><button class="button" id="showMoreBtn" type="button" hidden>＋ Mostrar mais séries</button><span id="shownCount" aria-live="polite"></span></div></section>
+ </div>
  <footer class="bottomline"><span>✦ ALLANWOODTV · AO VIVO NA TWITCH</span><div><button class="linklike" id="manageUnwatchedBtn" hidden>↩ Não assistidas</button><button class="linklike" id="backupBtn">Baixar backup do ranking</button><button class="linklike" id="importBtn">Importar backup</button><input type="file" id="backupFile" hidden accept="application/json,.json"></div></footer>
 </main>
 <div class="modalback" id="modalback" role="presentation"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Ficha da série"><button class="closex" id="modalClose" aria-label="Fechar">×</button><div id="modalBody"></div></div></div>
@@ -3445,13 +3448,36 @@ function manageUnwatched(){
     if(!state.shows.some(s=>locationOf(s.id)==='unwatched'))closeModal();
   });
 }
-function bind(){const b=$('modalback');b.addEventListener('click',ev=>{if(ev.target===b)closeModal()});$('modalClose').onclick=closeModal;document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){if($('modalback').classList.contains('open'))closeModal();else if(document.body.classList.contains('presentation'))togglePresentation()}});$('editTiersBtn').onclick=openTierForm;
+function bind(){initCatalogLayout();const b=$('modalback');b.addEventListener('click',ev=>{if(ev.target===b)closeModal()});$('modalClose').onclick=closeModal;document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){if($('modalback').classList.contains('open'))closeModal();else if(document.body.classList.contains('presentation'))togglePresentation()}});$('editTiersBtn').onclick=openTierForm;
  $('jumpCatalogBtn').onclick=()=>{$('librarySection').scrollIntoView({behavior:'smooth',block:'start'});};
  $('jumpCatalogBtn2').onclick=()=>{$('librarySection').scrollIntoView({behavior:'smooth',block:'start'});};
  $('showMoreBtn').onclick=()=>{libraryLimit+=LIBRARY_BATCH;renderLibrary();};
  ['countryFilter','genreFilter','platformFilter','statusFilter'].forEach(id=>$(id).onchange=resetLibraryPage);
  $('clearFiltersBtn').onclick=()=>{$('searchInput').value='';['countryFilter','genreFilter','platformFilter'].forEach(id=>$(id).value='');$('statusFilter').value='auto';resetLibraryPage();};
  $('addSeriesBtn').onclick=()=>openShowForm();$('manageUnwatchedBtn').onclick=manageUnwatched;$('restoreShowsBtn').onclick=()=>{const missing=DEFAULT_SHOWS.filter(base=>!state.shows.some(s=>s.id===base.id));if(!missing.length){toast('Todas as séries originais já estão cadastradas.');return}const names=missing.map(s=>s.title).join(', ');if(!confirm(`Recuperar ${missing.length} série(s) original(is)?\n\n${names}\n\nSuas categorias, classificações e outras fichas serão mantidas.`))return;checkpoint();missing.forEach(show=>{state.shows.push(structuredClone(show));state.locations[show.id]='pool'});save();render();toast(`${missing.length} série(s) recuperada(s)!`)};$('searchInput').oninput=resetLibraryPage;document.querySelectorAll('[data-quick-tag]').forEach(button=>button.onclick=()=>{const input=$('searchInput'),tag=button.dataset.quickTag;input.value=normalizeSearch(input.value)===normalizeSearch(tag)?'':tag;resetLibraryPage();input.focus()});$('resetBtn').onclick=()=>{if(!confirm('Remover TODAS as séries das categorias? As fichas continuarão salvas.'))return;checkpoint();state.shows.forEach(s=>{if(locationOf(s.id)!=='unwatched')state.locations[s.id]='pool'});save();render();toast('Ranking zerado.')};$('undoBtn').onclick=()=>{if(!history.length)return;state=JSON.parse(history.pop());save();render();toast('Última alteração desfeita.')};$('randomBtn').onclick=()=>{const options=state.shows.filter(s=>locationOf(s.id)==='pool');if(!options.length)return toast('Todas as séries já foram julgadas!');openDetails(options[Math.floor(Math.random()*options.length)].id);toast('A próxima série foi sorteada!')};$('presentBtn').onclick=togglePresentation;$('exitLiveBtn').onclick=togglePresentation;$('exportPngBtn').onclick=exportPng;$('backupBtn').onclick=()=>{download(new Blob([JSON.stringify({version:1,created:new Date().toISOString(),...state},null,2)],{type:'application/json'}),'allanwoodtv-backup-vereditos.json')};$('importBtn').onclick=()=>$('backupFile').click();$('backupFile').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{let obj=JSON.parse(await f.text());if(!validate(obj))throw Error('Formato');if(!confirm('Substituir o ranking atual pelos dados do backup?'))return;checkpoint();state= obj.tiers.some(t=>!('description' in t))?applyReferenceTiers(obj):{tiers:obj.tiers,shows:obj.shows,locations:obj.locations};state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();save();populateCountryFilter();resetLibraryPage();toast('Backup importado.')}catch{toast('O arquivo JSON não é um backup válido.')}finally{ev.target.value=''}}}
+
+/* Preferência de organização independente dos dados salvos das séries. */
+const CATALOG_LAYOUT_KEY='allanwoodtv-catalogo-layout-v1';
+function applyCatalogLayout(mode){
+  const side=mode==='sidebar';
+  document.body.classList.toggle('layout-sidebar',side);
+  const button=$('layoutToggleBtn');
+  if(button){
+    button.setAttribute('aria-pressed',String(side));
+    button.textContent=side?'▤ Catálogo abaixo':'▣ Catálogo lateral';
+    button.title=side?'Voltar ao catálogo abaixo dos tiers':'Mostrar catálogo fixo à direita dos tiers';
+  }
+  try{localStorage.setItem(CATALOG_LAYOUT_KEY,side?'sidebar':'classic')}catch{}
+}
+function initCatalogLayout(){
+  let mode='classic';
+  try{mode=localStorage.getItem(CATALOG_LAYOUT_KEY)||'classic'}catch{}
+  applyCatalogLayout(mode);
+  $('layoutToggleBtn').addEventListener('click',()=>applyCatalogLayout(
+    document.body.classList.contains('layout-sidebar')?'classic':'sidebar'
+  ));
+}
+
 function togglePresentation(){document.body.classList.toggle('presentation');$('exitLiveBtn').hidden=!document.body.classList.contains('presentation');$('presentBtn').textContent=document.body.classList.contains('presentation')?'⛶ Sair do modo live':'⛶ Modo live';toast(document.body.classList.contains('presentation')?'Modo live ativado. Use Esc para sair.':'Modo live encerrado.')}
 function download(blob,name){const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),600)}
 function round(ctx,x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
