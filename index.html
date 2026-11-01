@@ -2613,8 +2613,10 @@ function cardPosterUrl(url){
 /* Imagens do GitHub Pages: primeiro assets/, depois os links externos da ficha.
    Os caminhos são relativos ao index.html, inclusive em Pages de projeto. */
 const assetCheck=new Map();
-const localGalleryCount=new Map();
+const localGalleryFiles=new Map();
 const localGalleryProbe=new Map();
+let galleryDirectoryRequest=null;
+let galleryDirectoryFailed=false;
 function assetFolder(show){
   return show&&/^[a-z0-9-]+$/.test(show.id||'')?'assets/series/'+show.id+'/':'';
 }
@@ -2629,10 +2631,9 @@ function posterCandidates(show,mini=false){
   ].filter(Boolean);
 }
 function sceneCandidates(show,index){
-  const folder=assetFolder(show);
-  const local=folder+'cenas/'+String(index+1).padStart(2,'0')+'.webp';
+  const local=localGalleryFiles.get(show.id)||[];
   const external=Array.isArray(show.gallery)?show.gallery.filter(v=>typeof v==='string'&&v.trim())[index]:'';
-  return [folder?local:'',external].filter(Boolean);
+  return (local.length?[local[index],external]:[external]).filter(Boolean);
 }
 function imageWithFallback(img,candidates,handlers={}){
   if(!img)return;
@@ -2660,29 +2661,73 @@ function imageWithFallback(img,candidates,handlers={}){
 function setupPoster(img,show,mini=true){
   imageWithFallback(img,posterCandidates(show,mini));
 }
-/* Quando a ficha não tinha galeria externa, detecta fotos 01.webp, 02.webp etc.
-   A consulta é feita somente ao abrir a ficha, não ao carregar as 78 capas. */
+
+/* Descobre todas as imagens em assets/series/<serie>/cenas/ pelo índice
+   público do GitHub. Serve para WebP/JPG/PNG/GIF/AVIF e não presume quantidades.
+   No GitHub Pages, a listagem de arquivos não é disponibilizada diretamente. */
+const galleryOrder=new Intl.Collator('pt-BR',{numeric:true,sensitivity:'base'});
+function loadGalleryDirectory(){
+  if(galleryDirectoryRequest)return galleryDirectoryRequest;
+  const url='https://api.github.com/repos/tallyys-create/allanseries2026/git/trees/main?recursive=1';
+  galleryDirectoryRequest=fetch(url,{cache:'no-store',headers:{Accept:'application/vnd.github+json'}})
+    .then(response=>{if(!response.ok)throw Error('GitHub '+response.status);return response.json()})
+    .then(data=>{
+      if(!Array.isArray(data.tree)||data.truncated)throw Error('Listagem incompleta');
+      const current=modalType==='details'&&activeId?currentShow():null;
+      const before=current?carouselSlides(current):null;
+      const groups=new Map();
+      const pattern=new RegExp('^assets/series/([a-z0-9-]+)/cenas/([^/]+[.](?:webp|jpe?g|png|gif|avif))$','i');
+      for(const entry of data.tree){
+        if(entry.type!=='blob')continue;
+        const match=pattern.exec(entry.path);
+        if(!match)continue;
+        const id=match[1], name=match[2];
+        if(!groups.has(id))groups.set(id,[]);
+        groups.get(id).push({name,src:'assets/series/'+id+'/cenas/'+encodeURIComponent(name)});
+      }
+      localGalleryFiles.clear();
+      for(const [id,files] of groups){
+        files.sort((a,b)=>galleryOrder.compare(a.name,b.name));
+        const sources=files.map(item=>item.src);
+        localGalleryFiles.set(id,sources);
+        for(const source of sources)assetCheck.delete(source);
+      }
+      if(current&&modalType==='details'&&activeId===current.id
+        &&JSON.stringify(before)!==JSON.stringify(carouselSlides(current)))openDetails(current.id);
+      return true;
+    }).catch(()=>{
+      galleryDirectoryFailed=true;
+      if(modalType==='details'&&activeId)probeLocalGallery(currentShow());
+      return false;
+    });
+  return galleryDirectoryRequest;
+}
+/* Reserva quando a API do GitHub não estiver acessível: detectar cenas
+   sequenciais 01.webp, 02.webp etc. Os arquivos listados têm prioridade. */
 function probeLocalGallery(show){
   const folder=assetFolder(show);
-  if(!folder||localGalleryCount.has(show.id)||localGalleryProbe.has(show.id))return;
-  const task=(async()=>{
-    let count=0;
-    for(let i=0;i<20;i++){
-      const src=folder+'cenas/'+String(i+1).padStart(2,'0')+'.webp';
+  if(!folder||localGalleryFiles.has(show.id)||localGalleryProbe.has(show.id))return;
+  const job=(async()=>{
+    const files=[];
+    for(let n=1;n<=60;n++){
+      const src=folder+'cenas/'+String(n).padStart(2,'0')+'.webp';
       const exists=await new Promise(resolve=>{
         const im=new Image();
-        im.onload=()=>{assetCheck.set(src,true);resolve(true)};
-        im.onerror=()=>{assetCheck.set(src,false);resolve(false)};
+        im.onload=()=>resolve(true);
+        im.onerror=()=>resolve(false);
         im.src=src;
       });
       if(!exists)break;
-      count++;
+      files.push(src);
     }
-    localGalleryCount.set(show.id,count);
-    const externalCount=Array.isArray(show.gallery)?show.gallery.filter(Boolean).length:0;
-    if(count>externalCount&&modalType==='details'&&activeId===show.id)openDetails(show.id);
+    if(files.length){
+      const before=carouselSlides(show);
+      localGalleryFiles.set(show.id,files);
+      if(modalType==='details'&&activeId===show.id
+        &&JSON.stringify(before)!==JSON.stringify(carouselSlides(show)))openDetails(show.id);
+    }
   })().finally(()=>localGalleryProbe.delete(show.id));
-  localGalleryProbe.set(show.id,task);
+  localGalleryProbe.set(show.id,job);
 }
 const KEY='allanwoodtv-catalogo-completo-fichas-v1'; const LEGACY_KEYS=[];let state;let history=[];let modalType=null;let activeId=null;let draggedId=null;let editingId=null;let galleryTimer=null;let galleryIndex=0;let galleryPaused=false;let libraryLimit=24;const LIBRARY_BATCH=24;const $=(id)=>document.getElementById(id);const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const normalizeSearch=(s)=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();const showSearchBlob=(show)=>normalizeSearch([show.title,...(Array.isArray(show.aliases)?show.aliases:[]),show.country,show.platform,show.genre,...(Array.isArray(show.tags)?show.tags:[])].join(' '));
 const matchesSearch=(show,q)=>{if(!q)return true;const blob=showSearchBlob(show),words=blob.split(' ');return q.split(' ').every(term=>term.length<=2?words.includes(term):blob.includes(term))};
@@ -2748,7 +2793,7 @@ function init(){
       }
     }
   }catch(e){state=defaults()}
-  state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();populateCountryFilter();render();bind();
+  state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();populateCountryFilter();render();bind();loadGalleryDirectory();
 }
 function defaults(){return {tiers:structuredClone(DEFAULT_TIERS),shows:structuredClone(DEFAULT_SHOWS),locations:Object.fromEntries(DEFAULT_SHOWS.map(s=>[s.id,'pool']))}}
 function validate(data){return data&&Array.isArray(data.tiers)&&Array.isArray(data.shows)&&data.locations&&typeof data.locations==='object'&&data.tiers.every(t=>typeof t.id==='string'&&typeof t.name==='string')&&data.shows.every(s=>typeof s.id==='string'&&typeof s.title==='string')}
@@ -2843,7 +2888,7 @@ function openModal(content){stopGallery();$('modalBody').innerHTML=content;$('mo
 function closeModal(){stopGallery();modalType=null;activeId=null;editingId=null;$('modalback').classList.remove('open');$('modalBody').innerHTML='';document.body.style.overflow=''}
 function currentShow(){return state.shows.find(s=>s.id===activeId)}
 function stopGallery(){if(galleryTimer){clearInterval(galleryTimer);galleryTimer=null;}}
-function carouselSlides(show){const external=Array.isArray(show.gallery)?show.gallery.filter(s=>typeof s==='string'&&s.trim()):[];const count=Math.max(external.length,localGalleryCount.get(show.id)||0);return Array.from({length:count},(_,i)=>external[i]||'')}
+function carouselSlides(show){const local=localGalleryFiles.get(show.id)||[];if(local.length)return local;return Array.isArray(show.gallery)?show.gallery.filter(s=>typeof s==='string'&&s.trim()):[]}
 function updateGallery(next,auto=false){
   if(modalType!=='details')return;
   const s=currentShow();if(!s)return;
@@ -2874,6 +2919,8 @@ function restartGallery(){
 function openDetails(id){
   const s=state.shows.find(x=>x.id===id);if(!s||locationOf(id)==='unwatched')return;
   modalType='details';activeId=id;galleryIndex=0;galleryPaused=false;
+  if(galleryDirectoryFailed)probeLocalGallery(s);
+  else if(!galleryDirectoryRequest)loadGalleryDirectory();
   const loc=locationOf(id);
   const options=[{id:'pool',name:'↩ Fila de espera'},...state.tiers.map(t=>({id:t.id,name:t.name}))];
   const chips=[s.year,s.country,s.episodes,s.genre,s.platform].filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
