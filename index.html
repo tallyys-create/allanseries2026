@@ -151,18 +151,6 @@ footer{margin-top:35px}
 </div>
 </dialog>
 
-<dialog id="audienceDialog" aria-labelledby="audienceTitle">
-<div class="dialog-body">
- <div class="dialog-head"><div><small>✦ O CHAT É O JÚRI</small><h2 id="audienceTitle">Sua vez de julgar!</h2></div><button class="dialog-close" type="button" data-close aria-label="Fechar">✕</button></div>
- <p class="dialog-intro">Monte sua própria tier, escolha seus favoritos e compartilhe uma imagem personalizada nas redes ou no chat.</p>
- <form id="audienceForm">
-  <div class="form-group"><label for="audienceName">Qual nome aparece no ranking? (opcional)</label><input id="audienceName" type="text" maxlength="28" autocomplete="nickname" placeholder="Seu nome ou @"></div>
-  <button type="submit" class="primary submit">Começar minha tier →</button>
- </form>
- <button type="button" class="back-link" id="backToRolesFromAudience">Escolher outro perfil</button>
-</div>
-</dialog>
-
 <dialog id="soonDialog" aria-labelledby="soonTitle">
 <div class="dialog-body">
  <div class="dialog-head"><div><small>✦ PRÓXIMOS JULGAMENTOS</small><h2 id="soonTitle">Filmes (2026)</h2></div><button class="dialog-close" type="button" data-close aria-label="Fechar">✕</button></div>
@@ -174,7 +162,7 @@ footer{margin-top:35px}
 <script>
 (()=>{
  const $=id=>document.getElementById(id);
- const role=$('roleDialog'),login=$('allLoginDialog'),audience=$('audienceDialog'),soon=$('soonDialog');
+ const role=$('roleDialog'),login=$('allLoginDialog'),soon=$('soonDialog');
  function open(dialog){if(!dialog.open)dialog.showModal()}
  $('seriesChoice').onclick=()=>open(role);
  $('filmsChoice').onclick=()=>open(soon);
@@ -182,20 +170,9 @@ footer{margin-top:35px}
    role.close();$('allPassword').value='';$('passwordError').textContent='';
    open(login);$('allPassword').focus();
  };
- $('chooseAudience').onclick=()=>{
-   role.close();
-   try{$('audienceName').value=localStorage.getItem('allanwoodtv-telespectador-apelido-v1')||''}catch{}
-   open(audience);$('audienceName').focus();
- };
+ $('chooseAudience').onclick=()=>{location.href='./series-2026-publico.html'};
  $('backToRolesFromLogin').onclick=()=>{login.close();open(role)};
- $('backToRolesFromAudience').onclick=()=>{audience.close();open(role)};
  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
- $('audienceForm').onsubmit=event=>{
-   event.preventDefault();
-   const name=$('audienceName').value.trim().slice(0,28);
-   try{localStorage.setItem('allanwoodtv-telespectador-apelido-v1',name)}catch{}
-   location.href='./series-2026-publico.html';
- };
  const expectedHash='f4787a1ec985ee3214a19c0ee2d7f0e898fbfee734f35ec162fc6a9427b4c823';
  function hex(bytes){return Array.from(new Uint8Array(bytes)).map(n=>n.toString(16).padStart(2,'0')).join('')}
  $('allLoginForm').onsubmit=async event=>{
