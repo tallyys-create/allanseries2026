@@ -1,0 +1,56 @@
+/* Identidade visual do participante (não é o ranking oficial do Allan) */
+.audience-art{
+  position:absolute;right:2%;top:7%;bottom:7%;width:39%;
+  display:flex;align-items:center;justify-content:center;isolation:isolate
+}
+.audience-ring{
+  position:absolute;width:min(34vw,420px);aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 145deg,#9dea76,#40b66c 27%,#1e704a 47%,#ffb34e 52%,#e98c2a 75%,#9ee877);
+  box-shadow:0 0 0 12px #5cdf7930,0 0 70px #72c97643;
+  transform:rotate(-19deg);
+}
+.audience-ring::after{content:"";position:absolute;inset:22px;background:#1d3225;border-radius:50%}
+.audience-panel{
+  position:relative;z-index:2;width:75%;min-height:210px;
+  transform:rotate(-5deg);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  border:2px solid #eec78388;border-radius:18px;padding:28px 20px;
+  background:linear-gradient(140deg,#344928ee,#152a21f2);
+  box-shadow:0 26px 45px #0008;text-align:center
+}
+.audience-panel>span{font-size:clamp(9px,.9vw,13px);font-weight:900;letter-spacing:.18em;color:#b5f3ab}
+.audience-panel strong{margin:8px 0;font:900 clamp(44px,5.2vw,75px)/.9 'Outfit',sans-serif;letter-spacing:-.07em;color:#ffedd1}
+.audience-panel strong span{color:#ff9e2e}
+.audience-panel small{font-size:12px;font-weight:900;letter-spacing:.12em;color:#ffc475}
+.audience-stamp{position:absolute;z-index:3;right:2%;bottom:8%;padding:13px 20px;border-radius:12px;
+ transform:rotate(9deg);border:3px solid #ffc269;color:#ffc269;font:900 14px/1.15 'Outfit',sans-serif;
+ text-align:center;background:#4c3b2199}
+.audience-star{position:absolute;color:#9aef81;font-size:50px;z-index:2}
+.audience-star.star-a{top:5%;left:2%}.audience-star.star-b{bottom:9%;left:8%;color:#ffd27c}
+body:has(.audience-art) .hero-court .hero-copy{z-index:3}
+body:has(.audience-art) .hero-court h1 .title-color{color:#ffad3a}
+body:has(.audience-art) .court-identity .court-live{color:#ffcf85}
+body:has(.audience-art) #editTiersBtn,
+body:has(.audience-art) #restoreShowsBtn,
+body:has(.audience-art) #addSeriesBtn,
+body:has(.audience-art) .court-actions #editShowBtn{display:none!important}
+body:has(.audience-art) #sharePublicBtn{border:1px solid #ffcf68;color:#fff2d8;background:#70471e}
+body:has(.audience-art) #sharePublicBtn:hover{background:#a96b2a}
+@media(max-width:950px){
+ .audience-art{right:-2%;width:42%;opacity:.83}
+ .audience-panel{min-height:170px;padding:20px 10px}
+ .audience-stamp{font-size:10px}
+}
+@media(max-width:650px){
+ .audience-art{position:relative;right:auto;top:auto;bottom:auto;width:100%;height:135px;max-width:300px;margin:4px auto -10px}
+ .audience-ring{width:180px}
+ .audience-ring::after{inset:14px}
+ .audience-panel{width:60%;min-height:118px;padding:13px}
+ .audience-panel strong{font-size:40px}
+ .audience-panel>span{font-size:8px}
+ .audience-panel small{font-size:9px}
+ .audience-stamp{font-size:9px;padding:7px;right:-3%;bottom:3%}
+ .audience-star{font-size:29px}
+ body:has(.audience-art) .hero-court{padding-bottom:8px}
+ body:has(.audience-art) #sharePublicBtn{font-size:10px;min-height:37px}
+}
