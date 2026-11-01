@@ -14,8 +14,7 @@ Todas as 78 séries já têm suas pastas. Use `assets/series/INDICE.csv` para lo
 
 Dentro de cada pasta de série:
 
-- `poster.webp`: pôster grande para a ficha (aproximadamente 700 × 1050 px).
-- `poster-mini.webp`: versão leve para o catálogo (aproximadamente 300 × 450 px).
+- `poster.webp`: **única imagem de capa**, usada tanto nas miniaturas do catálogo e dos tiers quanto no pôster da ficha (proporção vertical próxima a 2:3; resolução recomendada a partir de 700 × 1050 px).
 - `cenas/01.webp`, `cenas/02.webp`, `cenas/03.webp` etc.: imagens da galeria, preferencialmente até 1280 px de largura.
 
 Use letras minúsculas, números e hífens nos nomes de arquivos; evite espaços e acentos. Se a série tiver somente pôster, não é preciso adicionar fotos em `cenas/`.
@@ -24,7 +23,7 @@ Use letras minúsculas, números e hífens nos nomes de arquivos; evite espaços
 
 1. Entre no repositório `tallyys-create/allanseries2026`.
 2. Abra `assets/series/` e escolha a pasta da série.
-3. Clique em **Add file > Upload files** e envie o arquivo `poster.webp` e, se desejar, `poster-mini.webp`.
+3. Clique em **Add file > Upload files** e envie somente a capa `poster.webp`.
 4. Para fotos de cenas, abra a pasta `cenas/` dessa série e envie `01.webp`, `02.webp` etc.
 5. Confirme em **Commit changes**.
 
@@ -32,20 +31,23 @@ Os arquivos `.gitkeep` são apenas marcadores para as pastas aparecerem no GitHu
 
 ## Importante: etapa de conexão
 
-**O `index.html` já está conectado a estas pastas.** Quando você publicar `poster.webp`, `poster-mini.webp` ou imagens `cenas/01.webp`, o site passará a preferir esses arquivos locais automaticamente, após o GitHub Pages atualizar. Se um arquivo local não existir ou falhar, o site tentará a imagem externa cadastrada na ficha. Se ambos faltarem, mostra o nome da série em fundo colorido.
+**As tiers de Séries (2026) do Allan e do telespectador já estão conectadas a estas pastas.** Quando você publicar `poster.webp` ou imagens `cenas/01.webp`, as duas versões passarão a preferir esses arquivos locais automaticamente, após o GitHub Pages atualizar. Se um arquivo local não existir ou falhar, o site tentará a imagem externa cadastrada na ficha. Se ambos faltarem, mostra o nome da série em fundo colorido.
 
 **As galerias agora são automáticas:** o site consulta a listagem pública dos arquivos do repositório e carrega todas as imagens existentes em cada pasta `cenas/`, na ordem natural do nome (`01`, `02`, `10`). Aceita `.webp`, `.jpg`, `.jpeg`, `.png`, `.gif` e `.avif`. Não há limite relacionado à quantidade de links externos cadastrados, nem exigência de numeração contínua. **Quando a pasta tem fotos, ela define a quantidade exibida; quando está vazia, os links externos continuam sendo usados.** Se uma foto local falhar, o link externo da mesma posição pode ser usado como reserva. Caso o GitHub não permita consultar a lista de arquivos, o site tenta detectar a sequência `01.webp`, `02.webp` etc. como solução alternativa.
 
 Para ver os arquivos novos no celular ou computador após o upload, atualize o navegador. O site só lê imagens do repositório **publicadas** no Pages; arquivos ainda não enviados não aparecem. **O ranking e as alterações de fichas continuam salvos no navegador** e não são sincronizados com o GitHub.
 
-Exemplos de caminhos relativos ao `index.html`:
+Exemplos de caminhos relativos às páginas das tiers:
 
 ```text
 assets/series/alice-in-borderland/poster.webp
-assets/series/alice-in-borderland/poster-mini.webp
 assets/series/alice-in-borderland/cenas/01.webp
 assets/series/one-piece/poster.webp
 assets/interface/foto-allan.webp
 ```
 
 Recomenda-se verificar a licença e o uso permitido de pôsteres e fotografias promocionais antes de hospedá-los publicamente.
+
+## Tela ampliada e tamanhos
+
+As galerias têm um botão **Tela cheia** para abrir cenas em uma janela ampliada, navegável com setas ou deslize no celular. Os tiers também oferecem capas **Pequenas, Médias, Grandes e Extragrandes**. Os estilos visuais dessas funcionalidades ficam em `tier-global.css`, compartilhado pelas tiers presentes e futuras.
