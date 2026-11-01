@@ -34,7 +34,7 @@ Os arquivos `.gitkeep` são apenas marcadores para as pastas aparecerem no GitHu
 
 **O `index.html` já está conectado a estas pastas.** Quando você publicar `poster.webp`, `poster-mini.webp` ou imagens `cenas/01.webp`, o site passará a preferir esses arquivos locais automaticamente, após o GitHub Pages atualizar. Se um arquivo local não existir ou falhar, o site tentará a imagem externa cadastrada na ficha. Se ambos faltarem, mostra o nome da série em fundo colorido.
 
-A galeria usa `cenas/01.webp`, `02.webp` etc. Se a série ainda não tinha links de cenas, a galeria aparece assim que existir ao menos `01.webp` (o site verifica isso ao abrir a ficha). Use numeração contínua, sem pular números.
+**As galerias agora são automáticas:** o site consulta a listagem pública dos arquivos do repositório e carrega todas as imagens existentes em cada pasta `cenas/`, na ordem natural do nome (`01`, `02`, `10`). Aceita `.webp`, `.jpg`, `.jpeg`, `.png`, `.gif` e `.avif`. Não há limite relacionado à quantidade de links externos cadastrados, nem exigência de numeração contínua. **Quando a pasta tem fotos, ela define a quantidade exibida; quando está vazia, os links externos continuam sendo usados.** Se uma foto local falhar, o link externo da mesma posição pode ser usado como reserva. Caso o GitHub não permita consultar a lista de arquivos, o site tenta detectar a sequência `01.webp`, `02.webp` etc. como solução alternativa.
 
 Para ver os arquivos novos no celular ou computador após o upload, atualize o navegador. O site só lê imagens do repositório **publicadas** no Pages; arquivos ainda não enviados não aparecem. **O ranking e as alterações de fichas continuam salvos no navegador** e não são sincronizados com o GitHub.
 
