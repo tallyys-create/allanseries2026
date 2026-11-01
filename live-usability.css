@@ -1,0 +1,88 @@
+/* O Tribunal do Allan — melhorias de usabilidade para a live (2026-11) */
+
+/* Pesquisa e filtros continuam visíveis ao rolar o catálogo lateral. */
+.library-sticky-tools{display:flex;gap:8px;align-items:center;min-width:0;margin:0 0 13px}
+.library-sticky-tools .search{flex:1 1 auto;min-width:0;width:100%;min-height:43px}
+.library-sticky-tools .sticky-filter-button{
+ flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:5px;
+ border-radius:10px;padding:9px 12px;min-height:43px;white-space:nowrap;
+ background:#ffac3220;color:#ffcd85;border:1px solid #ffba5b84;
+ font-size:11px;font-weight:900;cursor:pointer
+}
+.library-sticky-tools .sticky-filter-button:hover{background:#ffad3a40;border-color:#ffd38a}
+.library-sticky-tools .sticky-filter-button.is-active{background:#ffb95c;color:#1d261c;border-color:#ffb95c}
+@media(min-width:1120px){
+ body.layout-sidebar .ranking-workspace>.library{isolation:isolate}
+ body.layout-sidebar .library-sticky-tools{
+   position:sticky;top:-16px;z-index:12;
+   margin:0 -13px 12px;padding:9px 13px 10px;
+   border-bottom:1px solid #b6dfa946;
+   background:linear-gradient(145deg,#203728f7,#16281ef8);
+   box-shadow:0 9px 16px #08160e8c
+ }
+ body.layout-sidebar .library-sticky-tools .search{font-size:12px}
+ body.layout-sidebar .library-sticky-tools .sticky-filter-button{padding:8px 10px;font-size:10px}
+}
+
+/* Melhor leitura; remove o título sobreposto às capas que já possuem legenda abaixo. */
+.library-item>.series-card .cardtitle{display:none!important}
+body.layout-sidebar .ranking-workspace .library-item .title-under{
+ font-size:11px;line-height:1.28;font-weight:800
+}
+@media(min-width:901px){
+ .ranking-workspace .tier-description{font-size:12px;line-height:1.4;padding:9px 12px 4px}
+ .ranking-workspace .tier-label .name{font-size:clamp(12px,1.17vw,16px)}
+ body.layout-sidebar .ranking-workspace .tier-description{font-size:12px;line-height:1.38;padding:9px 10px 4px}
+ body.layout-sidebar .ranking-workspace .tier-label .name{font-size:clamp(11.5px,1.1vw,14.5px);line-height:1.16}
+}
+
+/* Destino fica evidente enquanto o usuário segura a capa. */
+.drag-reordering .tier.drag-over{
+ outline:3px solid #ffc462;outline-offset:2px;
+ border-color:#ffd27f!important;background:#354332!important;
+ box-shadow:0 0 0 6px #ff9e2a26,0 12px 30px #0007;
+ z-index:4;position:relative
+}
+.drag-reordering .tier.drag-over .tier-label{filter:brightness(1.12)}
+.drag-reordering .tier.drag-over .tier-dock{background:#f9b95012;border-radius:0 0 8px 8px}
+.drag-reordering .library-grid.drag-over{
+ outline:3px dashed #ffc36c!important;outline-offset:3px
+}
+
+/* Tamanho configurável somente para capas já posicionadas nos tiers. */
+.size-picker{
+ display:inline-flex;align-items:center;gap:6px;color:#cce9bd;
+ border:1px solid #badbaa40;background:#ffffff09;border-radius:10px;
+ padding:4px 8px;font-size:11px;font-weight:800;white-space:nowrap
+}
+.size-picker select{
+ background:#223429;color:#f4faeb;border:0;border-radius:6px;
+ font:inherit;padding:3px 5px;max-width:114px;cursor:pointer
+}
+.size-picker select:focus-visible{outline:2px solid #ffc461}
+@media(min-width:901px){
+ body.tier-size-small .ranking-workspace .tier-dock>.series-card{width:59px;height:80px}
+ body.tier-size-medium .ranking-workspace .tier-dock>.series-card{width:74px;height:100px}
+ body.tier-size-large .ranking-workspace .tier-dock>.series-card{width:95px;height:129px}
+ body.layout-sidebar.tier-size-small .ranking-workspace .tier-dock>.series-card{width:54px;height:73px}
+ body.layout-sidebar.tier-size-medium .ranking-workspace .tier-dock>.series-card{width:67px;height:91px}
+ body.layout-sidebar.tier-size-large .ranking-workspace .tier-dock>.series-card{width:82px;height:111px}
+ body.tier-size-large .ranking-workspace .tier-dock{align-content:flex-start}
+}
+@media(max-width:900px){.size-picker{display:none!important}}
+
+/* Modo de foco: maximiza área útil durante a transmissão.
+   Os controles de edição, ranking e filtros continuam disponíveis. */
+.focus-switch{background:#2b422e;border-color:#8ed27b6e;color:#daf6cf}
+.focus-switch[aria-pressed="true"]{background:#ffad3a;color:#1d261b;border-color:#ffad3a}
+body.focus-mode .topbar,body.focus-mode .hero-court,body.focus-mode .bottomline{display:none!important}
+body.focus-mode .shell{padding-top:12px;padding-bottom:18px}
+body.focus-mode .ranking-workspace{scroll-margin-top:12px}
+body.focus-mode .ranking-workspace>.ranking-panel>.sectionhead{margin-top:0}
+@media(min-width:1120px){
+ body.layout-sidebar.focus-mode .ranking-workspace>.library{max-height:calc(100dvh - 20px);top:10px}
+}
+@media(max-width:650px){
+ .focus-switch{font-size:10px!important}
+ .library-sticky-tools .sticky-filter-button{font-size:10px;padding:8px 10px}
+}
