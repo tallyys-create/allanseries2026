@@ -94,6 +94,7 @@
   background:#12221bde;color:#fff4d8;cursor:pointer;font-size:24px
 }
 .scene-lightbox-arrow:hover{background:#f2aa48;color:#15251a}
+#sceneFullscreenPrev[hidden],#sceneFullscreenNext[hidden]{display:none!important}
 .scene-lightbox-prev{left:clamp(5px,2vw,26px)}
 .scene-lightbox-next{right:clamp(5px,2vw,26px)}
 .scene-lightbox-foot{
