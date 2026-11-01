@@ -385,15 +385,15 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  .court-story p,.court-memory p{font-size:12px;line-height:1.55}
  .court-memory{padding:12px}
  .court-footer{padding:10px 11px calc(10px + env(safe-area-inset-bottom))}
- .court-footer-row{align-items:stretch;gap:8px}
- .court-current{flex:1 1 auto;justify-content:center}
+ .court-footer-row{flex-direction:column;align-items:stretch;gap:5px}
+ .court-current{flex:0 0 auto;display:flex;flex-direction:row;align-items:center;gap:8px}
  .court-current strong{font-size:10px}
  .court-current small{font-size:8px}
- .court-actions{flex:0 0 auto;gap:5px;justify-content:flex-end}
- .court-actions button{min-height:43px;padding:9px 10px;font-size:10px}
- .court-actions #editShowBtn,.court-actions #nextPendingBtn{display:none}
- .court-actions #unwatchedBtn{font-size:9px;padding:9px 6px}
- .court-primary{min-width:105px}
+ .court-actions{display:grid;grid-template-columns:1fr 1fr 1fr 1.45fr;gap:5px;width:100%;justify-content:stretch}
+ .court-actions button{white-space:normal;min-width:0;min-height:43px;padding:7px 3px;font-size:10px;line-height:1.1}
+ .court-actions #editShowBtn,.court-actions #nextPendingBtn{display:block}
+ .court-actions #unwatchedBtn{font-size:9px;padding:6px 3px}
+ .court-primary{min-width:0}
  .court-verdict-menu{width:calc(100% - 16px);right:8px;padding:10px;max-height:65dvh}
  .court-verdict-grid{gap:5px}
  .court-verdict-text b{font-size:10px}
@@ -402,8 +402,9 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 }
 @media(max-width:360px){
  .court-headline .court-edition{display:none}
- .court-current{max-width:115px}
- .court-actions #unwatchedBtn{display:none}
+ .court-current{max-width:none}
+ .court-actions{grid-template-columns:1fr 1fr 1.2fr}
+ .court-actions #nextPendingBtn{display:none}
  .court-poster-caption{display:none}
 }
 
