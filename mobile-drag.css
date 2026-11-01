@@ -1,0 +1,60 @@
+/* Arrastar pelo toque: Android, iOS e tablets com tela sensível.
+   O toque rápido continua abrindo a ficha; o toque longo ativa o arrasto. */
+@media (pointer:coarse){
+  #tierboard .series-card,
+  #libraryGrid .series-card{
+    -webkit-user-select:none;user-select:none;
+    -webkit-touch-callout:none;
+    touch-action:pan-y;
+  }
+  #tierboard .series-card img,
+  #libraryGrid .series-card img{-webkit-user-drag:none;pointer-events:none}
+  body.mobile-dragging,body.mobile-dragging .ranking-workspace{
+    overscroll-behavior:contain
+  }
+  body.mobile-dragging .mobile-drag-source{
+    opacity:.28!important;filter:grayscale(.35)!important;
+    transition:none!important
+  }
+  body.mobile-dragging .tier.drag-over{
+    border:2px solid #ffc55b!important;
+    outline:3px solid #ffba48!important;
+    outline-offset:2px;
+    background:#385039!important;
+    box-shadow:0 0 0 5px #ffae2e35!important;
+    position:relative;z-index:3
+  }
+  body.mobile-dragging .tier.drag-over .tier-label{filter:brightness(1.13)}
+  body.mobile-dragging .tier.drag-over .tier-dock{background:#ffac2f17}
+  .touch-drag-ghost{
+    position:fixed;z-index:150;
+    left:0;top:0;transform:translate3d(-300px,-300px,0);
+    width:85px;pointer-events:none!important;touch-action:none;
+    padding:5px;background:#1d3424e8;
+    border:2px solid #ffc366;border-radius:13px;
+    box-shadow:0 12px 30px #0009,0 0 0 4px #f8ad323e;
+    display:flex;flex-direction:column;gap:5px;
+    will-change:transform
+  }
+  .touch-drag-ghost .series-card{
+    width:100%!important;height:auto!important;aspect-ratio:94/128;
+    box-shadow:none!important;transform:none!important;
+    border-radius:8px!important;min-height:0
+  }
+  .touch-drag-ghost .cardtitle{display:none!important}
+  .touch-drag-ghost .touch-drag-title{
+    color:#fff4d9;font:800 10px/1.2 'DM Sans',sans-serif;
+    text-align:center;overflow:hidden;display:-webkit-box;
+    -webkit-box-orient:vertical;-webkit-line-clamp:2
+  }
+  .touch-drag-ghost .touch-drag-instruction{
+    color:#ffc572;text-align:center;font:800 9px/1.2 'DM Sans',sans-serif
+  }
+  body.mobile-dragging .tier-dock>.live-drag-preview{
+    border:2px dashed #ffc366!important;
+    opacity:.76;animation:none
+  }
+}
+@media (prefers-reduced-motion:reduce){
+ .touch-drag-ghost{transition:none!important}
+}
