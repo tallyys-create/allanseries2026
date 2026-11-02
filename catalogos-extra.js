@@ -1,4 +1,4 @@
-/* AllanWoodTV · Catálogos preparados sem capas. 148 filmes e 20 programas. */
+/* AllanWoodTV · Catálogos sem capas nesta etapa. */
 window.ALLAN_CATALOG_FILMES=[
   {
     "id": "zombies-disney-channel",
@@ -58,7 +58,11 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Um mistério envolve Viih Tube nesta produção brasileira de suspense e aventura.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Vih Tube Enigma",
+      "Viih Tube Enigma",
+      "Vih Tube em Enigma"
+    ],
     "tags": [
       "Filme",
       "Brasil",
@@ -80,7 +84,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Clawdeen descobre seu lugar na escola de monstros enquanto tenta esconder sua natureza.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Monster High Live Action",
+      "Monster High The Movie"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -103,7 +110,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Filhos dos vilões da Disney vão estudar em Auradon e precisam decidir quem querem ser.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Descendentes 1",
+      "Descendants 1"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -126,7 +136,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Uma jovem convida três possíveis pais para seu casamento embalado pelas músicas do ABBA.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Mamma Mia 1"
+    ],
     "tags": [
       "Filme",
       "Musical",
@@ -171,7 +183,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Mal retorna à Ilha dos Perdidos, onde uma nova rival ameaça Auradon.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Descendants 2"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -194,7 +208,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Violetta viaja para redescobrir sua identidade e iniciar uma nova etapa musical.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Tini o Filme",
+      "Tini - O Filme"
+    ],
     "tags": [
       "Filme",
       "Musical",
@@ -216,7 +233,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Mal e seus amigos enfrentam uma ameaça capaz de destruir a barreira entre Auradon e a Ilha.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Descendants 3"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -232,14 +251,17 @@ window.ALLAN_CATALOG_FILMES=[
     "title": "Princesinha Sofia: Elena e o Segredo de Avalor",
     "year": "2016",
     "country": "",
-    "episodes": "Filme · longa-metragem",
+    "episodes": "Especial de animação",
     "genre": "Disney · Animação · Fantasia · Infantil",
     "tint": "#ffd5a0",
     "description": "Sofia ajuda a libertar a princesa Elena e recuperar seu reino encantado.",
     "memory": "Sofia ajuda a libertar a princesa Elena e recuperar seu reino encantado.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Princesinha Sofia em Elena e o Mistério de Avalor",
+      "Elena e o Mistério de Avalor"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -262,7 +284,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Sophie revisita a juventude da mãe enquanto prepara uma nova fase na ilha.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Mamma Mia 2",
+      "Mamma Mia Here We Go Again"
+    ],
     "tags": [
       "Filme",
       "Musical",
@@ -277,22 +302,26 @@ window.ALLAN_CATALOG_FILMES=[
     "title": "Hannah Montana: Especial de 20º Aniversário",
     "year": "2026",
     "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Disney · Musical · Drama",
+    "episodes": "Especial de TV · 58 minutos",
+    "genre": "Documentário · Música · Entrevista",
     "tint": "#f3b6cc",
     "description": "Miley Cyrus revisita o legado da série, suas músicas e os bastidores do fenômeno Disney.",
     "memory": "Miley Cyrus revisita o legado da série, suas músicas e os bastidores do fenômeno Disney.",
     "image": "",
     "gallery": [],
     "aliases": [
-      "Hannah Montana 20th Anniversary Special"
+      "Hannah Montana 20th Anniversary Special",
+      "Hannah Montana Especial de Aniversário 2026",
+      "Hannah Montana 2026"
     ],
     "tags": [
       "Filme",
       "Disney",
       "Musical",
       "Drama",
-      "AllanWoodTV"
+      "AllanWoodTV",
+      "Especial",
+      "Documentário"
     ],
     "platform": ""
   },
@@ -423,7 +452,11 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Red e Chloe viajam no tempo para impedir uma transformação no destino de Auradon.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Descendentes 4",
+      "Descendants 4",
+      "Descendants The Rise of Red"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -468,7 +501,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "A filha de um motorista retorna sofisticada de Paris e mexe com o coração de dois irmãos.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Sabrina 1954"
+    ],
     "tags": [
       "Filme",
       "Romance",
@@ -648,7 +683,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Uma aspirante a cantora tenta conquistar seus sonhos enquanto a madrasta controla sua vida.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "A Nova Cinderela Era Uma Vez Uma Canção"
+    ],
     "tags": [
       "Filme",
       "Musical",
@@ -670,7 +707,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Uma dançarina conhece um jovem astro em um baile de máscaras e perde seu aparelho musical.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "A Nova Cinderela 2",
+      "Another Cinderella Story"
+    ],
     "tags": [
       "Filme",
       "Musical",
@@ -1179,7 +1219,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "A turma da Mistério S.A. se reúne para investigar eventos sobrenaturais numa ilha turística.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Scooby Doo O Filme",
+      "Scooby Doo Ilha"
+    ],
     "tags": [
       "Filme",
       "Comédia",
@@ -1258,14 +1301,16 @@ window.ALLAN_CATALOG_FILMES=[
     "title": "Descendentes 5",
     "year": "A confirmar",
     "country": "",
-    "episodes": "Filme · longa-metragem",
+    "episodes": "Produção anunciada · detalhes a confirmar",
     "genre": "Disney · Musical · Fantasia · Adolescente",
     "tint": "#add0ff",
     "description": "Nova aventura da franquia Descendentes; detalhes da história ainda não confirmados nesta ficha.",
     "memory": "Nova aventura da franquia Descendentes; detalhes da história ainda não confirmados nesta ficha.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Descendants 5"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -1537,7 +1582,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Lara Jean e Peter enfrentam dúvidas quando um antigo amor reaparece.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Para todos os garotos que já amei 2"
+    ],
     "tags": [
       "Filme",
       "Netflix",
@@ -1583,7 +1630,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Personagens de contos de fadas cruzam caminhos num musical sobre desejos e consequências.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Into the Woods"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -1669,7 +1718,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Um casal enfrenta os desafios da vida em família com seu labrador cheio de energia.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Marley e Eu"
+    ],
     "tags": [
       "Filme",
       "Comédia",
@@ -1691,7 +1742,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "A versão musical de Cinderela estrelada por Brandy e Whitney Houston.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Cinderella 1997",
+      "Cinderela da Brandy"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -1707,7 +1761,7 @@ window.ALLAN_CATALOG_FILMES=[
     "title": "Heartstopper: Para Sempre",
     "year": "A confirmar",
     "country": "",
-    "episodes": "Filme · longa-metragem",
+    "episodes": "Produção anunciada · detalhes a confirmar",
     "genre": "LGBTQIA+ · Romance · Drama",
     "tint": "#add0ff",
     "description": "Continuação cinematográfica de Heartstopper centrada em Nick e Charlie; detalhes pendentes.",
@@ -1739,7 +1793,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Lara Jean precisa pensar no futuro e na faculdade sem perder o amor por Peter.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Para todos os garotos que já amei 3"
+    ],
     "tags": [
       "Filme",
       "Netflix",
@@ -2075,7 +2131,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Yugi e Kaiba enfrentam um novo duelo ligado ao legado do Faraó.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Yu Gi Oh O lado sombrio das dimensões",
+      "Yu-Gi-Oh Dark Side of Dimensions"
+    ],
     "tags": [
       "Filme",
       "Anime",
@@ -2166,7 +2225,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Uma maldição sobrenatural persegue todos que entram numa casa assombrada.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "The Grudge",
+      "O Grito 2004"
+    ],
     "tags": [
       "Filme",
       "Terror",
@@ -2357,7 +2419,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Duas irmãs enfrentam uma presença demoníaca que transforma a família em pesadelo.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "A Morte do Demônio mais recente",
+      "Evil Dead Rise"
+    ],
     "tags": [
       "Filme",
       "Terror",
@@ -2739,7 +2804,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Eden Starling aprende o espírito natalino com a visita de três espíritos.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Barbie a Canção de Natal"
+    ],
     "tags": [
       "Filme",
       "Barbie",
@@ -2762,7 +2829,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Integrantes de um grupo musical protegem o mundo de ameaças sobrenaturais enquanto brilham no palco.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Guerreiras do KPop",
+      "Kpop Demon Hunters"
+    ],
     "tags": [
       "Filme",
       "Netflix",
@@ -2808,7 +2878,10 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Uma princesa de conto de fadas cai no mundo real de Nova York.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Encantada",
+      "Enchanted 2007"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -2962,7 +3035,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Os jovens do Camp Rock enfrentam um acampamento musical rival.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Camp Rock 2"
+    ],
     "tags": [
       "Filme",
       "Disney",
@@ -3111,7 +3186,7 @@ window.ALLAN_CATALOG_FILMES=[
     "title": "A Hipótese do Amor",
     "year": "A confirmar",
     "country": "",
-    "episodes": "Filme · longa-metragem",
+    "episodes": "Produção anunciada · detalhes a confirmar",
     "genre": "Romance · Comédia · Drama",
     "tint": "#e0bcff",
     "description": "Adaptação romântica inspirada na história de uma cientista e um relacionamento de mentira.",
@@ -3252,7 +3327,9 @@ window.ALLAN_CATALOG_FILMES=[
     "memory": "Elle se apaixona pelo irmão de seu melhor amigo e testa os limites dessa amizade.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Barraca do Beijo"
+    ],
     "tags": [
       "Filme",
       "Netflix",
