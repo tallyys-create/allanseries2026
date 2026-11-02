@@ -1,13 +1,169 @@
 {
   "fonte": "The Movie Database (TMDB)",
-  "gerado_em": "2026-11-02T03:09:37.579415+00:00",
+  "gerado_em": "2026-11-02T03:13:19.791746+00:00",
   "total_catalogo": 148,
-  "processados": 1,
+  "processados": 11,
   "limite_cenas": 10,
-  "importados": 1,
+  "importados": 11,
   "revisar": 0,
   "erros": 0,
   "itens": [
+    {
+      "id": "mensagens-para-isabelle",
+      "titulo": "Mensagens para Isabelle",
+      "status": "importado",
+      "tmdb_id": 614945,
+      "titulo_tmdb": "Mensagens para Isabelle",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "diva-la-vie-beauty-and-the-beat",
+      "titulo": "Diva La Vie (Beauty and the Beat)",
+      "status": "importado",
+      "tmdb_id": 1318642,
+      "titulo_tmdb": "A Bela e a Batida",
+      "similaridade": 1.1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp"
+      ],
+      "cenas_no_tmdb": 5,
+      "cenas_no_github": 5
+    },
+    {
+      "id": "heartstopper-para-sempre",
+      "titulo": "Heartstopper: Para Sempre",
+      "status": "importado",
+      "tmdb_id": 1468683,
+      "titulo_tmdb": "Heartstopper Para Sempre",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "o-ultimo-nascer-do-sol",
+      "titulo": "O Último Nascer do Sol",
+      "status": "importado",
+      "tmdb_id": 1516698,
+      "titulo_tmdb": "O Último Nascer do Sol",
+      "similaridade": 1.1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "ovelhas-detetives",
+      "titulo": "As Ovelhas Detetives",
+      "status": "importado",
+      "tmdb_id": 1301421,
+      "titulo_tmdb": "As Ovelhas Detetives",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "isolamento-mortal",
+      "titulo": "Isolamento Mortal",
+      "status": "importado",
+      "tmdb_id": 829410,
+      "titulo_tmdb": "Isolamento Mortal",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "meu-namorado-e-uma-superestrela",
+      "titulo": "Meu Namorado é uma Superestrela",
+      "status": "importado",
+      "tmdb_id": 35558,
+      "titulo_tmdb": "StarStruck: Meu Namorado é uma Superestrela",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
     {
       "id": "espirito-adolescente-teen-spirit",
       "titulo": "Espírito Adolescente (Uma Patricinha de Outro Mundo)",
@@ -29,6 +185,67 @@
       ],
       "cenas_no_tmdb": 9,
       "cenas_no_github": 9
+    },
+    {
+      "id": "a-boca-do-diabo",
+      "titulo": "A Boca do Diabo",
+      "status": "importado",
+      "tmdb_id": 1481343,
+      "titulo_tmdb": "A Boca do Diabo",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
+    },
+    {
+      "id": "um-amor-magnifico",
+      "titulo": "Um Amor Magnífico",
+      "status": "importado",
+      "tmdb_id": 362140,
+      "titulo_tmdb": "Um Amor Magnífico",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp"
+      ],
+      "cenas_no_tmdb": 2,
+      "cenas_no_github": 2
+    },
+    {
+      "id": "a-hipotese-do-amor",
+      "titulo": "A Hipótese do Amor",
+      "status": "importado",
+      "tmdb_id": 1032863,
+      "titulo_tmdb": "A Hipótese do Amor",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     }
   ]
 }
