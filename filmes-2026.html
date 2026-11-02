@@ -520,7 +520,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  <footer class="scene-lightbox-foot"><span id="sceneFullscreenCounter">1 / 1</span><span class="scene-lightbox-tip">Use ← → ou deslize para mudar de cena</span></footer>
 </dialog>
 <button id="exitLiveBtn" type="button" class="button exit-live" hidden>✕ Sair do modo live</button><div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="catalogos-extra.js?v=2"></script>
+<script src="catalogos-extra.js?v=3"></script>
 <script>
 (()=>{'use strict';
 const DEFAULT_TIERS=[
@@ -1466,7 +1466,7 @@ function openDetails(id){
           <p>${esc(s.description||'Sinopse não cadastrada.')}</p>
         </div>
         ${s.memory?`<div class="court-memory">
-          <h3>✦ Para lembrar no react</h3>
+          <h3>✦ Para relembrar</h3>
           <p>${esc(s.memory)}</p>
         </div>`:''}
         ${s.platform||extraTags.length||s.aliases?.length?`<details class="court-more">
