@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/recuperar-tv-allanzinho-pendentes.yml"
+      - "scripts/recuperar_tres_tv.py"
 permissions:
   contents: write
 concurrency:
@@ -22,7 +23,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Validar arquivos Python
-        run: python -m py_compile scripts/diagnosticar_tres_tv.py scripts/importar_tmdb_tv.py scripts/importar_tmdb_filmes.py
+        run: python -m py_compile scripts/recuperar_tres_tv.py scripts/importar_tmdb_tv.py scripts/importar_tmdb_filmes.py
       - name: Conferir acesso ao TMDB
         run: |
           if [ -z "$TMDB_API_KEY" ] && [ -z "$TMDB_READ_ACCESS_TOKEN" ]; then
@@ -31,17 +32,17 @@ jobs:
           fi
       - name: Instalar bibliotecas
         run: python -m pip install --disable-pip-version-check pillow requests
-      - name: Diagnosticar identificadores dos tres pendentes
-        run: python scripts/diagnosticar_tres_tv.py
-      - name: Salvar relatorio de busca no GitHub
+      - name: Baixar somente os 3 titulos pendentes
+        run: python scripts/recuperar_tres_tv.py
+      - name: Publicar apenas os 3 titulos e o relatorio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/tv-allanzinho/RELATORIO_BUSCA_PENDENTES.json
+          git add assets/tv-allanzinho/pokemon-jornadas assets/tv-allanzinho/power-rangers-tempestade-ninja assets/tv-allanzinho/madeline assets/tv-allanzinho/RELATORIO_RECUPERACAO_TV.json
           if git diff --cached --quiet; then
-            echo "Relatório sem alterações."
+            echo "Nenhum arquivo novo para publicar."
             exit 0
           fi
-          git commit -m "Diagnostica series TMDB pendentes da TV Allanzinho"
+          git commit -m "Recupera posters e cenas dos tres titulos TV Allanzinho"
           git pull --rebase origin main
           git push origin HEAD:main
