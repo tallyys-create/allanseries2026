@@ -1,0 +1,49 @@
+name: Recuperar 14 filmes pendentes no TMDB
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/recuperar-filmes-pendentes.yml"
+permissions:
+  contents: write
+concurrency:
+  group: importacao-tmdb-filmes
+  cancel-in-progress: false
+jobs:
+  recuperar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+      TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verificar sintaxe dos importadores
+        run: python -m py_compile scripts/recuperar_pendentes_tmdb.py scripts/importar_tmdb_filmes.py
+      - name: Conferir autorizacao
+        run: |
+          if [ -z "$TMDB_API_KEY" ] && [ -z "$TMDB_READ_ACCESS_TOKEN" ]; then
+            echo "::error::Falta o segredo TMDB_API_KEY ou TMDB_READ_ACCESS_TOKEN."
+            exit 1
+          fi
+      - name: Instalar bibliotecas
+        run: python -m pip install --disable-pip-version-check requests pillow
+      - name: Buscar e recuperar somente os 14 pendentes
+        run: python scripts/recuperar_pendentes_tmdb.py
+      - name: Publicar apenas arquivos dos filmes pendentes e relatorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/filmes
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança para enviar."
+            exit 0
+          fi
+          git commit -m "Recupera imagens dos filmes pendentes via TMDB"
+          git pull --rebase origin main
+          git push origin HEAD:main
