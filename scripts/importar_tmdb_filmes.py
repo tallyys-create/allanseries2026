@@ -20,6 +20,15 @@ CDN = "https://image.tmdb.org/t/p"
 KEY = os.environ.get("TMDB_API_KEY", "").strip()
 TOKEN = os.environ.get("TMDB_READ_ACCESS_TOKEN", "").strip()
 
+# IDs confirmados individualmente para franquias com nomes genéricos.
+# Evita confundir os musicais Z-O-M-B-I-E-S da Disney com filmes de terror.
+PINNED_TMDB_IDS = {
+    "zombies-disney-channel": 483980,          # Z-O-M-B-I-E-S (2018)
+    "zombies-2": 599521,                       # Z-O-M-B-I-E-S 2 (2020)
+    "zombies-3": 809107,                       # Z-O-M-B-I-E-S 3 (2022)
+    "zombies-4-dawn-of-the-vampires": 1243341, # Z-O-M-B-I-E-S 4 (2025)
+}
+
 def norm(value):
     value = unicodedata.normalize("NFKD", str(value or "").lower())
     value = "".join(c for c in value if not unicodedata.combining(c))
@@ -82,6 +91,15 @@ class TMDB:
         raise RuntimeError("TMDB indisponível: " + path)
 
     def find(self, movie):
+        pinned = PINNED_TMDB_IDS.get(movie["id"])
+        if pinned is not None:
+            result = self.get(f"/movie/{pinned}", {"language": "pt-BR"})
+            wanted, released = year(movie.get("year")), year(result.get("release_date"))
+            if wanted and released and abs(wanted-released) > 1:
+                raise RuntimeError(f"TMDB {pinned}: ano inconsistente ({wanted} vs {released})")
+            if not result.get("poster_path"):
+                raise RuntimeError(f"TMDB {pinned}: filme sem poster")
+            return result, 1.10
         results = {}
         for title in queries(movie)[:4]:
             response = self.get("/search/movie", {"query": title, "language": "pt-BR", "include_adult": "false"})
@@ -96,6 +114,8 @@ class TMDB:
         best, score = ranked[0], confidence(movie, ranked[0])
         expected, actual = year(movie.get("year")), year(best.get("release_date"))
         # Nunca confundir remakes, versões animadas ou sequências homônimas.
+        if expected and not actual:
+            return None, score
         if expected and actual and abs(expected - actual) > 2:
             return None, score
         if score < .80:
