@@ -34,6 +34,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Validar script Python
+        run: python -m py_compile scripts/importar_tmdb_filmes.py
       - name: Conferir autorizacao TMDB
         shell: bash
         run: |
