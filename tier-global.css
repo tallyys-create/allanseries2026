@@ -113,3 +113,18 @@
   .scene-lightbox-foot{padding:9px;font-size:11px}
   .scene-lightbox-tip{display:none}
 }
+
+/* Os títulos dos vereditos quebram somente entre palavras (todas as tiers). */
+.ranking-workspace .tier-label .name{
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none;
+}
+@media (min-width:901px){
+  .ranking-workspace .tier-label{min-width:170px}
+}
+@media (min-width:1120px){
+  body.layout-sidebar .ranking-workspace .tier-label{
+    flex-basis:clamp(170px,14vw,185px)
+  }
+}
