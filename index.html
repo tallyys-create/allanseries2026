@@ -218,6 +218,22 @@ footer{margin-top:35px}
  .hero-welcome .hero-allan-photo{transition:none!important}
 }
 
+
+/* As três modalidades têm cartões ativos e mesma identidade visual. */
+.tile-films .tile-action{background:#fca339;color:#22210e}
+.tile-tv{background:linear-gradient(135deg,#193039,#1c2732);border-color:#8cd5e05c}
+.tile-tv .tile-label{color:#9fe8f2}
+.tile-tv .tile-action{background:#fca339;color:#22210e}
+.tile-tv .film-art{opacity:.86}
+.tile-tv .film-art::before{border-color:#5b9da2}
+@media(min-width:1050px){
+ .tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+ .tile{min-height:295px}
+ .tile-copy{padding:25px 20px}
+ .tile h3{font-size:clamp(25px,2.6vw,34px)}
+ .tile-art,.film-art{flex-basis:25%}
+ .film-art span{font-size:74px}
+}
 </style>
 </head>
 <body>
@@ -230,7 +246,7 @@ footer{margin-top:35px}
  <div class="hero-intro-copy">
   <span class="eyebrow"><span class="spark">✦</span> SUA OPINIÃO ENTRA EM JULGAMENTO</span>
   <h1 id="welcomeTitle">ESCOLHA O SEU <span>TRIBUNAL!</span></h1>
-  <p>As séries favoritas, os surtos e os vereditos mais questionáveis estão aqui. Escolha uma tier, entre como Allan ou participe com o seu próprio ranking.</p>
+  <p>Séries, filmes, desenhos, surtos e os vereditos mais questionáveis estão aqui. Escolha uma tier, entre como Allan ou participe com o seu próprio ranking.</p>
   <div class="hero-participants" aria-label="Dois jeitos de participar">
    <span><span aria-hidden="true">👑</span> Allan julga</span>
    <span class="hero-sep" aria-hidden="true">✦</span>
@@ -247,15 +263,19 @@ footer{margin-top:35px}
  </div>
 </section>
 <section aria-labelledby="tiersTitle">
- <div class="available-header"><h2 id="tiersTitle">Tiers disponíveis</h2><small>2026 · novas categorias em breve</small></div>
+ <div class="available-header"><h2 id="tiersTitle">Tiers disponíveis</h2><small>2026 · 3 tribunais disponíveis</small></div>
  <div class="tiles">
   <button type="button" class="tile tile-series" id="seriesChoice">
-   <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>Séries <span>(2026)</span></h3><p>78 produções para relembrar, avaliar e colocar no lugar que merecem.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
+   <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>Séries <span>(2026)</span></h3><p>92 produções para relembrar, avaliar e colocar no lugar que merecem.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
    <span class="tile-art" aria-hidden="true"><span class="poster"></span><span class="poster alt"></span></span>
   </button>
   <button type="button" class="tile tile-films" id="filmsChoice">
-   <span class="tile-copy"><span class="tile-label">◷ EM PREPARAÇÃO</span><h3>Filmes <span>(2026)</span></h3><p>O próximo julgamento ainda está sendo preparado para o Allan e o chat.</p><span class="tile-action">Ver novidade <span aria-hidden="true">→</span></span></span>
+   <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>Filmes <span>(2026)</span></h3><p>148 filmes para ranquear, com sinopses e fichas prontas. Capas em preparação.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
    <span class="film-art" aria-hidden="true"><span>🎬</span></span>
+  </button>
+  <button type="button" class="tile tile-tv" id="tvChoice">
+   <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>TV Allanzinho</h3><p>20 desenhos, animes e programas da sessão nostálgica da live para entrar em julgamento.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
+   <span class="film-art" aria-hidden="true"><span>📺</span></span>
   </button>
  </div>
 </section>
@@ -288,26 +308,31 @@ footer{margin-top:35px}
 </div>
 </dialog>
 
-<dialog id="soonDialog" aria-labelledby="soonTitle">
-<div class="dialog-body">
- <div class="dialog-head"><div><small>✦ PRÓXIMOS JULGAMENTOS</small><h2 id="soonTitle">Filmes (2026)</h2></div><button class="dialog-close" type="button" data-close aria-label="Fechar">✕</button></div>
- <div class="emsoon-icon" aria-hidden="true">🎞️</div>
- <p class="dialog-intro" style="text-align:center">Essa tier ainda não foi montada. Em breve, o Allan e o chat também poderão classificar filmes!</p>
- <button class="primary submit" type="button" data-close>Entendi</button>
-</div>
-</dialog>
 <script>
 (()=>{
  const $=id=>document.getElementById(id);
- const role=$('roleDialog'),login=$('allLoginDialog'),soon=$('soonDialog');
+ const role=$('roleDialog'),login=$('allLoginDialog');
+ const destinations={
+   series:{label:'Séries (2026)',intro:'Você está entrando na tier de séries.',allan:'./series-2026.html',publico:'./series-2026-publico.html'},
+   filmes:{label:'Filmes (2026)',intro:'Você está entrando na tier de filmes.',allan:'./filmes-2026.html',publico:'./filmes-2026-publico.html'},
+   tv:{label:'TV Allanzinho',intro:'Você está entrando na tier da TV Allanzinho.',allan:'./tv-allanzinho.html',publico:'./tv-allanzinho-publico.html'}
+ };
+ let selectedTier='series';
  function open(dialog){if(!dialog.open)dialog.showModal()}
- $('seriesChoice').onclick=()=>open(role);
- $('filmsChoice').onclick=()=>open(soon);
+ function chooseTier(type){
+   selectedTier=type;
+   role.querySelector('.dialog-head small').textContent='✦ '+destinations[type].label.toUpperCase();
+   role.querySelector('.dialog-intro').textContent=destinations[type].intro+' Escolha o perfil para continuar.';
+   open(role);
+ }
+ $('seriesChoice').onclick=()=>chooseTier('series');
+ $('filmsChoice').onclick=()=>chooseTier('filmes');
+ $('tvChoice').onclick=()=>chooseTier('tv');
  $('chooseAllan').onclick=()=>{
    role.close();$('allPassword').value='';$('passwordError').textContent='';
    open(login);$('allPassword').focus();
  };
- $('chooseAudience').onclick=()=>{location.href='./series-2026-publico.html'};
+ $('chooseAudience').onclick=()=>{location.href=destinations[selectedTier].publico};
  $('backToRolesFromLogin').onclick=()=>{login.close();open(role)};
  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
  const expectedHash='f4787a1ec985ee3214a19c0ee2d7f0e898fbfee734f35ec162fc6a9427b4c823';
@@ -324,12 +349,13 @@ footer{margin-top:35px}
        $('allPassword').select();return;
      }
      sessionStorage.setItem('allanwoodtv-host-session-v1','yes');
-     location.href='./series-2026.html';
+     location.href=destinations[selectedTier].allan;
    }catch{
      $('passwordError').textContent='Não foi possível verificar. Abra o site em HTTPS e tente novamente.';
    }finally{button.disabled=false;button.textContent='Entrar como Allan →'}
  };
- if(new URLSearchParams(location.search).get('acesso')==='allan')open(role);
+ const query=new URLSearchParams(location.search);
+ if(query.get('acesso')==='allan')chooseTier(['series','filmes','tv'].includes(query.get('tier'))?query.get('tier'):'series');
 })();
 </script>
 </body>
