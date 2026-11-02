@@ -2408,20 +2408,22 @@ window.ALLAN_CATALOG_FILMES=[
     "platform": ""
   },
   {
-    "id": "a-morte-do-demonio-a-ascensao",
-    "title": "A Morte do Demônio: A Ascensão",
-    "year": "2023",
+    "id": "a-morte-do-demonio-em-chamas",
+    "title": "A Morte do Demônio: Em Chamas",
+    "year": "2026",
     "country": "",
     "episodes": "Filme · longa-metragem",
     "genre": "Terror · Suspense",
     "tint": "#ffd5a0",
-    "description": "Duas irmãs enfrentam uma presença demoníaca que transforma a família em pesadelo.",
-    "memory": "Duas irmãs enfrentam uma presença demoníaca que transforma a família em pesadelo.",
+    "description": "Após perder o marido, uma mulher visita a família dele e descobre que uma força demoníaca está transformando seus parentes em criaturas mortais.",
+    "memory": "Uma casa isolada, os sogros, o Livro dos Mortos e uma reunião de família aterrorizante.",
     "image": "",
     "gallery": [],
     "aliases": [
+      "Evil Dead Burn",
       "A Morte do Demônio mais recente",
-      "Evil Dead Rise"
+      "Evil Dead 2026",
+      "A Morte do Demônio: A Ascensão (2023) é outro filme"
     ],
     "tags": [
       "Filme",
