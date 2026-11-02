@@ -191,6 +191,15 @@ def main():
         poster = folder / "poster.webp"
         scene_folder = folder / "cenas"
         previous_scenes = sorted(scene_folder.glob("[0-9][0-9].webp"))
+        # Estes tres titulos sao temporadas especificas ou versoes historicas.
+        # Foram verificados e recuperados num importador dedicado, inclusive Madeline
+        # com cenas de fontes externas. Nao buscar imagens da franquia generica.
+        season_specific={"pokemon-jornadas", "power-rangers-tempestade-ninja", "madeline"}
+        if (poster.exists() and previous_scenes and show["id"] in season_specific):
+            records.append({"id": show["id"], "titulo": show["title"],
+                            "status": "ja_existe", "cenas_no_github": len(previous_scenes),
+                            "motivo": "Recuperado por temporada especifica; imagens preservadas"})
+            continue
         if poster.exists() and len(previous_scenes) >= args.scenes and not args.force:
             records.append({"id": show["id"], "titulo": show["title"],
                             "status": "ja_existe", "cenas_no_github": len(previous_scenes)})
