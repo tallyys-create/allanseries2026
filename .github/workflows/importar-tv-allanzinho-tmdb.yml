@@ -20,6 +20,7 @@ on:
   push:
     paths:
       - ".github/workflows/importar-tv-allanzinho-tmdb.yml"
+# Ao alterar este workflow, processa 5 titulos para validar a importacao.
 permissions:
   contents: write
 concurrency:
