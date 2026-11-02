@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111712">
-<meta name="description" content="O Tribunal do Allan: classifique suas programas e compartilhe os vereditos do AllanWoodTV.">
+<meta name="description" content="O Tribunal do Allan: classifique seus programas e compartilhe os vereditos do AllanWoodTV.">
 <link rel="preconnect" href="https://image.tmdb.org" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -453,10 +453,10 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  <div class="hero-copy">
   <div class="court-identity"><span class="court-presenter"><span class="presenter-star">✦</span> ALLANWOODTV · O PÚBLICO DECIDE</span><span class="court-live"><span class="live-dot"></span> SEU JULGAMENTO</span></div>
   <h1><span class="title-white">O SEU</span><span class="title-color">VEREDITO<span class="title-mark">!</span></span></h1>
-  <p>Agora é a sua vez de julgar! Organize as programas, defenda suas favoritas e compartilhe seu ranking com o chat.</p>
+  <p>Agora é a sua vez de julgar! Organize os programas, defenda suas favoritas e compartilhe seu ranking com o chat.</p>
   <div class="hero-stats" aria-label="Estatísticas do ranking">
    <div class="stat"><span class="stat-symbol" aria-hidden="true">✦</span><strong id="totalCount">3</strong><small>NO CATÁLOGO</small></div>
-   <div class="stat"><span class="stat-symbol" aria-hidden="true">✓</span><strong id="rankedCount">0</strong><small>JULGADAS</small></div>
+   <div class="stat"><span class="stat-symbol" aria-hidden="true">✓</span><strong id="rankedCount">0</strong><small>JULGADOS</small></div>
    <div class="stat"><span class="stat-symbol" aria-hidden="true">◷</span><strong id="pendingCount">3</strong><small>PENDENTES</small></div>
   </div>
   <div class="court-signoff"><span class="signoff-line"></span><span>VOCÊ É O JÚRI. A SENTENÇA É SUA.</span></div>
@@ -465,16 +465,16 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
 </section>
  <div class="ranking-workspace" id="rankingWorkspace">
  <section class="ranking-panel" aria-labelledby="boardHeading"><div class="sectionhead"><div><h2 id="boardHeading">Minha classificação <span style="color:#ff9a30">✦</span></h2><p>Classifique desenhos, animes e programas vistos na sessão TV Allanzinho da live.</p></div><div class="toolbar"><button class="button small layout-switch" id="layoutToggleBtn" type="button" aria-pressed="false" title="Mostrar catálogo à direita dos tiers">▣ Catálogo lateral</button><label class="size-picker" for="tierCardSize">Capas <select id="tierCardSize" aria-label="Tamanho das capas nos tiers"><option value="small">Pequenas</option><option value="medium">Médias</option><option value="large">Grandes</option><option value="xlarge">Extragrandes</option></select></label><button class="button small focus-switch" id="focusToggleBtn" type="button" aria-pressed="false">⛶ Modo foco</button><button class="button small" id="randomBtn">⚄ Sortear próxima</button><button class="button small" id="jumpCatalogBtn2">▦ Ver catálogo</button><button class="button small" id="undoBtn">↶ Desfazer</button><button class="button small" id="resetBtn">↺ Zerar ranking</button></div></div><div id="tierboard" class="tierboard" aria-label="Ranking de programas"></div></section>
- <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 TV Allanzinho para avaliar</h2><div class="hint">Toque para abrir a ficha. No celular, segure a capa para arrastar até um veredito.</div></div><div class="library-controls"><button class="button" id="restoreShowsBtn" title="Recuperar as programas originais excluídas, sem alterar o ranking">↺ Recuperar programas excluídas</button><button class="button highlight" id="addSeriesBtn">＋ Novo programa</button></div></div><div class="library-sticky-tools" aria-label="Busca e filtros rápidos"><input id="searchInput" type="search" class="input search" placeholder="Buscar programa ou nome alternativo..." aria-label="Buscar programa"><button type="button" id="stickyFiltersBtn" class="sticky-filter-button" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Filtros</button></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button type="button" class="filters-trigger" id="openFiltersBtn" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Mostrar filtros</button><button class="quick-filter" type="button" data-quick-tag="Animação">Animação</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Comédia">Comédia</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div> <div id="libraryGrid" class="library-grid" aria-label="TV Allanzinho encontradas"></div>
+ <section class="library" id="librarySection"><div class="library-head"><div><h2 id="libraryTitle">🎬 TV Allanzinho para avaliar</h2><div class="hint">Toque para abrir a ficha. No celular, segure a capa para arrastar até um veredito.</div></div><div class="library-controls"><button class="button" id="restoreShowsBtn" title="Recuperar os programas originais excluídos, sem alterar o ranking">↺ Recuperar programas excluídos</button><button class="button highlight" id="addSeriesBtn">＋ Novo programa</button></div></div><div class="library-sticky-tools" aria-label="Busca e filtros rápidos"><input id="searchInput" type="search" class="input search" placeholder="Buscar programa ou nome alternativo..." aria-label="Buscar programa"><button type="button" id="stickyFiltersBtn" class="sticky-filter-button" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Filtros</button></div><div class="quick-filter-row"><span class="quick-label">Explorar:</span><button type="button" class="filters-trigger" id="openFiltersBtn" aria-haspopup="dialog" aria-controls="filtersDialog">☷ Mostrar filtros</button><button class="quick-filter" type="button" data-quick-tag="Animação">Animação</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Disney">Disney</button><button class="quick-filter" type="button" data-quick-tag="Comédia">Comédia</button><button class="quick-filter" type="button" data-quick-tag="Anime">Anime</button><button class="quick-filter" type="button" data-quick-tag="Romance">Romance</button><span class="search-status" id="searchStatus"></span></div> <div id="libraryGrid" class="library-grid" aria-label="TV Allanzinho encontradas"></div>
  <div class="library-more"><button class="button" id="showMoreBtn" type="button" hidden>＋ Mostrar mais programas</button><span id="shownCount" aria-live="polite"></span></div></section>
  </div>
- <footer class="bottomline"><span>✦ SUA TIER · UM QUADRO DO ALLANWOODTV</span><div><button class="linklike" id="manageUnwatchedBtn" hidden>↩ Não assistidas</button><button class="linklike" id="backupBtn">Baixar backup do ranking</button><button class="linklike" id="importBtn">Importar backup</button><input type="file" id="backupFile" hidden accept="application/json,.json"></div></footer>
+ <footer class="bottomline"><span>✦ SUA TIER · UM QUADRO DO ALLANWOODTV</span><div><button class="linklike" id="manageUnwatchedBtn" hidden>↩ Não assistidos</button><button class="linklike" id="backupBtn">Baixar backup do ranking</button><button class="linklike" id="importBtn">Importar backup</button><input type="file" id="backupFile" hidden accept="application/json,.json"></div></footer>
 </main>
 
 <dialog id="filtersDialog" class="filters-dialog" aria-labelledby="filtersDialogTitle">
   <div class="filters-dialog-header">
     <div><span class="filters-dialog-kicker">✦ ALLANWOODTV · CATÁLOGO</span><h2 id="filtersDialogTitle">Filtros avançados</h2>
-      <p>Combine os filtros para encontrar as programas que deseja julgar.</p></div>
+      <p>Combine os filtros para encontrar os programas que deseja julgar.</p></div>
     <button type="button" id="closeFiltersBtn" class="filters-close" aria-label="Fechar filtros">✕</button>
   </div>
   <div class="filter-toolbar" aria-label="Filtros do catálogo">
@@ -733,7 +733,7 @@ function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('on');c
 function locationOf(id){return state.locations[id]||'pool'}
 function isJudged(id){return state.tiers.some(t=>t.id===locationOf(id))}
 function visibleShows(){return state.shows.filter(s=>locationOf(s.id)!=='unwatched')}
-function counts(){const visible=visibleShows();const sorted=visible.filter(s=>isJudged(s.id)).length;$('totalCount').textContent=visible.length;$('rankedCount').textContent=sorted;$('pendingCount').textContent=visible.length-sorted;$('undoBtn').disabled=!history.length;const hidden=state.shows.filter(s=>locationOf(s.id)==='unwatched').length;const manage=$('manageUnwatchedBtn');if(manage){manage.hidden=!hidden;manage.textContent=`↩ Não assistidas (${hidden})`;}}
+function counts(){const visible=visibleShows();const sorted=visible.filter(s=>isJudged(s.id)).length;$('totalCount').textContent=visible.length;$('rankedCount').textContent=sorted;$('pendingCount').textContent=visible.length-sorted;$('undoBtn').disabled=!history.length;const hidden=state.shows.filter(s=>locationOf(s.id)==='unwatched').length;const manage=$('manageUnwatchedBtn');if(manage){manage.hidden=!hidden;manage.textContent=`↩ Não assistidos (${hidden})`;}}
 function imgHtml(show){return `<div class="cardfallback" style="--fallback:${esc(show.tint||'#885780')}">${esc(show.title)}</div><img alt="" loading="lazy" decoding="async">`}
 
 function showCard(show,under=false){
@@ -802,7 +802,7 @@ function renderLibrary(){
  }).sort((a,b)=>normalizeSearch(a.title).localeCompare(normalizeSearch(b.title),'pt-BR'));
  const shows=full.slice(0,libraryLimit);
  $('libraryTitle').textContent=(filterActive||status==='judged'||status==='all')?'🔎 Catálogo de programas':'🎬 Aguardando julgamento';
- $('searchStatus').textContent=`${full.length} ${full.length===1?'programa encontrada':'programas encontradas'}`;
+ $('searchStatus').textContent=`${full.length} ${full.length===1?'programa encontrado':'programas encontrados'}`;
  $('openFiltersBtn').classList.toggle('is-active',!!(country||genre||platform||status!=='auto'));
  $('stickyFiltersBtn').classList.toggle('is-active',!!(country||genre||platform||status!=='auto'));
  if(!full.length){const msg=document.createElement('div');msg.className='empty-state';msg.textContent='Nenhum programa com estes filtros.';area.append(msg)}
@@ -1436,8 +1436,8 @@ function openDetails(id){
     if(next)openDetails(next.id);else toast('Não há programas aguardando julgamento.');
   };
   $('unwatchedBtn').onclick=()=>{
-    if(!confirm('Marcar "'+s.title+'" como não assistida e retirá-la do ranking?'))return;
-    checkpoint();state.locations[id]='unwatched';save();closeModal();render();toast(s.title+' marcada como não assistida.');
+    if(!confirm('Marcar "'+s.title+'" como não assistido e retirá-la do ranking?'))return;
+    checkpoint();state.locations[id]='unwatched';save();closeModal();render();toast(s.title+' marcada como não assistido.');
   };
 }
 function formField(label,id,value='',wide=false,type='text'){return `<div class="field ${wide?'wide':''}"><label for="${id}">${label}</label>${type==='textarea'?`<textarea class="input" id="${id}">${esc(value)}</textarea>`:`<input class="input" id="${id}" type="${type}" value="${esc(value)}">`}</div>`}
@@ -1479,9 +1479,9 @@ function openTierForm(){
 }
 function manageUnwatched(){
   const hidden=state.shows.filter(show=>locationOf(show.id)==='unwatched').sort((a,b)=>normalizeSearch(a.title).localeCompare(normalizeSearch(b.title),'pt-BR'));
-  if(!hidden.length){toast('Nenhum programa marcada como não assistida.');return}
+  if(!hidden.length){toast('Nenhum programa marcado como não assistido.');return}
   modalType='unwatched';activeId=null;
-  openModal(`<div class="modalform"><div class="detail-kicker">ALLANWOODTV</div><h2>Não assistidas</h2><div class="unwatched-list">${hidden.map(s=>`<div class="unwatched-row"><img alt="" loading="lazy"><strong>${esc(s.title)}</strong><button type="button" class="button small" data-restore-unwatched="${esc(s.id)}">↩ Recuperar</button></div>`).join('')}</div><div class="formactions"><button class="button" type="button" id="closeUnwatchedBtn">Fechar</button></div></div>`);
+  openModal(`<div class="modalform"><div class="detail-kicker">ALLANWOODTV</div><h2>Não assistidos</h2><div class="unwatched-list">${hidden.map(s=>`<div class="unwatched-row"><img alt="" loading="lazy"><strong>${esc(s.title)}</strong><button type="button" class="button small" data-restore-unwatched="${esc(s.id)}">↩ Recuperar</button></div>`).join('')}</div><div class="formactions"><button class="button" type="button" id="closeUnwatchedBtn">Fechar</button></div></div>`);
   document.querySelectorAll('.unwatched-row img').forEach((img,i)=>setupPoster(img,hidden[i],true));
   $('closeUnwatchedBtn').onclick=closeModal;
   document.querySelectorAll('[data-restore-unwatched]').forEach(b=>b.onclick=()=>{
@@ -1502,7 +1502,7 @@ function bind(){initSceneFullscreen();initAudienceIdentity();initCatalogLayout()
  $('showMoreBtn').onclick=()=>{libraryLimit+=LIBRARY_BATCH;renderLibrary();};
  ['countryFilter','genreFilter','platformFilter','statusFilter'].forEach(id=>$(id).onchange=resetLibraryPage);
  $('clearFiltersBtn').onclick=()=>{$('searchInput').value='';['countryFilter','genreFilter','platformFilter'].forEach(id=>$(id).value='');$('statusFilter').value='auto';resetLibraryPage();};
- $('addSeriesBtn').onclick=()=>openShowForm();$('manageUnwatchedBtn').onclick=manageUnwatched;$('restoreShowsBtn').onclick=()=>{const missing=DEFAULT_SHOWS.filter(base=>!state.shows.some(s=>s.id===base.id));if(!missing.length){toast('Todas as programas originais já estão cadastradas.');return}const names=missing.map(s=>s.title).join(', ');if(!confirm(`Recuperar ${missing.length} programa(s) original(is)?\n\n${names}\n\nSuas categorias, classificações e outras fichas serão mantidas.`))return;checkpoint();missing.forEach(show=>{state.shows.push(structuredClone(show));state.locations[show.id]='pool'});save();render();toast(`${missing.length} programa(s) recuperada(s)!`)};$('searchInput').oninput=resetLibraryPage;document.querySelectorAll('[data-quick-tag]').forEach(button=>button.onclick=()=>{const input=$('searchInput'),tag=button.dataset.quickTag;input.value=normalizeSearch(input.value)===normalizeSearch(tag)?'':tag;resetLibraryPage();input.focus()});$('resetBtn').onclick=()=>{if(!confirm('Remover TODAS as programas das categorias? As fichas continuarão salvas.'))return;checkpoint();state.shows.forEach(s=>{if(locationOf(s.id)!=='unwatched')state.locations[s.id]='pool'});save();render();toast('Ranking zerado.')};$('undoBtn').onclick=()=>{if(!history.length)return;state=JSON.parse(history.pop());save();render();toast('Última alteração desfeita.')};$('randomBtn').onclick=()=>{const options=state.shows.filter(s=>locationOf(s.id)==='pool');if(!options.length)return toast('Todas as programas já foram julgadas!');openDetails(options[Math.floor(Math.random()*options.length)].id);toast('A próxima programa foi sorteada!')};$('presentBtn').onclick=togglePresentation;$('exitLiveBtn').onclick=togglePresentation;$('exportPngBtn').onclick=()=>exportPng(false);$('sharePublicBtn').onclick=()=>exportPng(true);$('backupBtn').onclick=()=>{download(new Blob([JSON.stringify({version:1,created:new Date().toISOString(),...state},null,2)],{type:'application/json'}),'allanwoodtv-backup-vereditos.json')};$('importBtn').onclick=()=>$('backupFile').click();$('backupFile').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{let obj=JSON.parse(await f.text());if(!validate(obj))throw Error('Formato');if(!confirm('Substituir o ranking atual pelos dados do backup?'))return;checkpoint();state= obj.tiers.some(t=>!('description' in t))?applyReferenceTiers(obj):{tiers:obj.tiers,shows:obj.shows,locations:obj.locations};state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();save();populateCountryFilter();resetLibraryPage();toast('Backup importado.')}catch{toast('O arquivo JSON não é um backup válido.')}finally{ev.target.value=''}}}
+ $('addSeriesBtn').onclick=()=>openShowForm();$('manageUnwatchedBtn').onclick=manageUnwatched;$('restoreShowsBtn').onclick=()=>{const missing=DEFAULT_SHOWS.filter(base=>!state.shows.some(s=>s.id===base.id));if(!missing.length){toast('Todos os programas originais já estão cadastrados.');return}const names=missing.map(s=>s.title).join(', ');if(!confirm(`Recuperar ${missing.length} programa(s) original(is)?\n\n${names}\n\nSuas categorias, classificações e outras fichas serão mantidas.`))return;checkpoint();missing.forEach(show=>{state.shows.push(structuredClone(show));state.locations[show.id]='pool'});save();render();toast(`${missing.length} programa(s) recuperado(s)!`)};$('searchInput').oninput=resetLibraryPage;document.querySelectorAll('[data-quick-tag]').forEach(button=>button.onclick=()=>{const input=$('searchInput'),tag=button.dataset.quickTag;input.value=normalizeSearch(input.value)===normalizeSearch(tag)?'':tag;resetLibraryPage();input.focus()});$('resetBtn').onclick=()=>{if(!confirm('Remover TODOS os programas das categorias? As fichas continuarão salvas.'))return;checkpoint();state.shows.forEach(s=>{if(locationOf(s.id)!=='unwatched')state.locations[s.id]='pool'});save();render();toast('Ranking zerado.')};$('undoBtn').onclick=()=>{if(!history.length)return;state=JSON.parse(history.pop());save();render();toast('Última alteração desfeita.')};$('randomBtn').onclick=()=>{const options=state.shows.filter(s=>locationOf(s.id)==='pool');if(!options.length)return toast('Todos os programas já foram julgadas!');openDetails(options[Math.floor(Math.random()*options.length)].id);toast('O próximo programa foi sorteada!')};$('presentBtn').onclick=togglePresentation;$('exitLiveBtn').onclick=togglePresentation;$('exportPngBtn').onclick=()=>exportPng(false);$('sharePublicBtn').onclick=()=>exportPng(true);$('backupBtn').onclick=()=>{download(new Blob([JSON.stringify({version:1,created:new Date().toISOString(),...state},null,2)],{type:'application/json'}),'allanwoodtv-backup-vereditos.json')};$('importBtn').onclick=()=>$('backupFile').click();$('backupFile').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{let obj=JSON.parse(await f.text());if(!validate(obj))throw Error('Formato');if(!confirm('Substituir o ranking atual pelos dados do backup?'))return;checkpoint();state= obj.tiers.some(t=>!('description' in t))?applyReferenceTiers(obj):{tiers:obj.tiers,shows:obj.shows,locations:obj.locations};state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();save();populateCountryFilter();resetLibraryPage();toast('Backup importado.')}catch{toast('O arquivo JSON não é um backup válido.')}finally{ev.target.value=''}}}
 
 
 /* Tamanho de capas configurável sem alterar o ranking. */
@@ -1533,7 +1533,7 @@ function initFocusToggle(){
   $('focusToggleBtn').onclick=()=>setFocusMode(!document.body.classList.contains('focus-mode'));
 }
 
-/* Preferência de organização independente dos dados salvos das programas. */
+/* Preferência de organização independente dos dados salvos dos programas. */
 const CATALOG_LAYOUT_KEY='allanwoodtv-catalogo-layout-v2';
 function applyCatalogLayout(mode){
   const side=mode==='sidebar';
