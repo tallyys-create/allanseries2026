@@ -1,6 +1,6 @@
 {
   "fonte": "TMDB (Obsessão); Filmow e vídeos oficiais da Viih Tube no YouTube (O Enigma)",
-  "gerado_em": "2026-11-02T02:28:09.731230+00:00",
+  "gerado_em": "2026-11-02T02:29:48.141869+00:00",
   "itens": [
     {
       "id": "obsessao",
@@ -11,19 +11,7 @@
         "Curry Barker"
       ],
       "ano_tmdb": 2026,
-      "novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp",
-        "cenas/05.webp",
-        "cenas/06.webp",
-        "cenas/07.webp",
-        "cenas/08.webp",
-        "cenas/09.webp",
-        "cenas/10.webp"
-      ],
+      "novos": [],
       "poster_presente": true,
       "cenas": 10,
       "status": "completo"
@@ -31,93 +19,71 @@
     {
       "id": "viih-tube-em-enigma",
       "titulo": "O Enigma — O Filme (compilação da websérie de 2018)",
-      "fonte_poster": "https://filmow.com/o-enigma-webserie-t271505/",
+      "fonte_poster": "https://img.quizur.com/f/img5c43cd1e6354c7.37245520.jpg?lastEdited=1547947309",
       "fonte_cenas": "Miniaturas dos vídeos oficiais do canal Viih Tube no YouTube",
-      "poster_presente": false,
+      "poster_presente": true,
       "cenas": 9,
       "novos": [
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp",
-        "cenas/05.webp",
-        "cenas/06.webp",
-        "cenas/07.webp",
-        "cenas/08.webp",
-        "cenas/09.webp"
+        "poster.webp"
       ],
       "videos": [
         {
           "numero": 1,
           "video": "O Enigma - O Filme (2020)",
           "url": "https://www.youtube.com/watch?v=F5bR0AuydCk",
-          "imagem_origem": "https://i.ytimg.com/vi/F5bR0AuydCk/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 2,
           "video": "A chegada - episódio 1",
           "url": "https://www.youtube.com/watch?v=jWO7oX2WR3M",
-          "imagem_origem": "https://i.ytimg.com/vi/jWO7oX2WR3M/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 3,
           "video": "A bomba - episódio 2",
           "url": "https://www.youtube.com/watch?v=IsXL2KRMs24",
-          "imagem_origem": "https://i.ytimg.com/vi/IsXL2KRMs24/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 4,
           "video": "O penhasco - episódio 3",
           "url": "https://www.youtube.com/watch?v=3DQ_RJr9c0Q",
-          "imagem_origem": "https://i.ytimg.com/vi/3DQ_RJr9c0Q/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 5,
           "video": "O desmaio - episódio 4",
           "url": "https://www.youtube.com/watch?v=nMhjgO9bpxA",
-          "imagem_origem": "https://i.ytimg.com/vi/nMhjgO9bpxA/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 6,
           "video": "A descoberta - episódio 7",
           "url": "https://www.youtube.com/watch?v=p7hGA4U4ghs",
-          "imagem_origem": "https://i.ytimg.com/vi/p7hGA4U4ghs/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 7,
           "video": "A verdade - episódio 8",
           "url": "https://www.youtube.com/watch?v=si4wxfwk4Q4",
-          "imagem_origem": "https://i.ytimg.com/vi/si4wxfwk4Q4/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 8,
           "video": "O fogo - episódio 9",
           "url": "https://www.youtube.com/watch?v=gho8TrBW8xU",
-          "imagem_origem": "https://i.ytimg.com/vi/gho8TrBW8xU/maxresdefault.jpg",
           "presente": true
         },
         {
           "numero": 9,
           "video": "A morte - episódio 10",
           "url": "https://www.youtube.com/watch?v=B77QgikiHC0",
-          "imagem_origem": "https://i.ytimg.com/vi/B77QgikiHC0/maxresdefault.jpg",
           "presente": true
         }
       ],
-      "falhas": [
-        {
-          "arquivo": "poster.webp",
-          "erro": "Fonte indisponível: HTTPError: 400 Client Error: Bad Request for url: https://media.fstatic.com/bUWZLmQGFKA6e3umAA-P; HTTPError: 400 Client Error: Bad Request for url: https://media.fstatic.com/4cMrxtcM18g8CiLg03s7"
-        }
-      ],
-      "status": "parcial"
+      "falhas": [],
+      "status": "completo"
     }
   ]
 }
