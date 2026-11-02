@@ -2422,8 +2422,7 @@ window.ALLAN_CATALOG_FILMES=[
     "aliases": [
       "Evil Dead Burn",
       "A Morte do Demônio mais recente",
-      "Evil Dead 2026",
-      "A Morte do Demônio: A Ascensão (2023) é outro filme"
+      "Evil Dead 2026"
     ],
     "tags": [
       "Filme",
