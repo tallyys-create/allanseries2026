@@ -166,9 +166,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--limit", type=int, default=0, help="0 para todos")
-    parser.add_argument("--scenes", type=int, default=4)
+    parser.add_argument("--scenes", type=int, default=10, help="Máximo de cenas horizontais por filme (1 a 10)")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+    if not 1 <= args.scenes <= 10:
+        parser.error("--scenes precisa estar entre 1 e 10")
     if not KEY and not TOKEN:
         raise SystemExit("ERRO: Configure o secret TMDB_API_KEY ou TMDB_READ_ACCESS_TOKEN no GitHub.")
     raw = (ROOT/"catalogos-extra.js").read_text(encoding="utf-8")
@@ -201,22 +203,32 @@ def main():
             if poster_file and (args.force or not poster.exists()):
                 webp(tmdb.session, f"{CDN}/w780{poster_file}", poster, 600)
                 added.append("poster.webp")
-            for i, file_path in enumerate(select_scenes(images,args.scenes),1):
+            available_scenes = select_scenes(images, args.scenes)
+            for i, file_path in enumerate(available_scenes, 1):
                 dest = scenes_dir / f"{i:02d}.webp"
                 if dest.exists() and not args.force:
                     continue
                 webp(tmdb.session, f"{CDN}/w1280{file_path}", dest, 1200)
                 added.append(f"cenas/{i:02d}.webp")
-            print(f"[{number}/{len(chosen)}] OK {movie['title']} => TMDB {movie_id}, {len(added)} arquivos", flush=True)
-            records.append({"id":movie["id"],"titulo":movie["title"],"status":"importado",
-                "tmdb_id":movie_id,"titulo_tmdb":result.get("title"),
-                "similaridade":score,"arquivos_novos":added})
+            total_scenes = len(list(scenes_dir.glob("[0-9][0-9].webp")))
+            status = "importado" if added else "ja_existe"
+            print(
+                f"[{number}/{len(chosen)}] {status}: {movie['title']} => TMDB {movie_id}; "
+                f"{total_scenes} cena(s) disponível(is), {len(added)} arquivo(s) novo(s)",
+                flush=True
+            )
+            records.append({
+                "id": movie["id"], "titulo": movie["title"], "status": status,
+                "tmdb_id": movie_id, "titulo_tmdb": result.get("title"),
+                "similaridade": score, "arquivos_novos": added,
+                "cenas_no_tmdb": len(available_scenes), "cenas_no_github": total_scenes
+            })
         except Exception as exc:
             print(f"[{number}/{len(chosen)}] ERRO {movie['title']}: {str(exc)[:130]}", flush=True)
             records.append({"id":movie["id"],"titulo":movie["title"],"status":"erro","motivo":str(exc)[:250]})
         time.sleep(.25)
     report = {"fonte":"The Movie Database (TMDB)","gerado_em":datetime.now(timezone.utc).isoformat(),
-        "total_catalogo":len(movies),"processados":len(chosen),
+        "total_catalogo":len(movies),"processados":len(chosen),"limite_cenas":args.scenes,
         "importados":sum(x["status"]=="importado" for x in records),
         "revisar":sum(x["status"]=="revisar" for x in records),
         "erros":sum(x["status"]=="erro" for x in records),"itens":records}

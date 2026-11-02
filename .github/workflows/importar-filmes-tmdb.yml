@@ -12,6 +12,11 @@ on:
         required: false
         default: "0"
         type: string
+      scenes:
+        description: "Maximo de cenas por filme (1 a 10; recomendado: 10)"
+        required: false
+        default: "10"
+        type: string
   push:
     paths:
       - ".github/workflows/importar-filmes-tmdb.yml"
@@ -50,7 +55,8 @@ jobs:
         env:
           START: ${{ github.event.inputs.start || '0' }}
           LIMIT: ${{ github.event_name == 'push' && '10' || github.event.inputs.limit || '0' }}
-        run: python scripts/importar_tmdb_filmes.py --start "$START" --limit "$LIMIT" --scenes 4
+          SCENES: ${{ github.event.inputs.scenes || '10' }}
+        run: python scripts/importar_tmdb_filmes.py --start "$START" --limit "$LIMIT" --scenes "$SCENES"
       - name: Publicar arquivos nas pastas de assets
         shell: bash
         run: |
