@@ -1,9 +1,10 @@
 {
   "fonte": "The Movie Database (TMDB)",
-  "gerado_em": "2026-11-02T01:52:42.964859+00:00",
+  "gerado_em": "2026-11-02T01:57:45.568471+00:00",
   "total_catalogo": 148,
   "processados": 10,
-  "importados": 2,
+  "limite_cenas": 10,
+  "importados": 9,
   "revisar": 1,
   "erros": 0,
   "itens": [
@@ -15,12 +16,15 @@
       "titulo_tmdb": "Z-O-M-B-I-E-S",
       "similaridade": 1.1,
       "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "zombies-2",
@@ -30,12 +34,15 @@
       "titulo_tmdb": "Z-O-M-B-I-E-S 2",
       "similaridade": 1.1,
       "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "viih-tube-em-enigma",
@@ -46,37 +53,128 @@
     {
       "id": "monster-high-o-filme",
       "titulo": "Monster High: O Filme",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 335795,
+      "titulo_tmdb": "Monster High: O Filme",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "descendentes",
       "titulo": "Descendentes",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 277217,
+      "titulo_tmdb": "Descendentes",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "descendentes-2",
       "titulo": "Descendentes 2",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 417320,
+      "titulo_tmdb": "Descendentes 2",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "descendentes-3",
       "titulo": "Descendentes 3",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 506574,
+      "titulo_tmdb": "Descendentes 3",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "descendentes-a-ascensao-de-copas",
       "titulo": "Descendentes: A Ascensão de Copas",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 974262,
+      "titulo_tmdb": "Descendentes: A Ascensão de Copas",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "descendentes-5",
       "titulo": "Descendentes: País das Maravilhas Malvado",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 1318621,
+      "titulo_tmdb": "Descendentes: País das Maravilhas Malvado",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     },
     {
       "id": "mamma-mia",
       "titulo": "Mamma Mia!",
-      "status": "ja_existe"
+      "status": "importado",
+      "tmdb_id": 11631,
+      "titulo_tmdb": "Mamma Mia!",
+      "similaridade": 1.07,
+      "arquivos_novos": [
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas_no_tmdb": 10,
+      "cenas_no_github": 10
     }
   ]
 }
