@@ -1,11 +1,6 @@
 name: Recuperar 3 pendentes - TV Allanzinho
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/recuperar-tv-allanzinho-pendentes.yml"
-      - "scripts/recuperar_tres_tv.py"
-      - "scripts/diagnosticar_tres_tv.py"
 permissions:
   contents: write
 concurrency:
