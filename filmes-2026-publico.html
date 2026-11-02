@@ -1463,7 +1463,7 @@ function openDetails(id){
   document.querySelectorAll('[data-rank]').forEach(b=>b.addEventListener('click',()=>{move(id,b.dataset.rank);closeModal()}));
   $('editShowBtn').onclick=()=>openShowForm(id);
   $('nextPendingBtn').onclick=()=>{
-    const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort((a,b)=>a.title.localeCompare(b.title,'pt-BR'));
+    const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort((a,b)=>normalizeSearch(a.catalogOrder||a.title).localeCompare(normalizeSearch(b.catalogOrder||b.title),'pt-BR'));
     const pos=queue.findIndex(x=>x.id===id);
     const next=queue[(pos+1+queue.length)%queue.length];
     if(next)openDetails(next.id);else toast('Não há filmes aguardando julgamento.');
