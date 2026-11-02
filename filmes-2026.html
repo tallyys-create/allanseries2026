@@ -716,6 +716,38 @@ function applyReferenceTiers(old){
     locations:old.locations
   };
 }
+function migrateMovieCatalogCorrections(){
+  // Atualiza títulos oficiais sem perder rankings salvos do Allan ou do público.
+  if(state.movieCatalogCorrectionsV2===1)return;
+  const previousId='a-morte-do-demonio-em-chamas', correctedId='a-morte-do-demonio-2013';
+  const old=state.shows.find(show=>show.id===previousId);
+  if(old){
+    const duplicate=state.shows.find(show=>show.id===correctedId);
+    if(duplicate){
+      if(state.locations[previousId]&&state.locations[previousId]!=='pool'&&(!state.locations[correctedId]||state.locations[correctedId]==='pool')){
+        state.locations[correctedId]=state.locations[previousId];
+      }
+      state.shows=state.shows.filter(show=>show.id!==previousId);
+    }else{
+      old.id=correctedId;
+      state.locations[correctedId]=state.locations[previousId]||'pool';
+    }
+    delete state.locations[previousId];
+  }
+  const revised=new Set(['a-morte-do-demonio-2013','descendentes','descendentes-2','descendentes-3','descendentes-a-ascensao-de-copas','descendentes-5']);
+  const official=new Map(DEFAULT_SHOWS.map(show=>[show.id,show]));
+  for(const show of state.shows){
+    if(!revised.has(show.id))continue;
+    const base=official.get(show.id);
+    if(!base)continue;
+    for(const field of ['title','year','country','episodes','genre','description','memory','aliases','tags','platform','catalogOrder']){
+      if(Object.hasOwn(base,field))show[field]=structuredClone(base[field]);
+    }
+    if(show.id==='a-morte-do-demonio-2013')show.image='';
+  }
+  state.movieCatalogCorrectionsV2=1;
+  save();
+}
 function mergeNewCatalogEntries(){
   // Amplia o catálogo sem substituir avaliações já salvas nas tiers.
   const known=new Set(state.shows.map(show=>show.id));
@@ -756,6 +788,7 @@ function init(){
       }
     }
   }catch(e){state=defaults()}
+  migrateMovieCatalogCorrections();
   mergeNewCatalogEntries();
   state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();populateCountryFilter();render();bind();loadGalleryDirectory();
 }
@@ -833,7 +866,7 @@ function renderLibrary(){
    if(genre&&!normalizeSearch([s.genre,...(s.tags||[])].join(' ')).includes(genre))return false;
    if(platform&&!normalizeSearch([s.platform,...(s.tags||[])].join(' ')).includes(platform))return false;
    return true;
- }).sort((a,b)=>normalizeSearch(a.title).localeCompare(normalizeSearch(b.title),'pt-BR'));
+ }).sort((a,b)=>normalizeSearch(a.catalogOrder||a.title).localeCompare(normalizeSearch(b.catalogOrder||b.title),'pt-BR'));
  const shows=full.slice(0,libraryLimit);
  $('libraryTitle').textContent=(filterActive||status==='judged'||status==='all')?'🔎 Catálogo de filmes':'🎬 Aguardando julgamento';
  $('searchStatus').textContent=`${full.length} ${full.length===1?'filme encontrado':'filmes encontrados'}`;

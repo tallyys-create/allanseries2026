@@ -122,7 +122,122 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "descendentes 01"
+  },
+  {
+    "id": "descendentes-2",
+    "title": "Descendentes 2",
+    "year": "2017",
+    "country": "",
+    "episodes": "Filme · longa-metragem",
+    "genre": "Disney · Musical · Fantasia · Adolescente",
+    "tint": "#f3b6cc",
+    "description": "Mal retorna à Ilha dos Perdidos, onde uma nova rival ameaça Auradon.",
+    "memory": "Mal retorna à Ilha dos Perdidos, onde uma nova rival ameaça Auradon.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Descendants 2"
+    ],
+    "tags": [
+      "Filme",
+      "Disney",
+      "Musical",
+      "Fantasia",
+      "Adolescente",
+      "AllanWoodTV"
+    ],
+    "platform": "",
+    "catalogOrder": "descendentes 02"
+  },
+  {
+    "id": "descendentes-3",
+    "title": "Descendentes 3",
+    "year": "2019",
+    "country": "",
+    "episodes": "Filme · longa-metragem",
+    "genre": "Disney · Musical · Fantasia · Adolescente",
+    "tint": "#e0bcff",
+    "description": "Mal e seus amigos enfrentam uma ameaça capaz de destruir a barreira entre Auradon e a Ilha.",
+    "memory": "Mal e seus amigos enfrentam uma ameaça capaz de destruir a barreira entre Auradon e a Ilha.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Descendants 3"
+    ],
+    "tags": [
+      "Filme",
+      "Disney",
+      "Musical",
+      "Fantasia",
+      "Adolescente",
+      "AllanWoodTV"
+    ],
+    "platform": "",
+    "catalogOrder": "descendentes 03"
+  },
+  {
+    "id": "descendentes-a-ascensao-de-copas",
+    "title": "Descendentes: A Ascensão de Copas",
+    "year": "2024",
+    "country": "",
+    "episodes": "Filme · longa-metragem",
+    "genre": "Disney · Musical · Fantasia · Adolescente",
+    "tint": "#b9e6ac",
+    "description": "Red e Chloe viajam no tempo para impedir uma transformação no destino de Auradon.",
+    "memory": "Red e Chloe viajam no tempo para impedir uma transformação no destino de Auradon.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Descendentes 4",
+      "Descendants 4",
+      "Descendants The Rise of Red",
+      "Descendants: The Rise of Red",
+      "The Rise of Red"
+    ],
+    "tags": [
+      "Filme",
+      "Disney",
+      "Musical",
+      "Fantasia",
+      "Adolescente",
+      "AllanWoodTV"
+    ],
+    "platform": "Disney+",
+    "catalogOrder": "descendentes 04"
+  },
+  {
+    "id": "descendentes-5",
+    "title": "Descendentes: País das Maravilhas Malvado",
+    "year": "2026",
+    "country": "Estados Unidos",
+    "episodes": "Filme · 2026",
+    "genre": "Musical · Fantasia · Aventura · Família",
+    "tint": "#add0ff",
+    "description": "Depois que Red e Chloe mudam o passado, elas descobrem que suas decisões criaram um novo vilão: Maddox Hatter. Quando ele sequestra a Rainha de Copas, as duas reúnem novos aliados para salvar o País das Maravilhas.",
+    "memory": "Red, Chloe, Pink, Maddox Hatter, Cinderela e Rainha de Copas; as consequências da viagem no tempo e uma nova aventura no País das Maravilhas.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Descendentes 5",
+      "Descendants 5",
+      "Descendants: Wicked Wonderland",
+      "Descendentes Wicked Wonderland",
+      "Descendentes: País das Maravilhas Malvado"
+    ],
+    "tags": [
+      "Filme",
+      "Disney",
+      "Disney Channel",
+      "Disney+",
+      "Musical",
+      "Fantasia",
+      "Aventura",
+      "Família"
+    ],
+    "platform": "Disney+, Disney Channel",
+    "catalogOrder": "descendentes 05"
   },
   {
     "id": "mamma-mia",
@@ -172,31 +287,6 @@ window.ALLAN_CATALOG_FILMES=[
     "platform": ""
   },
   {
-    "id": "descendentes-2",
-    "title": "Descendentes 2",
-    "year": "2017",
-    "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Disney · Musical · Fantasia · Adolescente",
-    "tint": "#f3b6cc",
-    "description": "Mal retorna à Ilha dos Perdidos, onde uma nova rival ameaça Auradon.",
-    "memory": "Mal retorna à Ilha dos Perdidos, onde uma nova rival ameaça Auradon.",
-    "image": "",
-    "gallery": [],
-    "aliases": [
-      "Descendants 2"
-    ],
-    "tags": [
-      "Filme",
-      "Disney",
-      "Musical",
-      "Fantasia",
-      "Adolescente",
-      "AllanWoodTV"
-    ],
-    "platform": ""
-  },
-  {
     "id": "tini-depois-de-violetta",
     "title": "Tini: Depois de Violetta",
     "year": "2016",
@@ -216,31 +306,6 @@ window.ALLAN_CATALOG_FILMES=[
       "Filme",
       "Musical",
       "Romance",
-      "Adolescente",
-      "AllanWoodTV"
-    ],
-    "platform": ""
-  },
-  {
-    "id": "descendentes-3",
-    "title": "Descendentes 3",
-    "year": "2019",
-    "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Disney · Musical · Fantasia · Adolescente",
-    "tint": "#e0bcff",
-    "description": "Mal e seus amigos enfrentam uma ameaça capaz de destruir a barreira entre Auradon e a Ilha.",
-    "memory": "Mal e seus amigos enfrentam uma ameaça capaz de destruir a barreira entre Auradon e a Ilha.",
-    "image": "",
-    "gallery": [],
-    "aliases": [
-      "Descendants 3"
-    ],
-    "tags": [
-      "Filme",
-      "Disney",
-      "Musical",
-      "Fantasia",
       "Adolescente",
       "AllanWoodTV"
     ],
@@ -430,33 +495,6 @@ window.ALLAN_CATALOG_FILMES=[
     "image": "",
     "gallery": [],
     "aliases": [],
-    "tags": [
-      "Filme",
-      "Disney",
-      "Musical",
-      "Fantasia",
-      "Adolescente",
-      "AllanWoodTV"
-    ],
-    "platform": ""
-  },
-  {
-    "id": "descendentes-a-ascensao-de-copas",
-    "title": "Descendentes: A Ascensão de Copas",
-    "year": "2024",
-    "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Disney · Musical · Fantasia · Adolescente",
-    "tint": "#b9e6ac",
-    "description": "Red e Chloe viajam no tempo para impedir uma transformação no destino de Auradon.",
-    "memory": "Red e Chloe viajam no tempo para impedir uma transformação no destino de Auradon.",
-    "image": "",
-    "gallery": [],
-    "aliases": [
-      "Descendentes 4",
-      "Descendants 4",
-      "Descendants The Rise of Red"
-    ],
     "tags": [
       "Filme",
       "Disney",
@@ -1292,31 +1330,6 @@ window.ALLAN_CATALOG_FILMES=[
       "Filme",
       "Romance",
       "Drama",
-      "AllanWoodTV"
-    ],
-    "platform": ""
-  },
-  {
-    "id": "descendentes-5",
-    "title": "Descendentes 5",
-    "year": "A confirmar",
-    "country": "",
-    "episodes": "Produção anunciada · detalhes a confirmar",
-    "genre": "Disney · Musical · Fantasia · Adolescente",
-    "tint": "#add0ff",
-    "description": "Nova aventura da franquia Descendentes; detalhes da história ainda não confirmados nesta ficha.",
-    "memory": "Nova aventura da franquia Descendentes; detalhes da história ainda não confirmados nesta ficha.",
-    "image": "",
-    "gallery": [],
-    "aliases": [
-      "Descendants 5"
-    ],
-    "tags": [
-      "Filme",
-      "Disney",
-      "Musical",
-      "Fantasia",
-      "Adolescente",
       "AllanWoodTV"
     ],
     "platform": ""
@@ -2408,27 +2421,30 @@ window.ALLAN_CATALOG_FILMES=[
     "platform": ""
   },
   {
-    "id": "a-morte-do-demonio-em-chamas",
-    "title": "A Morte do Demônio: Em Chamas",
-    "year": "2026",
-    "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Terror · Suspense",
+    "id": "a-morte-do-demonio-2013",
+    "title": "A Morte do Demônio",
+    "year": "2013",
+    "country": "Estados Unidos",
+    "episodes": "Filme · 2013",
+    "genre": "Terror · Sobrenatural · Suspense",
     "tint": "#ffd5a0",
-    "description": "Após perder o marido, uma mulher visita a família dele e descobre que uma força demoníaca está transformando seus parentes em criaturas mortais.",
-    "memory": "Uma casa isolada, os sogros, o Livro dos Mortos e uma reunião de família aterrorizante.",
+    "description": "Mia e seus amigos se isolam numa cabana para ajudá-la a enfrentar a dependência química. Ao encontrarem o Livro dos Mortos e despertarem forças demoníacas, eles precisam lutar pela sobrevivência.",
+    "memory": "Mia, David, Eric, Olivia e Natalie; a cabana na floresta, o Livro dos Mortos e as possessões demoníacas.",
     "image": "",
     "gallery": [],
     "aliases": [
-      "Evil Dead Burn",
-      "A Morte do Demônio mais recente",
-      "Evil Dead 2026"
+      "Evil Dead",
+      "Evil Dead (2013)",
+      "A Morte do Demônio (2013)",
+      "A Morte do Demonio 2013"
     ],
     "tags": [
       "Filme",
       "Terror",
+      "Sobrenatural",
       "Suspense",
-      "AllanWoodTV"
+      "Estados Unidos",
+      "Remake"
     ],
     "platform": ""
   },
