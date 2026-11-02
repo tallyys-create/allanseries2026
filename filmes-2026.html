@@ -543,12 +543,16 @@ let galleryDirectoryFailed=false;
 function assetFolder(show){
   return show&&/^[a-z0-9-]+$/.test(show.id||'')?'assets/filmes/'+show.id+'/':'';
 }
+const refreshedFilmImages=new Set(["mensagens-para-isabelle","diva-la-vie-beauty-and-the-beat","heartstopper-para-sempre","o-ultimo-nascer-do-sol","ovelhas-detetives","isolamento-mortal","meu-namorado-e-uma-superestrela","espirito-adolescente-teen-spirit","a-boca-do-diabo","um-amor-magnifico","a-hipotese-do-amor"]);
+function filmAssetVersion(show,url){
+  return show&&refreshedFilmImages.has(show.id)&&typeof url==='string'&&url.startsWith('assets/filmes/')?url+(url.includes('?')?'&':'?')+'r=20261102':url;
+}
 function posterCandidates(show,mini=false){
   const folder=assetFolder(show),src=String(show.image||'');
   const original=DEFAULT_SHOWS.find(s=>s.id===show.id);
   const isDefault=original&&original.image===show.image;
   return [
-    ...(folder?[folder+'poster.webp']:[]),
+    ...(folder?[filmAssetVersion(show,folder+'poster.webp')]:[]),
     ...(src?[src]:[]),
     ...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])
   ].filter(Boolean);
@@ -556,7 +560,7 @@ function posterCandidates(show,mini=false){
 function sceneCandidates(show,index){
   const local=localGalleryFiles.get(show.id)||[];
   const external=Array.isArray(show.gallery)?show.gallery.filter(v=>typeof v==='string'&&v.trim())[index]:'';
-  return (local.length?[local[index],external]:[external]).filter(Boolean);
+  return (local.length?[local[index],external]:[external]).filter(Boolean).map(src=>filmAssetVersion(show,src));
 }
 function imageWithFallback(img,candidates,handlers={}){
   if(!img)return;
