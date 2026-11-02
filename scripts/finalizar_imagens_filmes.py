@@ -26,6 +26,10 @@ OBSESSION_ID = "obsessao"
 POSTERS_ENIGMA = [
     "https://media.fstatic.com/bUWZLmQGFKA6e3umAA-PADkTva8%3D/350x525/smart/filters%3Aformat%28webp%29/media/movies/covers/2019/02/15752.jpg",
     "https://media.fstatic.com/4cMrxtcM18g8CiLg03s7hudGVww%3D/322x478/smart/filters%3Aformat%28webp%29/media/movies/covers/2019/02/15752.jpg",
+    "https://img.quizur.com/f/img5c43cd1e6354c7.37245520.jpg?lastEdited=1547947309",
+    "https://img.quizur.com/f/img5c43cd1e6354c7.37245520.jpg",
+    "https://pt.quizur.com/_image?f=webp&h=600&href=https%3A%2F%2Fimg.quizur.com%2Ff%2Fimg5c43cd1e6354c7.37245520.jpg%3FlastEdited%3D1547947309&w=600",
+    "https://i.ytimg.com/vi/F5bR0AuydCk/maxresdefault.jpg",
 ]
 
 # Vídeos lançados pelo canal oficial "Viih Tube", identificados individualmente
@@ -119,6 +123,20 @@ def import_obsession(api):
         "cenas": len(list((folder/"cenas").glob("[0-9][0-9].webp"))),
     }
 
+def save_poster_enigma(image, dest):
+    # Manter a arte promocional íntegra: não cortar os créditos nem o título.
+    # Para imagem quadrada/horizontal, completar a proporção 2:3 com fundo desfocado.
+    from PIL import ImageFilter
+    width, height = 600, 900
+    background = ImageOps.fit(image.convert("RGB"), (width, height))
+    background = background.filter(ImageFilter.GaussianBlur(26))
+    background = Image.blend(background, Image.new("RGB", (width,height), "#0f1d2e"), 0.48)
+    artwork = ImageOps.contain(image.convert("RGB"), (width, height), Image.Resampling.LANCZOS)
+    position = ((width-artwork.width)//2, (height-artwork.height)//2)
+    background.paste(artwork, position)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    background.save(dest, "WEBP", quality=85, method=5)
+
 def import_enigma():
     folder = ASSETS / ENIGMA_ID
     folder.mkdir(parents=True, exist_ok=True)
@@ -130,8 +148,8 @@ def import_enigma():
     poster_source = "https://filmow.com/o-enigma-webserie-t271505/"
     if not poster.exists():
         try:
-            im, poster_url = original_image(session, POSTERS_ENIGMA, min_width=300, min_height=440)
-            save_webp(im, poster, max_width=600)
+            im, poster_url = original_image(session, POSTERS_ENIGMA, min_width=450, min_height=250)
+            save_poster_enigma(im, poster)
             poster_source = poster_url
             added.append("poster.webp")
         except Exception as exc:
