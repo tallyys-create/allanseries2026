@@ -1,0 +1,648 @@
+{
+  "generated": "2026-11-02T02:47:32.071291+00:00",
+  "entries": {
+    "pokemon-jornadas": {
+      "candidates": [
+        {
+          "id": 60572,
+          "name": "Pokémon",
+          "original": "ポケットモンスター",
+          "first_air_date": "1997-04-01",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon Journeys [en-US]",
+            "Pokémon Journeys [pt-BR]",
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]",
+            "Pocket Monsters [en-US]",
+            "Pocket Monsters [pt-BR]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]",
+            "Poketto Monsutā [en-US]",
+            "Poketto Monsutā [pt-BR]",
+            "Pokemon Journeys The Series [en-US]",
+            "Pokemon Journeys The Series [pt-BR]"
+          ]
+        },
+        {
+          "id": 220150,
+          "name": "Pokémon Horizons",
+          "original": "ポケットモンスター",
+          "first_air_date": "2023-04-14",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]",
+            "Pocket Monsters [en-US]",
+            "Pocket Monsters [pt-BR]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]"
+          ]
+        },
+        {
+          "id": 132636,
+          "name": "Pokémon Evolutions",
+          "original": "Pokémon Evolutions",
+          "first_air_date": "2021-09-09",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 221301,
+          "name": "Pokémon Concierge",
+          "original": "ポケモンコンシェルジュ",
+          "first_air_date": "2023-12-28",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 96420,
+          "name": "Pokémon: Twilight Wings",
+          "original": "薄明の翼",
+          "first_air_date": "2020-01-15",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]"
+          ]
+        },
+        {
+          "id": 61295,
+          "name": "Pokémon Origins",
+          "original": "ポケットモンスター THE ORIGIN",
+          "first_air_date": "2013-10-02",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]",
+            "Pocket Monsters [en-US]",
+            "Pocket Monsters [pt-BR]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]"
+          ]
+        },
+        {
+          "id": 67882,
+          "name": "Pokémon Generations",
+          "original": "ポケモンジェネレーションズ",
+          "first_air_date": "2016-12-09",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 13230,
+          "name": "Pokémon Chronicles",
+          "original": "ポケットモンスター サイドストーリー",
+          "first_air_date": "2002-12-03",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]",
+            "Pocket Monsters [en-US]",
+            "Pocket Monsters [pt-BR]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]",
+            "Poketto Monsutā [en-US]",
+            "Poketto Monsutā [pt-BR]"
+          ]
+        },
+        {
+          "id": 260604,
+          "name": "Pokémon: Trainer Tour",
+          "original": "Pokémon: Trainer Tour",
+          "first_air_date": "2024-07-31",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 199966,
+          "name": "Pokémon: Hisuian Snow",
+          "original": "雪ほどきし二藍",
+          "first_air_date": "2022-05-18",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 301959,
+          "name": "Pokémon Flippo Update",
+          "original": "Pokémon Flippo Update",
+          "first_air_date": "2001-04-09",
+          "countries": [
+            "NL"
+          ],
+          "poster": true,
+          "image": false,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 232214,
+          "name": "Pokémon: Paldean Winds",
+          "original": "放課後のブレス",
+          "first_air_date": "2023-09-06",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [en-US]",
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 232215,
+          "name": "Pokémon: Path to the Peak",
+          "original": "Pokémon: Path to the Peak",
+          "first_air_date": "2023-08-11",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pokémon [pt-BR]"
+          ]
+        },
+        {
+          "id": 207567,
+          "name": "Pokémon: The Arceus Chronicles",
+          "original": "ポケットモンスター 神とよばれし アルセウス",
+          "first_air_date": "2022-01-21",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Pocket Monsters [en-US]",
+            "Pocket Monsters [pt-BR]",
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]",
+            "Poketto Monsutā [en-US]",
+            "Poketto Monsutā [pt-BR]"
+          ]
+        },
+        {
+          "id": 332721,
+          "name": "ポケットモンスター めざせポケモンマスター",
+          "original": "ポケットモンスター めざせポケモンマスター",
+          "first_air_date": "2023-01-13",
+          "countries": [
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "ポケットモンスター [en-US]",
+            "ポケットモンスター [pt-BR]"
+          ]
+        }
+      ],
+      "parent_seasons": [
+        {
+          "id": 60572,
+          "title": "Pokémon",
+          "year": "1997-04-01",
+          "num_seasons": 26,
+          "seasons": [
+            {
+              "season_number": 3,
+              "name": "The Johto Journeys",
+              "air_date": "1999-10-14",
+              "poster": true
+            },
+            {
+              "season_number": 23,
+              "name": "Journeys",
+              "air_date": "2019-11-17",
+              "poster": true
+            },
+            {
+              "season_number": 24,
+              "name": "Master Journeys",
+              "air_date": "2020-12-11",
+              "poster": true
+            },
+            {
+              "season_number": 25,
+              "name": "Ultimate Journeys",
+              "air_date": "2021-12-17",
+              "poster": true
+            }
+          ]
+        }
+      ]
+    },
+    "power-rangers-tempestade-ninja": {
+      "candidates": [
+        {
+          "id": 2328,
+          "name": "Power Rangers",
+          "original": "Power Rangers",
+          "first_air_date": "1993-08-28",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers Ninja Storm [en-US]",
+            "Power Rangers Ninja Storm [pt-BR]",
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]",
+            "Ninja Storm [en-US]",
+            "Ninja Storm [pt-BR]"
+          ]
+        },
+        {
+          "id": 210832,
+          "name": "Power Rangers HyperForce",
+          "original": "Power Rangers HyperForce",
+          "first_air_date": "2017-10-24",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 303470,
+          "name": "Mighty Morphin' Power Rangers Re-Ignition",
+          "original": "Mighty Morphin' Power Rangers Re-Ignition",
+          "first_air_date": "2023-10-01",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 128554,
+          "name": "Power Rangers Dino Force Brave",
+          "original": "파워레인저 다이노포스 브레이브",
+          "first_air_date": "2017-04-01",
+          "countries": [
+            "KR",
+            "JP"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 336253,
+          "name": "Power Rangers Ninja Steel",
+          "original": "Power Rangers Ninja Steel",
+          "first_air_date": "2017-01-17",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 336252,
+          "name": "Power Rangers Samurai",
+          "original": "Power Rangers Samurai",
+          "first_air_date": "2011-10-15",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 336247,
+          "name": "Power Rangers Dino Charge",
+          "original": "Power Rangers Dino Charge",
+          "first_air_date": "2015-02-07",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 337215,
+          "name": "Power Rangers Beast Hunters",
+          "original": "Power Rangers Beast Hunters",
+          "first_air_date": "2025-11-14",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 332584,
+          "name": "Power Rangers Unworthy",
+          "original": "Power Rangers Unworthy",
+          "first_air_date": "2019-08-19",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 336248,
+          "name": "Power Rangers Dino Charge",
+          "original": "Power Rangers Dino Charge",
+          "first_air_date": "2015-02-07",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 335615,
+          "name": "Power Rangers Cosmic Fury",
+          "original": "Power Rangers Cosmic Fury",
+          "first_air_date": "2023-09-29",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Power Rangers [en-US]",
+            "Power Rangers [pt-BR]"
+          ]
+        },
+        {
+          "id": 340500,
+          "name": "Power Rangers Mystic Force",
+          "original": "Power Rangers Mystic Force",
+          "first_air_date": "2006-02-20",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Power Rangers [en-US]"
+          ]
+        },
+        {
+          "id": 249111,
+          "name": "Power Rangers Rail Riders",
+          "original": "Power Rangers Rail Riders",
+          "first_air_date": "2023-10-20",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": false,
+          "found_by": [
+            "Power Rangers [pt-BR]"
+          ]
+        }
+      ],
+      "parent_seasons": [
+        {
+          "id": 2328,
+          "title": "Power Rangers",
+          "year": "1993-08-28",
+          "num_seasons": 31,
+          "seasons": [
+            {
+              "season_number": 11,
+              "name": "Ninja Storm",
+              "air_date": "2003-02-15",
+              "poster": true
+            },
+            {
+              "season_number": 12,
+              "name": "Dino Thunder",
+              "air_date": "2004-02-14",
+              "poster": true
+            }
+          ]
+        }
+      ]
+    },
+    "madeline": {
+      "candidates": [
+        {
+          "id": 19283,
+          "name": "The New Adventures Of Madeline",
+          "original": "The New Adventures Of Madeline",
+          "first_air_date": "1993-11-14",
+          "countries": [],
+          "poster": true,
+          "image": false,
+          "found_by": [
+            "Madeline [en-US]",
+            "Madeline [pt-BR]",
+            "The New Adventures of Madeline [en-US]",
+            "The New Adventures of Madeline [pt-BR]"
+          ]
+        },
+        {
+          "id": 17194,
+          "name": "Madeline",
+          "original": "Madeline",
+          "first_air_date": "1988-11-07",
+          "countries": [
+            "CA",
+            "FR",
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Madeline [en-US]",
+            "Madeline [pt-BR]",
+            "The New Adventures of Madeline [en-US]",
+            "The New Adventures of Madeline [pt-BR]"
+          ]
+        },
+        {
+          "id": 26826,
+          "name": "Oh Madeline",
+          "original": "Oh Madeline",
+          "first_air_date": "1983-09-27",
+          "countries": [
+            "US"
+          ],
+          "poster": true,
+          "image": true,
+          "found_by": [
+            "Madeline [en-US]",
+            "Madeline [pt-BR]"
+          ]
+        },
+        {
+          "id": 273443,
+          "name": "Pretty Lonesome with Madeline Argy",
+          "original": "Pretty Lonesome with Madeline Argy",
+          "first_air_date": "2023-10-02",
+          "countries": [
+            "US"
+          ],
+          "poster": false,
+          "image": false,
+          "found_by": [
+            "Madeline [en-US]",
+            "Madeline [pt-BR]"
+          ]
+        }
+      ],
+      "parent_seasons": [
+        {
+          "id": 19283,
+          "title": "The New Adventures Of Madeline",
+          "year": "1993-11-14",
+          "num_seasons": 4,
+          "seasons": [
+            {
+              "season_number": 0,
+              "name": "Specials",
+              "air_date": "1990-11-22",
+              "poster": false
+            },
+            {
+              "season_number": 1,
+              "name": "Season 1",
+              "air_date": "1993-11-14",
+              "poster": false
+            },
+            {
+              "season_number": 2,
+              "name": "Season 2",
+              "air_date": null,
+              "poster": false
+            },
+            {
+              "season_number": 3,
+              "name": "Season 3",
+              "air_date": null,
+              "poster": false
+            }
+          ]
+        },
+        {
+          "id": 17194,
+          "title": "Madeline",
+          "year": "1988-11-07",
+          "num_seasons": 3,
+          "seasons": [
+            {
+              "season_number": 1,
+              "name": "Season 1",
+              "air_date": "1988-11-07",
+              "poster": true
+            },
+            {
+              "season_number": 2,
+              "name": "Season 2",
+              "air_date": "1995-09-09",
+              "poster": true
+            },
+            {
+              "season_number": 3,
+              "name": "Season 3",
+              "air_date": "2000-09-07",
+              "poster": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
