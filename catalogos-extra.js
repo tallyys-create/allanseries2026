@@ -3833,5 +3833,94 @@ window.ALLAN_CATALOG_TV_ALLANZINHO=[
       "AllanWoodTV"
     ],
     "platform": ""
+  },
+  {
+    "id": "as-aventuras-de-piggley-winks",
+    "title": "As Aventuras de Piggley Winks",
+    "year": "2003",
+    "country": "Estados Unidos · Irlanda · Reino Unido",
+    "episodes": "3 temporadas · série animada",
+    "genre": "Animação · Aventura · Comédia · Família",
+    "tint": "#a8d8ab",
+    "description": "Já avô, o porquinho Piggley conta aos netos as aventuras que viveu quando criança na fazenda Raloo, na Irlanda, ao lado de Ferny e Dannan. Suas lembranças misturam brincadeiras, descobertas e lições de amizade.",
+    "memory": "Piggley, Ferny e Dannan; a fazenda Raloo; as histórias contadas aos netos e o inesquecível grito 'Jakers!'",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Jakers! As Aventuras de Piggley Winks",
+      "Jakers! The Adventures of Piggley Winks",
+      "Piggley Winks",
+      "Jakers"
+    ],
+    "tags": [
+      "TV Allanzinho",
+      "Animação",
+      "Aventura",
+      "Comédia",
+      "Infantil",
+      "Família",
+      "Nostalgia",
+      "Discovery Kids"
+    ],
+    "platform": "PBS Kids · Discovery Kids"
+  },
+  {
+    "id": "o-segredo-alem-do-jardim",
+    "title": "O Segredo Além do Jardim",
+    "year": "2014",
+    "country": "Estados Unidos",
+    "episodes": "Minissérie · 10 episódios",
+    "genre": "Animação · Fantasia · Mistério · Aventura",
+    "tint": "#b49bcc",
+    "description": "Os irmãos Wirt e Greg se perdem em uma floresta misteriosa chamada O Desconhecido. Com a ajuda de Beatriz, um pássaro azul, eles tentam encontrar o caminho de volta para casa enquanto descobrem os perigos e segredos daquele lugar.",
+    "memory": "Wirt, Greg, Beatriz, o Lenhador e a Fera; atmosfera de outono, músicas e os enigmas do Desconhecido.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Segredo Além do Jardim",
+      "Over the Garden Wall",
+      "Over The Garden Wall"
+    ],
+    "tags": [
+      "TV Allanzinho",
+      "Animação",
+      "Fantasia",
+      "Mistério",
+      "Aventura",
+      "Suspense",
+      "Cartoon Network",
+      "Minissérie"
+    ],
+    "platform": "Cartoon Network"
+  },
+  {
+    "id": "a-mansao-foster-para-amigos-imaginarios",
+    "title": "A Mansão Foster para Amigos Imaginários",
+    "year": "2004",
+    "country": "Estados Unidos",
+    "episodes": "6 temporadas · série animada",
+    "genre": "Animação · Comédia · Fantasia · Família",
+    "tint": "#89bfee",
+    "description": "Quando Mac precisa se separar do amigo imaginário Bloo, encontra para ele um lar na Mansão Foster, onde criaturas nascidas da imaginação das crianças aguardam uma nova família. Mac continua visitando Bloo e vivendo confusões com os moradores.",
+    "memory": "Mac e Bloo; Eduardo, Coco, Minguado, Frankie e o Sr. Coelho; visitas à mansão e as trapalhadas dos amigos imaginários.",
+    "image": "",
+    "gallery": [],
+    "aliases": [
+      "Mansão Foster para Amigos Imaginários",
+      "Foster's Home for Imaginary Friends",
+      "Mansão Foster",
+      "A Mansão Foster"
+    ],
+    "tags": [
+      "TV Allanzinho",
+      "Animação",
+      "Comédia",
+      "Fantasia",
+      "Infantil",
+      "Família",
+      "Nostalgia",
+      "Cartoon Network"
+    ],
+    "platform": "Cartoon Network"
   }
 ];
