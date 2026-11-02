@@ -50,12 +50,18 @@ jobs:
           fi
       - name: Instalar dependencias
         run: python -m pip install --disable-pip-version-check pillow requests
+      - name: Recuperar 14 series pendentes com identificacoes confirmadas
+        if: github.event_name == 'push'
+        run: python scripts/recuperar_series_pendentes.py
       - name: Buscar posters e ate 10 cenas - Series
+        if: github.event_name == 'workflow_dispatch'
         env:
           START: ${{ github.event.inputs.start || '0' }}
-          LIMIT: ${{ github.event_name == 'push' && '5' || github.event.inputs.limit || '0' }}
+          LIMIT: ${{ github.event.inputs.limit || '0' }}
           SCENES: ${{ github.event.inputs.scenes || '10' }}
         run: python scripts/importar_tmdb_tv.py --catalog series --start "$START" --limit "$LIMIT" --scenes "$SCENES"
+      - name: Atualizar contagens reais do indice de series
+        run: python scripts/atualizar_indice_series.py
       - name: Publicar imagens nas pastas do GitHub
         shell: bash
         run: |
