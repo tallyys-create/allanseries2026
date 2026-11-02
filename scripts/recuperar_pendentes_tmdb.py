@@ -46,6 +46,8 @@ PENDING = {
 
 # Identificadores confirmados por referências externas; conferir ano no TMDB.
 PINNED = {
+    "diva-la-vie-beauty-and-the-beat": 1318642,  # Diva, La Vie, 2025 (GDH)
+    "as-irmas-vampiras-2": 298504,                # Die Vampirschwestern 2, 2014
     "after-sundown": 1113085,
     "um-estranho-a-beira-mar-the-stranger-by-the-shore": 642121,
     "frozen-2": 330457,
@@ -122,7 +124,9 @@ def choose_match(api, movie, candidates):
     pinned = PINNED.get(movie_id)
     if pinned:
         detail = api.get(f"/movie/{pinned}", {"language": "pt-BR"})
-        expect, actual = year(movie.get("year")), year(detail.get("release_date"))
+        confirmed_years = {"diva-la-vie-beauty-and-the-beat": 2025}
+        expect = confirmed_years.get(movie_id) or year(movie.get("year"))
+        actual = year(detail.get("release_date"))
         if not detail.get("id") == pinned or not expect or not actual or abs(expect - actual) > 1:
             return None, "ID verificado com ano incompatível"
         return detail, "id_confirmado"
