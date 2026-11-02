@@ -1144,23 +1144,26 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "mensagens-para-isabelle",
     "title": "Mensagens para Isabelle",
-    "year": "A confirmar",
+    "year": "2026",
     "country": "",
     "episodes": "Filme · longa-metragem",
-    "genre": "Romance · Drama",
+    "genre": "Comédia · Romance · Drama",
     "tint": "#add0ff",
-    "description": "Um romance se desenvolve por meio de mensagens e encontros transformadores. Os detalhes da produção ainda precisam ser confirmados.",
-    "memory": "O romance por mensagens; o título exato ainda aguarda confirmação.",
+    "description": "Jill tenta lidar com a morte da irmã deixando mensagens de voz em seu número antigo, contando as confusões da própria vida. Sem perceber que a linha foi transferida para Wes, um desconhecido, ela acaba criando uma conexão inesperada — e talvez um novo romance.",
+    "memory": "Jill falando com a irmã pelas mensagens de voz sem saber que Wes passou a receber todas elas.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Voicemails for Isabelle"
+    ],
     "tags": [
       "Filme",
+      "Comédia",
       "Romance",
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Netflix"
   },
   {
     "id": "as-irmas-vampiras",
@@ -1255,16 +1258,20 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "diva-la-vie-beauty-and-the-beat",
     "title": "Diva La Vie (Beauty and the Beat)",
-    "year": "A confirmar",
+    "year": "2025",
     "country": "Tailândia",
     "episodes": "Filme · longa-metragem",
     "genre": "Tailândia · Musical · Comédia · Drama",
     "tint": "#add0ff",
-    "description": "Produção tailandesa que mistura transformação pessoal, música e humor num universo glamouroso. A identificação da obra segue pendente para evitar confusões.",
-    "memory": "Música e glamour da produção tailandesa; confirmar a obra assistida.",
+    "description": "Quatro grandes vozes da música tailandesa são reunidas para dividir o palco num espetáculo. Mas a competição e as rivalidades entre os artistas podem transformar o grande show numa batalha de egos.",
+    "memory": "As quatro estrelas reunidas no mesmo show, os números musicais e a rivalidade entre os artistas.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Beauty and the Beat",
+      "Diva.. Rawi",
+      "A Bela e a Batida"
+    ],
     "tags": [
       "Filme",
       "Tailândia",
@@ -1819,13 +1826,13 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "heartstopper-para-sempre",
     "title": "Heartstopper: Para Sempre",
-    "year": "A confirmar",
+    "year": "2026",
     "country": "",
     "episodes": "Produção anunciada · detalhes a confirmar",
     "genre": "LGBTQIA+ · Romance · Drama",
     "tint": "#add0ff",
-    "description": "Continuação cinematográfica de Heartstopper centrada em Nick e Charlie; detalhes pendentes. O longa continua a história de um casal querido.",
-    "memory": "Nick e Charlie; ainda não há cenas confirmadas do longa.",
+    "description": "Com Nick prestes a começar a faculdade e Charlie vivendo seus últimos meses no colégio, o casal precisa imaginar um futuro que pode não ser tão simples. A possibilidade de um relacionamento à distância põe à prova a segurança que construíram juntos.",
+    "memory": "Nick e Charlie, a despedida antes da faculdade, a possibilidade da distância e o grupo de amigos que cresceu com eles.",
     "image": "",
     "gallery": [],
     "aliases": [
@@ -1839,7 +1846,7 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Netflix"
   },
   {
     "id": "para-todos-os-garotos-agora-e-para-sempre",
@@ -1938,23 +1945,25 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "o-ultimo-nascer-do-sol",
     "title": "O Último Nascer do Sol",
-    "year": "A confirmar",
-    "country": "",
+    "year": "2026",
+    "country": "Estados Unidos · Espanha",
     "episodes": "Filme · longa-metragem",
     "genre": "Drama · Romance",
     "tint": "#add0ff",
-    "description": "Drama sobre despedidas, recomeços e a importância de aproveitar cada instante. Ainda é necessário identificar a versão assistida.",
-    "memory": "A temática do último amanhecer; obra específica ainda a identificar.",
+    "description": "Ry viaja com a mãe para passar o verão em Maiorca e se apaixona por Julián. Enquanto vive esse romance, o agravamento de uma doença crônica e segredos familiares fazem cada momento ganhar um novo peso.",
+    "memory": "Ry, Julián, os dias de verão em Maiorca e a relação de Ry com a mãe, Isolde.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "The Last Sunrise"
+    ],
     "tags": [
       "Filme",
       "Drama",
       "Romance",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Prime Video"
   },
   {
     "id": "as-patricinhas-de-beverly-hills",
@@ -2025,22 +2034,25 @@ window.ALLAN_CATALOG_FILMES=[
   },
   {
     "id": "ovelhas-detetives",
-    "title": "Ovelhas Detetives",
-    "year": "A confirmar",
+    "title": "As Ovelhas Detetives",
+    "year": "2026",
     "country": "",
     "episodes": "Filme · longa-metragem",
-    "genre": "Comédia · Infantil · Suspense",
+    "genre": "Comédia · Mistério · Família",
     "tint": "#ffd5a0",
-    "description": "Um rebanho de ovelhas se transforma em equipe de investigação diante de um mistério. A trama ainda depende da identificação correta.",
-    "memory": "O rebanho de investigadores; a obra específica ainda a identificar.",
+    "description": "O pastor George adora ler romances policiais para suas ovelhas sem imaginar que elas entendem as histórias. Quando um mistério abala a fazenda, o rebanho resolve investigar pistas e suspeitos humanos por conta própria.",
+    "memory": "George lendo histórias de detetive para as ovelhas e o rebanho colocando seus conhecimentos em prática.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "The Sheep Detectives",
+      "Ovelhas Detetives"
+    ],
     "tags": [
       "Filme",
       "Comédia",
-      "Infantil",
-      "Suspense",
+      "Mistério",
+      "Família",
       "AllanWoodTV"
     ],
     "platform": ""
@@ -2302,20 +2314,23 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "isolamento-mortal",
     "title": "Isolamento Mortal",
-    "year": "A confirmar",
+    "year": "2022",
     "country": "",
     "episodes": "Filme · longa-metragem",
-    "genre": "Terror · Suspense",
+    "genre": "Terror · Suspense · Slasher",
     "tint": "#f3b6cc",
-    "description": "Uma história de sobrevivência e ameaça em meio ao isolamento. Sem confirmação, não seria seguro inventar cenas.",
-    "memory": "O perigo do isolamento; confirmar qual filme foi assistido.",
+    "description": "No começo da pandemia, Parker e Miri se isolam numa casa de lago para passar a quarentena. A tranquilidade acaba quando mensagens suspeitas e a presença de um assassino mascarado transformam o refúgio num pesadelo.",
+    "memory": "Parker e Miri em quarentena na casa do lago, as mensagens ameaçadoras e o assassino mascarado.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Sick (2022)"
+    ],
     "tags": [
       "Filme",
       "Terror",
       "Suspense",
+      "Slasher",
       "AllanWoodTV"
     ],
     "platform": ""
@@ -2969,24 +2984,29 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "meu-namorado-e-uma-superestrela",
     "title": "Meu Namorado é uma Superestrela",
-    "year": "A confirmar",
+    "year": "2010",
     "country": "",
     "episodes": "Filme · longa-metragem",
-    "genre": "Romance · Musical · Adolescente",
+    "genre": "Disney · Comédia · Musical · Romance · Adolescente",
     "tint": "#add0ff",
-    "description": "Uma adolescente se envolve com um ídolo da música e precisa lidar com a fama. A identificação exata continua necessária para acrescentar detalhes.",
-    "memory": "Uma adolescente e um astro pop; confirmar a obra antes de destacar cenas.",
+    "description": "Jessica viaja a Los Angeles sem nenhum interesse em perseguir celebridades, ao contrário de sua irmã. Mas ela acaba conhecendo Christopher Wilde, um astro adolescente, e o encontro vira uma aventura que a fama ameaça destruir.",
+    "memory": "Jessica Olsen, Christopher Wilde, a fuga dos paparazzi e o astro negando publicamente que a conhecia.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Starstruck",
+      "StarStruck - Meu Namorado é uma Superestrela"
+    ],
     "tags": [
       "Filme",
-      "Romance",
+      "Disney",
+      "Comédia",
       "Musical",
+      "Romance",
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Disney+"
   },
   {
     "id": "sierra-burgess-e-uma-loser",
@@ -3062,23 +3082,26 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "a-boca-do-diabo",
     "title": "A Boca do Diabo",
-    "year": "A confirmar",
+    "year": "2026",
     "country": "",
     "episodes": "Filme · longa-metragem",
-    "genre": "Terror · Suspense",
+    "genre": "Terror · Suspense · Sobrevivência",
     "tint": "#ffd5a0",
-    "description": "Uma ameaça misteriosa transforma um encontro inesperado em pesadelo. O filme específico ainda precisa ser identificado.",
-    "memory": "O suspense e o título A Boca do Diabo; versão ainda não identificada.",
+    "description": "Um grupo de amigos explora cavernas submersas na Tailândia em busca de aventura. Quando ficam presos com o oxigênio acabando, descobrem que um predador veloz os persegue na escuridão.",
+    "memory": "As cavernas inundadas da Tailândia, o oxigênio acabando e o predador oculto sob a água.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "The Devil's Mouth"
+    ],
     "tags": [
       "Filme",
       "Terror",
       "Suspense",
+      "Sobrevivência",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Prime Video"
   },
   {
     "id": "nao-vamos-pagar-nada",
@@ -3243,20 +3266,24 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "um-amor-magnifico",
     "title": "Um Amor Magnífico",
-    "year": "A confirmar",
-    "country": "",
+    "year": "2015",
+    "country": "Índia",
     "episodes": "Filme · longa-metragem",
-    "genre": "Romance · Drama",
+    "genre": "Bollywood · Comédia · Romance",
     "tint": "#b9e6ac",
-    "description": "Romance sobre encontros e escolhas que transformam a vida de seus protagonistas. Mais detalhes da obra ainda estão pendentes.",
-    "memory": "O romance de Um Amor Magnífico; obra exata ainda a identificar.",
+    "description": "Duas famílias influentes organizam um casamento grandioso para salvar seus negócios. Enquanto a noiva enfrenta a pressão da união arranjada, a irmã adotiva se aproxima do carismático organizador da festa.",
+    "memory": "Jagjinder Joginder, Alia, a família Arora e os preparativos para um casamento extravagante.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Shaandaar",
+      "Shaandar"
+    ],
     "tags": [
       "Filme",
+      "Bollywood",
+      "Comédia",
       "Romance",
-      "Drama",
       "AllanWoodTV"
     ],
     "platform": ""
@@ -3264,24 +3291,25 @@ window.ALLAN_CATALOG_FILMES=[
   {
     "id": "a-hipotese-do-amor",
     "title": "A Hipótese do Amor",
-    "year": "A confirmar",
+    "year": "2026",
     "country": "",
     "episodes": "Produção anunciada · detalhes a confirmar",
-    "genre": "Romance · Comédia · Drama",
+    "genre": "Comédia · Romance",
     "tint": "#e0bcff",
-    "description": "Adaptação romântica inspirada na história de uma cientista e um relacionamento de mentira. O romance de mentira desafia convicções.",
-    "memory": "Olive e o namoro de mentira no laboratório; sem cenas confirmadas.",
+    "description": "Olive Smith, doutoranda em biologia, inventa um relacionamento para provar que superou seu antigo amor. O respeitado e intimidador professor Adam Carlsen aceita fingir ser seu namorado, mas a química entre os dois complica a experiência.",
+    "memory": "Olive Smith e Adam Carlsen, o namoro de mentira na universidade e as experiências que não saem como o planejado.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "The Love Hypothesis"
+    ],
     "tags": [
       "Filme",
-      "Romance",
       "Comédia",
-      "Drama",
+      "Romance",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "Prime Video"
   },
   {
     "id": "sua-culpa",
