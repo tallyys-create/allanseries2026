@@ -25,7 +25,7 @@ TOKEN = os.environ.get("TMDB_READ_ACCESS_TOKEN", "").strip()
 PINNED_TMDB_IDS = {
     "zombies-disney-channel": 483980,          # Z-O-M-B-I-E-S (2018)
     "zombies-2": 599521,
-    "espirito-adolescente-teen-spirit": 73108,  # Teen Spirit (2011), Cassie Scerbo e Lindsey Shaw                       # Z-O-M-B-I-E-S 2 (2020)
+    "espirito-adolescente-teen-spirit": 73108,  # Teen Spirit (2011), Gil Junger; não o musical de 2018                       # Z-O-M-B-I-E-S 2 (2020)
     "zombies-3": 809107,                       # Z-O-M-B-I-E-S 3 (2022)
     "zombies-4-dawn-of-the-vampires": 1243341, # Z-O-M-B-I-E-S 4 (2025)
 }
