@@ -1,0 +1,986 @@
+{
+  "gerado_em": "2026-11-02T02:19:28.198305+00:00",
+  "total_analisado": 14,
+  "importados": 10,
+  "revisar": 4,
+  "erros": 0,
+  "itens": [
+    {
+      "id": "viih-tube-em-enigma",
+      "titulo": "Viih Tube em Enigma",
+      "candidatos": [],
+      "status": "revisar",
+      "motivo": "sem correspondência exata, única e compatível com o ano"
+    },
+    {
+      "id": "princesinha-sofia-elena-e-o-segredo-de-avalor",
+      "titulo": "Princesinha Sofia: Elena e o Segredo de Avalor",
+      "candidatos": [
+        {
+          "id": 427143,
+          "title": "Elena e o Segredo de Avalor",
+          "original_title": "Elena and the Secret of Avalor",
+          "year": 2016,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 2.9611
+        }
+      ],
+      "tmdb_id": 427143,
+      "titulo_tmdb": "Elena e o Segredo de Avalor",
+      "titulo_original_tmdb": "Elena and the Secret of Avalor",
+      "ano_tmdb": 2016,
+      "criterio": "titulo_original_e_ano",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp"
+      ],
+      "cenas": 4,
+      "status": "importado"
+    },
+    {
+      "id": "after-sundown",
+      "titulo": "After Sundown",
+      "candidatos": [
+        {
+          "id": 1113085,
+          "title": "ดับแสงรวี",
+          "original_title": "ดับแสงรวี",
+          "year": 2023,
+          "score": 0.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 1.6657
+        },
+        {
+          "id": 69686,
+          "title": "After Sundown",
+          "original_title": "After Sundown",
+          "year": 2006,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4763
+        },
+        {
+          "id": 342681,
+          "title": "Welcome to Willits: After Sundown",
+          "original_title": "Welcome to Willits: After Sundown",
+          "year": 2013,
+          "score": 0.503,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.9578
+        }
+      ],
+      "tmdb_id": 1113085,
+      "titulo_tmdb": "ดับแสงรวี",
+      "titulo_original_tmdb": "ดับแสงรวี",
+      "ano_tmdb": 2023,
+      "criterio": "id_confirmado",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    },
+    {
+      "id": "um-estranho-a-beira-mar-the-stranger-by-the-shore",
+      "titulo": "Um Estranho à Beira-Mar (The Stranger by the Shore)",
+      "candidatos": [
+        {
+          "id": 642121,
+          "title": "The Stranger by the Shore",
+          "original_title": "海辺のエトランゼ",
+          "year": 2020,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 3.4487
+        }
+      ],
+      "tmdb_id": 642121,
+      "titulo_tmdb": "The Stranger by the Shore",
+      "titulo_original_tmdb": "海辺のエトランゼ",
+      "ano_tmdb": 2020,
+      "criterio": "id_confirmado",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    },
+    {
+      "id": "diva-la-vie-beauty-and-the-beat",
+      "titulo": "Diva La Vie (Beauty and the Beat)",
+      "candidatos": [
+        {
+          "id": 305326,
+          "title": "Beauty and the Beat",
+          "original_title": "Beauty and the Beat",
+          "year": 2014,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.8052
+        },
+        {
+          "id": 191529,
+          "title": "Je sens le beat qui monte en moi",
+          "original_title": "Je sens le beat qui monte en moi",
+          "year": 2012,
+          "score": 0.266,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.1847
+        },
+        {
+          "id": 1318642,
+          "title": "A Bela e a Batida",
+          "original_title": "ดีว่า..ราวี",
+          "year": 2025,
+          "score": 0.249,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.1564
+        }
+      ],
+      "status": "revisar",
+      "motivo": "sem correspondência exata, única e compatível com o ano"
+    },
+    {
+      "id": "as-irmas-vampiras-2",
+      "titulo": "As Irmãs Vampiras 2",
+      "candidatos": [
+        {
+          "id": 298504,
+          "title": "As Irmãs Vampiras 2: O Amor Floresce",
+          "original_title": "Die Vampirschwestern 2 - Fledermäuse im Bauch",
+          "year": 2014,
+          "score": 0.648,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 2.0253
+        }
+      ],
+      "status": "revisar",
+      "motivo": "sem correspondência exata, única e compatível com o ano"
+    },
+    {
+      "id": "as-irmas-vampiras-3",
+      "titulo": "As Irmãs Vampiras 3",
+      "candidatos": [
+        {
+          "id": 392476,
+          "title": "As Irmãs Vampiras 3: Viagem para a Transilvânia",
+          "original_title": "Die Vampirschwestern 3 - Reise nach Transsilvanien",
+          "year": 2016,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 2.221
+        }
+      ],
+      "tmdb_id": 392476,
+      "titulo_tmdb": "As Irmãs Vampiras 3: Viagem para a Transilvânia",
+      "titulo_original_tmdb": "Die Vampirschwestern 3 - Reise nach Transsilvanien",
+      "ano_tmdb": 2016,
+      "criterio": "titulo_original_e_ano",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp"
+      ],
+      "cenas": 1,
+      "status": "importado"
+    },
+    {
+      "id": "frozen-2",
+      "titulo": "Frozen 2",
+      "candidatos": [
+        {
+          "id": 330457,
+          "title": "Frozen II",
+          "original_title": "Frozen II",
+          "year": 2019,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 18.5793
+        },
+        {
+          "id": 913579,
+          "title": "A Frozen Christmas Time 2",
+          "original_title": "A Frozen Christmas Time 2",
+          "year": 2020,
+          "score": 0.449,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 0.7917
+        },
+        {
+          "id": 1236437,
+          "title": "Frozen Stupid 2: Open Water",
+          "original_title": "Frozen Stupid 2: Open Water",
+          "year": 2020,
+          "score": 0.441,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 0.8991
+        },
+        {
+          "id": 566451,
+          "title": "Re:ZERO -Starting Life in Another World- Laços Congelados",
+          "original_title": "Re:ゼロから始める異世界生活 氷結の絆",
+          "year": 2019,
+          "score": 0.232,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 3.3972
+        },
+        {
+          "id": 490214,
+          "title": "Iceman 2: O Viajante do Tempo",
+          "original_title": "冰封侠：时空行者",
+          "year": 2018,
+          "score": 0.189,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 1.3309
+        },
+        {
+          "id": 1024604,
+          "title": "Frozen III",
+          "original_title": "Frozen III",
+          "year": 2027,
+          "score": 0.689,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 5.304
+        },
+        {
+          "id": 490935,
+          "title": "A Frozen Christmas 2",
+          "original_title": "A Frozen Christmas 2",
+          "year": 2017,
+          "score": 0.541,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.7013
+        },
+        {
+          "id": 816688,
+          "title": "As Lendas de Frozen II",
+          "original_title": "Myth: A Frozen Tale",
+          "year": 2021,
+          "score": 0.505,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.1755
+        },
+        {
+          "id": 1148971,
+          "title": "Pakasteet II",
+          "original_title": "Pakasteet II",
+          "year": 1969,
+          "score": 0.361,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.6045
+        },
+        {
+          "id": 450298,
+          "title": "O Reino dos Sapos 2",
+          "original_title": "Arctic Adventure: On Frozen Pond",
+          "year": 2016,
+          "score": 0.278,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.5494
+        },
+        {
+          "id": 112912,
+          "title": "Batalha da Rússia",
+          "original_title": "Why We Fight: The Battle of Russia",
+          "year": 1943,
+          "score": 0.089,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.5626
+        },
+        {
+          "id": 182228,
+          "title": "100 Graus Abaixo de Zero",
+          "original_title": "100 Degrees Below Zero",
+          "year": 2013,
+          "score": 0.077,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.4022
+        }
+      ],
+      "tmdb_id": 330457,
+      "titulo_tmdb": "Frozen II",
+      "titulo_original_tmdb": "Frozen II",
+      "ano_tmdb": 2019,
+      "criterio": "id_confirmado",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    },
+    {
+      "id": "obsessao",
+      "titulo": "Obsessão",
+      "candidatos": [
+        {
+          "id": 1339713,
+          "title": "Obsessão",
+          "original_title": "Obsession",
+          "year": 2026,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 113.449
+        },
+        {
+          "id": 471506,
+          "title": "Obsessão",
+          "original_title": "Greta",
+          "year": 2019,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 7.8494
+        },
+        {
+          "id": 1107551,
+          "title": "Obsessão",
+          "original_title": "Obsessão",
+          "year": 2023,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 3.5148
+        },
+        {
+          "id": 332672,
+          "title": "Obsessão",
+          "original_title": "Rendez-Vous",
+          "year": 2015,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 3.4806
+        },
+        {
+          "id": 1522179,
+          "title": "Obsessão",
+          "original_title": "Obsessão",
+          "year": 2025,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.846
+        },
+        {
+          "id": 999291,
+          "title": "Obsessão",
+          "original_title": "Obsessão",
+          "year": 2022,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.7533
+        },
+        {
+          "id": 362644,
+          "title": "Obsessão",
+          "original_title": "Obsessão",
+          "year": 1973,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.6982
+        },
+        {
+          "id": 1514360,
+          "title": "Obsessão",
+          "original_title": "Obsessão",
+          "year": 2025,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4896
+        },
+        {
+          "id": 1700,
+          "title": "Louca Obsessão",
+          "original_title": "Misery",
+          "year": 1990,
+          "score": 0.632,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 10.6775
+        },
+        {
+          "id": 1296671,
+          "title": "Obsessão Maldita",
+          "original_title": "Obsessão Maldita",
+          "year": 1974,
+          "score": 0.597,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 4.5367
+        },
+        {
+          "id": 947612,
+          "title": "Obsessão Virtual",
+          "original_title": "Exploited",
+          "year": 2022,
+          "score": 0.597,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.9438
+        },
+        {
+          "id": 269955,
+          "title": "Perigosa Obsessão",
+          "original_title": "인간중독",
+          "year": 2014,
+          "score": 0.581,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 16.0227
+        }
+      ],
+      "status": "revisar",
+      "motivo": "ambiguidade: Obsessão possui várias versões, sem ano confirmado"
+    },
+    {
+      "id": "entre-facas-e-segredos-3-acorde-defunto-acorde",
+      "titulo": "Entre Facas e Segredos 3: Acorde, Defunto, Acorde",
+      "candidatos": [
+        {
+          "id": 812583,
+          "title": "Vivo ou Morto: Um Mistério Knives Out",
+          "original_title": "Wake Up Dead Man: A Knives Out Mystery",
+          "year": 2025,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 18.1909
+        },
+        {
+          "id": 1642331,
+          "title": "Wake Up, Dead Man",
+          "original_title": "Acorde, Homenzinho!",
+          "year": null,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4173
+        }
+      ],
+      "tmdb_id": 812583,
+      "titulo_tmdb": "Vivo ou Morto: Um Mistério Knives Out",
+      "titulo_original_tmdb": "Wake Up Dead Man: A Knives Out Mystery",
+      "ano_tmdb": 2025,
+      "criterio": "id_confirmado",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    },
+    {
+      "id": "tudo-por-um-popstar",
+      "titulo": "Tudo por um Popstar",
+      "candidatos": [
+        {
+          "id": 551572,
+          "title": "Tudo por um Pop Star",
+          "original_title": "Tudo por um Pop Star",
+          "year": 2018,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 1.4935
+        },
+        {
+          "id": 1175147,
+          "title": "Tudo por um Pop Star 2",
+          "original_title": "Tudo por um Pop Star 2",
+          "year": 2024,
+          "score": 0.902,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.2584
+        },
+        {
+          "id": 1369693,
+          "title": "Tudo Por um Popstar 2",
+          "original_title": "Tudo Por um Popstar 2",
+          "year": null,
+          "score": 0.887,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4627
+        },
+        {
+          "id": 32293,
+          "title": "As Feras da Música",
+          "original_title": "The Cheetah Girls",
+          "year": 2003,
+          "score": 0.161,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 3.0367
+        }
+      ],
+      "tmdb_id": 551572,
+      "titulo_tmdb": "Tudo por um Pop Star",
+      "titulo_original_tmdb": "Tudo por um Pop Star",
+      "ano_tmdb": 2018,
+      "criterio": "titulo_original_e_ano",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp"
+      ],
+      "cenas": 2,
+      "status": "importado"
+    },
+    {
+      "id": "aventuras-de-babas",
+      "titulo": "Aventuras de Babás",
+      "candidatos": [
+        {
+          "id": 360606,
+          "title": "Uma Aventura de Babás",
+          "original_title": "Adventures in Babysitting",
+          "year": 2016,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 3.5771
+        },
+        {
+          "id": 331836,
+          "title": "Babá Fora de Controle - Missão Brasil",
+          "original_title": "Babysitting 2",
+          "year": 2015,
+          "score": 0.742,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 3.5908
+        },
+        {
+          "id": 358353,
+          "title": "Bound & Babysitting",
+          "original_title": "Bound & Babysitting",
+          "year": 2015,
+          "score": 0.666,
+          "exact_alias": false,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 2.9165
+        },
+        {
+          "id": 262551,
+          "title": "Babá Fora de Controle",
+          "original_title": "Babysitting",
+          "year": 2014,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 6.294
+        },
+        {
+          "id": 14367,
+          "title": "Uma Noite de Aventuras",
+          "original_title": "Adventures in Babysitting",
+          "year": 1987,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 4.8178
+        },
+        {
+          "id": 664749,
+          "title": "Adventures in Babysitting",
+          "original_title": "Adventures in Babysitting",
+          "year": 1989,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.8792
+        },
+        {
+          "id": 375997,
+          "title": "Babysitting",
+          "original_title": "Babysitting",
+          "year": 2011,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 3.6932
+        },
+        {
+          "id": 809224,
+          "title": "Babysitting",
+          "original_title": "Babysitting",
+          "year": 2018,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 0.6827
+        },
+        {
+          "id": 258497,
+          "title": "Babysitting Andy",
+          "original_title": "Babysitting Andy",
+          "year": 2007,
+          "score": 0.683,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 5.6973
+        },
+        {
+          "id": 431841,
+          "title": "Babysitting Story",
+          "original_title": "Babysitting Story",
+          "year": 2014,
+          "score": 0.666,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 2.6701
+        },
+        {
+          "id": 108668,
+          "title": "As Aventuras De Hajji Baba",
+          "original_title": "The Adventures of Hajji Baba",
+          "year": 1954,
+          "score": 0.588,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.623
+        },
+        {
+          "id": 880615,
+          "title": "Baby-Sitting",
+          "original_title": "Baby-Sitting",
+          "year": 2012,
+          "score": 0.555,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.8975
+        }
+      ],
+      "tmdb_id": 360606,
+      "titulo_tmdb": "Uma Aventura de Babás",
+      "titulo_original_tmdb": "Adventures in Babysitting",
+      "ano_tmdb": 2016,
+      "criterio": "id_confirmado",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    },
+    {
+      "id": "kally-s-mashup-o-filme",
+      "titulo": "Kally's Mashup: O Filme",
+      "candidatos": [
+        {
+          "id": 788647,
+          "title": "Kally's Mashup! Um Aniversário Muito Kally!",
+          "original_title": "Kally's Mashup: Un cumpleaños muy Kally",
+          "year": 2021,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 1.9667
+        }
+      ],
+      "tmdb_id": 788647,
+      "titulo_tmdb": "Kally's Mashup! Um Aniversário Muito Kally!",
+      "titulo_original_tmdb": "Kally's Mashup: Un cumpleaños muy Kally",
+      "ano_tmdb": 2021,
+      "criterio": "titulo_original_e_ano",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp"
+      ],
+      "cenas": 4,
+      "status": "importado"
+    },
+    {
+      "id": "espirito-adolescente-teen-spirit",
+      "titulo": "Espírito Adolescente (Teen Spirit)",
+      "candidatos": [
+        {
+          "id": 440918,
+          "title": "Espírito Jovem",
+          "original_title": "Teen Spirit",
+          "year": 2019,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": true,
+          "has_poster": true,
+          "popularity": 5.5184
+        },
+        {
+          "id": 73108,
+          "title": "Uma Patricinha de Outro Mundo",
+          "original_title": "Teen Spirit",
+          "year": 2011,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 4.0999
+        },
+        {
+          "id": 1410706,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": 2012,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.5698
+        },
+        {
+          "id": 1611718,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": 2026,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.6454
+        },
+        {
+          "id": 850488,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": 2021,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4147
+        },
+        {
+          "id": 968528,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": 2016,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.4
+        },
+        {
+          "id": 1710489,
+          "title": "Teen Spirit!",
+          "original_title": "Teen Spirit!",
+          "year": 2026,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 0.5995
+        },
+        {
+          "id": 1139602,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": null,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 0.5678
+        },
+        {
+          "id": 1139598,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": null,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 0.4994
+        },
+        {
+          "id": 1477507,
+          "title": "Teen Spirit",
+          "original_title": "Teen Spirit",
+          "year": null,
+          "score": 1.0,
+          "exact_alias": true,
+          "year_match": false,
+          "has_poster": false,
+          "popularity": 0.4263
+        },
+        {
+          "id": 394740,
+          "title": "Spirit (Smells Like Teen Spirit)",
+          "original_title": "Spirit (Smells Like Teen Spirit)",
+          "year": 2007,
+          "score": 0.619,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 0.722
+        },
+        {
+          "id": 37081,
+          "title": "Sounds Like Teen Spirit",
+          "original_title": "Sounds Like Teen Spirit",
+          "year": 2009,
+          "score": 0.585,
+          "exact_alias": false,
+          "year_match": false,
+          "has_poster": true,
+          "popularity": 1.2267
+        }
+      ],
+      "tmdb_id": 440918,
+      "titulo_tmdb": "Espírito Jovem",
+      "titulo_original_tmdb": "Teen Spirit",
+      "ano_tmdb": 2019,
+      "criterio": "titulo_original_e_ano",
+      "arquivos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "cenas": 10,
+      "status": "importado"
+    }
+  ]
+}
