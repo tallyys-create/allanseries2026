@@ -59,7 +59,7 @@ jobs:
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
-            python scripts/importar_tmdb_filmes.py --only-id espirito-adolescente-teen-spirit --scenes 10 --force
+            python scripts/importar_tmdb_filmes.py --only-id "mensagens-para-isabelle,diva-la-vie-beauty-and-the-beat,heartstopper-para-sempre,o-ultimo-nascer-do-sol,ovelhas-detetives,isolamento-mortal,meu-namorado-e-uma-superestrela,a-boca-do-diabo,um-amor-magnifico,a-hipotese-do-amor,espirito-adolescente-teen-spirit" --scenes 10 --force
           else
             python scripts/importar_tmdb_filmes.py --start "$START" --limit "$LIMIT" --scenes "$SCENES"
           fi

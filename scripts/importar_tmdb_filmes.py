@@ -25,7 +25,9 @@ TOKEN = os.environ.get("TMDB_READ_ACCESS_TOKEN", "").strip()
 PINNED_TMDB_IDS = {
     "zombies-disney-channel": 483980,          # Z-O-M-B-I-E-S (2018)
     "zombies-2": 599521,
-    "espirito-adolescente-teen-spirit": 73108,  # Teen Spirit (2011), Gil Junger; não o musical de 2018                       # Z-O-M-B-I-E-S 2 (2020)
+    "espirito-adolescente-teen-spirit": 73108,  # Teen Spirit (2011), Gil Junger; não o musical de 2018
+    "diva-la-vie-beauty-and-the-beat": 1318642, # Diva La Vie (2025); não o homônimo de 2014
+    "o-ultimo-nascer-do-sol": 1516698,          # The Last Sunrise (2026); não o longa de 2019                       # Z-O-M-B-I-E-S 2 (2020)
     "zombies-3": 809107,                       # Z-O-M-B-I-E-S 3 (2022)
     "zombies-4-dawn-of-the-vampires": 1243341, # Z-O-M-B-I-E-S 4 (2025)
 }
@@ -184,9 +186,10 @@ def main():
     if args.limit>0:
         chosen = chosen[:args.limit]
     if args.only_id:
-        chosen = [m for m in movies if m["id"] == args.only_id]
-        if not chosen:
-            raise SystemExit("ID de filme não encontrado: " + args.only_id)
+        requested = {x.strip() for x in args.only_id.split(",") if x.strip()}
+        chosen = [m for m in movies if m["id"] in requested]
+        if len(chosen) != len(requested):
+            raise SystemExit("ID de filme não encontrado: " + ", ".join(sorted(requested - {m["id"] for m in chosen})))
     tmdb = TMDB()
     records = []
     for number, movie in enumerate(chosen, 1):
