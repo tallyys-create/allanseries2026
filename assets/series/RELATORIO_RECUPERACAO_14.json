@@ -1,0 +1,193 @@
+{
+  "fonte": "TMDB com IDs verificados + fotografias promocionais específicas",
+  "gerado_em": "2026-11-02T03:45:47.957541+00:00",
+  "processados": 14,
+  "com_poster": 14,
+  "com_cenas": 11,
+  "itens": [
+    {
+      "id": "duang-with-you",
+      "titulo": "Duang With You",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 284828,
+      "titulo_tmdb": "Duang com Você",
+      "ano_tmdb": 2026,
+      "origem_tmdb": [
+        "TH"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "khemjira-forever",
+      "titulo": "Khemjira Forever",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 1,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://i.ytimg.com/vi/aTi9XvIr66Q/maxresdefault.jpg",
+      "url_cenas": [
+        "https://i.ytimg.com/vi/essHZG3cQu0/maxresdefault.jpg"
+      ],
+      "nota": "Frames dos trailers oficiais do especial de 2026; não da série de 2025."
+    },
+    {
+      "id": "la-banda",
+      "titulo": "La Banda",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 2,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://static.wixstatic.com/media/cb2eac_43a684d0dc504750b8729312967d6210.png/v1/fill/w_800,h_800,al_c,q_90/cb2eac_43a684d0dc504750b8729312967d6210.png",
+      "url_cenas": [
+        "https://images.squarespace-cdn.com/content/v1/569538aec21b86e162486620/1465821324763-A3EG08FCKKF8I98R4KED/image-asset.jpeg",
+        "https://st1.uvnimg.com/dc/fb/a67b2a524cf294fd4cec50dcf9aa/rv4-2523.jpg"
+      ],
+      "nota": "Reality da Univision 2015 com Ricky Martin e CNCO."
+    },
+    {
+      "id": "malhacao-2002",
+      "titulo": "Malhação 2002",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 1,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://is1-ssl.mzstatic.com/image/thumb/RBoAQOSpFfZeXImqorLrkw/1200x675.jpg",
+      "url_cenas": [
+        "https://s2-gshow.glbimg.com/x4331CMW2RFUlRoEQNSGq1N4GJ8%3D/0x0%3A690x570/984x0/smart/filters%3Astrip_icc%28%29/s.glbimg.com/et/gs/f/original/2015/08/26/pedro_e_kailani.jpg"
+      ],
+      "nota": "Material da edição de 2002 com Pedro e Júlia (não a série genérica de 1995)."
+    },
+    {
+      "id": "malhacao-2018",
+      "titulo": "Malhação 2018",
+      "status": "parcial",
+      "poster": true,
+      "cenas": 0,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://www.agenciadw3.com.br/landingpage/storage/app/public/pictures/XhUKm7vK1yZzRqyQsZBUp1hrjXvV1zP3qDJbn4HO.png",
+      "url_cenas": [],
+      "nota": "Material de Vidas Brasileiras (2018), com a professora Gabriela."
+    },
+    {
+      "id": "maxton-hall",
+      "titulo": "Maxton Hall",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 250670,
+      "titulo_tmdb": "Maxton Hall - O Mundo Entre Nós",
+      "ano_tmdb": 2024,
+      "origem_tmdb": [
+        "DE"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "my-golden-blood",
+      "titulo": "My Golden Blood",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 237327,
+      "titulo_tmdb": "Meu Sangue Dourado",
+      "ano_tmdb": 2025,
+      "origem_tmdb": [
+        "TH"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "rebelde-brasil",
+      "titulo": "Rebelde Brasil",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 1,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://artworks.thetvdb.com/banners/v4/series/301280/posters/6095d3125c5e1.jpg",
+      "url_cenas": [
+        "https://s2.glbimg.com/YLvwkd_JeRRQxBQHz-4qlpqUlKA%3D/smart/e.glbimg.com/og/ed/f/original/2022/02/16/rebelde_elenco.jpg"
+      ],
+      "nota": "Record 2011, elenco Alice, Pedro, Roberta, Diego, Carla e Tomás."
+    },
+    {
+      "id": "rebelde-netflix",
+      "titulo": "Rebelde Netflix",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 134949,
+      "titulo_tmdb": "Rebelde",
+      "ano_tmdb": 2022,
+      "origem_tmdb": [
+        "MX"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "thame-e-po",
+      "titulo": "Thame e Po",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 252649,
+      "titulo_tmdb": "Thame e Po: Bate Coração",
+      "ano_tmdb": 2024,
+      "origem_tmdb": [
+        "TH"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "the-next-prince",
+      "titulo": "The Next Prince",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 217810,
+      "titulo_tmdb": "O Próximo Príncipe",
+      "ano_tmdb": 2025,
+      "origem_tmdb": [
+        "TH"
+      ],
+      "fonte": "TMDB"
+    },
+    {
+      "id": "the-boyfriend-temporada-2",
+      "titulo": "The Boyfriend — 2ª temporada",
+      "status": "recuperado",
+      "poster": true,
+      "cenas": 10,
+      "tmdb_id": 256220,
+      "titulo_tmdb": "O Namorado",
+      "ano_tmdb": 2024,
+      "origem_tmdb": [
+        "JP"
+      ],
+      "fonte": "TMDB (temporada 2 específica)"
+    },
+    {
+      "id": "a-usurpadollra",
+      "titulo": "A Usurpadollra",
+      "status": "parcial",
+      "poster": true,
+      "cenas": 0,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://images.metroimg.com/2026/07/rodrigo-apresentador-protagoniza-a-usurpadollra-parodia-feita-com-ia-1.jpg",
+      "url_cenas": [],
+      "nota": "Foto da novela-paródia de IA de Rodrigo Apresentador, 2026."
+    },
+    {
+      "id": "corrida-das-blogueiras-8",
+      "titulo": "Corrida das Blogueiras — Ano 8",
+      "status": "parcial",
+      "poster": true,
+      "cenas": 0,
+      "fonte": "Foto promocional / trailer específico",
+      "url_poster": "https://www.portaltela.com/s.01k8r8f7wx8pm/2026/04/corrida-das-blogueiras-8-temporada-e-confirmada-e-promete-edicao-historica.jpg",
+      "url_cenas": [],
+      "nota": "Foto promocional do Ano 8, estética rococó, 2026."
+    }
+  ]
+}
