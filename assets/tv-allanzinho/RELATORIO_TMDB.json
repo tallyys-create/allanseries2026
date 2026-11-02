@@ -1,0 +1,123 @@
+{
+  "fonte": "The Movie Database (TMDB) – TV API",
+  "catalogo": "tv-allanzinho",
+  "gerado_em": "2026-11-02T02:07:54.309035+00:00",
+  "total_catalogo": 23,
+  "processados": 5,
+  "inicio": 0,
+  "limite_cenas": 10,
+  "importado": 5,
+  "ja_existe": 0,
+  "revisar": 0,
+  "sem_imagens": 0,
+  "erro": 0,
+  "itens": [
+    {
+      "id": "o-pequeno-scooby-doo",
+      "titulo": "O Pequeno Scooby-Doo",
+      "status": "importado",
+      "tmdb_id": 418,
+      "titulo_tmdb": "O Pequeno Scooby-Doo",
+      "primeira_exibicao": "1988-09-10",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 5,
+      "cenas_no_github": 5,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp"
+      ]
+    },
+    {
+      "id": "juniper-lee",
+      "titulo": "Juniper Lee",
+      "status": "importado",
+      "tmdb_id": 446,
+      "titulo_tmdb": "A Vida e Aventuras de Juniper Lee",
+      "primeira_exibicao": "2005-05-30",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 4,
+      "cenas_no_github": 4,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp"
+      ]
+    },
+    {
+      "id": "baby-looney-tunes",
+      "titulo": "Baby Looney Tunes",
+      "status": "importado",
+      "tmdb_id": 670,
+      "titulo_tmdb": "Baby Looney Tunes",
+      "primeira_exibicao": "2002-09-07",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 7,
+      "cenas_no_github": 7,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp"
+      ]
+    },
+    {
+      "id": "winx-club",
+      "titulo": "Winx Club",
+      "status": "importado",
+      "tmdb_id": 1848,
+      "titulo_tmdb": "O Clube das Winx",
+      "primeira_exibicao": "2004-01-28",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 6,
+      "cenas_no_github": 6,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp"
+      ]
+    },
+    {
+      "id": "sakura-card-captors",
+      "titulo": "Sakura Card Captors",
+      "status": "importado",
+      "tmdb_id": 35790,
+      "titulo_tmdb": "Cardcaptor Sakura",
+      "primeira_exibicao": "1998-04-07",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    }
+  ]
+}
