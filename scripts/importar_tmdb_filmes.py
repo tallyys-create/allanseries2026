@@ -24,7 +24,8 @@ TOKEN = os.environ.get("TMDB_READ_ACCESS_TOKEN", "").strip()
 # Evita confundir os musicais Z-O-M-B-I-E-S da Disney com filmes de terror.
 PINNED_TMDB_IDS = {
     "zombies-disney-channel": 483980,          # Z-O-M-B-I-E-S (2018)
-    "zombies-2": 599521,                       # Z-O-M-B-I-E-S 2 (2020)
+    "zombies-2": 599521,
+    "espirito-adolescente-teen-spirit": 73108,  # Teen Spirit (2011), Cassie Scerbo e Lindsey Shaw                       # Z-O-M-B-I-E-S 2 (2020)
     "zombies-3": 809107,                       # Z-O-M-B-I-E-S 3 (2022)
     "zombies-4-dawn-of-the-vampires": 1243341, # Z-O-M-B-I-E-S 4 (2025)
 }
@@ -168,6 +169,7 @@ def main():
     parser.add_argument("--limit", type=int, default=0, help="0 para todos")
     parser.add_argument("--scenes", type=int, default=10, help="Máximo de cenas horizontais por filme (1 a 10)")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--only-id", default="", help="Importa um filme específico por ID")
     args = parser.parse_args()
     if not 1 <= args.scenes <= 10:
         parser.error("--scenes precisa estar entre 1 e 10")
@@ -181,6 +183,10 @@ def main():
     chosen = movies[max(0, args.start):]
     if args.limit>0:
         chosen = chosen[:args.limit]
+    if args.only_id:
+        chosen = [m for m in movies if m["id"] == args.only_id]
+        if not chosen:
+            raise SystemExit("ID de filme não encontrado: " + args.only_id)
     tmdb = TMDB()
     records = []
     for number, movie in enumerate(chosen, 1):
@@ -199,6 +205,10 @@ def main():
             movie_id = result["id"]
             images = tmdb.get(f"/movie/{movie_id}/images", {"include_image_language":"pt,en,null"})
             added = []
+            # Uma reimportação forçada troca as cenas antigas; não mantém arquivos de outro filme.
+            if args.force:
+                for stale in scenes_dir.glob("[0-9][0-9].webp"):
+                    stale.unlink()
             poster_file = select_poster(images, result)
             if poster_file and (args.force or not poster.exists()):
                 webp(tmdb.session, f"{CDN}/w780{poster_file}", poster, 600)

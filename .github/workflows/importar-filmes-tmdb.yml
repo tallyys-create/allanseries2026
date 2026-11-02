@@ -56,7 +56,13 @@ jobs:
           START: ${{ github.event.inputs.start || '0' }}
           LIMIT: ${{ github.event_name == 'push' && '10' || github.event.inputs.limit || '0' }}
           SCENES: ${{ github.event.inputs.scenes || '10' }}
-        run: python scripts/importar_tmdb_filmes.py --start "$START" --limit "$LIMIT" --scenes "$SCENES"
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python scripts/importar_tmdb_filmes.py --only-id espirito-adolescente-teen-spirit --scenes 10 --force
+          else
+            python scripts/importar_tmdb_filmes.py --start "$START" --limit "$LIMIT" --scenes "$SCENES"
+          fi
       - name: Publicar arquivos nas pastas de assets
         shell: bash
         run: |
