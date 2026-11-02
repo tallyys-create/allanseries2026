@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/recuperar-filmes-pendentes.yml"
+      - "scripts/recuperar_pendentes_tmdb.py"
 permissions:
   contents: write
 concurrency:
