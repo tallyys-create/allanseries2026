@@ -756,6 +756,27 @@ function migrateEnigmaAndObsessionDetails(){
   state.filmIdentityCorrections2026=1;
   save();
 }
+/* Sincroniza atualizações editoriais do catálogo sem perder vereditos, ordem,
+   títulos e fichas personalizados de obras adicionadas pelos espectadores.
+   Uma versão nova aplica correções inclusive a quem tinha dados antigos em localStorage. */
+function syncOfficialMovieMetadata(){
+  const edition='2026-11-02-editorial-v3';
+  if(state.movieMetadataEdition===edition)return;
+  const currentById=new Map(DEFAULT_SHOWS.map(show=>[show.id,show]));
+  let changed=false;
+  for(const show of state.shows){
+    const base=currentById.get(show.id);
+    if(!base)continue;
+    for(const field of ['title','year','country','episodes','genre','description','memory','aliases','tags','platform','catalogOrder']){
+      if(Object.hasOwn(base,field) && JSON.stringify(show[field])!==JSON.stringify(base[field])){
+        show[field]=structuredClone(base[field]);
+        changed=true;
+      }
+    }
+  }
+  state.movieMetadataEdition=edition;
+  if(changed||edition)save();
+}
 function mergeNewCatalogEntries(){
   // Amplia o catálogo sem substituir avaliações já salvas nas tiers.
   const known=new Set(state.shows.map(show=>show.id));
@@ -778,6 +799,7 @@ function init(){
   migrateMovieCatalogCorrections();
   mergeNewCatalogEntries();
   migrateEnigmaAndObsessionDetails();
+  syncOfficialMovieMetadata();
   state.shows.forEach(show=>delete show.video);
   migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();
   populateCountryFilter();render();bind();loadGalleryDirectory();
