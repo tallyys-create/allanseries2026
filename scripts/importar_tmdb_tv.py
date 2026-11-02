@@ -49,6 +49,9 @@ EXTRA_QUERIES = {
     "cavaleiros-do-zodiaco-lost-canvas": ["Saint Seiya: The Lost Canvas"],
 }
 
+# Fixa as versões, impedindo importar a Doctor Who clássica ou a novela turca.
+PINNED_TMDB_SERIES = {"doctor-who": 57243, "estilhacos": 298168}
+
 # Fichas referentes a uma temporada de uma série, não a uma série nova.
 # Conferir o ano original da produção, não o ano da temporada.
 PARENT_SERIES_YEARS = {
@@ -111,6 +114,17 @@ def score_candidate(show, result, wanted_year):
     return round(result_score, 4)
 
 def choose_result(show, api):
+    pinned = PINNED_TMDB_SERIES.get(show["id"])
+    if pinned:
+        item = api.get(f"/tv/{pinned}", {"language":"pt-BR"})
+        expected, actual = year(show.get("year")), first_year(item)
+        if not actual or (expected and actual != expected):
+            raise RuntimeError(f"TMDB {pinned}: ano incorreto ({actual}; esperado {expected})")
+        country = "GB" if show["id"] == "doctor-who" else "US"
+        origin = item.get("origin_country") or []
+        if origin and country not in origin:
+            raise RuntimeError(f"TMDB {pinned}: país incorreto ({origin})")
+        return item, 1.12, "ok"
     wanted_year = PARENT_SERIES_YEARS.get(show["id"], year(show.get("year")))
     candidates = {}
     for query in searches(show)[:6]:

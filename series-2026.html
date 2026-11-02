@@ -984,35 +984,34 @@ const DEFAULT_SHOWS=[
   },
   {
     "id": "doctor-who",
-    "title": "Doctor Who",
-    "year": "1963",
+    "title": "Doctor Who (2005)",
+    "year": "2005",
     "country": "Reino Unido",
-    "episodes": "Múltiplas temporadas · em continuidade",
-    "genre": "Ficção científica · Aventura · Fantasia",
+    "episodes": "13 temporadas e especiais · retomada de 2005",
+    "genre": "Ficção científica · Aventura · Drama · Fantasia",
     "tint": "#ffb347",
-    "description": "O Doutor, viajante do tempo alienígena, explora o universo em uma nave que parece uma cabine policial. A cada regeneração, novas companhias e ameaças testam seu senso de justiça.",
-    "memory": "A TARDIS, o sonic screwdriver, as regenerações, Daleks, Cybermen e os companheiros de viagem.",
-    "image": "https://image.tmdb.org/t/p/original/soNF9L12H2Hnruu8bCOOEwAWCpf.jpg",
-    "gallery": [
-      "https://image.tmdb.org/t/p/original/tPwpc9Uo1Fly50urDxfGWWk7H77.jpg",
-      "https://image.tmdb.org/t/p/original/j1FK8iZXNqpCmQekt6gLlgZCq0Y.jpg",
-      "https://image.tmdb.org/t/p/original/tuomlOy0TxFkOhGe0ZDoLTmy6lW.jpg",
-      "https://image.tmdb.org/t/p/original/wTRa6iCj6vO0AfySNOViLJxciC3.jpg",
-      "https://image.tmdb.org/t/p/original/8kVGYA9CkVaFZKoVRe7bsFRGrS2.jpg"
-    ],
+    "description": "Após anos longe da televisão, o Doutor volta a viajar pelo tempo e pelo espaço na TARDIS. Nesta fase iniciada em 2005, o Nono Doutor conhece Rose Tyler, uma jovem londrina que embarca em aventuras por planetas desconhecidos, acontecimentos históricos e futuros improváveis. Ao longo das regenerações, ele enfrenta Daleks, Cybermen e ameaças capazes de alterar o destino do universo.",
+    "memory": "Rose Tyler conhecendo o Nono Doutor, a TARDIS por dentro, o Décimo Doutor de David Tennant, a frase “Allons-y!” e as histórias com Daleks e Cybermen.",
+    "image": "",
+    "gallery": [],
     "aliases": [
+      "Doctor Who 2005",
+      "Doctor Who (2005–2022)",
+      "Doctor Who Nova Série",
+      "Doctor Who New Who",
       "Dr Who",
       "Doutor Quem"
     ],
     "tags": [
       "Ficção científica",
       "Aventura",
+      "Drama",
       "Fantasia",
       "Reino Unido",
       "BBC",
-      "Disney+"
+      "2005"
     ],
-    "platform": "BBC, Disney+"
+    "platform": "BBC"
   },
   {
     "id": "drama-total",
@@ -1083,33 +1082,34 @@ const DEFAULT_SHOWS=[
   },
   {
     "id": "estilhacos",
-    "title": "Estilhaços",
-    "year": "2014",
-    "country": "Turquia",
-    "episodes": "3 temporadas · 97 episódios",
-    "genre": "Drama · Novela · Família",
+    "title": "Estilhaços (The Shards)",
+    "year": "2026",
+    "country": "Estados Unidos",
+    "episodes": "1 temporada · 2026",
+    "genre": "Suspense psicológico · Mistério · Drama · Crime",
     "tint": "#8be7b4",
-    "description": "Duas meninas trocadas na maternidade crescem em famílias muito diferentes. A descoberta conecta duas mães, dois pais e uma rede de conflitos, amores e segredos.",
-    "memory": "Cansu e Hazal, Gülseren e Dilara; famílias de classes sociais opostas e as revelações da troca.",
-    "image": "https://image.tmdb.org/t/p/original/hMkkiXVwiGcJ5yF1kcsN7LUEDXu.jpg",
-    "gallery": [
-      "https://image.tmdb.org/t/p/original/AhzF2bkYYybcCT4PnqpoagRGBWJ.jpg",
-      "https://image.tmdb.org/t/p/original/vTzfZ55Qp1GP3uKGSMlsLEYrn6.jpg",
-      "https://image.tmdb.org/t/p/original/tqGdfZG4dEv0zlG4CYPS3jA0w6N.jpg",
-      "https://image.tmdb.org/t/p/original/eEkc61PVUxojRuHXucJ3bD9yYME.jpg"
-    ],
+    "description": "Em Los Angeles, no início dos anos 1980, Bret é um adolescente privilegiado que sonha em ser escritor e estuda numa escola de elite. A chegada do misterioso Robert Mallory desperta nele uma obsessão crescente, justamente quando um assassino em série passa a aterrorizar a cidade. Entre festas, ciúmes, desejos e segredos, Bret começa a desconfiar de que o perigo está mais próximo do seu círculo de amigos do que imagina.",
+    "memory": "Bret Easton Ellis, Robert Mallory, Susan Reynolds, a estética neon dos anos 1980 e o assassino conhecido como The Trawler, rondando adolescentes de Los Angeles.",
+    "image": "",
+    "gallery": [],
     "aliases": [
-      "Paramparça",
-      "Broken Pieces",
-      "Paramparca"
+      "The Shards",
+      "The Shards (2026)",
+      "Estilhaços FX",
+      "Estilhaços Disney+",
+      "Ryan Murphy The Shards"
     ],
-    "platform": "Star TV",
+    "platform": "FX, Disney+",
     "tags": [
+      "Suspense",
       "Drama",
-      "Novela",
-      "Família",
-      "Turquia",
-      "Star TV"
+      "Mistério",
+      "Crime",
+      "Adolescente",
+      "Estados Unidos",
+      "FX",
+      "Disney+",
+      "2026"
     ]
   },
   {
@@ -3197,6 +3197,8 @@ const BACKUP_POSTERS={
 };
 /* Imagens do GitHub Pages: primeiro assets/, depois os links externos da ficha.
    Os caminhos são relativos ao index.html, inclusive em Pages de projeto. */
+const SERIES_FIXED_IDS=new Set(['doctor-who','estilhacos']);
+const SERIES_FIXED_IMAGES_VERSION='20261102-v2';
 const assetCheck=new Map();
 const localGalleryFiles=new Map();
 const localGalleryProbe=new Map();
@@ -3209,14 +3211,16 @@ function posterCandidates(show,mini=false){
   const folder=assetFolder(show),src=String(show.image||'');
   const original=DEFAULT_SHOWS.find(s=>s.id===show.id);
   const isDefault=original&&original.image===show.image;
+  const fixed=SERIES_FIXED_IDS.has(show.id);
   return [
-    ...(folder?[folder+'poster.webp']:[]),
-    ...(src?[src]:[]),
-    ...(isDefault?(BACKUP_POSTERS[show.id]||[]):[])
+    ...(folder?[folder+'poster.webp'+(fixed?'?v='+SERIES_FIXED_IMAGES_VERSION:'')]:[]),
+    ...(!fixed&&src?[src]:[]),
+    ...(!fixed&&isDefault?(BACKUP_POSTERS[show.id]||[]):[])
   ].filter(Boolean);
 }
 function sceneCandidates(show,index){
   const local=localGalleryFiles.get(show.id)||[];
+  if(SERIES_FIXED_IDS.has(show.id))return local[index]?[local[index]+'?v='+SERIES_FIXED_IMAGES_VERSION]:[];
   const external=Array.isArray(show.gallery)?show.gallery.filter(v=>typeof v==='string'&&v.trim())[index]:'';
   return (local.length?[local[index],external]:[external]).filter(Boolean);
 }
@@ -3378,6 +3382,18 @@ function applyReferenceTiers(old){
     locations:old.locations
   };
 }
+/* Corrige obras homônimas sem apagar os vereditos nem as posições na tier. */
+function migrateDoctorShardsNov2026(){
+  if(state.doctorShardsNov2026V1===1)return;
+  const official=new Map(DEFAULT_SHOWS.filter(x=>SERIES_FIXED_IDS.has(x.id)).map(x=>[x.id,x]));
+  for(const show of state.shows){
+    const base=official.get(show.id);
+    if(!base)continue;
+    for(const field of ['title','year','country','episodes','genre','description','memory','image','gallery','aliases','tags','platform'])show[field]=structuredClone(base[field]);
+  }
+  state.doctorShardsNov2026V1=1;
+  save();
+}
 function mergeNewCatalogEntries(){
   // Amplia o catálogo sem substituir avaliações já salvas nas tiers.
   const known=new Set(state.shows.map(show=>show.id));
@@ -3419,6 +3435,7 @@ function init(){
     }
   }catch(e){state=defaults()}
   mergeNewCatalogEntries();
+  migrateDoctorShardsNov2026();
   state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();populateCountryFilter();render();bind();loadGalleryDirectory();
 }
 function defaults(){return {tiers:structuredClone(DEFAULT_TIERS),shows:structuredClone(DEFAULT_SHOWS),locations:Object.fromEntries(DEFAULT_SHOWS.map(s=>[s.id,'pool']))}}
