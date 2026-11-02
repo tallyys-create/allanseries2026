@@ -638,6 +638,10 @@ function probeLocalGallery(show){
   localGalleryProbe.set(show.id,job);
 }
 const KEY='allanwoodtv-filmes-publico-v1'; const LEGACY_KEYS=[];let state;let history=[];let modalType=null;let activeId=null;let draggedId=null;let editingId=null;let galleryTimer=null;let galleryIndex=0;let galleryPaused=false;let libraryLimit=24;const LIBRARY_BATCH=24;const $=(id)=>document.getElementById(id);const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const normalizeSearch=(s)=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();const showSearchBlob=(show)=>normalizeSearch([show.title,...(Array.isArray(show.aliases)?show.aliases:[]),show.country,show.platform,show.genre,...(Array.isArray(show.tags)?show.tags:[])].join(' '));
+// Ordenação por franquia: base oficial sempre prevalece; títulos exibidos não são alterados.
+const catalogOrderById=new Map(DEFAULT_SHOWS.map(show=>[show.id,show.catalogOrder||show.title]));
+const catalogSortKey=(show)=>normalizeSearch(catalogOrderById.get(show.id)||show.catalogOrder||show.title);
+const compareCatalog=(a,b)=>catalogSortKey(a).localeCompare(catalogSortKey(b),'pt-BR');
 const matchesSearch=(show,q)=>{if(!q)return true;const blob=showSearchBlob(show),words=blob.split(' ');return q.split(' ').every(term=>term.length<=2?words.includes(term):blob.includes(term))};
 function migrateTags(){const byId=new Map(DEFAULT_SHOWS.map(s=>[s.id,s]));let updated=false;for(const show of state.shows){const base=byId.get(show.id);if(!Array.isArray(show.tags)){show.tags=base?structuredClone(base.tags||[]):[];updated=true}if(!Array.isArray(show.aliases)){show.aliases=base?structuredClone(base.aliases||[]):[];updated=true}if(typeof show.platform!=='string'){show.platform=base?.platform||'';updated=true}if(base&&state.tagsVersion!==1){if(!show.country&&base.country){show.country=base.country;updated=true}if(!show.genre&&base.genre){show.genre=base.genre;updated=true}}}if(state.tagsVersion!==1){state.tagsVersion=1;updated=true}if(updated)save()}
 
@@ -832,7 +836,7 @@ function renderLibrary(){
    if(genre&&!normalizeSearch([s.genre,...(s.tags||[])].join(' ')).includes(genre))return false;
    if(platform&&!normalizeSearch([s.platform,...(s.tags||[])].join(' ')).includes(platform))return false;
    return true;
- }).sort((a,b)=>normalizeSearch(a.catalogOrder||a.title).localeCompare(normalizeSearch(b.catalogOrder||b.title),'pt-BR'));
+ }).sort(compareCatalog);
  const shows=full.slice(0,libraryLimit);
  $('libraryTitle').textContent=(filterActive||status==='judged'||status==='all')?'🔎 Catálogo de filmes':'🎬 Aguardando julgamento';
  $('searchStatus').textContent=`${full.length} ${full.length===1?'filme encontrado':'filmes encontrados'}`;
@@ -1183,12 +1187,14 @@ function previewPosition(zone,target,ev){
   if(!dragPreview)return;
   let anchor=null;
   if(isPool){
-    // O catálogo é alfabético: respeitar a posição após o soltar.
-    const name=state.shows.find(s=>s.id===draggedId)?.title||'';
+    // Mantém as franquias juntas também durante o arraste de volta ao catálogo.
+    const dragged=state.shows.find(show=>show.id===draggedId);
     const peers=[...dock.children].filter(el=>el.classList.contains('library-item')
       &&el!==dragPreview&&el!==dragOrigin);
-    anchor=peers.find(el=>(el.querySelector('.title-under')?.textContent||'')
-      .localeCompare(name,'pt-BR',{sensitivity:'base'})>0)||null;
+    anchor=peers.find(el=>{
+      const peer=state.shows.find(show=>show.id===el.querySelector('.series-card')?.dataset.id);
+      return dragged&&peer&&compareCatalog(peer,dragged)>0;
+    })||null;
   }else{
     // Evita oscilações quando o cursor já está dentro da posição prevista.
     if(dragPreview.parentElement===dock){
@@ -1463,7 +1469,7 @@ function openDetails(id){
   document.querySelectorAll('[data-rank]').forEach(b=>b.addEventListener('click',()=>{move(id,b.dataset.rank);closeModal()}));
   $('editShowBtn').onclick=()=>openShowForm(id);
   $('nextPendingBtn').onclick=()=>{
-    const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort((a,b)=>normalizeSearch(a.catalogOrder||a.title).localeCompare(normalizeSearch(b.catalogOrder||b.title),'pt-BR'));
+    const queue=state.shows.filter(x=>locationOf(x.id)==='pool').sort(compareCatalog);
     const pos=queue.findIndex(x=>x.id===id);
     const next=queue[(pos+1+queue.length)%queue.length];
     if(next)openDetails(next.id);else toast('Não há filmes aguardando julgamento.');
@@ -1511,7 +1517,7 @@ function openTierForm(){
   $('tierForm').onsubmit=ev=>{ev.preventDefault();checkpoint();state.tiers.forEach((t,i)=>{t.name=$('tier-name-'+i).value.trim()||t.name;t.description=$('tier-desc-'+i).value.trim();t.color=$('tier-color-'+i).value});save();render();closeModal();toast('Categorias e explicações atualizadas!')};
 }
 function manageUnwatched(){
-  const hidden=state.shows.filter(show=>locationOf(show.id)==='unwatched').sort((a,b)=>normalizeSearch(a.title).localeCompare(normalizeSearch(b.title),'pt-BR'));
+  const hidden=state.shows.filter(show=>locationOf(show.id)==='unwatched').sort(compareCatalog);
   if(!hidden.length){toast('Nenhum filme marcado como não assistido.');return}
   modalType='unwatched';activeId=null;
   openModal(`<div class="modalform"><div class="detail-kicker">ALLANWOODTV</div><h2>Não assistidos</h2><div class="unwatched-list">${hidden.map(s=>`<div class="unwatched-row"><img alt="" loading="lazy"><strong>${esc(s.title)}</strong><button type="button" class="button small" data-restore-unwatched="${esc(s.id)}">↩ Recuperar</button></div>`).join('')}</div><div class="formactions"><button class="button" type="button" id="closeUnwatchedBtn">Fechar</button></div></div>`);

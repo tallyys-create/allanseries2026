@@ -21,7 +21,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "zombies 01"
   },
   {
     "id": "zombies-2",
@@ -44,7 +45,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "zombies 02"
   },
   {
     "id": "viih-tube-em-enigma",
@@ -261,7 +263,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Comédia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "mamma mia 01"
   },
   {
     "id": "barbie-a-princesa-e-a-popstar",
@@ -284,7 +287,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 08"
   },
   {
     "id": "tini-depois-de-violetta",
@@ -360,7 +364,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Comédia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "mamma mia 02"
   },
   {
     "id": "hannah-montana-especial-de-20-aniversario",
@@ -388,7 +393,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Especial",
       "Documentário"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "hannah montana 02"
   },
   {
     "id": "lemonade-mouth",
@@ -456,7 +462,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "zombies 03"
   },
   {
     "id": "after-sundown",
@@ -503,7 +510,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "zombies 04"
   },
   {
     "id": "a-bailarina-ballerina",
@@ -615,7 +623,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a nova cinderela 04"
   },
   {
     "id": "a-nova-cinderela",
@@ -637,7 +646,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a nova cinderela 01"
   },
   {
     "id": "cinderela-disney-1950",
@@ -660,7 +670,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Musical",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "cinderela disney 01"
   },
   {
     "id": "cinderela-iii-uma-volta-no-tempo",
@@ -683,7 +694,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Romance",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "cinderela disney 02"
   },
   {
     "id": "cinderela-pop",
@@ -731,7 +743,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a nova cinderela 03"
   },
   {
     "id": "outro-conto-da-nova-cinderela",
@@ -756,7 +769,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a nova cinderela 02"
   },
   {
     "id": "vermelho-branco-e-sangue-azul",
@@ -937,7 +951,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "para todos os garotos 01"
   },
   {
     "id": "como-se-fosse-a-primeira-vez",
@@ -1045,7 +1060,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "crepusculo 01"
   },
   {
     "id": "a-saga-crepusculo-lua-nova",
@@ -1067,7 +1083,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "crepusculo 02"
   },
   {
     "id": "16-desejos",
@@ -1112,7 +1129,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "crepusculo 03"
   },
   {
     "id": "mensagens-para-isabelle",
@@ -1155,7 +1173,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "as irmas vampiras 01"
   },
   {
     "id": "a-saga-crepusculo-amanhecer-parte-1",
@@ -1177,7 +1196,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "crepusculo 04"
   },
   {
     "id": "a-saga-crepusculo-amanhecer-parte-2",
@@ -1199,7 +1219,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Drama",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "crepusculo 05"
   },
   {
     "id": "os-vampiros-que-se-mordam",
@@ -1311,7 +1332,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "minha culpa 01"
   },
   {
     "id": "um-amor-para-recordar",
@@ -1354,7 +1376,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "as irmas vampiras 02"
   },
   {
     "id": "as-irmas-vampiras-3",
@@ -1376,7 +1399,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "as irmas vampiras 03"
   },
   {
     "id": "a-pequena-sereia-disney-1989",
@@ -1400,7 +1424,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Romance",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a pequena sereia 01"
   },
   {
     "id": "a-bela-adormecida-disney-1959",
@@ -1468,7 +1493,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "frozen 01"
   },
   {
     "id": "frozen-2",
@@ -1491,7 +1517,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "frozen 02"
   },
   {
     "id": "a-garota-da-capa-vermelha",
@@ -1537,7 +1564,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 03"
   },
   {
     "id": "e-fada",
@@ -1606,7 +1634,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "para todos os garotos 02"
   },
   {
     "id": "zapped",
@@ -1817,7 +1846,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "para todos os garotos 03"
   },
   {
     "id": "camp-rock",
@@ -1840,7 +1870,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "camp rock 01"
   },
   {
     "id": "teen-beach-movie",
@@ -2607,7 +2638,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 02"
   },
   {
     "id": "barbie-vida-de-sereia",
@@ -2629,7 +2661,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 05"
   },
   {
     "id": "barbie-a-princesa-e-a-plebeia",
@@ -2652,7 +2685,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 01"
   },
   {
     "id": "barbie-escola-de-princesas",
@@ -2674,7 +2708,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 06"
   },
   {
     "id": "barbie-e-o-segredo-das-fadas",
@@ -2696,7 +2731,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 07"
   },
   {
     "id": "tudo-por-um-popstar",
@@ -2832,7 +2868,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Fantasia",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "barbie 04"
   },
   {
     "id": "guerreiras-do-k-pop",
@@ -3063,7 +3100,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "camp rock 02"
   },
   {
     "id": "dancarina-imperfeita-work-it",
@@ -3152,7 +3190,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Romance",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "a pequena sereia 02"
   },
   {
     "id": "a-bela-e-a-fera-live-action",
@@ -3240,7 +3279,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "minha culpa 02"
   },
   {
     "id": "the-rocky-horror-picture-show",
@@ -3285,7 +3325,8 @@ window.ALLAN_CATALOG_FILMES=[
       "Adolescente",
       "AllanWoodTV"
     ],
-    "platform": ""
+    "platform": "",
+    "catalogOrder": "hannah montana 01"
   },
   {
     "id": "os-feiticeiros-de-waverly-place-o-filme",
