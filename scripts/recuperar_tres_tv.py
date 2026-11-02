@@ -13,6 +13,27 @@ from datetime import datetime, timezone
 
 from importar_tmdb_filmes import ROOT, CDN, TMDB, webp, year, select_poster, select_scenes
 
+# Fotos de Madeline confirmadas em páginas da série animada de 1993.
+# Fontes: Prime Video (1993), TV Guide (Madeline 1993) e BravePlus (S01 E11).
+# Não misturar com o filme live-action nem com edições posteriores.
+MADELINE_EXTERNAL = [
+    {
+        "source": "Prime Video - Madeline (1993)",
+        "url": "https://m.media-amazon.com/images/S/pv-target-images/676a093e8de8e18a10c095c62cac3e09b5c943eabab1dd81e4b789fbf8714b32._SX1080_FMjpg_.jpg",
+        "page": "https://www.primevideo.com/-/pt/detail/0O9LLXRD43CKKESBAZ5SMV841G",
+    },
+    {
+        "source": "TV Guide - Madeline (1993)",
+        "url": "https://cdn.jwplayer.com/thumbs/3bWshvcp-640.jpg",
+        "page": "https://www.tvguide.com/tvshows/madeline/1030156128/",
+    },
+    {
+        "source": "BravePlus - Madeline S01 E11",
+        "url": "https://alpha.uscreencdn.com/1110xnull/images/programs/3498251/horizontal/big_c128bf4a-0cd6-4e6c-8c48-0c68d1f1acb4.jpg?auto=webp",
+        "page": "https://watch.braveplus.com/programs/madeline-1-11",
+    },
+]
+
 FOLDER = ROOT / "assets" / "tv-allanzinho"
 TARGETS = {
     "pokemon-jornadas": {
@@ -150,6 +171,27 @@ def save_target(api, slug, target):
             result["new_files"].append(f"cenas/{index:02d}.webp")
         except Exception as exc:
             result["warnings"].append(f"Falha na cena {index:02d}: {str(exc)[:150]}")
+    if slug=="madeline" and not list(scene_folder.glob("[0-9][0-9].webp")):
+        # O TMDB tem o pôster correto, mas não tem imagens de episódios.
+        # Usar apenas fotos reais atribuídas à série de 1993.
+        import requests
+        session=requests.Session()
+        session.headers.update({
+            "User-Agent":"Mozilla/5.0 (compatible; AllanWoodTV/1.0)",
+            "Accept":"image/webp,image/jpeg,image/*",
+        })
+        result["external_images"]=[]
+        for source in MADELINE_EXTERNAL:
+            index=len(result["external_images"])+1
+            dest=scene_folder/f"{index:02d}.webp"
+            try:
+                webp(session,source["url"],dest,1200)
+                result["new_files"].append(f"cenas/{index:02d}.webp")
+                result["external_images"].append(source)
+            except Exception as exc:
+                result["warnings"].append(
+                    f"Imagem externa {source['source']}: {str(exc)[:160]}"
+                )
     result["poster_exists"]=poster.exists()
     result["scene_count"]=len(list(scene_folder.glob("[0-9][0-9].webp")))
     result["stills_at_tmdb"]=len(stills)
