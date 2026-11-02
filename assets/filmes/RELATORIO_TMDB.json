@@ -1,18 +1,34 @@
 {
   "fonte": "The Movie Database (TMDB)",
-  "gerado_em": "2026-11-02T03:05:59.382989+00:00",
+  "gerado_em": "2026-11-02T03:09:37.579415+00:00",
   "total_catalogo": 148,
   "processados": 1,
   "limite_cenas": 10,
-  "importados": 0,
+  "importados": 1,
   "revisar": 0,
-  "erros": 1,
+  "erros": 0,
   "itens": [
     {
       "id": "espirito-adolescente-teen-spirit",
-      "titulo": "Espírito Adolescente (Teen Spirit)",
-      "status": "erro",
-      "motivo": "TMDB 73108: ano inconsistente (2018 vs 2011)"
+      "titulo": "Espírito Adolescente (Uma Patricinha de Outro Mundo)",
+      "status": "importado",
+      "tmdb_id": 73108,
+      "titulo_tmdb": "Uma Patricinha de Outro Mundo",
+      "similaridade": 1.1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp"
+      ],
+      "cenas_no_tmdb": 9,
+      "cenas_no_github": 9
     }
   ]
 }
