@@ -1,0 +1,102 @@
+{
+  "fonte": "The Movie Database (TMDB) – TV API",
+  "catalogo": "series",
+  "gerado_em": "2026-11-02T02:05:09.260171+00:00",
+  "total_catalogo": 92,
+  "processados": 5,
+  "inicio": 0,
+  "limite_cenas": 10,
+  "importado": 4,
+  "ja_existe": 1,
+  "revisar": 0,
+  "sem_imagens": 0,
+  "erro": 0,
+  "itens": [
+    {
+      "id": "alice-in-borderland",
+      "titulo": "Alice in Borderland",
+      "status": "importado",
+      "tmdb_id": 110316,
+      "titulo_tmdb": "Alice in Borderland",
+      "primeira_exibicao": "2020-12-10",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "anne-with-an-e",
+      "titulo": "Anne with an E",
+      "status": "importado",
+      "tmdb_id": 70785,
+      "titulo_tmdb": "Anne com um \"E\"",
+      "primeira_exibicao": "2017-03-19",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "beleza-verdadeira",
+      "titulo": "Beleza Verdadeira",
+      "status": "importado",
+      "tmdb_id": 112888,
+      "titulo_tmdb": "Beleza Verdadeira",
+      "primeira_exibicao": "2020-12-09",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "bia",
+      "titulo": "Bia",
+      "status": "ja_existe",
+      "tmdb_id": 90823,
+      "titulo_tmdb": "BIA",
+      "primeira_exibicao": "2019-06-24",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 6,
+      "cenas_no_github": 6,
+      "arquivos_novos": []
+    },
+    {
+      "id": "big-time-rush",
+      "titulo": "Big Time Rush",
+      "status": "importado",
+      "tmdb_id": 31356,
+      "titulo_tmdb": "Big Time Rush",
+      "primeira_exibicao": "2009-11-28",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    }
+  ]
+}
