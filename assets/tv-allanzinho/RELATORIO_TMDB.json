@@ -1,21 +1,21 @@
 {
   "fonte": "The Movie Database (TMDB) – TV API",
   "catalogo": "tv-allanzinho",
-  "gerado_em": "2026-11-02T02:07:54.309035+00:00",
+  "gerado_em": "2026-11-02T02:11:53.637131+00:00",
   "total_catalogo": 23,
-  "processados": 5,
+  "processados": 23,
   "inicio": 0,
   "limite_cenas": 10,
-  "importado": 5,
-  "ja_existe": 0,
-  "revisar": 0,
+  "importado": 15,
+  "ja_existe": 5,
+  "revisar": 3,
   "sem_imagens": 0,
   "erro": 0,
   "itens": [
     {
       "id": "o-pequeno-scooby-doo",
       "titulo": "O Pequeno Scooby-Doo",
-      "status": "importado",
+      "status": "ja_existe",
       "tmdb_id": 418,
       "titulo_tmdb": "O Pequeno Scooby-Doo",
       "primeira_exibicao": "1988-09-10",
@@ -23,19 +23,12 @@
       "poster_no_github": true,
       "cenas_disponiveis": 5,
       "cenas_no_github": 5,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp",
-        "cenas/05.webp"
-      ]
+      "arquivos_novos": []
     },
     {
       "id": "juniper-lee",
       "titulo": "Juniper Lee",
-      "status": "importado",
+      "status": "ja_existe",
       "tmdb_id": 446,
       "titulo_tmdb": "A Vida e Aventuras de Juniper Lee",
       "primeira_exibicao": "2005-05-30",
@@ -43,18 +36,12 @@
       "poster_no_github": true,
       "cenas_disponiveis": 4,
       "cenas_no_github": 4,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "arquivos_novos": []
     },
     {
       "id": "baby-looney-tunes",
       "titulo": "Baby Looney Tunes",
-      "status": "importado",
+      "status": "ja_existe",
       "tmdb_id": 670,
       "titulo_tmdb": "Baby Looney Tunes",
       "primeira_exibicao": "2002-09-07",
@@ -62,6 +49,45 @@
       "poster_no_github": true,
       "cenas_disponiveis": 7,
       "cenas_no_github": 7,
+      "arquivos_novos": []
+    },
+    {
+      "id": "winx-club",
+      "titulo": "Winx Club",
+      "status": "ja_existe",
+      "tmdb_id": 1848,
+      "titulo_tmdb": "O Clube das Winx",
+      "primeira_exibicao": "2004-01-28",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 6,
+      "cenas_no_github": 6,
+      "arquivos_novos": []
+    },
+    {
+      "id": "sakura-card-captors",
+      "titulo": "Sakura Card Captors",
+      "status": "ja_existe",
+      "cenas_no_github": 10
+    },
+    {
+      "id": "pokemon-jornadas",
+      "titulo": "Pokémon Jornadas",
+      "status": "revisar",
+      "motivo": "correspondencia_insegura",
+      "similaridade": -1.0
+    },
+    {
+      "id": "as-meninas-superpoderosas",
+      "titulo": "As Meninas Superpoderosas",
+      "status": "importado",
+      "tmdb_id": 607,
+      "titulo_tmdb": "As Meninas Superpoderosas",
+      "primeira_exibicao": "1998-11-18",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
       "arquivos_novos": [
         "poster.webp",
         "cenas/01.webp",
@@ -70,20 +96,40 @@
         "cenas/04.webp",
         "cenas/05.webp",
         "cenas/06.webp",
-        "cenas/07.webp"
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
       ]
     },
     {
-      "id": "winx-club",
-      "titulo": "Winx Club",
+      "id": "os-camundongos-aventureiros",
+      "titulo": "Os Camundongos Aventureiros",
       "status": "importado",
-      "tmdb_id": 1848,
-      "titulo_tmdb": "O Clube das Winx",
-      "primeira_exibicao": "2004-01-28",
+      "tmdb_id": 16882,
+      "titulo_tmdb": "Os Camundongos Aventureiros",
+      "primeira_exibicao": "1998-03-01",
+      "similaridade": 1.0,
+      "poster_no_github": true,
+      "cenas_disponiveis": 2,
+      "cenas_no_github": 2,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp"
+      ]
+    },
+    {
+      "id": "a-pequena-sereia-serie-animada",
+      "titulo": "A Pequena Sereia (série animada)",
+      "status": "importado",
+      "tmdb_id": 2675,
+      "titulo_tmdb": "A Pequena Sereia",
+      "primeira_exibicao": "1992-09-12",
       "similaridade": 1.08,
       "poster_no_github": true,
-      "cenas_disponiveis": 6,
-      "cenas_no_github": 6,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
       "arquivos_novos": [
         "poster.webp",
         "cenas/01.webp",
@@ -91,16 +137,102 @@
         "cenas/03.webp",
         "cenas/04.webp",
         "cenas/05.webp",
-        "cenas/06.webp"
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
       ]
     },
     {
-      "id": "sakura-card-captors",
-      "titulo": "Sakura Card Captors",
+      "id": "the-looney-tunes-show",
+      "titulo": "The Looney Tunes Show",
       "status": "importado",
-      "tmdb_id": 35790,
-      "titulo_tmdb": "Cardcaptor Sakura",
-      "primeira_exibicao": "1998-04-07",
+      "tmdb_id": 32605,
+      "titulo_tmdb": "O Show dos Looney Tunes",
+      "primeira_exibicao": "2011-05-03",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "power-rangers-tempestade-ninja",
+      "titulo": "Power Rangers: Tempestade Ninja",
+      "status": "revisar",
+      "motivo": "correspondencia_insegura",
+      "similaridade": -1.0
+    },
+    {
+      "id": "o-incrivel-mundo-de-gumball",
+      "titulo": "O Incrível Mundo de Gumball",
+      "status": "importado",
+      "tmdb_id": 37606,
+      "titulo_tmdb": "O Incrível Mundo de Gumball",
+      "primeira_exibicao": "2011-05-03",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "bob-esponja-calca-quadrada",
+      "titulo": "Bob Esponja Calça Quadrada",
+      "status": "importado",
+      "tmdb_id": 387,
+      "titulo_tmdb": "Bob Esponja",
+      "primeira_exibicao": "1999-05-01",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "sailor-moon-classico",
+      "titulo": "Sailor Moon (clássico)",
+      "status": "importado",
+      "tmdb_id": 3570,
+      "titulo_tmdb": "Sailor Moon",
+      "primeira_exibicao": "1992-03-07",
       "similaridade": 1.12,
       "poster_no_github": true,
       "cenas_disponiveis": 10,
@@ -117,6 +249,194 @@
         "cenas/08.webp",
         "cenas/09.webp",
         "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "hora-de-aventura",
+      "titulo": "Hora de Aventura",
+      "status": "importado",
+      "tmdb_id": 15260,
+      "titulo_tmdb": "Hora de Aventura",
+      "primeira_exibicao": "2010-04-05",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "madeline",
+      "titulo": "Madeline",
+      "status": "revisar",
+      "motivo": "correspondencia_insegura",
+      "similaridade": -1.0
+    },
+    {
+      "id": "yu-gi-oh-gx",
+      "titulo": "Yu-Gi-Oh! GX",
+      "status": "importado",
+      "tmdb_id": 12536,
+      "titulo_tmdb": "Yu-Gi-Oh! GX",
+      "primeira_exibicao": "2004-10-06",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "chaves",
+      "titulo": "Chaves",
+      "status": "importado",
+      "tmdb_id": 47,
+      "titulo_tmdb": "Chaves",
+      "primeira_exibicao": "1973-02-26",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "tres-espias-demais",
+      "titulo": "Três Espiãs Demais!",
+      "status": "importado",
+      "tmdb_id": 2808,
+      "titulo_tmdb": "Três Espiãs Demais!",
+      "primeira_exibicao": "2002-04-03",
+      "similaridade": 1.0,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "os-sete-monstrinhos",
+      "titulo": "Os Sete Monstrinhos",
+      "status": "importado",
+      "tmdb_id": 20113,
+      "titulo_tmdb": "Os Sete Monstrinhos",
+      "primeira_exibicao": "2000-09-30",
+      "similaridade": 1.08,
+      "poster_no_github": true,
+      "cenas_disponiveis": 1,
+      "cenas_no_github": 1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp"
+      ]
+    },
+    {
+      "id": "as-aventuras-de-piggley-winks",
+      "titulo": "As Aventuras de Piggley Winks",
+      "status": "importado",
+      "tmdb_id": 13605,
+      "titulo_tmdb": "Jakers! As Aventuras de Piggley Winks",
+      "primeira_exibicao": "2003-09-07",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 1,
+      "cenas_no_github": 1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp"
+      ]
+    },
+    {
+      "id": "o-segredo-alem-do-jardim",
+      "titulo": "O Segredo Além do Jardim",
+      "status": "importado",
+      "tmdb_id": 61617,
+      "titulo_tmdb": "O Segredo Além do Jardim",
+      "primeira_exibicao": "2014-11-03",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ]
+    },
+    {
+      "id": "a-mansao-foster-para-amigos-imaginarios",
+      "titulo": "A Mansão Foster para Amigos Imaginários",
+      "status": "importado",
+      "tmdb_id": 1720,
+      "titulo_tmdb": "A Mansão Foster para Amigos Imaginários",
+      "primeira_exibicao": "2004-08-13",
+      "similaridade": 1.12,
+      "poster_no_github": true,
+      "cenas_disponiveis": 9,
+      "cenas_no_github": 9,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp"
       ]
     }
   ]
