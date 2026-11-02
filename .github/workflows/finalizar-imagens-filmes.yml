@@ -1,0 +1,47 @@
+name: Finalizar imagens - Obsessao e O Enigma
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/finalizar-imagens-filmes.yml"
+permissions:
+  contents: write
+concurrency:
+  group: importacao-tmdb-filmes
+  cancel-in-progress: false
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+      TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verificar sintaxe dos scripts
+        run: python -m py_compile scripts/finalizar_imagens_filmes.py scripts/importar_tmdb_filmes.py
+      - name: Conferir chave do TMDB
+        run: |
+          if [ -z "$TMDB_API_KEY" ] && [ -z "$TMDB_READ_ACCESS_TOKEN" ]; then
+            echo "::error::Configure o secret TMDB_API_KEY ou TMDB_READ_ACCESS_TOKEN."
+            exit 1
+          fi
+      - name: Instalar bibliotecas de imagens
+        run: python -m pip install --disable-pip-version-check pillow requests
+      - name: Importar imagens dos dois titulos finais
+        run: python scripts/finalizar_imagens_filmes.py
+      - name: Publicar SOMENTE as imagens de Obsessao e O Enigma
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/filmes/obsessao assets/filmes/viih-tube-em-enigma assets/filmes/RELATORIO_FINAL_PENDENTES.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma imagem nova para publicar."
+            exit 0
+          fi
+          git commit -m "Finaliza posters e cenas de Obsessao 2026 e O Enigma Viih Tube"
+          git pull --rebase origin main
+          git push origin HEAD:main
