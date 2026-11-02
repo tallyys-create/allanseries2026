@@ -158,10 +158,9 @@ def load_catalog(category):
     if start < 0:
         raise RuntimeError("Catálogo TV Allanzinho não encontrado")
     start += len(marker)
-    end = text.find(";", start)
-    if end < 0:
-        raise RuntimeError("Fim do catálogo TV Allanzinho não encontrado")
-    result = json.loads(text[start:end])
+    # O próprio JSON pode conter ";" nas descrições.
+    # raw_decode lê o array completo sem cortar prematuramente.
+    result, _ = json.JSONDecoder().raw_decode(text[start:].lstrip())
     if len(result) < 20:
         raise RuntimeError("Catálogo TV Allanzinho incompleto")
     return result
