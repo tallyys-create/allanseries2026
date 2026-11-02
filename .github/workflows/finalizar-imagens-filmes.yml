@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/finalizar-imagens-filmes.yml"
+      - "scripts/finalizar_imagens_filmes.py"
 permissions:
   contents: write
 concurrency:
