@@ -2968,7 +2968,6 @@ window.ALLAN_CATALOG_FILMES=[
     "gallery": [],
     "aliases": [
       "Enchanted",
-      "Como Mágica",
       "Enchanted (2007)"
     ],
     "tags": [
