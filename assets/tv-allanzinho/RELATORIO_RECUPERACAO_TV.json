@@ -1,6 +1,6 @@
 {
   "source": "TMDB TV / temporadas especificas",
-  "generated": "2026-11-02T02:49:43.386691+00:00",
+  "generated": "2026-11-02T02:51:35.985114+00:00",
   "total_catalog": 23,
   "requested": 3,
   "items": [
@@ -13,19 +13,7 @@
       "season_name": "Journeys",
       "season_year": 2019,
       "poster_source": "season",
-      "new_files": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp",
-        "cenas/05.webp",
-        "cenas/06.webp",
-        "cenas/07.webp",
-        "cenas/08.webp",
-        "cenas/09.webp",
-        "cenas/10.webp"
-      ],
+      "new_files": [],
       "warnings": [],
       "poster_exists": true,
       "scene_count": 10,
@@ -41,19 +29,7 @@
       "season_name": "Ninja Storm",
       "season_year": 2003,
       "poster_source": "season",
-      "new_files": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp",
-        "cenas/05.webp",
-        "cenas/06.webp",
-        "cenas/07.webp",
-        "cenas/08.webp",
-        "cenas/09.webp",
-        "cenas/10.webp"
-      ],
+      "new_files": [],
       "warnings": [],
       "poster_exists": true,
       "scene_count": 10,
@@ -70,17 +46,36 @@
       "season_year": 1993,
       "poster_source": "series",
       "new_files": [
-        "poster.webp"
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp"
       ],
       "warnings": [],
       "fallback": "backdrops da serie de 1993",
+      "external_images": [
+        {
+          "source": "Prime Video - Madeline (1993)",
+          "url": "https://m.media-amazon.com/images/S/pv-target-images/676a093e8de8e18a10c095c62cac3e09b5c943eabab1dd81e4b789fbf8714b32._SX1080_FMjpg_.jpg",
+          "page": "https://www.primevideo.com/-/pt/detail/0O9LLXRD43CKKESBAZ5SMV841G"
+        },
+        {
+          "source": "TV Guide - Madeline (1993)",
+          "url": "https://cdn.jwplayer.com/thumbs/3bWshvcp-640.jpg",
+          "page": "https://www.tvguide.com/tvshows/madeline/1030156128/"
+        },
+        {
+          "source": "BravePlus - Madeline S01 E11",
+          "url": "https://alpha.uscreencdn.com/1110xnull/images/programs/3498251/horizontal/big_c128bf4a-0cd6-4e6c-8c48-0c68d1f1acb4.jpg?auto=webp",
+          "page": "https://watch.braveplus.com/programs/madeline-1-11"
+        }
+      ],
       "poster_exists": true,
-      "scene_count": 0,
+      "scene_count": 3,
       "stills_at_tmdb": 0,
-      "status": "parcial"
+      "status": "completo"
     }
   ],
-  "completed": 2,
-  "partial": 1,
+  "completed": 3,
+  "partial": 0,
   "errors": 0
 }
