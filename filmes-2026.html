@@ -752,6 +752,21 @@ function migrateMovieCatalogCorrections(){
   state.movieCatalogCorrectionsV2=1;
   save();
 }
+function migrateEnigmaAndObsessionDetails(){
+  // Corrige duas fichas específicas sem alterar posições, vereditos ou customizações gerais.
+  if(state.filmIdentityCorrections2026===1)return;
+  const ids=new Set(['obsessao','viih-tube-em-enigma']);
+  const official=new Map(DEFAULT_SHOWS.filter(show=>ids.has(show.id)).map(show=>[show.id,show]));
+  for(const show of state.shows){
+    const base=official.get(show.id);
+    if(!base)continue;
+    for(const field of ['title','year','country','episodes','genre','description','memory','aliases','tags','platform']){
+      if(Object.hasOwn(base,field))show[field]=structuredClone(base[field]);
+    }
+  }
+  state.filmIdentityCorrections2026=1;
+  save();
+}
 function mergeNewCatalogEntries(){
   // Amplia o catálogo sem substituir avaliações já salvas nas tiers.
   const known=new Set(state.shows.map(show=>show.id));
@@ -794,6 +809,7 @@ function init(){
   }catch(e){state=defaults()}
   migrateMovieCatalogCorrections();
   mergeNewCatalogEntries();
+  migrateEnigmaAndObsessionDetails();
   state.shows.forEach(show=>delete show.video);migrateTags();migrateLoveStageAnime();migrateMissingPosterFix();migrateOfficialTitles();populateCountryFilter();render();bind();loadGalleryDirectory();
 }
 function defaults(){return {tiers:structuredClone(DEFAULT_TIERS),shows:structuredClone(DEFAULT_SHOWS),locations:Object.fromEntries(DEFAULT_SHOWS.map(s=>[s.id,'pool']))}}

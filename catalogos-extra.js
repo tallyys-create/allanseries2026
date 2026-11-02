@@ -50,29 +50,36 @@ window.ALLAN_CATALOG_FILMES=[
   },
   {
     "id": "viih-tube-em-enigma",
-    "title": "Viih Tube em Enigma",
-    "year": "A confirmar",
+    "title": "O Enigma — O Filme (Viih Tube)",
+    "year": "2020",
     "country": "Brasil",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Brasil · Suspense · Adolescente",
+    "episodes": "Filme-compilação · websérie original de 2018 (10 episódios)",
+    "genre": "Mistério · Drama · Suspense · Adolescente",
     "tint": "#f3b6cc",
-    "description": "Um mistério envolve Viih Tube nesta produção brasileira de suspense e aventura.",
-    "memory": "Um mistério envolve Viih Tube nesta produção brasileira de suspense e aventura.",
+    "description": "Durante as férias no Acampamento NR, Mirella e outros jovens se envolvem em mistérios e conflitos inesperados. A versão completa publicada no YouTube em 2020 reúne a websérie O Enigma, criada por Viih Tube e Felipe Didonih em 2018.",
+    "memory": "Mirella, Cauê, Rafa, Deyse, Gabriel e o grupo do Acampamento NR. A websérie estreou em 2018 e ganhou uma versão completa no canal da Viih Tube em 2020.",
     "image": "",
     "gallery": [],
     "aliases": [
-      "Vih Tube Enigma",
-      "Viih Tube Enigma",
-      "Vih Tube em Enigma"
+      "O Enigma",
+      "O Enigma O Filme",
+      "O Enigma (2018)",
+      "O Enigma (2020)",
+      "O Enigma Viih Tube",
+      "Viih Tube em Enigma"
     ],
     "tags": [
       "Filme",
+      "Compilação",
+      "Websérie",
       "Brasil",
-      "Suspense",
+      "Viih Tube",
+      "Mistério",
       "Adolescente",
-      "AllanWoodTV"
+      "Suspense",
+      "YouTube"
     ],
-    "platform": ""
+    "platform": "YouTube · Canal Viih Tube"
   },
   {
     "id": "monster-high-o-filme",
@@ -1592,22 +1599,30 @@ window.ALLAN_CATALOG_FILMES=[
   },
   {
     "id": "obsessao",
-    "title": "Obsessão",
-    "year": "A confirmar",
-    "country": "",
-    "episodes": "Filme · longa-metragem",
-    "genre": "Suspense · Drama",
+    "title": "Obsessão (2026)",
+    "year": "2026",
+    "country": "Estados Unidos",
+    "episodes": "Filme · 2026",
+    "genre": "Terror · Suspense psicológico · Sobrenatural",
     "tint": "#f3b6cc",
-    "description": "Um suspense sobre desejo, segredos e relações que ultrapassam os limites.",
-    "memory": "Um suspense sobre desejo, segredos e relações que ultrapassam os limites.",
+    "description": "Bear, um jovem apaixonado por Nikki, faz um pedido ao quebrar um misterioso amuleto ligado ao Salgueiro dos Desejos. Quando seu desejo de ser correspondido se realiza, ele descobre consequências aterrorizantes.",
+    "memory": "Bear, Nikki e o Salgueiro dos Desejos; direção de Curry Barker, suspense psicológico e as consequências de um amor transformado em obsessão.",
     "image": "",
     "gallery": [],
-    "aliases": [],
+    "aliases": [
+      "Obsession",
+      "Obsession (2026)",
+      "Obsession (2025)",
+      "Obsessão de Curry Barker"
+    ],
     "tags": [
       "Filme",
+      "Terror",
       "Suspense",
-      "Drama",
-      "AllanWoodTV"
+      "Terror psicológico",
+      "Sobrenatural",
+      "Curry Barker",
+      "Estados Unidos"
     ],
     "platform": ""
   },
