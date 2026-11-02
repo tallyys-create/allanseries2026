@@ -20,6 +20,7 @@ on:
   push:
     paths:
       - ".github/workflows/importar-series-tmdb.yml"
+      - "scripts/recuperar_series_pendentes.py"
 permissions:
   contents: write
 concurrency:

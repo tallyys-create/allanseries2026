@@ -42,7 +42,8 @@ PROMOCIONAIS = {
     },
     "malhacao-2018": {
         "poster": ["https://www.agenciadw3.com.br/landingpage/storage/app/public/pictures/XhUKm7vK1yZzRqyQsZBUp1hrjXvV1zP3qDJbn4HO.png"],
-        "cenas": [],
+        "cenas": ["https://f.i.uol.com.br/fotografia/2018/03/16/15212420265aac4faaca458_1521242026_3x2_xl.jpg",
+                  "https://s2-memoriaglobo.glbimg.com/CE48fgvC3h5w0pkeNPUwJGgP20I%3D/0x0%3A768x768/984x0/smart/filters%3Astrip_icc%28%29/i.s3.glbimg.com/v1/AUTH_ee6202d7f3f346a7a5d7affb807d8893/internal_photos/bs/2021/W/T/1H4rRpRIGeIiNMHyIAbA/assets-fotos-793-globo-has-three-nominations-for-the-2019-international-emmy-kids-awards-globo-recibe-tres-nominaciones-en-el-emmy-kids-internacional-2019-6803cfbde34c-768x768.jpg"],
         "nota": "Material de Vidas Brasileiras (2018), com a professora Gabriela."
     },
     "rebelde-brasil": {
@@ -53,12 +54,12 @@ PROMOCIONAIS = {
     },
     "a-usurpadollra": {
         "poster": ["https://images.metroimg.com/2026/07/rodrigo-apresentador-protagoniza-a-usurpadollra-parodia-feita-com-ia-1.jpg"],
-        "cenas": [],
+        "cenas": ["https://images.metroimg.com/2026/07/criador-do-bau-explica-alex-alves-tambem-integra-a-usurpadollra-1.jpg"],
         "nota": "Foto da novela-paródia de IA de Rodrigo Apresentador, 2026."
     },
     "corrida-das-blogueiras-8": {
         "poster": ["https://www.portaltela.com/s.01k8r8f7wx8pm/2026/04/corrida-das-blogueiras-8-temporada-e-confirmada-e-promete-edicao-historica.jpg"],
-        "cenas": [],
+        "cenas": ["https://pbs.twimg.com/media/HF6DT__bEAAIJdn.jpg"],
         "nota": "Foto promocional do Ano 8, estética rococó, 2026."
     },
 }
