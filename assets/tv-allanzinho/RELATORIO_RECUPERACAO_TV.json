@@ -1,0 +1,86 @@
+{
+  "source": "TMDB TV / temporadas especificas",
+  "generated": "2026-11-02T02:49:43.386691+00:00",
+  "total_catalog": 23,
+  "requested": 3,
+  "items": [
+    {
+      "id": "pokemon-jornadas",
+      "title": "Pokémon Jornadas",
+      "tmdb_series_id": 60572,
+      "tmdb_series_name": "Pokémon",
+      "season_number": 23,
+      "season_name": "Journeys",
+      "season_year": 2019,
+      "poster_source": "season",
+      "new_files": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "warnings": [],
+      "poster_exists": true,
+      "scene_count": 10,
+      "stills_at_tmdb": 10,
+      "status": "completo"
+    },
+    {
+      "id": "power-rangers-tempestade-ninja",
+      "title": "Power Rangers: Tempestade Ninja",
+      "tmdb_series_id": 2328,
+      "tmdb_series_name": "Power Rangers",
+      "season_number": 11,
+      "season_name": "Ninja Storm",
+      "season_year": 2003,
+      "poster_source": "season",
+      "new_files": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp",
+        "cenas/05.webp",
+        "cenas/06.webp",
+        "cenas/07.webp",
+        "cenas/08.webp",
+        "cenas/09.webp",
+        "cenas/10.webp"
+      ],
+      "warnings": [],
+      "poster_exists": true,
+      "scene_count": 10,
+      "stills_at_tmdb": 10,
+      "status": "completo"
+    },
+    {
+      "id": "madeline",
+      "title": "Madeline",
+      "tmdb_series_id": 19283,
+      "tmdb_series_name": "The New Adventures Of Madeline",
+      "season_number": 1,
+      "season_name": "Season 1",
+      "season_year": 1993,
+      "poster_source": "series",
+      "new_files": [
+        "poster.webp"
+      ],
+      "warnings": [],
+      "fallback": "backdrops da serie de 1993",
+      "poster_exists": true,
+      "scene_count": 0,
+      "stills_at_tmdb": 0,
+      "status": "parcial"
+    }
+  ],
+  "completed": 2,
+  "partial": 1,
+  "errors": 0
+}
