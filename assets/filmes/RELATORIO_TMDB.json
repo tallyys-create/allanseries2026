@@ -1,31 +1,41 @@
 {
   "fonte": "The Movie Database (TMDB)",
-  "gerado_em": "2026-11-02T01:49:26.834777+00:00",
+  "gerado_em": "2026-11-02T01:52:42.964859+00:00",
   "total_catalogo": 148,
   "processados": 10,
-  "importados": 8,
-  "revisar": 2,
+  "importados": 2,
+  "revisar": 1,
   "erros": 0,
   "itens": [
     {
       "id": "zombies-disney-channel",
       "titulo": "Zombies (Disney Channel)",
       "status": "importado",
-      "tmdb_id": 472876,
-      "titulo_tmdb": "Zumbis - Os Sobreviventes",
-      "similaridade": 0.92,
+      "tmdb_id": 483980,
+      "titulo_tmdb": "Z-O-M-B-I-E-S",
+      "similaridade": 1.1,
       "arquivos_novos": [
         "poster.webp",
         "cenas/01.webp",
         "cenas/02.webp",
-        "cenas/03.webp"
+        "cenas/03.webp",
+        "cenas/04.webp"
       ]
     },
     {
       "id": "zombies-2",
       "titulo": "Zombies 2",
-      "status": "revisar",
-      "similaridade": 0.635
+      "status": "importado",
+      "tmdb_id": 599521,
+      "titulo_tmdb": "Z-O-M-B-I-E-S 2",
+      "similaridade": 1.1,
+      "arquivos_novos": [
+        "poster.webp",
+        "cenas/01.webp",
+        "cenas/02.webp",
+        "cenas/03.webp",
+        "cenas/04.webp"
+      ]
     },
     {
       "id": "viih-tube-em-enigma",
@@ -36,107 +46,37 @@
     {
       "id": "monster-high-o-filme",
       "titulo": "Monster High: O Filme",
-      "status": "importado",
-      "tmdb_id": 335795,
-      "titulo_tmdb": "Monster High: O Filme",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "descendentes",
       "titulo": "Descendentes",
-      "status": "importado",
-      "tmdb_id": 277217,
-      "titulo_tmdb": "Descendentes",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "descendentes-2",
       "titulo": "Descendentes 2",
-      "status": "importado",
-      "tmdb_id": 417320,
-      "titulo_tmdb": "Descendentes 2",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "descendentes-3",
       "titulo": "Descendentes 3",
-      "status": "importado",
-      "tmdb_id": 506574,
-      "titulo_tmdb": "Descendentes 3",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "descendentes-a-ascensao-de-copas",
       "titulo": "Descendentes: A Ascensão de Copas",
-      "status": "importado",
-      "tmdb_id": 974262,
-      "titulo_tmdb": "Descendentes: A Ascensão de Copas",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "descendentes-5",
       "titulo": "Descendentes: País das Maravilhas Malvado",
-      "status": "importado",
-      "tmdb_id": 1318621,
-      "titulo_tmdb": "Descendentes: País das Maravilhas Malvado",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     },
     {
       "id": "mamma-mia",
       "titulo": "Mamma Mia!",
-      "status": "importado",
-      "tmdb_id": 11631,
-      "titulo_tmdb": "Mamma Mia!",
-      "similaridade": 1.07,
-      "arquivos_novos": [
-        "poster.webp",
-        "cenas/01.webp",
-        "cenas/02.webp",
-        "cenas/03.webp",
-        "cenas/04.webp"
-      ]
+      "status": "ja_existe"
     }
   ]
 }
