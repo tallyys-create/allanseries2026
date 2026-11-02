@@ -240,10 +240,10 @@
     {
       "id": "doctor-who",
       "titulo": "Doctor Who",
-      "status": "importado",
-      "tmdb_id": 121,
+      "status": "corrigido",
+      "tmdb_id": 57243,
       "titulo_tmdb": "Doctor Who",
-      "primeira_exibicao": "1963-11-23",
+      "primeira_exibicao": "2005",
       "similaridade": 1.12,
       "poster_no_github": true,
       "cenas_disponiveis": 10,
@@ -260,7 +260,8 @@
         "cenas/08.webp",
         "cenas/09.webp",
         "cenas/10.webp"
-      ]
+      ],
+      "motivo": "Identidade corrigida, imagens anteriores removidas"
     },
     {
       "id": "drama-total",
@@ -297,18 +298,19 @@
     {
       "id": "estilhacos",
       "titulo": "Estilhaços",
-      "status": "importado",
-      "tmdb_id": 69238,
-      "titulo_tmdb": "Vidas Partidas",
-      "primeira_exibicao": "2014-12-01",
+      "status": "corrigido",
+      "tmdb_id": 298168,
+      "titulo_tmdb": "Estilhaços",
+      "primeira_exibicao": "2026",
       "similaridade": 1.12,
       "poster_no_github": true,
-      "cenas_disponiveis": 1,
-      "cenas_no_github": 1,
+      "cenas_disponiveis": 10,
+      "cenas_no_github": 10,
       "arquivos_novos": [
         "poster.webp",
         "cenas/01.webp"
-      ]
+      ],
+      "motivo": "Identidade corrigida, imagens anteriores removidas"
     },
     {
       "id": "eu-nunca",
@@ -1832,5 +1834,6 @@
         "cenas/10.webp"
       ]
     }
-  ]
+  ],
+  "correcao_identidade_em": "2026-11-02T04:07:19.799151+00:00"
 }

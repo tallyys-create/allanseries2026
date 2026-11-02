@@ -1,0 +1,53 @@
+{
+  "status": "corrigido",
+  "gerado_em": "2026-11-02T04:07:19.799151+00:00",
+  "descricao": "Doctor Who de 2005 e The Shards de 2026: pôster e cenas completamente substituídos",
+  "itens": [
+    {
+      "id": "doctor-who",
+      "tmdb_id": 57243,
+      "titulo_tmdb": "Doctor Who",
+      "ano": "2005",
+      "pais": [
+        "GB"
+      ],
+      "cenas_no_github": 10,
+      "poster_no_github": true,
+      "fontes_cenas": [
+        "/mQ9yeCuofNatSyErUKAPD1uOq8Q.jpg",
+        "/sRfl6vyzGWutgG0cmXmbChC4iN6.jpg",
+        "/nfH8SZJVOxcBlFaqqtoqS5hHizG.jpg",
+        "/uCZrNmtriucxbv5luCeEWZhSawQ.jpg",
+        "/x2RNK4ACF4r4M4aVRYobu70H7l5.jpg",
+        "/vcFW09U4834DyFOeRZpsx9x1D3S.jpg",
+        "/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+        "/tPwpc9Uo1Fly50urDxfGWWk7H77.jpg",
+        "/z2XTVhbr4PYIBzi1d6Ua73EFsoE.jpg",
+        "/wxF05CI54j0P1eKgqFugUJviEKv.jpg"
+      ]
+    },
+    {
+      "id": "estilhacos",
+      "tmdb_id": 298168,
+      "titulo_tmdb": "Estilhaços",
+      "ano": "2026",
+      "pais": [
+        "US"
+      ],
+      "cenas_no_github": 10,
+      "poster_no_github": true,
+      "fontes_cenas": [
+        "/vTzfZ55Qp1GP3uKGSMlsLEYrn6.jpg",
+        "/AhzF2bkYYybcCT4PnqpoagRGBWJ.jpg",
+        "/hiQz5xE2h71NErOMkp5vtROnGow.jpg",
+        "/eEkc61PVUxojRuHXucJ3bD9yYME.jpg",
+        "/dXTZ8Y3LOfsKZsxDIYSDHyPNq2a.jpg",
+        "/tqGdfZG4dEv0zlG4CYPS3jA0w6N.jpg",
+        "/uS7YCtNaW0IrBtxHS6uUf8YXEEi.jpg",
+        "/3DQywpq8hzHOkGNgDVL96QKrvF9.jpg",
+        "/AwmlA331lKwsu39hRS5S5duTzHD.jpg",
+        "/cIANyrbgPJtuUpxdyVANHlknuFY.jpg"
+      ]
+    }
+  ]
+}
