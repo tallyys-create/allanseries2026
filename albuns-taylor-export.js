@@ -1,0 +1,14 @@
+(() => {
+const app=window.TAYLOR_APP,$=id=>document.getElementById(id);
+$("copyBtn").onclick=async()=>{const state=app.getState();const lines=["🎧 TIER TAYLOR SWIFT · ALLANWOODTV",...app.tiers.map(t=>t.name.toUpperCase()+": "+(app.albums.filter(a=>state[a.id]===t.id).map(a=>a.title).join(" • ")||"—")),"Ainda não classificados: "+(app.albums.filter(a=>!state[a.id]).map(a=>a.title).join(" • ")||"nenhum")];try{await navigator.clipboard.writeText(lines.join("\n"));app.notice("Ranking copiado!")}catch{app.notice("Não foi possível copiar neste navegador.")}};
+$("exportBtn").onclick=async()=>{
+const state=app.getState(),canvas=document.createElement("canvas"),ctx=canvas.getContext("2d");canvas.width=1360;canvas.height=1150;ctx.fillStyle="#101911";ctx.fillRect(0,0,1360,1150);
+ctx.fillStyle="#a9e9b1";ctx.font="bold 26px system-ui";ctx.fillText("ALLANWOODTV · TIER MUSICAL",48,62);ctx.fillStyle="#fff6e6";ctx.font="bold 53px system-ui";ctx.fillText("TAYLOR SWIFT · ÁLBUNS",48,122);
+ctx.font="22px system-ui";ctx.fillStyle="#c4d1c3";ctx.fillText("18 álbuns e edições · "+(document.documentElement.dataset.mode==="allan"?"Ranking do Allan":"Ranking do público"),48,161);
+let y=202;const load=src=>new Promise(done=>{const img=new Image();img.onload=()=>done(img);img.onerror=()=>done(null);img.src=src;});const images={};await Promise.all(app.albums.map(async a=>{images[a.id]=await load("assets/albuns/taylor-swift/"+a.id+"/poster.webp")}));
+for(const t of app.tiers){const items=app.albums.filter(a=>state[a.id]===t.id);const rows=Math.max(1,Math.ceil(items.length/9));const h=Math.max(106,rows*99+18);ctx.fillStyle="#223025";ctx.fillRect(48,y,1264,h);ctx.fillStyle=t.color;ctx.fillRect(48,y,240,h);ctx.fillStyle="#171d16";ctx.font="bold 22px system-ui";const parts=t.name.split(" ");if(t.name.length>17){ctx.fillText(parts.slice(0,Math.ceil(parts.length/2)).join(" "),64,y+40);ctx.fillText(parts.slice(Math.ceil(parts.length/2)).join(" "),64,y+69)}else ctx.fillText(t.name,64,y+54);
+items.forEach((a,i)=>{const x=307+(i%9)*113,yy=y+12+Math.floor(i/9)*99;ctx.fillStyle=a.color;ctx.fillRect(x,yy,77,77);if(images[a.id])ctx.drawImage(images[a.id],x,yy,77,77);else{ctx.fillStyle="#fff";ctx.font="bold 10px system-ui";ctx.fillText(a.title.slice(0,12),x+5,yy+39)} });y+=h+9;}
+ctx.fillStyle="#c9d4c5";ctx.font="18px system-ui";ctx.fillText("Por julgar: "+app.albums.filter(a=>!state[a.id]).length,48,y+28);
+const link=document.createElement("a");link.download="tier-taylor-swift-"+document.documentElement.dataset.mode+".png";link.href=canvas.toDataURL("image/png");link.click();app.notice("Imagem gerada!");
+};
+})();
