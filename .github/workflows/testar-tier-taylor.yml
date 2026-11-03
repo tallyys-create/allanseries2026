@@ -1,0 +1,58 @@
+name: Testar Tier Taylor no navegador
+on:
+  push:
+    paths:
+      - "albuns-taylor*"
+      - "scripts/testar_tier_taylor.mjs"
+      - ".github/workflows/testar-tier-taylor.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ui-test-taylor
+  cancel-in-progress: true
+jobs:
+  navegador:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar navegador de testes
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Abrir o site local
+        shell: bash
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/taylor-http.log 2>&1 &
+          echo $! >/tmp/taylor-http.pid
+          sleep 3
+      - name: Testar as duas versões e registrar problemas
+        shell: bash
+        run: node scripts/testar_tier_taylor.mjs
+        continue-on-error: true
+      - name: Salvar relatório da verificação no repositório
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/albuns/taylor-swift/RELATORIO_TESTES_UI.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Registra teste de interface da tier Taylor"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Guardar capturas de tela
+        uses: actions/upload-artifact@v4
+        with:
+          name: taylor-ui-screenshots
+          path: /tmp/taylor-*.png
+          if-no-files-found: ignore
