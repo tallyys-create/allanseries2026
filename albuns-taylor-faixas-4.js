@@ -1,0 +1,1 @@
+(()=>{window.TAYLOR_ALBUMS.find(x=>x.id==="evermore").tracks=["willow","champagne problems","gold rush","'tis the damn season","tolerate it","no body, no crime (feat. HAIM)","happiness","dorothea","coney island (feat. Bon Iver)","ivy","cowboy like me","long story short","marjorie","closure","evermore (feat. Bon Iver)"];})();
