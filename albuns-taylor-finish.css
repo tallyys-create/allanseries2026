@@ -69,3 +69,15 @@ body.focus-mode .portal-return,body.presentation .portal-return{display:none!imp
  .hero-court .court-seal{font-size:25px}
 }
 @media(prefers-reduced-motion:reduce){.tier-dock .album.live-drag-preview{animation:none}}
+
+/* Estrutura de linhas do tribunal original, com texto de ajuda em cada veredito. */
+#board .tier-label{flex-shrink:0}
+#board .tier-label .tier-number{font-weight:900;font-size:10px;letter-spacing:.13em}
+#board .tier-label .tier-count{font-size:11px;font-weight:800;opacity:.78}
+#board .tier-body{flex:1;display:flex;flex-direction:column;min-width:0;justify-content:center}
+#board .tier-body .tier-description{font-size:11px;line-height:1.35;color:#bfd0bd;margin:0;padding:9px 11px 0}
+#board .tier-body .tier-dock{min-height:62px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:7px 10px 10px}
+body.layout-sidebar #board .tier-body .tier-description{font-size:10px;padding:7px 8px 0}
+body.layout-sidebar #board .tier-body .tier-dock{padding:6px 8px 8px}
+#board .tier-label b{word-break:normal;overflow-wrap:normal;hyphens:none}
+@media(max-width:650px){#board .tier-body .tier-description{font-size:10px;padding:7px 7px 0}#board .tier-body .tier-dock{padding:6px;gap:6px}}
