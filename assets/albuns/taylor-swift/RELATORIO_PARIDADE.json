@@ -1,0 +1,3375 @@
+{
+  "executedAt": "2026-11-03T02:24:25.838Z",
+  "type": "paridade-tiers",
+  "pages": {
+    "series-allan": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDO ALLAN!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 593,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 593,
+            "w": 929,
+            "h": 711
+          },
+          "library": {
+            "x": 987,
+            "y": 593,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 725,
+            "w": 929,
+            "h": 580
+          },
+          "tierLabel": {
+            "x": 56,
+            "y": 737,
+            "w": 185,
+            "h": 86
+          },
+          "firstTier": {
+            "x": 55,
+            "y": 736,
+            "w": 907,
+            "h": 88
+          },
+          "catalogList": {
+            "x": 1001,
+            "y": 900,
+            "w": 392,
+            "h": 1659
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDO ALLAN!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 836,
+            "w": 366,
+            "h": 4980
+          },
+          "panel": {
+            "x": 12,
+            "y": 836,
+            "w": 366,
+            "h": 1458
+          },
+          "library": {
+            "x": 12,
+            "y": 2313,
+            "w": 366,
+            "h": 3504
+          },
+          "board": {
+            "x": 12,
+            "y": 1073,
+            "w": 366,
+            "h": 1221
+          },
+          "tierLabel": {
+            "x": 24,
+            "y": 1085,
+            "w": 342,
+            "h": 96
+          },
+          "firstTier": {
+            "x": 23,
+            "y": 1084,
+            "w": 344,
+            "h": 193
+          },
+          "catalogList": {
+            "x": 27,
+            "y": 2650,
+            "w": 336,
+            "h": 3095
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": false
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      }
+    },
+    "filmes-allan": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDO ALLAN!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 593,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 593,
+            "w": 929,
+            "h": 711
+          },
+          "library": {
+            "x": 987,
+            "y": 593,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 725,
+            "w": 929,
+            "h": 580
+          },
+          "tierLabel": {
+            "x": 56,
+            "y": 737,
+            "w": 185,
+            "h": 86
+          },
+          "firstTier": {
+            "x": 55,
+            "y": 736,
+            "w": 907,
+            "h": 88
+          },
+          "catalogList": {
+            "x": 1001,
+            "y": 900,
+            "w": 392,
+            "h": 1687
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDO ALLAN!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 836,
+            "w": 366,
+            "h": 5008
+          },
+          "panel": {
+            "x": 12,
+            "y": 836,
+            "w": 366,
+            "h": 1458
+          },
+          "library": {
+            "x": 12,
+            "y": 2313,
+            "w": 366,
+            "h": 3532
+          },
+          "board": {
+            "x": 12,
+            "y": 1073,
+            "w": 366,
+            "h": 1221
+          },
+          "tierLabel": {
+            "x": 24,
+            "y": 1085,
+            "w": 342,
+            "h": 96
+          },
+          "firstTier": {
+            "x": 23,
+            "y": 1084,
+            "w": 344,
+            "h": 193
+          },
+          "catalogList": {
+            "x": 27,
+            "y": 2650,
+            "w": 336,
+            "h": 3123
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": false
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      }
+    },
+    "albuns-allan": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDOS ÁLBUNS!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 647,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 647,
+            "w": 927,
+            "h": 860
+          },
+          "library": {
+            "x": 987,
+            "y": 647,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 824,
+            "w": 927,
+            "h": 683
+          },
+          "tierLabel": {
+            "x": 55,
+            "y": 835,
+            "w": 185,
+            "h": 101
+          },
+          "firstTier": {
+            "x": 54,
+            "y": 834,
+            "w": 907,
+            "h": 103
+          },
+          "catalogList": {
+            "x": 1002,
+            "y": 749,
+            "w": 390,
+            "h": 941
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 18,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "Dono do Repeat",
+          "Hino atrás de Hino",
+          "No Meu Fone",
+          "Tem Seus Momentos",
+          "Dá pra Pular",
+          "Skip sem Dó"
+        ],
+        "tierDescriptions": [
+          "Obra-prima. Eu ouviria sem parar!",
+          "Quase tudo aqui é música favorita.",
+          "Gostei, e sempre volto a ouvir.",
+          "Algumas faixas salvam o álbum.",
+          "Poucas músicas prendem minha atenção.",
+          "Não funcionou para mim."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": [
+          {
+            "id": "debut",
+            "title": "Taylor Swift",
+            "year": 2006,
+            "tracks": 11
+          },
+          {
+            "id": "fearless",
+            "title": "Fearless",
+            "year": 2008,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now",
+            "title": "Speak Now",
+            "year": 2010,
+            "tracks": 14
+          },
+          {
+            "id": "red",
+            "title": "Red",
+            "year": 2012,
+            "tracks": 16
+          },
+          {
+            "id": "1989",
+            "title": "1989",
+            "year": 2014,
+            "tracks": 13
+          },
+          {
+            "id": "reputation",
+            "title": "reputation",
+            "year": 2017,
+            "tracks": 15
+          },
+          {
+            "id": "lover",
+            "title": "Lover",
+            "year": 2019,
+            "tracks": 18
+          },
+          {
+            "id": "folklore",
+            "title": "folklore",
+            "year": 2020,
+            "tracks": 16
+          },
+          {
+            "id": "evermore",
+            "title": "evermore",
+            "year": 2020,
+            "tracks": 15
+          },
+          {
+            "id": "fearless-tv",
+            "title": "Fearless (Taylor's Version)",
+            "year": 2021,
+            "tracks": 26
+          },
+          {
+            "id": "red-tv",
+            "title": "Red (Taylor's Version)",
+            "year": 2021,
+            "tracks": 30
+          },
+          {
+            "id": "midnights",
+            "title": "Midnights",
+            "year": 2022,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now-tv",
+            "title": "Speak Now (Taylor's Version)",
+            "year": 2023,
+            "tracks": 22
+          },
+          {
+            "id": "1989-tv",
+            "title": "1989 (Taylor's Version)",
+            "year": 2023,
+            "tracks": 21
+          },
+          {
+            "id": "ttpd",
+            "title": "The Tortured Poets Department",
+            "year": 2024,
+            "tracks": 16
+          },
+          {
+            "id": "anthology",
+            "title": "The Tortured Poets Department: The Anthology",
+            "year": 2024,
+            "tracks": 31
+          },
+          {
+            "id": "showgirl",
+            "title": "The Life of a Showgirl",
+            "year": 2025,
+            "tracks": 12
+          },
+          {
+            "id": "encore",
+            "title": "The Life of a Showgirl: The Encore",
+            "year": 2026,
+            "tracks": 16
+          }
+        ],
+        "imagesComplete": true
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O TRIBUNAL\nDOS ÁLBUNS!",
+        "audienceArt": false,
+        "officialHero": true,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 835,
+            "w": 366,
+            "h": 1866
+          },
+          "panel": {
+            "x": 12,
+            "y": 835,
+            "w": 366,
+            "h": 894
+          },
+          "library": {
+            "x": 12,
+            "y": 1745,
+            "w": 366,
+            "h": 957
+          },
+          "board": {
+            "x": 12,
+            "y": 1031,
+            "w": 366,
+            "h": 698
+          },
+          "tierLabel": {
+            "x": 23,
+            "y": 1042,
+            "w": 98,
+            "h": 116
+          },
+          "firstTier": {
+            "x": 22,
+            "y": 1041,
+            "w": 346,
+            "h": 118
+          },
+          "catalogList": {
+            "x": 12,
+            "y": 1806,
+            "w": 366,
+            "h": 896
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 2,
+          "catalogCount": 16,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": true
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": false,
+            "visible": false
+          },
+          "nickname": {
+            "present": false,
+            "visible": false
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "Dono do Repeat",
+          "Hino atrás de Hino",
+          "No Meu Fone",
+          "Tem Seus Momentos",
+          "Dá pra Pular",
+          "Skip sem Dó"
+        ],
+        "tierDescriptions": [
+          "Obra-prima. Eu ouviria sem parar!",
+          "Quase tudo aqui é música favorita.",
+          "Gostei, e sempre volto a ouvir.",
+          "Algumas faixas salvam o álbum.",
+          "Poucas músicas prendem minha atenção.",
+          "Não funcionou para mim."
+        ],
+        "categoryCounts": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": [
+          {
+            "id": "debut",
+            "title": "Taylor Swift",
+            "year": 2006,
+            "tracks": 11
+          },
+          {
+            "id": "fearless",
+            "title": "Fearless",
+            "year": 2008,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now",
+            "title": "Speak Now",
+            "year": 2010,
+            "tracks": 14
+          },
+          {
+            "id": "red",
+            "title": "Red",
+            "year": 2012,
+            "tracks": 16
+          },
+          {
+            "id": "1989",
+            "title": "1989",
+            "year": 2014,
+            "tracks": 13
+          },
+          {
+            "id": "reputation",
+            "title": "reputation",
+            "year": 2017,
+            "tracks": 15
+          },
+          {
+            "id": "lover",
+            "title": "Lover",
+            "year": 2019,
+            "tracks": 18
+          },
+          {
+            "id": "folklore",
+            "title": "folklore",
+            "year": 2020,
+            "tracks": 16
+          },
+          {
+            "id": "evermore",
+            "title": "evermore",
+            "year": 2020,
+            "tracks": 15
+          },
+          {
+            "id": "fearless-tv",
+            "title": "Fearless (Taylor's Version)",
+            "year": 2021,
+            "tracks": 26
+          },
+          {
+            "id": "red-tv",
+            "title": "Red (Taylor's Version)",
+            "year": 2021,
+            "tracks": 30
+          },
+          {
+            "id": "midnights",
+            "title": "Midnights",
+            "year": 2022,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now-tv",
+            "title": "Speak Now (Taylor's Version)",
+            "year": 2023,
+            "tracks": 22
+          },
+          {
+            "id": "1989-tv",
+            "title": "1989 (Taylor's Version)",
+            "year": 2023,
+            "tracks": 21
+          },
+          {
+            "id": "ttpd",
+            "title": "The Tortured Poets Department",
+            "year": 2024,
+            "tracks": 16
+          },
+          {
+            "id": "anthology",
+            "title": "The Tortured Poets Department: The Anthology",
+            "year": 2024,
+            "tracks": 31
+          },
+          {
+            "id": "showgirl",
+            "title": "The Life of a Showgirl",
+            "year": 2025,
+            "tracks": 12
+          },
+          {
+            "id": "encore",
+            "title": "The Life of a Showgirl: The Encore",
+            "year": 2026,
+            "tracks": 16
+          }
+        ],
+        "imagesComplete": true
+      }
+    },
+    "series-publico": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 614,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 614,
+            "w": 929,
+            "h": 711
+          },
+          "library": {
+            "x": 987,
+            "y": 614,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 745,
+            "w": 929,
+            "h": 580
+          },
+          "tierLabel": {
+            "x": 56,
+            "y": 757,
+            "w": 185,
+            "h": 86
+          },
+          "firstTier": {
+            "x": 55,
+            "y": 756,
+            "w": 907,
+            "h": 88
+          },
+          "catalogList": {
+            "x": 1001,
+            "y": 879,
+            "w": 392,
+            "h": 1659
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 797,
+            "w": 366,
+            "h": 4937
+          },
+          "panel": {
+            "x": 12,
+            "y": 797,
+            "w": 366,
+            "h": 1458
+          },
+          "library": {
+            "x": 12,
+            "y": 2273,
+            "w": 366,
+            "h": 3461
+          },
+          "board": {
+            "x": 12,
+            "y": 1034,
+            "w": 366,
+            "h": 1221
+          },
+          "tierLabel": {
+            "x": 24,
+            "y": 1046,
+            "w": 342,
+            "h": 96
+          },
+          "firstTier": {
+            "x": 23,
+            "y": 1045,
+            "w": 344,
+            "h": 193
+          },
+          "catalogList": {
+            "x": 27,
+            "y": 2568,
+            "w": 336,
+            "h": 3095
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": false
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      }
+    },
+    "filmes-publico": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 614,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 614,
+            "w": 929,
+            "h": 711
+          },
+          "library": {
+            "x": 987,
+            "y": 614,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 745,
+            "w": 929,
+            "h": 580
+          },
+          "tierLabel": {
+            "x": 56,
+            "y": 757,
+            "w": 185,
+            "h": 86
+          },
+          "firstTier": {
+            "x": 55,
+            "y": 756,
+            "w": 907,
+            "h": 88
+          },
+          "catalogList": {
+            "x": 1001,
+            "y": 879,
+            "w": 392,
+            "h": 1687
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 797,
+            "w": 366,
+            "h": 4965
+          },
+          "panel": {
+            "x": 12,
+            "y": 797,
+            "w": 366,
+            "h": 1458
+          },
+          "library": {
+            "x": 12,
+            "y": 2273,
+            "w": 366,
+            "h": 3489
+          },
+          "board": {
+            "x": 12,
+            "y": 1034,
+            "w": 366,
+            "h": 1221
+          },
+          "tierLabel": {
+            "x": 24,
+            "y": 1046,
+            "w": 342,
+            "h": 96
+          },
+          "firstTier": {
+            "x": 23,
+            "y": 1045,
+            "w": 344,
+            "h": 193
+          },
+          "catalogList": {
+            "x": 27,
+            "y": 2568,
+            "w": 336,
+            "h": 3123
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 24,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": false
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "PATRIMÔNIO CULTURAL!",
+          "SERVIU ENTRETENIMENTO!",
+          "EU DEFENDO!",
+          "FOI UMA EXPERIÊNCIA...",
+          "SÓ DEUS SABE COMO TERMINEI",
+          "ME DEVOLVE MEU TEMPO!"
+        ],
+        "tierDescriptions": [
+          "Obra-prima absoluta. Tem que respeitar!",
+          "Me prendeu, me emocionou e entregou tudo.",
+          "Tem defeitos, mas ganhou meu coração.",
+          "Teve seus momentos. Só isso mesmo.",
+          "Exigiu paciência e muita força de vontade.",
+          "Nunca mais quero passar por isso."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": null,
+        "imagesComplete": null
+      }
+    },
+    "albuns-publico": {
+      "desktop": {
+        "viewport": {
+          "width": 1450,
+          "height": 900
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": null,
+        "sections": {
+          "workspace": {
+            "x": 44,
+            "y": 626,
+            "w": 1363,
+            "h": 876
+          },
+          "panel": {
+            "x": 44,
+            "y": 626,
+            "w": 927,
+            "h": 860
+          },
+          "library": {
+            "x": 987,
+            "y": 626,
+            "w": 420,
+            "h": 876
+          },
+          "board": {
+            "x": 44,
+            "y": 803,
+            "w": 927,
+            "h": 683
+          },
+          "tierLabel": {
+            "x": 55,
+            "y": 814,
+            "w": 185,
+            "h": 101
+          },
+          "firstTier": {
+            "x": 54,
+            "y": 813,
+            "w": 907,
+            "h": 103
+          },
+          "catalogList": {
+            "x": 1002,
+            "y": 728,
+            "w": 390,
+            "h": 941
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 0,
+          "catalogCount": 18,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "grid",
+        "overflowX": 0,
+        "tierLabels": [
+          "Dono do Repeat",
+          "Hino atrás de Hino",
+          "No Meu Fone",
+          "Tem Seus Momentos",
+          "Dá pra Pular",
+          "Skip sem Dó"
+        ],
+        "tierDescriptions": [
+          "Obra-prima. Eu ouviria sem parar!",
+          "Quase tudo aqui é música favorita.",
+          "Gostei, e sempre volto a ouvir.",
+          "Algumas faixas salvam o álbum.",
+          "Poucas músicas prendem minha atenção.",
+          "Não funcionou para mim."
+        ],
+        "categoryCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": [
+          {
+            "id": "debut",
+            "title": "Taylor Swift",
+            "year": 2006,
+            "tracks": 11
+          },
+          {
+            "id": "fearless",
+            "title": "Fearless",
+            "year": 2008,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now",
+            "title": "Speak Now",
+            "year": 2010,
+            "tracks": 14
+          },
+          {
+            "id": "red",
+            "title": "Red",
+            "year": 2012,
+            "tracks": 16
+          },
+          {
+            "id": "1989",
+            "title": "1989",
+            "year": 2014,
+            "tracks": 13
+          },
+          {
+            "id": "reputation",
+            "title": "reputation",
+            "year": 2017,
+            "tracks": 15
+          },
+          {
+            "id": "lover",
+            "title": "Lover",
+            "year": 2019,
+            "tracks": 18
+          },
+          {
+            "id": "folklore",
+            "title": "folklore",
+            "year": 2020,
+            "tracks": 16
+          },
+          {
+            "id": "evermore",
+            "title": "evermore",
+            "year": 2020,
+            "tracks": 15
+          },
+          {
+            "id": "fearless-tv",
+            "title": "Fearless (Taylor's Version)",
+            "year": 2021,
+            "tracks": 26
+          },
+          {
+            "id": "red-tv",
+            "title": "Red (Taylor's Version)",
+            "year": 2021,
+            "tracks": 30
+          },
+          {
+            "id": "midnights",
+            "title": "Midnights",
+            "year": 2022,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now-tv",
+            "title": "Speak Now (Taylor's Version)",
+            "year": 2023,
+            "tracks": 22
+          },
+          {
+            "id": "1989-tv",
+            "title": "1989 (Taylor's Version)",
+            "year": 2023,
+            "tracks": 21
+          },
+          {
+            "id": "ttpd",
+            "title": "The Tortured Poets Department",
+            "year": 2024,
+            "tracks": 16
+          },
+          {
+            "id": "anthology",
+            "title": "The Tortured Poets Department: The Anthology",
+            "year": 2024,
+            "tracks": 31
+          },
+          {
+            "id": "showgirl",
+            "title": "The Life of a Showgirl",
+            "year": 2025,
+            "tracks": 12
+          },
+          {
+            "id": "encore",
+            "title": "The Life of a Showgirl: The Encore",
+            "year": 2026,
+            "tracks": 16
+          }
+        ],
+        "imagesComplete": true
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "portal": true,
+        "heroText": "O SEU\nVEREDITO!",
+        "audienceArt": true,
+        "officialHero": false,
+        "headerAvatar": true,
+        "nickname": "Participante de teste",
+        "sections": {
+          "workspace": {
+            "x": 12,
+            "y": 778,
+            "w": 366,
+            "h": 1866
+          },
+          "panel": {
+            "x": 12,
+            "y": 778,
+            "w": 366,
+            "h": 894
+          },
+          "library": {
+            "x": 12,
+            "y": 1688,
+            "w": 366,
+            "h": 957
+          },
+          "board": {
+            "x": 12,
+            "y": 974,
+            "w": 366,
+            "h": 698
+          },
+          "tierLabel": {
+            "x": 23,
+            "y": 985,
+            "w": 98,
+            "h": 116
+          },
+          "firstTier": {
+            "x": 22,
+            "y": 984,
+            "w": 346,
+            "h": 118
+          },
+          "catalogList": {
+            "x": 12,
+            "y": 1749,
+            "w": 366,
+            "h": 896
+          }
+        },
+        "cards": {
+          "rows": 6,
+          "ranked": 2,
+          "catalogCount": 16,
+          "catalogBroken": 0
+        },
+        "controls": {
+          "random": {
+            "present": true,
+            "visible": true
+          },
+          "layout": {
+            "present": true,
+            "visible": true
+          },
+          "focus": {
+            "present": true,
+            "visible": true
+          },
+          "live": {
+            "present": true,
+            "visible": true
+          },
+          "sizes": {
+            "present": true,
+            "visible": true
+          },
+          "export": {
+            "present": true,
+            "visible": true
+          },
+          "edit": {
+            "present": true,
+            "visible": false
+          },
+          "undo": {
+            "present": true,
+            "visible": true
+          },
+          "reset": {
+            "present": true,
+            "visible": true
+          },
+          "backup": {
+            "present": true,
+            "visible": true
+          },
+          "import": {
+            "present": true,
+            "visible": true
+          },
+          "share": {
+            "present": true,
+            "visible": true
+          },
+          "nickname": {
+            "present": true,
+            "visible": true
+          }
+        },
+        "sidebar": true,
+        "layout": "block",
+        "overflowX": 0,
+        "tierLabels": [
+          "Dono do Repeat",
+          "Hino atrás de Hino",
+          "No Meu Fone",
+          "Tem Seus Momentos",
+          "Dá pra Pular",
+          "Skip sem Dó"
+        ],
+        "tierDescriptions": [
+          "Obra-prima. Eu ouviria sem parar!",
+          "Quase tudo aqui é música favorita.",
+          "Gostei, e sempre volto a ouvir.",
+          "Algumas faixas salvam o álbum.",
+          "Poucas músicas prendem minha atenção.",
+          "Não funcionou para mim."
+        ],
+        "categoryCounts": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "albumIds": [
+          {
+            "id": "debut",
+            "title": "Taylor Swift",
+            "year": 2006,
+            "tracks": 11
+          },
+          {
+            "id": "fearless",
+            "title": "Fearless",
+            "year": 2008,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now",
+            "title": "Speak Now",
+            "year": 2010,
+            "tracks": 14
+          },
+          {
+            "id": "red",
+            "title": "Red",
+            "year": 2012,
+            "tracks": 16
+          },
+          {
+            "id": "1989",
+            "title": "1989",
+            "year": 2014,
+            "tracks": 13
+          },
+          {
+            "id": "reputation",
+            "title": "reputation",
+            "year": 2017,
+            "tracks": 15
+          },
+          {
+            "id": "lover",
+            "title": "Lover",
+            "year": 2019,
+            "tracks": 18
+          },
+          {
+            "id": "folklore",
+            "title": "folklore",
+            "year": 2020,
+            "tracks": 16
+          },
+          {
+            "id": "evermore",
+            "title": "evermore",
+            "year": 2020,
+            "tracks": 15
+          },
+          {
+            "id": "fearless-tv",
+            "title": "Fearless (Taylor's Version)",
+            "year": 2021,
+            "tracks": 26
+          },
+          {
+            "id": "red-tv",
+            "title": "Red (Taylor's Version)",
+            "year": 2021,
+            "tracks": 30
+          },
+          {
+            "id": "midnights",
+            "title": "Midnights",
+            "year": 2022,
+            "tracks": 13
+          },
+          {
+            "id": "speak-now-tv",
+            "title": "Speak Now (Taylor's Version)",
+            "year": 2023,
+            "tracks": 22
+          },
+          {
+            "id": "1989-tv",
+            "title": "1989 (Taylor's Version)",
+            "year": 2023,
+            "tracks": 21
+          },
+          {
+            "id": "ttpd",
+            "title": "The Tortured Poets Department",
+            "year": 2024,
+            "tracks": 16
+          },
+          {
+            "id": "anthology",
+            "title": "The Tortured Poets Department: The Anthology",
+            "year": 2024,
+            "tracks": 31
+          },
+          {
+            "id": "showgirl",
+            "title": "The Life of a Showgirl",
+            "year": 2025,
+            "tracks": 12
+          },
+          {
+            "id": "encore",
+            "title": "The Life of a Showgirl: The Encore",
+            "year": 2026,
+            "tracks": 16
+          }
+        ],
+        "imagesComplete": true
+      }
+    }
+  },
+  "checks": [
+    {
+      "label": "series-allan | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "series-allan | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima absoluta. Tem que respeitar!",
+        "Me prendeu, me emocionou e entregou tudo.",
+        "Tem defeitos, mas ganhou meu coração.",
+        "Teve seus momentos. Só isso mesmo.",
+        "Exigiu paciência e muita força de vontade.",
+        "Nunca mais quero passar por isso."
+      ]
+    },
+    {
+      "label": "series-allan | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": true
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": false,
+          "visible": false
+        },
+        "nickname": {
+          "present": false,
+          "visible": false
+        }
+      }
+    },
+    {
+      "label": "series-allan | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 593,
+          "w": 929,
+          "h": 711
+        },
+        "library": {
+          "x": 987,
+          "y": 593,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "series-allan | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "series-allan | identidade do Allan",
+      "pass": true,
+      "detail": {
+        "official": true,
+        "audience": false
+      }
+    },
+    {
+      "label": "series-allan | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 836,
+          "w": 366,
+          "h": 1458
+        },
+        "library": {
+          "x": 12,
+          "y": 2313,
+          "w": 366,
+          "h": 3504
+        }
+      }
+    },
+    {
+      "label": "series-allan | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "filmes-allan | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "filmes-allan | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima absoluta. Tem que respeitar!",
+        "Me prendeu, me emocionou e entregou tudo.",
+        "Tem defeitos, mas ganhou meu coração.",
+        "Teve seus momentos. Só isso mesmo.",
+        "Exigiu paciência e muita força de vontade.",
+        "Nunca mais quero passar por isso."
+      ]
+    },
+    {
+      "label": "filmes-allan | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": true
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": false,
+          "visible": false
+        },
+        "nickname": {
+          "present": false,
+          "visible": false
+        }
+      }
+    },
+    {
+      "label": "filmes-allan | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 593,
+          "w": 929,
+          "h": 711
+        },
+        "library": {
+          "x": 987,
+          "y": 593,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "filmes-allan | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "filmes-allan | identidade do Allan",
+      "pass": true,
+      "detail": {
+        "official": true,
+        "audience": false
+      }
+    },
+    {
+      "label": "filmes-allan | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 836,
+          "w": 366,
+          "h": 1458
+        },
+        "library": {
+          "x": 12,
+          "y": 2313,
+          "w": 366,
+          "h": 3532
+        }
+      }
+    },
+    {
+      "label": "filmes-allan | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "albuns-allan | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "albuns-allan | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima. Eu ouviria sem parar!",
+        "Quase tudo aqui é música favorita.",
+        "Gostei, e sempre volto a ouvir.",
+        "Algumas faixas salvam o álbum.",
+        "Poucas músicas prendem minha atenção.",
+        "Não funcionou para mim."
+      ]
+    },
+    {
+      "label": "albuns-allan | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": true
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": false,
+          "visible": false
+        },
+        "nickname": {
+          "present": false,
+          "visible": false
+        }
+      }
+    },
+    {
+      "label": "albuns-allan | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 647,
+          "w": 927,
+          "h": 860
+        },
+        "library": {
+          "x": 987,
+          "y": 647,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "albuns-allan | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "albuns-allan | identidade do Allan",
+      "pass": true,
+      "detail": {
+        "official": true,
+        "audience": false
+      }
+    },
+    {
+      "label": "albuns-allan | 18 álbuns únicos",
+      "pass": true,
+      "detail": [
+        "debut",
+        "fearless",
+        "speak-now",
+        "red",
+        "1989",
+        "reputation",
+        "lover",
+        "folklore",
+        "evermore",
+        "fearless-tv",
+        "red-tv",
+        "midnights",
+        "speak-now-tv",
+        "1989-tv",
+        "ttpd",
+        "anthology",
+        "showgirl",
+        "encore"
+      ]
+    },
+    {
+      "label": "albuns-allan | todas as tracklists",
+      "pass": true,
+      "detail": [
+        [
+          "Taylor Swift",
+          11
+        ],
+        [
+          "Fearless",
+          13
+        ],
+        [
+          "Speak Now",
+          14
+        ],
+        [
+          "Red",
+          16
+        ],
+        [
+          "1989",
+          13
+        ],
+        [
+          "reputation",
+          15
+        ],
+        [
+          "Lover",
+          18
+        ],
+        [
+          "folklore",
+          16
+        ],
+        [
+          "evermore",
+          15
+        ],
+        [
+          "Fearless (Taylor's Version)",
+          26
+        ],
+        [
+          "Red (Taylor's Version)",
+          30
+        ],
+        [
+          "Midnights",
+          13
+        ],
+        [
+          "Speak Now (Taylor's Version)",
+          22
+        ],
+        [
+          "1989 (Taylor's Version)",
+          21
+        ],
+        [
+          "The Tortured Poets Department",
+          16
+        ],
+        [
+          "The Tortured Poets Department: The Anthology",
+          31
+        ],
+        [
+          "The Life of a Showgirl",
+          12
+        ],
+        [
+          "The Life of a Showgirl: The Encore",
+          16
+        ]
+      ]
+    },
+    {
+      "label": "albuns-allan | 18 capas",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "label": "albuns-allan | ordem personalizada por tier",
+      "pass": true,
+      "detail": [
+        "fearless",
+        "debut"
+      ]
+    },
+    {
+      "label": "albuns-allan | ordem mantida ao recarregar",
+      "pass": true,
+      "detail": {
+        "before": [
+          "fearless",
+          "debut"
+        ],
+        "afterReload": [
+          "fearless",
+          "debut"
+        ]
+      }
+    },
+    {
+      "label": "albuns-allan | exportação recebe ordem personalizada",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "albuns-allan | exportação PNG",
+      "pass": true,
+      "detail": "tier-taylor-swift-allan.png"
+    },
+    {
+      "label": "albuns-allan | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 835,
+          "w": 366,
+          "h": 894
+        },
+        "library": {
+          "x": 12,
+          "y": 1745,
+          "w": 366,
+          "h": 957
+        }
+      }
+    },
+    {
+      "label": "albuns-allan | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "series-publico | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "series-publico | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima absoluta. Tem que respeitar!",
+        "Me prendeu, me emocionou e entregou tudo.",
+        "Tem defeitos, mas ganhou meu coração.",
+        "Teve seus momentos. Só isso mesmo.",
+        "Exigiu paciência e muita força de vontade.",
+        "Nunca mais quero passar por isso."
+      ]
+    },
+    {
+      "label": "series-publico | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": false
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        },
+        "nickname": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "series-publico | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 614,
+          "w": 929,
+          "h": 711
+        },
+        "library": {
+          "x": 987,
+          "y": 614,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "series-publico | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "series-publico | identidade de público",
+      "pass": true,
+      "detail": {
+        "audience": true,
+        "official": false,
+        "hero": "O SEU\nVEREDITO!"
+      }
+    },
+    {
+      "label": "series-publico | apelido e compartilhar",
+      "pass": true,
+      "detail": {
+        "nickname": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "series-publico | editor não aparece para o público",
+      "pass": true,
+      "detail": {
+        "present": true,
+        "visible": false
+      }
+    },
+    {
+      "label": "series-publico | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 797,
+          "w": 366,
+          "h": 1458
+        },
+        "library": {
+          "x": 12,
+          "y": 2273,
+          "w": 366,
+          "h": 3461
+        }
+      }
+    },
+    {
+      "label": "series-publico | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "filmes-publico | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "filmes-publico | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima absoluta. Tem que respeitar!",
+        "Me prendeu, me emocionou e entregou tudo.",
+        "Tem defeitos, mas ganhou meu coração.",
+        "Teve seus momentos. Só isso mesmo.",
+        "Exigiu paciência e muita força de vontade.",
+        "Nunca mais quero passar por isso."
+      ]
+    },
+    {
+      "label": "filmes-publico | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": false
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        },
+        "nickname": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "filmes-publico | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 614,
+          "w": 929,
+          "h": 711
+        },
+        "library": {
+          "x": 987,
+          "y": 614,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "filmes-publico | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "filmes-publico | identidade de público",
+      "pass": true,
+      "detail": {
+        "audience": true,
+        "official": false,
+        "hero": "O SEU\nVEREDITO!"
+      }
+    },
+    {
+      "label": "filmes-publico | apelido e compartilhar",
+      "pass": true,
+      "detail": {
+        "nickname": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "filmes-publico | editor não aparece para o público",
+      "pass": true,
+      "detail": {
+        "present": true,
+        "visible": false
+      }
+    },
+    {
+      "label": "filmes-publico | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 797,
+          "w": 366,
+          "h": 1458
+        },
+        "library": {
+          "x": 12,
+          "y": 2273,
+          "w": 366,
+          "h": 3489
+        }
+      }
+    },
+    {
+      "label": "filmes-publico | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "albuns-publico | seis tiers",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "label": "albuns-publico | descrição em todos os tiers",
+      "pass": true,
+      "detail": [
+        "Obra-prima. Eu ouviria sem parar!",
+        "Quase tudo aqui é música favorita.",
+        "Gostei, e sempre volto a ouvir.",
+        "Algumas faixas salvam o álbum.",
+        "Poucas músicas prendem minha atenção.",
+        "Não funcionou para mim."
+      ]
+    },
+    {
+      "label": "albuns-publico | recursos essenciais",
+      "pass": true,
+      "detail": {
+        "random": {
+          "present": true,
+          "visible": true
+        },
+        "layout": {
+          "present": true,
+          "visible": true
+        },
+        "focus": {
+          "present": true,
+          "visible": true
+        },
+        "live": {
+          "present": true,
+          "visible": true
+        },
+        "sizes": {
+          "present": true,
+          "visible": true
+        },
+        "export": {
+          "present": true,
+          "visible": true
+        },
+        "edit": {
+          "present": true,
+          "visible": false
+        },
+        "undo": {
+          "present": true,
+          "visible": true
+        },
+        "reset": {
+          "present": true,
+          "visible": true
+        },
+        "backup": {
+          "present": true,
+          "visible": true
+        },
+        "import": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        },
+        "nickname": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "albuns-publico | catálogo do lado",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 44,
+          "y": 626,
+          "w": 927,
+          "h": 860
+        },
+        "library": {
+          "x": 987,
+          "y": 626,
+          "w": 420,
+          "h": 876
+        },
+        "layout": "grid"
+      }
+    },
+    {
+      "label": "albuns-publico | imagem do Allan no cabeçalho",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "albuns-publico | identidade de público",
+      "pass": true,
+      "detail": {
+        "audience": true,
+        "official": false,
+        "hero": "O SEU\nVEREDITO!"
+      }
+    },
+    {
+      "label": "albuns-publico | apelido e compartilhar",
+      "pass": true,
+      "detail": {
+        "nickname": {
+          "present": true,
+          "visible": true
+        },
+        "share": {
+          "present": true,
+          "visible": true
+        }
+      }
+    },
+    {
+      "label": "albuns-publico | editor não aparece para o público",
+      "pass": true,
+      "detail": {
+        "present": true,
+        "visible": false
+      }
+    },
+    {
+      "label": "albuns-publico | 18 álbuns únicos",
+      "pass": true,
+      "detail": [
+        "debut",
+        "fearless",
+        "speak-now",
+        "red",
+        "1989",
+        "reputation",
+        "lover",
+        "folklore",
+        "evermore",
+        "fearless-tv",
+        "red-tv",
+        "midnights",
+        "speak-now-tv",
+        "1989-tv",
+        "ttpd",
+        "anthology",
+        "showgirl",
+        "encore"
+      ]
+    },
+    {
+      "label": "albuns-publico | todas as tracklists",
+      "pass": true,
+      "detail": [
+        [
+          "Taylor Swift",
+          11
+        ],
+        [
+          "Fearless",
+          13
+        ],
+        [
+          "Speak Now",
+          14
+        ],
+        [
+          "Red",
+          16
+        ],
+        [
+          "1989",
+          13
+        ],
+        [
+          "reputation",
+          15
+        ],
+        [
+          "Lover",
+          18
+        ],
+        [
+          "folklore",
+          16
+        ],
+        [
+          "evermore",
+          15
+        ],
+        [
+          "Fearless (Taylor's Version)",
+          26
+        ],
+        [
+          "Red (Taylor's Version)",
+          30
+        ],
+        [
+          "Midnights",
+          13
+        ],
+        [
+          "Speak Now (Taylor's Version)",
+          22
+        ],
+        [
+          "1989 (Taylor's Version)",
+          21
+        ],
+        [
+          "The Tortured Poets Department",
+          16
+        ],
+        [
+          "The Tortured Poets Department: The Anthology",
+          31
+        ],
+        [
+          "The Life of a Showgirl",
+          12
+        ],
+        [
+          "The Life of a Showgirl: The Encore",
+          16
+        ]
+      ]
+    },
+    {
+      "label": "albuns-publico | 18 capas",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "label": "albuns-publico | ordem personalizada por tier",
+      "pass": true,
+      "detail": [
+        "fearless",
+        "debut"
+      ]
+    },
+    {
+      "label": "albuns-publico | ordem mantida ao recarregar",
+      "pass": true,
+      "detail": {
+        "before": [
+          "fearless",
+          "debut"
+        ],
+        "afterReload": [
+          "fearless",
+          "debut"
+        ]
+      }
+    },
+    {
+      "label": "albuns-publico | exportação recebe ordem personalizada",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "label": "albuns-publico | exportação PNG",
+      "pass": true,
+      "detail": "tier-taylor-swift-publico.png"
+    },
+    {
+      "label": "albuns-publico | compartilhar ranking real",
+      "pass": true,
+      "detail": "tier-taylor-swift-publico.png"
+    },
+    {
+      "label": "albuns-publico | catálogo abaixo no celular",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "x": 12,
+          "y": 778,
+          "w": 366,
+          "h": 894
+        },
+        "library": {
+          "x": 12,
+          "y": 1688,
+          "w": 366,
+          "h": 957
+        }
+      }
+    },
+    {
+      "label": "albuns-publico | largura sem transbordamento",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "label": "largura da coluna de catálogo coerente",
+      "pass": true,
+      "detail": {
+        "panel": -2,
+        "catalog": 0,
+        "label": 0
+      }
+    },
+    {
+      "label": "largura da coluna de veredito coerente",
+      "pass": true,
+      "detail": {
+        "panel": -2,
+        "catalog": 0,
+        "label": 0
+      }
+    }
+  ],
+  "errors": [],
+  "comparison": {
+    "desktopDimensions": [
+      {
+        "panel": 929,
+        "library": 420,
+        "label": 185
+      },
+      {
+        "panel": 929,
+        "library": 420,
+        "label": 185
+      },
+      {
+        "panel": 927,
+        "library": 420,
+        "label": 185
+      }
+    ],
+    "albumVersusSeries": {
+      "panel": -2,
+      "catalog": 0,
+      "label": 0
+    }
+  },
+  "total": 71,
+  "passed": 71,
+  "failed": [],
+  "success": true
+}
