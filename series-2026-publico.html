@@ -505,6 +505,7 @@ html{scroll-padding-top:14px}button,select,input{touch-action:manipulation}
  <footer class="scene-lightbox-foot"><span id="sceneFullscreenCounter">1 / 1</span><span class="scene-lightbox-tip">Use ← → ou deslize para mudar de cena</span></footer>
 </dialog>
 <button id="exitLiveBtn" type="button" class="button exit-live" hidden>✕ Sair do modo live</button><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="tier-drag-shared.js?v=1"></script>
 <script>
 (()=>{'use strict';
 const DEFAULT_TIERS=[
@@ -3792,6 +3793,7 @@ function createDragPreview(isPool){
   return item;
 }
 function tierInsertionAnchor(dock,clientX,clientY){
+  if(window.AllanTierDrag?.insertionAnchor) return window.AllanTierDrag.insertionAnchor(dock,clientX,clientY,'.series-card',[dragPreview,dragOrigin]);
   const cards=[...dock.children].filter(el=>el.classList.contains('series-card')
     &&el!==dragPreview&&el!==dragOrigin);
   if(!cards.length)return null;
