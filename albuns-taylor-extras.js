@@ -17,13 +17,16 @@ if($("signOutAllanBtn"))$("signOutAllanBtn").onclick=()=>{
  sessionStorage.removeItem("allanwoodtv-host-session-v1");
  location.href="./index.html";
 };
-if($("shareTierBtn"))$("shareTierBtn").onclick=async()=>{
- const url=new URL("./albuns-taylor-publico.html",location.href).href;
- try {
-   if(navigator.share){await navigator.share({title:"Tier de álbuns · Taylor Swift · AllanWoodTV",url});return}
-   await navigator.clipboard.writeText(url);
-   app.notice("Link da tier copiado!");
- }catch(err){if(err?.name!=="AbortError")app.notice("Copie o endereço na barra do navegador.")}
+const viewerInput=$("viewerNameInput");
+if(viewerInput){
+ try{viewerInput.value=localStorage.getItem("allanwoodtv-telespectador-apelido-v1")||""}catch{}
+ viewerInput.addEventListener("input",()=>{
+  try{localStorage.setItem("allanwoodtv-telespectador-apelido-v1",viewerInput.value.trim().slice(0,28))}catch{}
+ });
+}
+if($("shareTierBtn"))$("shareTierBtn").onclick=()=>{
+ if(window.TAYLOR_EXPORT?.image)window.TAYLOR_EXPORT.image(true);
+ else app.notice("Não foi possível compartilhar o ranking.");
 };
 // Backup/importação de vereditos, idêntico em propósito ao de séries e filmes.
 const actions=$("board")?.closest("section")?.querySelector(".bar .actions");
