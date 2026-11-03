@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:19:22.898Z",
+  "executedAt": "2026-11-03T02:26:33.819Z",
   "type": "ui-regression",
   "browser": "chromium",
   "results": [
@@ -17,14 +17,225 @@
       "name": "publico: foto do Allan",
       "pass": true,
       "detail": true
-    }
-  ],
-  "errors": [
+    },
     {
-      "fatal": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('.court-allan')\n"
+      "name": "publico: banner próprio do público",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: catálogo lateral",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: galeria abre",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "publico: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: fotos não clicáveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: slideshow passa sozinho",
+      "pass": true,
+      "detail": {
+        "before": "01 / 04",
+        "after": "02 / 04"
+      }
+    },
+    {
+      "name": "publico: tela cheia preservada",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tracklist",
+      "pass": true,
+      "detail": 11
+    },
+    {
+      "name": "publico: todos os tiers visíveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: ficha sem barra de rolagem externa",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tracklist abre em janela própria",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: ficha cabe em 1200x600",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 600,
+        "modalBottom": 588
+      }
+    },
+    {
+      "name": "publico: ficha cabe em 1366x768",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 768,
+        "modalBottom": 744.953125
+      }
+    },
+    {
+      "name": "publico: sortear abre ficha",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: foco",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tamanho extragrande",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: arrastar para tier",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "allan: cards",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "allan: 18 capas renderizadas",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "allan: foto do Allan",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: banner oficial do Allan",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: catálogo lateral",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: galeria abre",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "allan: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: fotos não clicáveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: slideshow passa sozinho",
+      "pass": true,
+      "detail": {
+        "before": "01 / 04",
+        "after": "02 / 04"
+      }
+    },
+    {
+      "name": "allan: tela cheia preservada",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tracklist",
+      "pass": true,
+      "detail": 11
+    },
+    {
+      "name": "allan: todos os tiers visíveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: ficha sem barra de rolagem externa",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tracklist abre em janela própria",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: ficha cabe em 1200x600",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 600,
+        "modalBottom": 588
+      }
+    },
+    {
+      "name": "allan: ficha cabe em 1366x768",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 768,
+        "modalBottom": 744.953125
+      }
+    },
+    {
+      "name": "allan: sortear abre ficha",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: foco",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tamanho extragrande",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: arrastar para tier",
+      "pass": true,
+      "detail": "1"
     }
   ],
-  "passed": 3,
-  "total": 3,
-  "success": false
+  "errors": [],
+  "passed": 40,
+  "total": 40,
+  "success": true
 }
