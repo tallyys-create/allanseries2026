@@ -1,0 +1,477 @@
+{
+  "debut": {
+    "encontradas": 4,
+    "total_tentadas": 5,
+    "fotos": [
+      {
+        "musica": "Tim McGraw",
+        "video": "Tim McGraw",
+        "ano": "2006",
+        "fonte": "https://music.apple.com/us/music-video/tim-mcgraw/1445883988?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/37/a0/f7/mzi.ojagwqrt.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/debut/cenas/01.webp"
+      },
+      {
+        "musica": "Teardrops on My Guitar",
+        "video": "Teardrops On My Guitar",
+        "ano": "2007",
+        "fonte": "https://music.apple.com/us/music-video/teardrops-on-my-guitar/6814446635?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/8b/27/fb/8b27fb59-d1fd-2bb1-f894-46ad3c1ec13a/08PNDIM04654.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/debut/cenas/02.webp"
+      },
+      {
+        "musica": "Our Song",
+        "video": "Our Song",
+        "ano": "2008",
+        "fonte": "https://music.apple.com/us/music-video/our-song/1446004567?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Features/29/14/0e/dj.nrcqgmxt.tif/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/debut/cenas/03.webp"
+      },
+      {
+        "musica": "Picture to Burn",
+        "video": "Picture to Burn",
+        "ano": "2006",
+        "fonte": "https://music.apple.com/us/music-video/picture-to-burn/1467934363?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Music/63/46/68/mzi.avulyjab.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/debut/cenas/04.webp"
+      }
+    ]
+  },
+  "fearless": {
+    "encontradas": 4,
+    "total_tentadas": 5,
+    "fotos": [
+      {
+        "musica": "You Belong with Me",
+        "video": "You Belong With Me",
+        "ano": "2009",
+        "fonte": "https://music.apple.com/us/music-video/you-belong-with-me/1452859640?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/f1/ff/21/f1ff21a1-4cff-88b3-230f-fd1bc0c26b70/dj.imboabfu.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless/cenas/01.webp"
+      },
+      {
+        "musica": "White Horse",
+        "video": "White Horse",
+        "ano": "2009",
+        "fonte": "https://music.apple.com/us/music-video/white-horse/1452859636?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/56/1d/96/561d9619-8e83-8040-59eb-8364b7d407ec/dj.ejffdlgp.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless/cenas/02.webp"
+      },
+      {
+        "musica": "Fifteen",
+        "video": "Fifteen",
+        "ano": "2009",
+        "fonte": "https://music.apple.com/us/music-video/fifteen/1445828857?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/24/16/96/241696af-9117-1c7e-d034-67d525f85347/dj.bxczzykc.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless/cenas/03.webp"
+      },
+      {
+        "musica": "Fearless",
+        "video": "Fearless",
+        "ano": "2010",
+        "fonte": "https://music.apple.com/us/music-video/fearless/1445836761?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video128/v4/d9/d0/d8/d9d0d88f-cd00-db9b-12cd-159be54777db/Universal.358600032.00843930003310_USCJY1003627.CROPPED.mzi.ajxqvhyv.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless/cenas/04.webp"
+      }
+    ]
+  },
+  "speak-now": {
+    "encontradas": 6,
+    "total_tentadas": 6,
+    "fotos": [
+      {
+        "musica": "Mine",
+        "video": "Mine",
+        "ano": "2010",
+        "fonte": "https://music.apple.com/us/music-video/mine/1445826299?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/61/a2/f4/mzi.qifgrvms.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/01.webp"
+      },
+      {
+        "musica": "Back to December",
+        "video": "Back to December",
+        "ano": "2011",
+        "fonte": "https://music.apple.com/us/music-video/back-to-december/1445827510?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/af/4a/bc/mzi.iykcxtvm.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/02.webp"
+      },
+      {
+        "musica": "Mean",
+        "video": "Mean",
+        "ano": "2011",
+        "fonte": "https://music.apple.com/us/music-video/mean/1445715945?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/24/d8/9c/24d89c96-ea4c-4b99-004c-3222fa525a10/dj.wgulrpnx.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/03.webp"
+      },
+      {
+        "musica": "The Story of Us",
+        "video": "The Story of Us",
+        "ano": "2011",
+        "fonte": "https://music.apple.com/us/music-video/the-story-of-us/1445859378?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/ef/7e/b4/mzi.ohdceuvp.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/04.webp"
+      },
+      {
+        "musica": "Sparks Fly",
+        "video": "Sparks Fly",
+        "ano": "2011",
+        "fonte": "https://music.apple.com/us/music-video/sparks-fly/1445726355?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/b1/e3/d4/mzi.quvnnigk.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/05.webp"
+      },
+      {
+        "musica": "Ours",
+        "video": "Ours",
+        "ano": "2011",
+        "fonte": "https://music.apple.com/us/music-video/ours/1446016867?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/de/49/fd/mzi.eyjzxdcq.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now/cenas/06.webp"
+      }
+    ]
+  },
+  "red": {
+    "encontradas": 4,
+    "total_tentadas": 6,
+    "fotos": [
+      {
+        "musica": "We Are Never Ever Getting Back Together",
+        "video": "We Are Never Ever Getting Back Together",
+        "ano": "2012",
+        "fonte": "https://music.apple.com/us/music-video/we-are-never-ever-getting-back-together/1445833386?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video/v4/f9/64/77/f96477d5-522c-badf-ca8f-0de34279846b/vidtrkimg_00843930006991_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red/cenas/01.webp"
+      },
+      {
+        "musica": "22",
+        "video": "22",
+        "ano": "2013",
+        "fonte": "https://music.apple.com/us/music-video/22/1444345303?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video118/v4/2e/5d/60/2e5d6080-6f8b-5857-4221-3443d922f0dc/Universal.617167262.00843930009251_USCJY1231268.CROPPED.vidtrkimg_00843930009251_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red/cenas/02.webp"
+      },
+      {
+        "musica": "Everything Has Changed",
+        "video": "Everything Has Changed (feat. Ed Sheeran)",
+        "ano": "2013",
+        "fonte": "https://music.apple.com/us/music-video/everything-has-changed-feat-ed-sheeran/1444344749?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video2/v4/bc/e9/e0/bce9e020-92d0-3651-e477-f65da3109707/vidtrkimg_00843930010271_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red/cenas/03.webp"
+      },
+      {
+        "musica": "Begin Again",
+        "video": "Begin Again",
+        "ano": "2012",
+        "fonte": "https://music.apple.com/us/music-video/begin-again/1445869386?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video1/v4/a1/29/ce/a129cead-dc23-4b1a-c660-64aaee24171f/dj.cgqmwsok.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red/cenas/04.webp"
+      }
+    ]
+  },
+  "1989": {
+    "encontradas": 6,
+    "total_tentadas": 7,
+    "fotos": [
+      {
+        "musica": "Blank Space",
+        "video": "Blank Space",
+        "ano": "2014",
+        "fonte": "https://music.apple.com/us/music-video/blank-space/1445036536?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video118/v4/11/d9/73/11d97317-d086-32b1-e80b-7c3006fd86e8/Universal.939101062.00843930015139_USCJY1431508.CROPPED.vidtrkimg_00843930015139_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/01.webp"
+      },
+      {
+        "musica": "Shake It Off",
+        "video": "Shake It Off",
+        "ano": "2014",
+        "fonte": "https://music.apple.com/us/music-video/shake-it-off/1445005781?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video2/v4/02/e7/57/02e7574c-81f8-ed99-16ef-4156276fd41c/vidtrkimg_00843930013845_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/02.webp"
+      },
+      {
+        "musica": "Style",
+        "video": "Style",
+        "ano": "2015",
+        "fonte": "https://music.apple.com/us/music-video/style/1444997402?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video3/v4/85/fc/e8/85fce8e0-0603-11ba-4bef-7cccff386844/vidtrkimg_00843930016204_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/03.webp"
+      },
+      {
+        "musica": "Bad Blood",
+        "video": "Bad Blood (feat. Kendrick Lamar)",
+        "ano": "2015",
+        "fonte": "https://music.apple.com/us/music-video/bad-blood-feat-kendrick-lamar/1444612068?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video1/v4/88/a5/4a/88a54a39-15cc-072f-d245-68e6c2cd90be/15UMDIM00351_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/04.webp"
+      },
+      {
+        "musica": "Wildest Dreams",
+        "video": "Wildest Dreams",
+        "ano": "2015",
+        "fonte": "https://music.apple.com/us/music-video/wildest-dreams/1445010473?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video49/v4/6e/5d/d4/6e5dd4e4-0355-89b9-20fe-9859e5274a20/15UMDIM00510_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/05.webp"
+      },
+      {
+        "musica": "Out of the Woods",
+        "video": "Out of the Woods",
+        "ano": "2015",
+        "fonte": "https://music.apple.com/us/music-video/out-of-the-woods/1445018135?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video49/v4/06/14/8a/06148ac5-b3a9-a36d-88a7-644b54e24093/15UMDIM00758_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989/cenas/06.webp"
+      }
+    ]
+  },
+  "reputation": {
+    "encontradas": 3,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "Look What You Made Me Do",
+        "video": "Look What You Made Me Do",
+        "ano": "2017",
+        "fonte": "https://music.apple.com/us/music-video/look-what-you-made-me-do/1445740748?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video128/v4/0a/7c/2e/0a7c2eb8-8443-9ea2-cdeb-afcf06698e45/17UM1IM24940_1_1.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/reputation/cenas/01.webp"
+      },
+      {
+        "musica": "...Ready for It?",
+        "video": "...Ready For It?",
+        "ano": "2017",
+        "fonte": "https://music.apple.com/us/music-video/ready-for-it/1445011970?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video118/v4/76/b7/7b/76b77b40-4058-d4ff-1683-27e57a6f1ad4/dj.oevfezxg.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/reputation/cenas/02.webp"
+      },
+      {
+        "musica": "Delicate",
+        "video": "Delicate",
+        "ano": "2018",
+        "fonte": "https://music.apple.com/us/music-video/delicate/1358176127?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video118/v4/e2/19/28/e2192865-f022-11c7-35f3-c18a06ede4ab/00843930028078_00001.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/reputation/cenas/03.webp"
+      }
+    ]
+  },
+  "lover": {
+    "encontradas": 4,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "ME!",
+        "video": "ME! (feat. Brendon Urie of Panic! At The Disco)",
+        "ano": "2019",
+        "fonte": "https://music.apple.com/us/music-video/me-feat-brendon-urie-of-panic-at-the-disco/1460866705?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/84/4a/bd/844abdf8-f2db-1a48-0fd7-693ffb4f970b/19UMGIM38661_.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/lover/cenas/01.webp"
+      },
+      {
+        "musica": "You Need to Calm Down",
+        "video": "You Need To Calm Down",
+        "ano": "2019",
+        "fonte": "https://music.apple.com/us/music-video/you-need-to-calm-down/1468647174?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/1b/64/29/1b64297a-b315-fbe4-61a9-a841a93548c0/19UMGIM53855.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/lover/cenas/02.webp"
+      },
+      {
+        "musica": "Lover",
+        "video": "Lover",
+        "ano": "2019",
+        "fonte": "https://music.apple.com/us/music-video/lover/1477498160?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/99/d0/00/99d000c9-efaf-720c-0534-8aedc6dd0a96/19UMGIM76676.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/lover/cenas/03.webp"
+      },
+      {
+        "musica": "The Man",
+        "video": "The Man",
+        "ano": "2019",
+        "fonte": "https://music.apple.com/us/music-video/the-man-lyric-video/1497926971?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/37/cb/a7/37cba7c0-a6cc-dc18-2c66-e6f2b60ef485/20UMGIM06014.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/lover/cenas/04.webp"
+      }
+    ]
+  },
+  "folklore": {
+    "encontradas": 1,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "cardigan",
+        "video": "cardigan",
+        "ano": "2020",
+        "fonte": "https://music.apple.com/us/music-video/cardigan/1524878994?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/26/4b/0a/264b0ac1-f92a-bc57-8af6-9a6abb20e752/20UMGIM64242.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/folklore/cenas/01.webp"
+      }
+    ]
+  },
+  "evermore": {
+    "encontradas": 2,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "no body, no crime",
+        "video": "no body, no crime (feat. HAIM)",
+        "ano": "2020",
+        "fonte": "https://music.apple.com/us/music-video/no-body-no-crime-feat-haim-lyric-video/1544320341?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/fc/a6/83/fca68304-be6f-4af7-715e-511c16e72930/20UM1IM14924.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/evermore/cenas/01.webp"
+      },
+      {
+        "musica": "coney island",
+        "video": "coney island (feat. The National)",
+        "ano": "2020",
+        "fonte": "https://music.apple.com/us/music-video/coney-island-feat-the-national-lyric-video/1544318122?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/ca/f7/c5/caf7c5ee-6431-82ee-e683-153c14274559/20UM1IM14927.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/evermore/cenas/02.webp"
+      }
+    ]
+  },
+  "fearless-tv": {
+    "encontradas": 3,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "Love Story (Taylor's Version)",
+        "video": "Love Story (Taylor's Version)",
+        "ano": "2021",
+        "fonte": "https://music.apple.com/us/music-video/love-story-taylors-version-lyric-video/1553405395?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/87/ee/1f/87ee1f6a-6981-02dd-3e30-75401a0fd9ce/21UMGIM11349.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless-tv/cenas/01.webp"
+      },
+      {
+        "musica": "Mr. Perfectly Fine",
+        "video": "Mr. Perfectly Fine (Taylor's Version) (From The Vault)",
+        "ano": "2021",
+        "fonte": "https://music.apple.com/us/music-video/mr-perfectly-fine-taylors-version-from-the-vault/1561838133?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/0a/e1/1d/0ae11d3a-5d90-2617-b14e-7fb4a4e0cf6e/21UMGIM29419.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless-tv/cenas/02.webp"
+      },
+      {
+        "musica": "That's When",
+        "video": "That’s When (Taylor’s Version) [From The Vault] [feat. Keith Urban]",
+        "ano": "2021",
+        "fonte": "https://music.apple.com/us/music-video/thats-when-taylors-version-from-the-vault-feat-keith/1562046703?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video124/v4/cd/e9/d4/cde9d47b-861a-bfc1-dc15-7ed98a52eb59/21UMGIM29420.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/fearless-tv/cenas/03.webp"
+      }
+    ]
+  },
+  "red-tv": {
+    "encontradas": 2,
+    "total_tentadas": 3,
+    "fotos": [
+      {
+        "musica": "All Too Well (10 Minute Version)",
+        "video": "All Too Well (10 Minute Version) (Taylor's Version) (From The Vault)",
+        "ano": "2021",
+        "fonte": "https://music.apple.com/us/music-video/all-too-well-10-minute-version-taylors-version-from/1594764001?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/95/b0/8c/95b08cc6-120d-3439-f85a-80c3c7bede75/21UM1IM41338.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red-tv/cenas/01.webp"
+      },
+      {
+        "musica": "I Bet You Think About Me",
+        "video": "I Bet You Think About Me (Taylor's Version) (From The Vault) [feat. Chris Stapleton]",
+        "ano": "2021",
+        "fonte": "https://music.apple.com/us/music-video/i-bet-you-think-about-me-taylors-version-from-the/1594746399?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/21/38/7b/21387b06-165e-69b1-89b3-3e1c13159787/21UM1IM41337.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/red-tv/cenas/02.webp"
+      }
+    ]
+  },
+  "midnights": {
+    "encontradas": 1,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "Anti-Hero",
+        "video": "Anti-Hero",
+        "ano": "2022",
+        "fonte": "https://music.apple.com/us/music-video/anti-hero/1650836460?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video122/v4/77/8e/77/778e77d1-59ef-0be7-616e-8b7ef186e8a4/22UM1IM21531.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/midnights/cenas/01.webp"
+      }
+    ]
+  },
+  "speak-now-tv": {
+    "encontradas": 2,
+    "total_tentadas": 3,
+    "fotos": [
+      {
+        "musica": "I Can See You",
+        "video": "I Can See You (Taylor’s Version) [From The Vault]",
+        "ano": "2023",
+        "fonte": "https://music.apple.com/us/music-video/i-can-see-you-taylors-version-from-the-vault/1696387354?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video116/v4/f6/70/ea/f670ead3-e9f0-684d-ecbc-2e59f97ec0ff/23UMGIM76729.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now-tv/cenas/01.webp"
+      },
+      {
+        "musica": "Castles Crumbling (Taylor's Version)",
+        "video": "Castles Crumbling (Taylor’s Version) [From The Vault]] [feat. Hayley Williams]",
+        "ano": "2023",
+        "fonte": "https://music.apple.com/us/music-video/castles-crumbling-taylors-version-from-the-vault-feat/1696244032?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/ed/f7/00/edf700c8-988c-0b08-4e1e-5965c491a79d/23UMGIM74822.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/speak-now-tv/cenas/02.webp"
+      }
+    ]
+  },
+  "1989-tv": {
+    "encontradas": 1,
+    "total_tentadas": 3,
+    "fotos": [
+      {
+        "musica": "Is It Over Now? (Taylor's Version)",
+        "video": "Is It Over Now? (Taylor's Version) [From The Vault]",
+        "ano": "2023",
+        "fonte": "https://music.apple.com/us/music-video/is-it-over-now-taylors-version-from-the-vault-lyric-video/1713867346?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/51/5c/5e/515c5e7d-8fdc-236a-b10b-d4d0000fc041/23UM1IM31197.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/1989-tv/cenas/01.webp"
+      }
+    ]
+  },
+  "ttpd": {
+    "encontradas": 1,
+    "total_tentadas": 2,
+    "fotos": [
+      {
+        "musica": "Fortnight",
+        "video": "Fortnight (feat. Post Malone)",
+        "ano": "2024",
+        "fonte": "https://music.apple.com/us/music-video/fortnight-feat-post-malone/1742247789?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/a6/ff/7c/a6ff7cc4-b45d-49c1-bb21-ec08c3948869/24UMGIM42850.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/ttpd/cenas/01.webp"
+      }
+    ]
+  },
+  "anthology": {
+    "encontradas": 0,
+    "total_tentadas": 4,
+    "fotos": []
+  },
+  "showgirl": {
+    "encontradas": 1,
+    "total_tentadas": 3,
+    "fotos": [
+      {
+        "musica": "The Fate of Ophelia",
+        "video": "The Fate of Ophelia",
+        "ano": "2025",
+        "fonte": "https://music.apple.com/us/music-video/the-fate-of-ophelia/1845446611?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/fe/d9/a8/fed9a8ad-13fc-7408-a739-2d80d3714876/25UM1IM51274.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/showgirl/cenas/01.webp"
+      }
+    ]
+  },
+  "encore": {
+    "encontradas": 1,
+    "total_tentadas": 4,
+    "fotos": [
+      {
+        "musica": "Patient Zero",
+        "video": "Patient Zero",
+        "ano": "2026",
+        "fonte": "https://music.apple.com/us/music-video/patient-zero/6816241368?uo=4",
+        "imagem": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/02/21/39/022139aa-083d-21c1-f0b9-cb7dc630dc98/26UM1IM22083.crop.jpg/1200x1200bb.jpg",
+        "arquivo": "assets/albuns/taylor-swift/encore/cenas/01.webp"
+      }
+    ]
+  }
+}
