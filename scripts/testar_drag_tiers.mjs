@@ -95,7 +95,7 @@ async function audition(mode){
    try{
      const old=JSON.stringify(await page.evaluate(()=>window.TAYLOR_APP.getState()));
      await page.locator('#board .tier:first-child .album[data-id="'+secondId+'"]').dragTo(
-       page.locator(".top .brand"),{timeout:12000,steps:15});
+       page.locator("#libraryTitle"),{timeout:12000,steps:15});
      const state=JSON.stringify(await page.evaluate(()=>window.TAYLOR_APP.getState()));
      const previews=await page.locator(".live-drag-preview").count();
      check(mode.name+" | soltar fora cancela",old===state&&previews===0,{unchanged:old===state,previews});
