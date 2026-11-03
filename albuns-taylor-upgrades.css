@@ -1,0 +1,86 @@
+/* Tier Taylor Swift: melhorias essenciais compartilhadas com as demais tiers. */
+.top .brand{display:flex;align-items:center;gap:13px;letter-spacing:.035em}
+.top .brand .allan-avatar{display:block;width:54px;height:54px;flex:0 0 54px;border:3px solid #e3efc8;border-radius:17px;box-shadow:0 8px 25px #0006;overflow:hidden;background:#26432c}
+.top .brand .allan-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.brand-lettering{display:flex;flex-direction:column;line-height:1.1}
+.brand-lettering small{font:800 9px 'DM Sans',sans-serif;letter-spacing:.18em;color:#9debad;margin-top:5px}
+.toplinks{align-items:center}.toplinks .btn{min-height:40px}
+.ranking-workspace{display:block;min-width:0}
+.ranking-workspace .ranking-panel,.ranking-workspace .library{min-width:0}
+.ranking-workspace>.library{margin-top:18px}
+.library .bar{margin-top:0}
+.library .pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(91px,1fr));align-items:start;gap:13px}
+.pool .album{width:100%;flex-basis:auto}
+.pool .album-art{width:100%}
+.pool .album-title{font-size:11px;line-height:1.26}
+.tier .album{width:var(--rank-size,76px);flex:0 0 var(--rank-size,76px)}
+.tier .album-art{width:100%}
+.tier .album-title{font-size:9px}
+body.tier-size-small{--rank-size:58px}
+body.tier-size-medium{--rank-size:76px}
+body.tier-size-large{--rank-size:97px}
+body.tier-size-xlarge{--rank-size:124px}
+body.tier-size-xlarge .tier-dock{align-content:flex-start}
+.tier-label b{overflow-wrap:normal;word-break:normal;hyphens:none}
+.layout-switch[aria-pressed="true"],.focus-switch[aria-pressed="true"],.live-switch[aria-pressed="true"]{background:#9ae38b!important;color:#16321d!important;border-color:#9ae38b!important}
+.size-picker{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;background:#ffffff0a;border:1px solid #ffffff35;border-radius:10px;font-size:11px;font-weight:800}
+.size-picker select{background:#233729;color:#fff;border:0;font:inherit;max-width:112px;padding:3px;border-radius:5px}
+.size-picker select:focus-visible{outline:2px solid #ffd27b}
+.tier-dock{min-height:80px}
+.ranking-workspace .bar .actions{align-items:center}
+.ranking-workspace .bar .actions .btn{padding:9px 11px;min-height:37px}
+@media(min-width:1120px){
+body.layout-sidebar .ranking-workspace{display:grid;grid-template-columns:minmax(0,1fr) clamp(320px,30vw,420px);align-items:start;gap:16px}
+body.layout-sidebar .ranking-workspace>.library{position:sticky;top:12px;max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;scrollbar-color:#779a77 #18291b;margin-top:0;padding:14px;border:1px solid #b0dc9950;border-radius:17px;background:#17271e;box-shadow:0 14px 42px #0004}
+body.layout-sidebar .library .pool{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 8px}
+body.layout-sidebar .ranking-panel .bar{flex-direction:column;align-items:flex-start;gap:10px}
+body.layout-sidebar .ranking-panel .bar .actions{width:100%}
+body.layout-sidebar .tier-label{flex:0 0 clamp(112px,11vw,150px);padding:8px}
+body.layout-sidebar .tier-label b{font-size:clamp(11px,1.05vw,14px);line-height:1.15}
+body.layout-sidebar .tier-dock{padding:7px;gap:6px}
+body.layout-sidebar.tier-size-medium{--rank-size:68px}
+body.layout-sidebar.tier-size-large{--rank-size:86px}
+body.layout-sidebar.tier-size-xlarge{--rank-size:105px}
+body.layout-sidebar .pool .album-title{font-size:10px}
+body.layout-sidebar .library .bar{position:sticky;top:-14px;z-index:4;background:linear-gradient(#1a3022 92%,#1a302200);padding:12px 0 14px}
+}
+@media(min-width:901px) and (max-width:1119px){.layout-switch{display:none!important}}
+body.focus-mode .top,body.focus-mode .hero,body.focus-mode footer{display:none!important}
+body.focus-mode .shell{padding-top:12px;padding-bottom:18px}
+body.focus-mode .ranking-panel>.bar{margin-top:0}
+body.presentation .top,body.presentation .hero,body.presentation footer{display:none!important}
+body.presentation .shell{max-width:none;padding:12px 16px}
+body.presentation .ranking-workspace>.library{max-height:calc(100dvh - 22px)}
+body.presentation .ranking-workspace .bar{margin-top:0}
+body.presentation .tier{min-height:102px}
+body.presentation .board{background:#0c140ebd}
+.album.drag-touch{opacity:.4}
+.drag-touch-ghost{position:fixed;z-index:9000;pointer-events:none;width:92px;transform:translate(-50%,-52%);border:2px solid #ffe3b0;border-radius:12px;box-shadow:0 15px 35px #000b;background:#19251c;padding:6px;color:#fff;font-size:10px;font-weight:900;text-align:center}
+.drag-touch-ghost img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:7px}
+.tier.touch-target,.pool.touch-target{outline:3px solid #ffd076;outline-offset:-3px;background:#3e4a34!important}
+.tier-editor{width:min(570px,calc(100vw - 24px));color:#fff7eb;border:1px solid #d3deab70;border-radius:20px;background:linear-gradient(145deg,#213525,#17241d);padding:23px}
+.tier-editor::backdrop{background:#000c;backdrop-filter:blur(5px)}
+.editor-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}
+.editor-header h2{font:900 24px 'Outfit',sans-serif;margin:2px 0}
+.editor-fields{display:grid;gap:10px}
+.editor-field{display:grid;grid-template-columns:1fr 48px;gap:10px;align-items:center;font-weight:800;font-size:11px}
+.editor-field input[type=text]{width:100%;min-height:41px;border:1px solid #c2d0b15b;border-radius:9px;background:#111d16;color:#fff;padding:10px;font:800 13px 'DM Sans',sans-serif}
+.editor-field input[type=color]{width:48px;height:41px;border-radius:9px;border:1px solid #c2d0b15b;background:#19271d;padding:4px}
+.editor-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:16px;flex-wrap:wrap}
+@media(max-width:800px){
+.top{gap:10px}.top .brand .allan-avatar{width:47px;height:47px;flex-basis:47px}
+.top .brand .brand-lettering{font-size:15px}
+.toplinks{gap:6px}.toplinks .btn{padding:8px;font-size:10px}
+.ranking-workspace>.library{margin-top:16px}
+.library .pool{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px 8px}
+.pool .album-title{font-size:10px}
+body.tier-size-small{--rank-size:54px}body.tier-size-medium{--rank-size:66px}body.tier-size-large{--rank-size:84px}body.tier-size-xlarge{--rank-size:104px}
+.ranking-workspace .bar .actions{gap:5px}.ranking-workspace .bar .actions .btn{font-size:10px;padding:7px 8px;min-height:37px}
+.size-picker{font-size:10px;padding:5px}.size-picker select{font-size:10px;max-width:98px}
+}
+@media(max-width:440px){.toplinks{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
+.toplinks .btn{white-space:normal;text-align:center}
+.tier-label{flex-basis:98px}.tier-label b{font-size:11px}
+.tier .album-title{font-size:8px}
+.album .badge-year{font-size:8px}
+}
