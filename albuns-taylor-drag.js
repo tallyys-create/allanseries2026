@@ -110,7 +110,7 @@ function autoScroll(){
    const delta=velocity(y,rect.top,rect.bottom,65);
    if(delta){side.scrollTop+=delta;moved=true;}
  }else{
-   const delta=velocity(y,0,innerHeight,78);
+   const delta=core?.scrollVelocity?.(y,0,innerHeight,32,9)||0;
    if(delta){scrollBy(0,delta);moved=true;}
  }
  if(moved&&touch?.moved){

@@ -60,10 +60,20 @@ async function audition(mode){
    }catch(e){check(mode.name+" | reorganizar dentro do tier",false,e.message.slice(0,210));}
    // Mover da primeira categoria para a segunda.
    try{
+     await page.evaluate(()=>{
+       window.__dropTrace=[];
+       const log=ev=>{
+         const row=ev.target?.closest?.(".tier");
+         window.__dropTrace.push({type:ev.type,zone:row?Array.from(document.querySelectorAll("#board .tier")).indexOf(row):-1,point:[ev.clientX,ev.clientY],target:ev.target?.className?.toString()?.slice(0,60)});
+         if(window.__dropTrace.length>70)window.__dropTrace.shift();
+       };
+       ["dragstart","dragover","drop","dragend"].forEach(type=>document.addEventListener(type,log,true));
+     });
      await page.locator('#board .tier:first-child .album[data-id="'+id+'"]').dragTo(
        page.locator('#board .tier:nth-child(2) .tier-dock'),{timeout:12000,steps:14});
      const state=await page.evaluate(id=>window.TAYLOR_APP.getState()[id],id);
-     check(mode.name+" | tier → outro tier",state==="hinos",state);
+     const trace=await page.evaluate(()=>window.__dropTrace?.slice(-28));
+     check(mode.name+" | tier → outro tier",state==="hinos",{state,trace});
    }catch(e){check(mode.name+" | tier → outro tier",false,e.message.slice(0,210));}
    // Devolver ao catálogo (fluxo inverso).
    try{
