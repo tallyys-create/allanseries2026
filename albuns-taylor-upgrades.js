@@ -19,12 +19,13 @@ const liveBtn=btn("presentBtn","⛶ Modo live","live-switch");
 nav.prepend(liveBtn,catalogBtn);
 const sideBtn=btn("layoutToggleBtn","▣ Catálogo lateral","layout-switch");
 const focusBtn=btn("focusToggleBtn","◎ Modo foco","focus-switch");
+const liveExitBtn=btn("liveExitBtn","⛶ Sair modo live","live-switch");liveExitBtn.hidden=true;
 const editBtn=btn("editTiersBtn","✎ Categorias");
 const coverLabel=document.createElement("label");coverLabel.className="size-picker";coverLabel.textContent="Capas";
 const sizeSelect=document.createElement("select");sizeSelect.id="sizeSelect";sizeSelect.setAttribute("aria-label","Tamanho das capas nos tiers");
 [["small","Pequenas"],["medium","Médias"],["large","Grandes"],["xlarge","Extragrandes"]].forEach(([value,label])=>{const opt=document.createElement("option");opt.value=value;opt.textContent=label;sizeSelect.append(opt)});
 coverLabel.append(sizeSelect);
-bar.prepend(sideBtn,focusBtn,coverLabel,editBtn);
+bar.prepend(sideBtn,focusBtn,liveExitBtn,coverLabel,editBtn);
 let side=pref.sidebar!==false;let focus=!!pref.focus;
 function refreshModes(){document.body.classList.toggle("layout-sidebar",side);
  document.body.classList.toggle("focus-mode",focus);
@@ -34,11 +35,13 @@ function refreshModes(){document.body.classList.toggle("layout-sidebar",side);
  focusBtn.textContent=focus?"◎ Sair do foco":"◎ Modo foco";
  liveBtn.setAttribute("aria-pressed",String(document.body.classList.contains("presentation")));
  liveBtn.textContent=document.body.classList.contains("presentation")?"⛶ Sair da live":"⛶ Modo live";
+ liveExitBtn.hidden=!document.body.classList.contains("presentation");
 }
 sideBtn.onclick=()=>{side=!side;pref.sidebar=side;persist();refreshModes()};
 focusBtn.onclick=()=>{focus=!focus;pref.focus=focus;persist();refreshModes();if(focus)workspace.scrollIntoView({behavior:"smooth",block:"start"})};
 catalogBtn.onclick=()=>library.scrollIntoView({behavior:"smooth",block:"start"});
 liveBtn.onclick=async()=>{const active=document.body.classList.toggle("presentation");refreshModes();if(active){try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen()}catch{}workspace.scrollIntoView({behavior:"smooth"})}else if(document.fullscreenElement){try{await document.exitFullscreen()}catch{}}};
+liveExitBtn.onclick=()=>liveBtn.click();
 document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement && document.body.classList.contains("presentation")){document.body.classList.remove("presentation");refreshModes()}});
 const sizes=["small","medium","large","xlarge"];
 function setSize(value){const size=sizes.includes(value)?value:"medium";sizes.forEach(x=>document.body.classList.remove("tier-size-"+x));document.body.classList.add("tier-size-"+size);sizeSelect.value=size;pref.size=size;persist()}
@@ -61,7 +64,7 @@ function findAlbum(target){const card=target.closest(".album");if(!card)return n
 function clearTouch(){if(hold)clearTimeout(hold);hold=null;document.querySelectorAll(".touch-target").forEach(el=>el.classList.remove("touch-target"));if(touch?.ghost)touch.ghost.remove();if(touch?.card)touch.card.classList.remove("drag-touch");touch=null}
 workspace.addEventListener("touchstart",e=>{if(e.touches.length!==1)return;const card=e.target.closest(".album");if(!card)return;const album=findAlbum(card);if(!album)return;const p=e.touches[0];touch={id:album.id,card,x:p.clientX,y:p.clientY,started:false,ghost:null};hold=setTimeout(()=>{if(!touch)return;touch.started=true;card.classList.add("drag-touch");const ghost=document.createElement("div");ghost.className="drag-touch-ghost";const img=card.querySelector("img");if(img){const clone=img.cloneNode();ghost.append(clone)}const title=document.createElement("span");title.textContent=album.title;ghost.append(title);document.body.append(ghost);touch.ghost=ghost;ghost.style.left=touch.x+"px";ghost.style.top=touch.y+"px"},320)},{passive:true});
 workspace.addEventListener("touchmove",e=>{if(!touch)return;const p=e.touches[0];if(!p)return;if(!touch.started){if(Math.hypot(p.clientX-touch.x,p.clientY-touch.y)>12){clearTouch()}return}e.preventDefault();touch.x=p.clientX;touch.y=p.clientY;touch.ghost.style.left=touch.x+"px";touch.ghost.style.top=touch.y+"px";const dest=document.elementFromPoint(p.clientX,p.clientY)?.closest(".tier,.pool");document.querySelectorAll(".touch-target").forEach(el=>el.classList.remove("touch-target"));dest?.classList.add("touch-target")},{passive:false});
-workspace.addEventListener("touchend",e=>{if(!touch)return;const active=touch.started;const id=touch.id;const p=e.changedTouches[0];const dest=p&&document.elementFromPoint(p.clientX,p.clientY)?.closest(".tier,.pool");clearTouch();if(!active)return;e.preventDefault();suppressUntil=Date.now()+500;if(dest){if(dest.id==="pool"){app.move(id,"")}else if(dest.classList.contains("tier")){const index=Array.from($("board").children).indexOf(dest);if(app.tiers[index])app.move(id,app.tiers[index].id)}}},{passive:false});
+workspace.addEventListener("touchend",e=>{if(!touch)return;const active=touch.started;const id=touch.id;const p=e.changedTouches[0];const point=p&&document.elementFromPoint(p.clientX,p.clientY);const dest=point?.closest(".tier,.pool");const before=point?.closest(".album")?.dataset.id||null;clearTouch();if(!active)return;e.preventDefault();suppressUntil=Date.now()+500;if(dest){if(dest.id==="pool"){app.move(id,"")}else if(dest.classList.contains("tier")){const index=Array.from($("board").children).indexOf(dest);if(app.tiers[index])app.move(id,app.tiers[index].id,before===id?null:before)}}},{passive:false});
 workspace.addEventListener("touchcancel",clearTouch,{passive:true});
 workspace.addEventListener("click",e=>{if(Date.now()<suppressUntil && e.target.closest(".album")){e.stopImmediatePropagation();e.preventDefault()}},true);
 })();
