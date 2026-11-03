@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:41:28.491Z",
+  "executedAt": "2026-11-03T02:45:24.244Z",
   "type": "native-drag-parity",
   "checks": [
     {
@@ -46,7 +46,10 @@
     {
       "label": "albuns-allan | tier → outro tier",
       "pass": false,
-      "detail": "repeat"
+      "detail": {
+        "state": "repeat",
+        "trace": []
+      }
     },
     {
       "label": "albuns-allan | tier → catálogo",
@@ -110,7 +113,10 @@
     {
       "label": "albuns-publico | tier → outro tier",
       "pass": false,
-      "detail": "repeat"
+      "detail": {
+        "state": "repeat",
+        "trace": []
+      }
     },
     {
       "label": "albuns-publico | tier → catálogo",
@@ -206,7 +212,10 @@
     {
       "label": "albuns-allan | tier → outro tier",
       "pass": false,
-      "detail": "repeat"
+      "detail": {
+        "state": "repeat",
+        "trace": []
+      }
     },
     {
       "label": "albuns-allan | tier → catálogo",
@@ -216,7 +225,10 @@
     {
       "label": "albuns-publico | tier → outro tier",
       "pass": false,
-      "detail": "repeat"
+      "detail": {
+        "state": "repeat",
+        "trace": []
+      }
     },
     {
       "label": "albuns-publico | tier → catálogo",
