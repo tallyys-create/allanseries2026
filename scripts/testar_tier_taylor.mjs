@@ -27,11 +27,22 @@ try{
   const item=page.locator("#pool .album").first();
   await item.click();
   await page.locator("#albumDialog[open]").waitFor();
-  const scenes=await page.locator("#galleryBody .gallery-item").count();
+  const scenes=await page.locator("#galleryBody .era-slide").count();
   test(mode+": galeria abre",scenes>0,scenes);
   if(scenes){
-   await page.waitForFunction(()=>{const el=document.querySelector("#galleryBody .gallery-item img");return el?.complete},null,{timeout:12000});
-   test(mode+": foto do clipe visível",await page.locator("#galleryBody .gallery-item img").first().evaluate(img=>img.naturalWidth>0),true);
+   await page.waitForFunction(()=>{const el=document.querySelector("#galleryBody .era-slide.is-active .era-photo");return el?.complete},null,{timeout:12000});
+   const loaded=await page.locator("#galleryBody .era-slide.is-active .era-photo").evaluate(img=>img.naturalWidth>0);
+   test(mode+": foto do clipe visível",loaded,true);
+   test(mode+": fotos não clicáveis",await page.locator("#galleryBody button, #galleryBody a").count()===0,true);
+   const before=await page.locator("#galleryBody .era-counter").textContent();
+   if(scenes>1){
+     await page.waitForTimeout(5350);
+     const after=await page.locator("#galleryBody .era-counter").textContent();
+     test(mode+": slideshow passa sozinho",before!==after,{before,after});
+   }
+   await page.locator("#fullGallery").click();
+   test(mode+": tela cheia preservada",await page.locator("#lightbox").evaluate(el=>el.open),true);
+   await page.locator("#lightboxClose").click();
   }
   test(mode+": tracklist",await page.locator("#albumTracks li").count()>0,await page.locator("#albumTracks li").count());
   await page.locator("#closeAlbum").click();
