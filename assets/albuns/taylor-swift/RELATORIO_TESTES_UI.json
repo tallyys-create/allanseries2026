@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:03:20.677Z",
+  "executedAt": "2026-11-03T02:05:36.180Z",
   "type": "ui-regression",
   "browser": "chromium",
   "results": [
@@ -30,8 +30,31 @@
     },
     {
       "name": "publico: galeria abre",
-      "pass": false,
-      "detail": 0
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "publico: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: fotos não clicáveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: slideshow passa sozinho",
+      "pass": true,
+      "detail": {
+        "before": "01 / 04",
+        "after": "02 / 04"
+      }
+    },
+    {
+      "name": "publico: tela cheia preservada",
+      "pass": true,
+      "detail": true
     },
     {
       "name": "publico: tracklist",
@@ -85,8 +108,31 @@
     },
     {
       "name": "allan: galeria abre",
-      "pass": false,
-      "detail": 0
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "allan: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: fotos não clicáveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: slideshow passa sozinho",
+      "pass": true,
+      "detail": {
+        "before": "01 / 04",
+        "after": "02 / 04"
+      }
+    },
+    {
+      "name": "allan: tela cheia preservada",
+      "pass": true,
+      "detail": true
     },
     {
       "name": "allan: tracklist",
@@ -115,7 +161,7 @@
     }
   ],
   "errors": [],
-  "passed": 20,
-  "total": 22,
-  "success": false
+  "passed": 30,
+  "total": 30,
+  "success": true
 }
