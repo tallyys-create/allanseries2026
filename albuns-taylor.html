@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR" data-mode="allan">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#172b1d">
+<meta name="description" content="Classifique 18 álbuns e edições de Taylor Swift no tribunal musical AllanWoodTV.">
+<title>Tier Oficial · Álbuns Taylor Swift · AllanWoodTV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="albuns-taylor.css?v=1">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body><main class="shell">
+<header class="top"><div class="brand">ALLAN<span>WOOD</span>TV <small>♪ TRIBUNAL MUSICAL</small></div><nav class="toplinks" aria-label="Navegação"><a class="btn" href="./index.html">← Todas as tiers</a><button class="btn" id="copyBtn" type="button">Copiar ranking</button><button class="btn primary" id="exportBtn" type="button">Salvar imagem</button></nav></header>
+<section class="hero"><div class="eyebrow">✦ TIER MUSICAL · TAYLOR SWIFT · RANKING DO ALLAN</div><h1>Qual era merece <em>o repeat?</em></h1><p>18 álbuns e edições para ouvir, relembrar e julgar. Clique na capa para abrir a ficha e a galeria da era; arraste para classificar ou escolha um nível dentro da ficha.</p><div class="stats"><div class="stat"><b id="doneCount">0</b>Classificados</div><div class="stat"><b>18</b>Álbuns e edições</div><div class="stat"><b id="leftCount">18</b>Por julgar</div></div></section>
+<section aria-labelledby="boardTitle"><div class="bar"><div><h2 id="boardTitle">A sentença musical 🎧</h2><p>O ranking é salvo automaticamente neste navegador.</p></div><div class="actions"><button class="btn" id="undoBtn" type="button">↶ Desfazer</button><button class="btn" id="resetBtn" type="button">↺ Zerar</button></div></div><div id="board" class="board" aria-label="Níveis do ranking"></div></section>
+<section aria-labelledby="libraryTitle"><div class="bar"><div><h2 id="libraryTitle">Álbuns para julgar</h2><p>Todos os 18 títulos estão disponíveis, sem filtros.</p></div><small id="poolCount">18 restantes</small></div><div id="pool" class="pool" aria-label="Álbuns não classificados"></div></section>
+<footer style="margin-top:28px;color:#9db4a0;font-size:12px">ALLANWOODTV · Ranking oficial do Allan · Galerias em preparação</footer>
+</main>
+<dialog id="albumDialog" class="modal" aria-labelledby="albumName"><div class="modal-head"><div><span class="eyebrow" id="albumEdition">TAYLOR SWIFT · ERA</span><h2 id="albumName"></h2></div><button class="close" id="closeAlbum" type="button" aria-label="Fechar ficha">✕</button></div><div class="modal-layout"><section class="gallery" aria-label="Imagens da era"><div class="gallery-head"><h3>✦ Reviva essa era</h3><button class="btn" id="fullGallery" type="button" hidden>Tela cheia ⛶</button></div><div id="galleryBody" class="gallery-empty"></div></section><aside class="info"><div class="eyebrow">FICHA DO ÁLBUM</div><dl><dt>Ano</dt><dd id="albumYear"></dd><dt>Gênero</dt><dd id="albumGenre"></dd><dt>Faixas</dt><dd id="albumTrackCount"></dd></dl><p id="albumMemo" class="memo"></p><details class="tracks" open><summary>Tracklist completa</summary><ol id="albumTracks"></ol></details><div><b style="display:block;margin-bottom:8px">Colocar no tier</b><div id="rankChoices" class="rank-choices"></div></div></aside></div></dialog>
+<dialog id="lightbox" class="lightbox" aria-label="Imagem ampliada"><div class="lightbox-bar"><span id="lightboxCaption"></span><button id="lightboxClose" class="btn" type="button">Fechar ✕</button></div><div class="lightbox-main"><button id="prevPhoto" aria-label="Imagem anterior">‹</button><img id="lightboxImage" alt=""><button id="nextPhoto" aria-label="Próxima imagem">›</button></div></dialog>
+<div id="notice" role="status" hidden></div>
+<script src="albuns-taylor-dados.js?v=1"></script><script src="albuns-taylor.js?v=1"></script>
+</body></html>
