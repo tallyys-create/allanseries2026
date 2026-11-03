@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:05:36.180Z",
+  "executedAt": "2026-11-03T02:10:24.550Z",
   "type": "ui-regression",
   "browser": "chromium",
   "results": [
@@ -60,6 +60,43 @@
       "name": "publico: tracklist",
       "pass": true,
       "detail": 11
+    },
+    {
+      "name": "publico: todos os tiers visíveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: ficha sem barra de rolagem externa",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tracklist abre em janela própria",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: ficha cabe em 1200x600",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 600,
+        "modalBottom": 588
+      }
+    },
+    {
+      "name": "publico: ficha cabe em 1366x768",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 768,
+        "modalBottom": 744.953125
+      }
     },
     {
       "name": "publico: sortear abre ficha",
@@ -140,6 +177,43 @@
       "detail": 11
     },
     {
+      "name": "allan: todos os tiers visíveis",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: ficha sem barra de rolagem externa",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tracklist abre em janela própria",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: ficha cabe em 1200x600",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 600,
+        "modalBottom": 588
+      }
+    },
+    {
+      "name": "allan: ficha cabe em 1366x768",
+      "pass": true,
+      "detail": {
+        "noScroll": true,
+        "allTiers": true,
+        "photoVisible": true,
+        "viewHeight": 768,
+        "modalBottom": 744.953125
+      }
+    },
+    {
       "name": "allan: sortear abre ficha",
       "pass": true,
       "detail": true
@@ -161,7 +235,7 @@
     }
   ],
   "errors": [],
-  "passed": 30,
-  "total": 30,
+  "passed": 40,
+  "total": 40,
   "success": true
 }
