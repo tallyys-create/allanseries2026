@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:48:04.253Z",
+  "executedAt": "2026-11-03T02:50:17.581Z",
   "type": "native-drag-parity",
   "checks": [
     {
@@ -99,13 +99,16 @@
     },
     {
       "label": "albuns-allan | soltar fora cancela",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
+      "pass": true,
+      "detail": {
+        "unchanged": true,
+        "previews": 0
+      }
     },
     {
       "label": "albuns-allan | desfazer operacional",
       "pass": true,
-      "detail": 17
+      "detail": 16
     },
     {
       "label": "albuns-publico | catálogo → tier",
@@ -204,13 +207,16 @@
     },
     {
       "label": "albuns-publico | soltar fora cancela",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
+      "pass": true,
+      "detail": {
+        "unchanged": true,
+        "previews": 0
+      }
     },
     {
       "label": "albuns-publico | desfazer operacional",
       "pass": true,
-      "detail": 17
+      "detail": 16
     },
     {
       "label": "series-allan | catálogo → tier",
@@ -283,18 +289,7 @@
   ],
   "errors": [],
   "total": 24,
-  "passed": 22,
-  "failed": [
-    {
-      "label": "albuns-allan | soltar fora cancela",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
-    },
-    {
-      "label": "albuns-publico | soltar fora cancela",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
-    }
-  ],
-  "success": false
+  "passed": 24,
+  "failed": [],
+  "success": true
 }
