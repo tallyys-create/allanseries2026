@@ -6,6 +6,7 @@ on:
       - "scripts/testar_tier_taylor.mjs"
       - "scripts/auditar_paridade_tiers.mjs"
       - "scripts/testar_drag_tiers.mjs"
+      - "scripts/testar_exportacao_taylor.mjs"
       - ".github/workflows/testar-tier-taylor.yml"
   workflow_dispatch:
 permissions:
@@ -49,12 +50,16 @@ jobs:
         shell: bash
         run: node scripts/testar_drag_tiers.mjs
         continue-on-error: true
+      - name: Testar PNG premium de álbuns e preservar amostras
+        shell: bash
+        run: node scripts/testar_exportacao_taylor.mjs
+        continue-on-error: true
       - name: Salvar relatório da verificação no repositório
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/albuns/taylor-swift/RELATORIO_PARIDADE.json assets/albuns/taylor-swift/RELATORIO_TESTES_UI.json assets/albuns/taylor-swift/RELATORIO_DRAG.json
+          git add assets/albuns/taylor-swift/RELATORIO_PARIDADE.json assets/albuns/taylor-swift/RELATORIO_TESTES_UI.json assets/albuns/taylor-swift/RELATORIO_DRAG.json assets/albuns/taylor-swift/RELATORIO_EXPORTACAO.json
           if ! git diff --cached --quiet; then
             git commit -m "Registra teste de interface da tier Taylor"
             git pull --rebase origin main
@@ -68,4 +73,5 @@ jobs:
             /tmp/taylor-*.png
             /tmp/paridade-*.png
             /tmp/album-drag-*.png
+            /tmp/taylor-export-*.png
           if-no-files-found: ignore
