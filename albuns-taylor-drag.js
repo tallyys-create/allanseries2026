@@ -1,228 +1,254 @@
-/* Mesmo modelo de arrastar das tiers de séries/filmes:
- * prévia ao vivo, reordenação entre capas, arrasto prolongado no touch
- * e scroll automático do catálogo lateral ou da página. */
+/* Motor de arrasto da tier musical — mesma posição de inserção das tiers de
+   séries/filmes, com apenas um handler HTML5 para o desktop e long-press no touch.
+   O ranking nunca é alterado durante a prévia, somente após soltar. */
 (() => {
-const app=window.TAYLOR_APP;
-if(!app)return;
+"use strict";
+const app=window.TAYLOR_APP, core=window.AllanTierDrag;
 const board=document.getElementById("board"),pool=document.getElementById("pool");
-let drag=null,preview=null,previewType=null,origin=null,ghost=null;
-let pending=null,touch=null,blockClickUntil=0,autoRAF=0;
-let cursor={x:-1,y:-1};
-const $=sel=>document.querySelector(sel);
-const cardFrom=target=>target?.closest?.(".album[data-id]");
-const zoneFrom=(x,y)=>{
- const hit=document.elementFromPoint(x,y);
- if(!hit)return null;
- const tier=hit.closest(".tier");
- if(tier&&board.contains(tier))return {el:tier,type:"tier",id:app.tiers[Array.from(board.children).indexOf(tier)]?.id};
- if(hit.closest("#pool,#librarySection"))return {el:pool,type:"pool",id:""};
- return null;
-};
-function cleanup(){
- preview?.remove();preview=null;previewType=null;
- origin?.classList.remove("live-drag-origin","mobile-drag-source");origin=null;
- ghost?.remove();ghost=null;
- drag=null;touch=null;
- document.querySelectorAll(".drag-over,.touch-target").forEach(el=>el.classList.remove("drag-over","touch-target"));
- document.body.classList.remove("drag-reordering","mobile-dragging");
- if(autoRAF)cancelAnimationFrame(autoRAF);autoRAF=0;
-}
-function rectRows(dock){
- const cards=[...dock.children].filter(el=>el.classList.contains("album")&&el!==preview&&el!==origin);
- const rows=[];
- for(const el of cards){
-   const r=el.getBoundingClientRect();
-   let row=rows.find(row=>Math.abs(row.top-r.top)<14);
-   if(!row){row={top:r.top,bottom:r.bottom,items:[]};rows.push(row)}
-   row.items.push({el,r});row.bottom=Math.max(row.bottom,r.bottom);
+const workspace=document.getElementById("rankingWorkspace");
+if(!app||!board||!pool||!workspace)return;
+let draggedId=null,dragOrigin=null,dragPreview=null,dragPreviewType=null;
+let dragMode=null,highlighted=null,ghost=null,pending=null,touch=null;
+let autoRAF=0,pointer={x:-999,y:-999},blockClickUntil=0;
+const cardFrom=target=>target?.closest?.(".album[data-id]")||null;
+function zoneFromTarget(target){
+ const row=target?.closest?.(".tier");
+ if(row&&board.contains(row)){
+   const i=Array.from(board.children).indexOf(row);
+   if(app.tiers[i])return {el:row,dock:row.querySelector(".tier-dock"),id:app.tiers[i].id,type:"tier"};
  }
- return rows.sort((a,b)=>a.top-b.top);
-}
-function anchorFor(dock,x,y){
- const rows=rectRows(dock);
- for(let i=0;i<rows.length;i++){
-   const row=rows[i];
-   if(y<=row.bottom+6){
-     const next=row.items.find(item=>x<item.r.left+item.r.width/2);
-     return next?.el||rows[i+1]?.items[0]?.el||null;
-   }
- }
+ if(pool===target||pool.contains(target))return {el:pool,dock:pool,id:"",type:"pool"};
  return null;
+}
+function zoneFromPoint(x,y){return zoneFromTarget(document.elementFromPoint(x,y));}
+function clearHighlight(){
+ highlighted?.el?.classList.remove("drag-over");
+ highlighted?.dock?.classList.remove("drag-over");
+ highlighted=null;
 }
 function highlight(zone){
- document.querySelectorAll(".drag-over").forEach(x=>x.classList.remove("drag-over"));
- if(zone){zone.el.classList.add("drag-over");if(zone.type==="tier")zone.el.querySelector(".tier-dock")?.classList.add("drag-over")}
-}
-function ensurePreview(zone,x,y){
- if(!drag||!zone)return;
- const dock=zone.type==="pool"?pool:zone.el.querySelector(".tier-dock");
- if(!dock)return;
- if(!preview||previewType!==zone.type){
-   preview?.remove();
-   preview=origin.cloneNode(true);
-   preview.classList.remove("live-drag-origin","mobile-drag-source");
-   preview.classList.add("live-drag-preview");
-   preview.removeAttribute("data-id");preview.draggable=false;preview.tabIndex=-1;
-   preview.setAttribute("aria-hidden","true");
-   previewType=zone.type;
+ if(highlighted?.el===zone?.el)return;
+ clearHighlight();
+ highlighted=zone;
+ if(zone){
+   zone.el.classList.add("drag-over");
+   if(zone.dock!==zone.el)zone.dock?.classList.add("drag-over");
  }
- // Sem movimentar a prévia enquanto o cursor estiver dentro dela:
- // isso evita oscilações em linhas quebradas.
- if(preview.parentElement===dock){
-    const p=preview.getBoundingClientRect();
-    if(x>=p.left&&x<=p.right&&y>=p.top&&y<=p.bottom)return;
+}
+function finish(){
+ if(autoRAF)cancelAnimationFrame(autoRAF);autoRAF=0;
+ dragPreview?.remove();dragPreview=null;dragPreviewType=null;
+ dragOrigin?.classList.remove("live-drag-origin","mobile-drag-source");
+ document.querySelectorAll("#board .hint").forEach(el=>el.hidden=false);
+ ghost?.remove();ghost=null;
+ clearHighlight();
+ document.body.classList.remove("drag-reordering","mobile-dragging");
+ dragOrigin=null;draggedId=null;dragMode=null;touch=null;
+}
+function insertionAnchor(dock,x,y){
+ if(core?.insertionAnchor)return core.insertionAnchor(dock,x,y,".album",[dragPreview,dragOrigin]);
+ const cards=[...dock.children].filter(el=>el.matches(".album")&&el!==dragPreview&&el!==dragOrigin);
+ return cards.find(el=>{const r=el.getBoundingClientRect();return y<r.bottom+6&&x<r.left+r.width/2})||null;
+}
+function previewPosition(zone,x,y){
+ if(!draggedId||!dragOrigin||!zone?.dock)return;
+ const {dock,type}=zone;
+ if(!dragPreview||dragPreviewType!==type){
+   dragPreview?.remove();
+   dragPreview=dragOrigin.cloneNode(true);
+   dragPreview.removeAttribute("id");
+   dragPreview.removeAttribute("data-id");
+   dragPreview.removeAttribute("aria-label");
+   dragPreview.classList.remove("live-drag-origin","mobile-drag-source");
+   dragPreview.classList.add("live-drag-preview");
+   dragPreview.draggable=false;dragPreview.tabIndex=-1;
+   dragPreview.setAttribute("aria-hidden","true");
+   dragPreview.querySelectorAll("img").forEach(el=>el.draggable=false);
+   dragPreviewType=type;
  }
- const anchor=anchorFor(dock,x,y);
- const hint=dock.querySelector(".hint");if(hint)hint.hidden=true;
- if(preview.parentElement!==dock||preview.nextElementSibling!==anchor) dock.insertBefore(preview,anchor);
-}
-function destinationBefore(zone){
- if(!zone||zone.type==="pool"||!preview)return null;
- let next=preview.nextElementSibling;
- while(next&&(next===origin||!next.classList.contains("album")))next=next.nextElementSibling;
- return next?.dataset.id||null;
-}
-function changeAt(x,y,final=false){
- const zone=zoneFrom(x,y);
- highlight(zone);
- if(zone)ensurePreview(zone,x,y);
- else if(preview){preview.remove();preview=null;previewType=null}
- if(final&&zone&&drag){
-   const id=drag.id, before=destinationBefore(zone);
-   cleanup();
-   app.move(id,zone.id,before);
-   app.notice(zone.type==="pool"?"Álbum devolvido ao catálogo.":"Álbum classificado! ✦");
-   return true;
+ let anchor=null;
+ if(type==="pool"){
+   anchor=core?.catalogAnchor?.(dock,draggedId,app.albums,[dragPreview,dragOrigin])||null;
+ }else{
+   // Igual às séries: não oscila quando o cursor permanece na prévia.
+   if(dragPreview.parentElement===dock
+      &&(core?.previewHasPointer?.(dragPreview,x,y)
+      ||(!core&&(()=>{const r=dragPreview.getBoundingClientRect();return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom})())))return;
+   anchor=insertionAnchor(dock,x,y);
+   dock.querySelector(".hint")?.setAttribute("hidden","");
  }
- return false;
+ if(anchor!==dragPreview&&!(dragPreview.parentElement===dock&&dragPreview.nextElementSibling===anchor)){
+   dock.insertBefore(dragPreview,anchor);
+ }
 }
-function speed(pos,start,end,margin=78){
- if(pos<start+margin)return -Math.min(18,(start+margin-pos)/margin*18);
- if(pos>end-margin)return Math.min(18,(pos-end+margin)/margin*18);
- return 0;
+function beforeAt(zone){
+ if(zone?.type!=="tier"||dragPreview?.parentElement!==zone.dock)return null;
+ let sibling=dragPreview.nextElementSibling;
+ while(sibling&&(sibling===dragOrigin||!sibling.matches(".album[data-id]")))sibling=sibling.nextElementSibling;
+ return sibling?.dataset.id||null;
 }
-function scrollLoop(){
- if(!drag){autoRAF=0;return}
- const {x,y}=cursor;
- const side=document.body.classList.contains("layout-sidebar")&&matchMedia("(min-width:1120px)").matches?$("#librarySection"):null;
- const box=side?.getBoundingClientRect();
- if(box&&x>=box.left&&x<=box.right&&y>=box.top&&y<=box.bottom&&side.scrollHeight>side.clientHeight+2){
-   side.scrollTop+=speed(y,box.top,box.bottom,70);
- }else window.scrollBy(0,speed(y,0,innerHeight,86));
- if(touch?.moved)changeAt(x,y);
- autoRAF=requestAnimationFrame(scrollLoop);
+function completeDrop(zone){
+ if(!draggedId||!zone)return false;
+ const id=draggedId,before=beforeAt(zone),destination=zone.id;
+ finish();
+ blockClickUntil=Date.now()+450;
+ app.move(id,destination,before);
+ app.notice(destination?"Veredito atualizado! ✦":"Álbum devolvido ao catálogo.");
+ return true;
 }
-function beginAuto(x,y){cursor={x,y};if(!autoRAF)autoRAF=requestAnimationFrame(scrollLoop)}
+function velocity(pos,start,end,margin){
+ return core?.scrollVelocity?.(pos,start,end,margin,18)||0;
+}
+function autoScroll(){
+ if(!draggedId){autoRAF=0;return;}
+ const {x,y}=pointer;
+ const side=document.body.classList.contains("layout-sidebar")&&matchMedia("(min-width:1120px)").matches
+   ?workspace.querySelector(":scope > .library"):null;
+ const rect=side?.getBoundingClientRect();
+ let moved=false;
+ if(side&&rect&&x>=rect.left&&x<=rect.right&&y>=rect.top&&y<=rect.bottom&&side.scrollHeight>side.clientHeight+2){
+   const delta=velocity(y,rect.top,rect.bottom,65);
+   if(delta){side.scrollTop+=delta;moved=true;}
+ }else{
+   const delta=velocity(y,0,innerHeight,78);
+   if(delta){scrollBy(0,delta);moved=true;}
+ }
+ if(moved&&touch?.moved){
+   const zone=zoneFromPoint(x,y);highlight(zone);if(zone)previewPosition(zone,x,y);
+ }
+ autoRAF=requestAnimationFrame(autoScroll);
+}
+function trackPointer(x,y){
+ pointer={x,y};if(!autoRAF)autoRAF=requestAnimationFrame(autoScroll);
+}
 function nativeStart(ev){
+ if(ev.defaultPrevented||!ev.dataTransfer||ev.target.closest?.("dialog"))return;
  const card=cardFrom(ev.target);
- if(!card||!document.getElementById("rankingWorkspace")?.contains(card))return;
- if(!ev.dataTransfer)return;
- cleanup();
- drag={id:card.dataset.id};origin=card;
- ev.dataTransfer.effectAllowed="move";ev.dataTransfer.setData("text/plain",drag.id);
+ if(!card||!workspace.contains(card))return;
+ finish();
+ dragMode="native";draggedId=card.dataset.id;dragOrigin=card;
+ ev.dataTransfer.effectAllowed="move";
+ ev.dataTransfer.setData("text/plain",draggedId);
  document.body.classList.add("drag-reordering");
- beginAuto(ev.clientX,ev.clientY);
- setTimeout(()=>{if(drag?.id===card.dataset.id)card.classList.add("live-drag-origin")},0);
- ev.stopPropagation();
+ trackPointer(ev.clientX,ev.clientY);
+ // Captura do fantasma pelo Chrome antes de esconder o elemento de origem.
+ setTimeout(()=>{if(dragMode==="native"&&dragOrigin===card)card.classList.add("live-drag-origin")},0);
 }
 function nativeOver(ev){
- if(!drag||touch)return;
- const zone=ev.target.closest?.(".tier,#pool,#librarySection");
+ if(dragMode!=="native"||!draggedId)return;
+ const zone=zoneFromTarget(ev.target);
  if(!zone)return;
- ev.preventDefault();ev.stopPropagation();ev.stopImmediatePropagation();
+ ev.preventDefault();
  if(ev.dataTransfer)ev.dataTransfer.dropEffect="move";
- beginAuto(ev.clientX,ev.clientY);
- changeAt(ev.clientX,ev.clientY);
+ trackPointer(ev.clientX,ev.clientY);
+ highlight(zone);
+ previewPosition(zone,ev.clientX,ev.clientY);
 }
 function nativeDrop(ev){
- if(!drag||touch)return;
- ev.preventDefault();ev.stopPropagation();ev.stopImmediatePropagation();
- changeAt(ev.clientX,ev.clientY,true);
- if(drag)cleanup();
+ if(dragMode!=="native"||!draggedId)return;
+ const zone=zoneFromTarget(ev.target);
+ if(!zone)return;
+ ev.preventDefault();ev.stopPropagation();
+ trackPointer(ev.clientX,ev.clientY);
+ highlight(zone);
+ previewPosition(zone,ev.clientX,ev.clientY);
+ completeDrop(zone);
 }
-document.addEventListener("dragstart",nativeStart,true);
-document.addEventListener("dragover",nativeOver,true);
-document.addEventListener("drop",nativeDrop,true);
-document.addEventListener("dragend",()=>{if(drag&&!touch)cleanup()},true);
-// Long-press móvel adaptado dos controles de séries e filmes.
+workspace.addEventListener("dragstart",nativeStart,true);
+board.addEventListener("dragover",nativeOver,true);
+pool.addEventListener("dragover",nativeOver,true);
+board.addEventListener("drop",nativeDrop,true);
+pool.addEventListener("drop",nativeDrop,true);
+document.addEventListener("dragover",ev=>{
+ if(dragMode==="native"&&!zoneFromTarget(ev.target))clearHighlight();
+},true);
+document.addEventListener("drop",()=>{if(dragMode==="native")finish()});
+document.addEventListener("dragend",()=>{if(dragMode==="native")finish()},true);
+// Long press no mobile, preservando toque curto para a ficha.
 const touchOf=(list,id)=>[...list].find(t=>t.identifier===id)||null;
 function cancelPending(){
  if(!pending)return;
- clearTimeout(pending.timer);pending.card.draggable=pending.wasDraggable;pending=null;
+ clearTimeout(pending.timer);
+ if(pending.card?.isConnected)pending.card.draggable=pending.wasDraggable;
+ pending=null;
 }
 function positionGhost(x,y){
  if(!ghost)return;
- const left=Math.max(6,Math.min(innerWidth-105,x-46));
- const top=Math.max(6,Math.min(innerHeight-160,y-132));
+ const left=Math.max(6,Math.min(innerWidth-110,x-50));
+ const top=Math.max(6,Math.min(innerHeight-162,y-133));
  ghost.style.transform="translate3d("+left+"px,"+top+"px,0)";
 }
 function beginTouch(){
  const p=pending;
- if(!p||touch||!document.contains(p.card))return;
- clearTimeout(p.timer);pending=null;cleanup();
- drag={id:p.id};origin=p.card;
- ghost=document.createElement("div");ghost.className="touch-drag-ghost";ghost.setAttribute("aria-hidden","true");
- const img=p.card.querySelector(".album-art")?.cloneNode(true);
- if(img)ghost.append(img);
- const name=document.createElement("strong");name.textContent=app.byId[p.id]?.title||"Álbum";
- const help=document.createElement("small");help.textContent="Arraste para julgar";ghost.append(name,help);
- document.body.append(ghost);
+ if(!p||touch||!p.card.isConnected)return;
+ pending=null;finish();
+ dragMode="touch";draggedId=p.id;dragOrigin=p.card;
+ ghost=document.createElement("div");ghost.className="touch-drag-ghost";
+ ghost.setAttribute("aria-hidden","true");
+ const art=p.card.querySelector(".album-art")?.cloneNode(true);
+ if(art)ghost.append(art);
+ const title=document.createElement("strong");title.textContent=app.byId[p.id]?.title||"Álbum";
+ const help=document.createElement("small");help.textContent="Arraste para um veredito";
+ ghost.append(title,help);document.body.append(ghost);
  touch={id:p.id,card:p.card,touchId:p.touchId,x:p.x,y:p.y,startX:p.x,startY:p.y,moved:false,wasDraggable:p.wasDraggable};
- p.card.draggable=false;p.card.classList.add("mobile-drag-source");
+ p.card.draggable=false;
+ p.card.classList.add("mobile-drag-source");
  document.body.classList.add("drag-reordering","mobile-dragging");
  positionGhost(p.x,p.y);
- blockClickUntil=Date.now()+1200;
+ blockClickUntil=Date.now()+1000;
 }
 function endTouch(x,y,cancel=false){
  if(!touch)return;
- const active=touch;
- const valid=!cancel&&active.moved;
- if(valid)changeAt(x,y);
- const zone=valid?zoneFrom(x,y):null;
- const id=active.id,before=valid?destinationBefore(zone):null;
- active.card.draggable=active.wasDraggable;
- cleanup();
- blockClickUntil=Date.now()+700;
- if(zone){app.move(id,zone.id,before);app.notice(zone.type==="pool"?"Álbum devolvido.":"Álbum classificado! ✦")}
+ const active=touch,zone=!cancel&&active.moved?zoneFromPoint(x,y):null;
+ if(zone)previewPosition(zone,x,y);
+ const id=draggedId,before=beforeAt(zone),dest=zone?.id;
+ if(active.card.isConnected)active.card.draggable=active.wasDraggable;
+ finish();blockClickUntil=Date.now()+650;
+ if(zone){app.move(id,dest,before);app.notice(dest?"Veredito atualizado! ✦":"Álbum devolvido ao catálogo.")}
 }
 document.addEventListener("touchstart",ev=>{
  if(!matchMedia("(pointer:coarse)").matches)return;
- if(ev.touches.length!==1){cancelPending();if(touch)endTouch(0,0,true);return}
+ if(ev.touches.length!==1){cancelPending();if(touch)endTouch(0,0,true);return;}
  if(touch)return;
  const card=cardFrom(ev.target);
- if(!card||!$("#rankingWorkspace")?.contains(card))return;
+ if(!card||!workspace.contains(card))return;
  cancelPending();
  const p=ev.touches[0];
  pending={card,id:card.dataset.id,touchId:p.identifier,x:p.clientX,y:p.clientY,wasDraggable:card.draggable,timer:null};
  card.draggable=false;
- pending.timer=setTimeout(beginTouch,380);
+ pending.timer=setTimeout(beginTouch,360);
 },{passive:true,capture:true});
 document.addEventListener("touchmove",ev=>{
  if(pending){
    const p=touchOf(ev.touches,pending.touchId);
-   if(!p||ev.touches.length!==1||Math.hypot(p.clientX-pending.x,p.clientY-pending.y)>12)cancelPending();
+   if(!p||ev.touches.length!==1||Math.hypot(p.clientX-pending.x,p.clientY-pending.y)>11)cancelPending();
  }
  if(!touch)return;
  const p=touchOf(ev.touches,touch.touchId);
- if(!p||ev.touches.length!==1){endTouch(0,0,true);return}
+ if(!p||ev.touches.length!==1){endTouch(0,0,true);return;}
  if(ev.cancelable)ev.preventDefault();
  touch.x=p.clientX;touch.y=p.clientY;
  if(!touch.moved&&Math.hypot(touch.x-touch.startX,touch.y-touch.startY)>8)touch.moved=true;
  positionGhost(touch.x,touch.y);
- if(touch.moved){beginAuto(touch.x,touch.y);changeAt(touch.x,touch.y)}
+ if(touch.moved){
+   const zone=zoneFromPoint(touch.x,touch.y);
+   highlight(zone);if(zone)previewPosition(zone,touch.x,touch.y);
+   trackPointer(touch.x,touch.y);
+ }
 },{passive:false,capture:true});
 document.addEventListener("touchend",ev=>{
  if(pending&&touchOf(ev.changedTouches,pending.touchId))cancelPending();
  if(!touch)return;
- const p=touchOf(ev.changedTouches,touch.touchId);if(!p)return;
- if(ev.cancelable)ev.preventDefault();
- endTouch(p.clientX,p.clientY);
+ const p=touchOf(ev.changedTouches,touch.touchId);
+ if(p){if(ev.cancelable)ev.preventDefault();endTouch(p.clientX,p.clientY);}
 },{passive:false,capture:true});
 document.addEventListener("touchcancel",()=>{cancelPending();if(touch)endTouch(0,0,true)},{passive:true,capture:true});
 document.addEventListener("click",ev=>{
- if(Date.now()<blockClickUntil&&cardFrom(ev.target)){ev.preventDefault();ev.stopImmediatePropagation()}
+ if(Date.now()<blockClickUntil&&cardFrom(ev.target)){ev.preventDefault();ev.stopImmediatePropagation();}
 },true);
 document.addEventListener("contextmenu",ev=>{if((pending||touch)&&cardFrom(ev.target))ev.preventDefault()},true);
-document.addEventListener("keydown",ev=>{if(ev.key==="Escape"){cancelPending();if(touch)endTouch(0,0,true)}},true);
-window.addEventListener("blur",()=>{cancelPending();if(touch)endTouch(0,0,true)});
+document.addEventListener("keydown",ev=>{
+ if(ev.key==="Escape"){cancelPending();if(touch)endTouch(0,0,true);}
+},true);
+window.addEventListener("blur",()=>{cancelPending();if(touch)endTouch(0,0,true);});
 })();
