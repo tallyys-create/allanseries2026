@@ -35,7 +35,7 @@ function card(a){const el=document.createElement("button");el.className="album";
 el.setAttribute("aria-label","Abrir ficha de "+a.title);
 el.addEventListener("click",()=>window.TAYLOR_OPEN(a.id));
 const img=document.createElement("img");img.alt="Capa de "+a.title;img.loading="lazy";img.decoding="async";img.width=700;img.height=700;
-img.onerror=()=>{img.remove();el.classList.add("cover-missing");};
+img.draggable=false;img.onerror=()=>{img.remove();el.classList.add("cover-missing");};
 img.src="./assets/albuns/taylor-swift/"+encodeURIComponent(a.id)+"/poster.webp";
 el.querySelector(".album-art").prepend(img);return el;}
 function droppable(el,tier){el.ondragover=e=>{e.preventDefault();el.classList.add("over")};el.ondragleave=()=>el.classList.remove("over");el.ondrop=e=>{e.preventDefault();el.classList.remove("over");const id=e.dataTransfer.getData("text/plain")||dragging;const target=e.target.closest(".album");const beforeId=target&&target.dataset.id!==id?target.dataset.id:null;move(id,tier,beforeId)};}
