@@ -1,0 +1,1 @@
+(()=>{const a=window.TAYLOR_ALBUMS.find(x=>x.id==="folklore");a.tracks="the 1|cardigan|the last great american dynasty|exile (feat. Bon Iver)|my tears ricochet|mirrorball|seven|august|this is me trying|illicit affairs|invisible string|mad woman|epiphany|betty|peace|hoax".split("|");})();
