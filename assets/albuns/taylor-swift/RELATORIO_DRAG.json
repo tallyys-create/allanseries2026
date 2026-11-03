@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T02:45:24.244Z",
+  "executedAt": "2026-11-03T02:48:04.253Z",
   "type": "native-drag-parity",
   "checks": [
     {
@@ -45,29 +45,67 @@
     },
     {
       "label": "albuns-allan | tier → outro tier",
-      "pass": false,
+      "pass": true,
       "detail": {
-        "state": "repeat",
-        "trace": []
+        "state": "hinos",
+        "geometry": {
+          "target": {
+            "x": 240,
+            "y": 322.25,
+            "width": 749,
+            "height": 98.25,
+            "top": 322.25,
+            "right": 989,
+            "bottom": 420.5,
+            "left": 240
+          },
+          "focus": true
+        },
+        "trace": [
+          {
+            "type": "dragstart",
+            "zone": 0,
+            "point": [
+              358,
+              240
+            ],
+            "target": "album"
+          },
+          {
+            "type": "dragover",
+            "zone": 1,
+            "point": [
+              614,
+              362
+            ],
+            "target": "tier-dock"
+          },
+          {
+            "type": "drop",
+            "zone": 1,
+            "point": [
+              614,
+              362
+            ],
+            "target": "tier-dock drag-over"
+          }
+        ]
       }
     },
     {
       "label": "albuns-allan | tier → catálogo",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+      "pass": true,
+      "detail": null
     },
     {
       "label": "albuns-allan | soltar fora cancela",
-      "pass": true,
-      "detail": {
-        "unchanged": true,
-        "previews": 0
-      }
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
     },
     {
       "label": "albuns-allan | desfazer operacional",
       "pass": true,
-      "detail": 16
+      "detail": 17
     },
     {
       "label": "albuns-publico | catálogo → tier",
@@ -112,29 +150,67 @@
     },
     {
       "label": "albuns-publico | tier → outro tier",
-      "pass": false,
+      "pass": true,
       "detail": {
-        "state": "repeat",
-        "trace": []
+        "state": "hinos",
+        "geometry": {
+          "target": {
+            "x": 240,
+            "y": 322.25,
+            "width": 749,
+            "height": 98.25,
+            "top": 322.25,
+            "right": 989,
+            "bottom": 420.5,
+            "left": 240
+          },
+          "focus": true
+        },
+        "trace": [
+          {
+            "type": "dragstart",
+            "zone": 0,
+            "point": [
+              358,
+              240
+            ],
+            "target": "album"
+          },
+          {
+            "type": "dragover",
+            "zone": 1,
+            "point": [
+              614,
+              362
+            ],
+            "target": "tier-dock"
+          },
+          {
+            "type": "drop",
+            "zone": 1,
+            "point": [
+              614,
+              362
+            ],
+            "target": "tier-dock drag-over"
+          }
+        ]
       }
     },
     {
       "label": "albuns-publico | tier → catálogo",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+      "pass": true,
+      "detail": null
     },
     {
       "label": "albuns-publico | soltar fora cancela",
-      "pass": true,
-      "detail": {
-        "unchanged": true,
-        "previews": 0
-      }
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
     },
     {
       "label": "albuns-publico | desfazer operacional",
       "pass": true,
-      "detail": 16
+      "detail": 17
     },
     {
       "label": "series-allan | catálogo → tier",
@@ -207,33 +283,17 @@
   ],
   "errors": [],
   "total": 24,
-  "passed": 20,
+  "passed": 22,
   "failed": [
     {
-      "label": "albuns-allan | tier → outro tier",
+      "label": "albuns-allan | soltar fora cancela",
       "pass": false,
-      "detail": {
-        "state": "repeat",
-        "trace": []
-      }
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
     },
     {
-      "label": "albuns-allan | tier → catálogo",
+      "label": "albuns-publico | soltar fora cancela",
       "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
-    },
-    {
-      "label": "albuns-publico | tier → outro tier",
-      "pass": false,
-      "detail": {
-        "state": "repeat",
-        "trace": []
-      }
-    },
-    {
-      "label": "albuns-publico | tier → catálogo",
-      "pass": false,
-      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:first-child .album[data-id=\"fearless\"]')\n    - locator resolved to <button class=\"album\" type=\"button\" draggable=\"true\" "
     }
   ],
   "success": false
