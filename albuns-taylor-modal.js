@@ -2,7 +2,7 @@
 (() => {
 const app=window.TAYLOR_APP, $=id=>document.getElementById(id);
 if(!app)return;
-const dlg=$("albumDialog"),light=$("lightbox"),INTERVAL=5000;
+const dlg=$("albumDialog"),light=$("lightbox"),tracksDialog=$("tracklistDialog"),INTERVAL=5000;
 let album=null,photos=[],slideIndex=0,timer=null;
 
 function stopSlideshow(){
@@ -93,12 +93,16 @@ window.TAYLOR_OPEN=id=>{
  const a=app.byId[id];if(!a)return;
  stopSlideshow();if(light.open)light.close();
  album=a;photos=[];
+ if(tracksDialog.open)tracksDialog.close();
  $("albumName").textContent=a.title;
  $("albumEdition").textContent="TAYLOR SWIFT · "+(a.id.endsWith("-tv")?"TAYLOR'S VERSION":a.id==="anthology"||a.id==="encore"?"EDIÇÃO ESPECIAL":"ÁLBUM");
  $("albumYear").textContent=a.year;
  $("albumGenre").textContent=a.genre;
  $("albumTrackCount").textContent=a.tracks.length?a.tracks.length+" faixas":"Em revisão";
  $("albumMemo").textContent=a.memo;
+ $("tracklistCount").textContent=String(a.tracks.length||"—")+" faixas";
+ $("trackDialogTitle").textContent=a.title;
+ $("trackDialogMeta").textContent=a.year+" · "+a.genre+" · "+a.tracks.length+" faixas";
  const list=$("albumTracks");list.replaceChildren();
  (a.tracks.length?a.tracks:["Tracklist em revisão"]).forEach(x=>{const li=document.createElement("li");li.textContent=x;list.append(li)});
  const box=$("rankChoices");box.replaceChildren();
@@ -119,6 +123,10 @@ window.TAYLOR_OPEN=id=>{
  if(!dlg.open)dlg.showModal();
  startSlideshow();
 };
+$("openTracklist").onclick=()=>{if(!tracksDialog.open)tracksDialog.showModal()};
+$("closeTracklist").onclick=()=>tracksDialog.close();
+tracksDialog.addEventListener("click",e=>{if(e.target===tracksDialog)tracksDialog.close()});
+tracksDialog.addEventListener("close",()=>{if(dlg.open)$("openTracklist").focus()});
 $("closeAlbum").onclick=()=>dlg.close();
 $("fullGallery").onclick=openFullscreen;
 $("lightboxClose").onclick=()=>light.close();
@@ -137,7 +145,7 @@ fullscreenImage.addEventListener("touchend",e=>{
  const delta=e.changedTouches[0]?.clientX-x;
  if(Math.abs(delta)>55)setSlide(slideIndex+(delta<0?1:-1),{restart:true});
 },{passive:true});
-dlg.addEventListener("close",()=>{stopSlideshow();if(light.open)light.close()});
+dlg.addEventListener("close",()=>{stopSlideshow();if(light.open)light.close();if(tracksDialog.open)tracksDialog.close()});
 document.addEventListener("visibilitychange",()=>{
  if(document.hidden)stopSlideshow();
  else if(dlg.open)startSlideshow();

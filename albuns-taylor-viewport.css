@@ -1,0 +1,171 @@
+/* Ficha musical em uma tela — o julgamento e o slideshow permanecem visíveis. */
+#albumDialog.modal {
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  width:min(1180px,calc(100vw - 24px));
+  height:min(94dvh,850px);
+  max-height:94dvh;
+  overflow:hidden;
+  overscroll-behavior:contain;
+}
+#albumDialog.modal:not([open]){display:none}
+#albumDialog .modal-head {
+  flex:0 0 auto;
+  min-height:0;
+  padding:13px 18px 11px;
+  gap:12px;
+}
+#albumDialog .modal-head h2 {font-size:clamp(21px,2.45vw,31px);line-height:1.08}
+#albumDialog .modal-head .eyebrow{font-size:10px}
+#albumDialog .album-cover-mini{width:56px;height:56px;flex:0 0 56px}
+#albumDialog .modal-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(260px,27%,315px);
+  flex:1 1 auto;
+  min-height:0;
+  overflow:hidden;
+  gap:11px;
+  padding:0 16px 15px;
+}
+#albumDialog .gallery {
+  min-width:0;
+  min-height:0;
+  height:100%;
+  overflow:hidden;
+}
+#albumDialog .gallery-head{padding:9px 13px;min-height:45px}
+#albumDialog .gallery-head h3{font-size:16px}
+#albumDialog .gallery-head .btn{min-height:34px;padding:7px 10px}
+#albumDialog #galleryBody.era-slideshow {
+  min-width:0;min-height:0;
+  margin:0 10px 10px;
+}
+#albumDialog .era-viewport{min-height:0}
+#albumDialog .era-overlay{min-height:40px;padding:8px 12px}
+#albumDialog .era-caption{font-size:clamp(11px,1.2vw,14px)}
+#albumDialog .era-counter{font-size:10px}
+#albumDialog aside.info{
+  box-sizing:border-box;
+  min-width:0;min-height:0;
+  height:100%;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:8px;
+  padding:12px 13px 10px;
+}
+#albumDialog .info .eyebrow{font-size:10px}
+#albumDialog .info dl {
+  grid-template-columns:63px minmax(0,1fr);
+  gap:3px 5px;
+  font-size:11px;line-height:1.35;
+}
+#albumDialog .info dd{min-width:0;overflow-wrap:anywhere}
+#albumDialog .info .memo{
+  font-size:11px;line-height:1.32;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+#albumDialog .tracklist-trigger {
+  display:flex;justify-content:space-between;align-items:center;
+  gap:9px;width:100%;min-height:36px;
+  padding:7px 10px;
+  background:#18251c;color:#f4ecd9;border:1px solid #9ebc935b;
+  border-radius:9px;text-align:left;
+  font-size:11px;font-weight:900;
+  cursor:pointer;
+}
+#albumDialog .tracklist-trigger:hover{border-color:#ffbe6a;background:#2b3c2d}
+#albumDialog .tracklist-count{color:#9fe5a1;white-space:nowrap;font-size:10px}
+#albumDialog .info>div:last-child{
+  min-width:0;min-height:0;
+  margin-top:auto;
+}
+#albumDialog .info>div:last-child>b{
+  display:block;margin:0 0 6px!important;
+  font-size:12px;line-height:1.15;
+}
+#albumDialog #rankChoices {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:6px;
+}
+#albumDialog #rankChoices button {
+  min-width:0;
+  min-height:32px;
+  padding:6px 5px;
+  font-size:10px;
+  line-height:1.18;
+}
+#albumDialog #rankChoices button:last-child{grid-column:1/-1}
+.tracks-dialog {
+  box-sizing:border-box;
+  width:min(850px,calc(100vw - 24px));
+  max-height:90dvh;
+  padding:22px 26px;
+  overflow:auto;
+  background:linear-gradient(145deg,#1b2d21,#111f18);
+  color:#fff7e8;
+  border:1px solid #a4c9a17d;
+  border-radius:18px;
+  box-shadow:0 22px 90px #000b;
+}
+.tracks-dialog::backdrop{background:#030a06c7;backdrop-filter:blur(5px)}
+.tracks-dialog-head{display:flex;justify-content:space-between;align-items:start;gap:14px;border-bottom:1px solid #fff3;padding-bottom:12px}
+.tracks-dialog-head h2{margin:5px 0;font:900 clamp(21px,3vw,29px) 'Outfit',sans-serif}
+.tracks-dialog-head p{margin:0;color:#c3d7c3;font-size:12px}
+.tracks-dialog-list{
+  columns:2;column-gap:30px;
+  padding:0 0 0 20px;
+  margin:14px 0 3px;
+  font-size:12px;line-height:1.55;
+}
+.tracks-dialog-list li{padding:4px 0;break-inside:avoid;padding-right:8px}
+.tracks-dialog-list li::marker{color:#99dfa3;font-weight:800}
+@media(max-height:680px) and (min-width:721px) {
+ #albumDialog.modal{height:96dvh;max-height:96dvh}
+ #albumDialog .modal-head{padding:9px 14px 8px}
+ #albumDialog .album-cover-mini{width:48px;height:48px;flex-basis:48px}
+ #albumDialog .modal-layout{padding:0 12px 10px;gap:9px}
+ #albumDialog .gallery-head{padding:7px 11px;min-height:39px}
+ #albumDialog aside.info{padding:9px 11px;gap:6px}
+ #albumDialog .info dl{gap:2px 4px}
+ #albumDialog #rankChoices button{min-height:30px;padding:5px 4px;font-size:9px}
+ #albumDialog #rankChoices{gap:5px}
+ #albumDialog .tracklist-trigger{min-height:32px;padding:5px 9px}
+ #albumDialog #galleryBody.era-slideshow{margin:0 8px 8px}
+}
+@media(max-width:720px){
+ #albumDialog.modal{width:calc(100vw - 12px);height:97dvh;max-height:97dvh;border-radius:15px}
+ #albumDialog .modal-head{padding:9px 10px 7px}
+ #albumDialog .modal-head h2{font-size:clamp(17px,5vw,25px)}
+ #albumDialog .album-cover-mini{width:44px;height:44px;flex-basis:44px}
+ #albumDialog .modal-layout{
+   display:grid;grid-template-columns:1fr;
+   grid-template-rows:minmax(145px,38%) minmax(0,1fr);
+   padding:0 9px 9px;
+   gap:8px;
+ }
+ #albumDialog .gallery{order:1}
+ #albumDialog .info{order:2}
+ #albumDialog .gallery-head{padding:6px 9px;min-height:36px}
+ #albumDialog .gallery-head h3{font-size:13px}
+ #albumDialog .gallery-head .btn{min-height:30px;padding:5px 8px;font-size:10px}
+ #albumDialog #galleryBody.era-slideshow{margin:0 7px 7px}
+ #albumDialog .era-overlay{min-height:31px;padding:5px 9px}
+ #albumDialog .era-caption{font-size:10px}
+ #albumDialog aside.info{padding:9px 11px;gap:5px}
+ #albumDialog .info .memo{-webkit-line-clamp:2}
+ #albumDialog #rankChoices button{min-height:30px;font-size:9px;padding:5px}
+ #albumDialog #rankChoices{gap:5px}
+ #albumDialog .tracklist-trigger{min-height:31px;padding:5px 8px}
+ .tracks-dialog{padding:15px}
+ .tracks-dialog-list{columns:1}
+}
+@media(max-height:620px) and (max-width:720px){
+ #albumDialog .modal-layout{grid-template-rows:minmax(110px,30%) minmax(0,1fr)}
+ #albumDialog .info .memo{display:none}
+ #albumDialog .gallery-head{min-height:31px}
+ #albumDialog #rankChoices button{min-height:26px}
+}

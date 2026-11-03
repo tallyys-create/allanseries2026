@@ -45,7 +45,30 @@ try{
    await page.locator("#lightboxClose").click();
   }
   test(mode+": tracklist",await page.locator("#albumTracks li").count()>0,await page.locator("#albumTracks li").count());
+  const rankVisible=await page.locator("#rankChoices button").last().evaluate(button=>{
+    const r=button.getBoundingClientRect(), d=document.getElementById("albumDialog").getBoundingClientRect();
+    return r.bottom<=d.bottom+2&&r.top>=d.top-2&&r.height>20;
+  });
+  test(mode+": todos os tiers visíveis",rankVisible,rankVisible);
+  const modalNoScroll=await page.locator("#albumDialog").evaluate(el=>el.scrollHeight<=el.clientHeight+2);
+  test(mode+": ficha sem barra de rolagem externa",modalNoScroll,modalNoScroll);
+  await page.locator("#openTracklist").click();
+  test(mode+": tracklist abre em janela própria",await page.locator("#tracklistDialog").evaluate(el=>el.open),true);
+  await page.locator("#closeTracklist").click();
   await page.locator("#closeAlbum").click();
+  // Regressão em resoluções próximas às da captura enviada.
+  for(const [width,height] of [[1200,600],[1366,768]]){
+    await page.setViewportSize({width,height});
+    await page.locator("#pool .album").first().click();
+    const dims=await page.locator("#albumDialog").evaluate(el=>{
+      const dialog=el.getBoundingClientRect(),rank=document.querySelector("#rankChoices button:last-child").getBoundingClientRect();
+      const gallery=document.querySelector("#galleryBody").getBoundingClientRect();
+      return {noScroll:el.scrollHeight<=el.clientHeight+2,allTiers:rank.bottom<=dialog.bottom+2&&rank.top>=dialog.top,photoVisible:gallery.height>140,viewHeight:innerHeight,modalBottom:dialog.bottom};
+    });
+    test(mode+": ficha cabe em "+width+"x"+height,dims.noScroll&&dims.allTiers&&dims.photoVisible,dims);
+    await page.locator("#closeAlbum").click();
+  }
+  await page.setViewportSize({width:1450,height:960});
   await page.locator("#randomBtn").click();
   test(mode+": sortear abre ficha",await page.locator("#albumDialog").evaluate(el=>el.open),true);
   await page.locator("#closeAlbum").click();
