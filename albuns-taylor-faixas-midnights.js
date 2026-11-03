@@ -1,0 +1,1 @@
+(()=>{window.TAYLOR_ALBUMS.find(a=>a.id==="midnights").tracks=["Lavender Haze","Maroon","Anti-Hero","Snow on the Beach (feat. Lana Del Rey)","You're on Your Own, Kid","Midnight Rain","Question...?","Vigilante Shit","Bejeweled","Labyrinth","Karma","Sweet Nothing","Mastermind"];})();
