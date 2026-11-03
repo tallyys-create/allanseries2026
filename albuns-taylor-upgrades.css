@@ -84,3 +84,11 @@ body.tier-size-small{--rank-size:54px}body.tier-size-medium{--rank-size:66px}bod
 .tier .album-title{font-size:8px}
 .album .badge-year{font-size:8px}
 }
+
+/* Acabamento da identidade e acessibilidade do modo live. */
+.top .brand .brand-lettering{color:var(--fg)}
+.top .brand .brand-lettering strong{font:900 18px 'Outfit',sans-serif;letter-spacing:.05em}
+.top .brand .brand-lettering strong em{font-style:normal;color:#8fdc8d}
+#liveExitBtn[hidden]{display:none!important}
+#liveExitBtn:not([hidden]){background:linear-gradient(110deg,#f0ba63,#ec9739);color:#251d12;border-color:#ffd18a}
+@media(max-width:600px){.top .brand .brand-lettering strong{font-size:16px}}
