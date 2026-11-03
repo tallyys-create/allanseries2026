@@ -58,6 +58,10 @@ async function audition(mode){
      order=await page.locator("#board .tier").first().locator(".album[data-id]").evaluateAll(els=>els.map(el=>el.dataset.id));
      check(mode.name+" | reorganizar dentro do tier",order[0]===secondId&&order[1]===id,{order,expected:[secondId,id]});
    }catch(e){check(mode.name+" | reorganizar dentro do tier",false,e.message.slice(0,210));}
+   // Foco deixa as duas linhas simultaneamente visíveis: distingue
+   // a geometria do arrastar de um auto-scroll provocado pelo teste.
+   await page.locator("#focusToggleBtn").click();
+   await page.waitForTimeout(150);
    // Mover da primeira categoria para a segunda.
    try{
      await page.evaluate(()=>{
@@ -73,7 +77,12 @@ async function audition(mode){
        page.locator('#board .tier:nth-child(2) .tier-dock'),{timeout:12000,steps:14});
      const state=await page.evaluate(id=>window.TAYLOR_APP.getState()[id],id);
      const trace=await page.evaluate(()=>window.__dropTrace?.slice(-28));
-     check(mode.name+" | tier → outro tier",state==="hinos",{state,trace});
+     const geometry=await page.evaluate(id=>{
+       const source=document.querySelector('#board .tier:first-child .album[data-id="'+id+'"]');
+       const target=document.querySelector("#board .tier:nth-child(2) .tier-dock");
+       return {source:source?.getBoundingClientRect().toJSON(),target:target?.getBoundingClientRect().toJSON(),draggable:source?.draggable,focus:document.body.classList.contains("focus-mode")};
+     },id);
+     check(mode.name+" | tier → outro tier",state==="hinos",{state,geometry,trace});
    }catch(e){check(mode.name+" | tier → outro tier",false,e.message.slice(0,210));}
    // Devolver ao catálogo (fluxo inverso).
    try{
