@@ -1,0 +1,131 @@
+{
+  "executedAt": "2026-11-03T01:57:51.865Z",
+  "type": "ui-regression",
+  "browser": "chromium",
+  "results": [
+    {
+      "name": "publico: cards",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "publico: 18 capas renderizadas",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "publico: foto do Allan",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: banner do tribunal",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: catálogo lateral",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: galeria abre",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "publico: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tracklist",
+      "pass": true,
+      "detail": 11
+    },
+    {
+      "name": "publico: sortear abre ficha",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: foco",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: tamanho extragrande",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "publico: arrastar para tier",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "allan: cards",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "allan: 18 capas renderizadas",
+      "pass": true,
+      "detail": 18
+    },
+    {
+      "name": "allan: foto do Allan",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: banner do tribunal",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: catálogo lateral",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: galeria abre",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "allan: foto do clipe visível",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tracklist",
+      "pass": true,
+      "detail": 11
+    },
+    {
+      "name": "allan: sortear abre ficha",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: foco",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: tamanho extragrande",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "allan: arrastar para tier",
+      "pass": true,
+      "detail": "1"
+    }
+  ],
+  "errors": [],
+  "passed": 24,
+  "total": 24,
+  "success": true
+}
