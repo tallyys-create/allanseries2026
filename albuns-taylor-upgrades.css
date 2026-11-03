@@ -35,7 +35,7 @@ body.layout-sidebar .ranking-workspace>.library{position:sticky;top:12px;max-hei
 body.layout-sidebar .library .pool{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 8px}
 body.layout-sidebar .ranking-panel .bar{flex-direction:column;align-items:flex-start;gap:10px}
 body.layout-sidebar .ranking-panel .bar .actions{width:100%}
-body.layout-sidebar .tier-label{flex:0 0 clamp(112px,11vw,150px);padding:8px}
+body.layout-sidebar .tier-label{flex:0 0 clamp(170px,14vw,185px);min-width:170px;padding:8px}
 body.layout-sidebar .tier-label b{font-size:clamp(11px,1.05vw,14px);line-height:1.15}
 body.layout-sidebar .tier-dock{padding:7px;gap:6px}
 body.layout-sidebar.tier-size-medium{--rank-size:68px}

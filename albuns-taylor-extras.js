@@ -31,8 +31,8 @@ if($("shareTierBtn"))$("shareTierBtn").onclick=()=>{
 // Backup/importação de vereditos, idêntico em propósito ao de séries e filmes.
 const actions=$("board")?.closest("section")?.querySelector(".bar .actions");
 if(actions){
- const backup=document.createElement("button");backup.className="btn";backup.type="button";backup.textContent="⇩ Backup JSON";
- const importButton=document.createElement("button");importButton.className="btn";importButton.type="button";importButton.textContent="⇧ Importar";
+ const backup=document.createElement("button");backup.id="backupBtn";backup.className="btn";backup.type="button";backup.textContent="⇩ Backup JSON";
+ const importButton=document.createElement("button");importButton.id="importBtn";importButton.className="btn";importButton.type="button";importButton.textContent="⇧ Importar";
  const input=document.createElement("input");input.type="file";input.accept=".json,application/json";input.hidden=true;
  actions.append(backup,importButton,input);
  const download=(content,name)=>{const blob=new Blob([content],{type:"application/json;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};
