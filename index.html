@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#14271b">
-<meta name="description" content="Escolha sua tier list no AllanWoodTV: séries e filmes. O Allan julga, o público também!">
+<meta name="description" content="Escolha sua tier list no AllanWoodTV: séries, filmes, desenhos e álbuns musicais. O Allan julga, o público também!">
 <title>Escolha sua Tier · AllanWoodTV</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
@@ -234,6 +234,7 @@ footer{margin-top:35px}
  .tile-art,.film-art{flex-basis:25%}
  .film-art span{font-size:74px}
 }
+.tile-music{background:linear-gradient(130deg,#2a2533,#342531);border-color:#edafbc55}.tile-music .tile-label{color:#ffb2d6}.tile-music .tile-action{background:linear-gradient(120deg,#efa9cf,#ffc273);color:#352132}.tile-music .film-art{opacity:.8}.tile-music .film-art::before{border-color:#ac729d}.tile-music:hover{border-color:#f6b8d4}
 </style>
 </head>
 <body>
@@ -263,7 +264,7 @@ footer{margin-top:35px}
  </div>
 </section>
 <section aria-labelledby="tiersTitle">
- <div class="available-header"><h2 id="tiersTitle">Tiers disponíveis</h2><small>2026 · 3 tribunais disponíveis</small></div>
+ <div class="available-header"><h2 id="tiersTitle">Tiers disponíveis</h2><small>2026 · 4 tribunais disponíveis</small></div>
  <div class="tiles">
   <button type="button" class="tile tile-series" id="seriesChoice">
    <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>Séries <span>(2026)</span></h3><p>92 produções para relembrar, avaliar e colocar no lugar que merecem.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
@@ -276,6 +277,10 @@ footer{margin-top:35px}
   <button type="button" class="tile tile-tv" id="tvChoice">
    <span class="tile-copy"><span class="tile-label">✦ DISPONÍVEL AGORA</span><h3>TV Allanzinho</h3><p>23 desenhos, animes e programas da sessão nostálgica da live para entrar em julgamento.</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
    <span class="film-art" aria-hidden="true"><span>📺</span></span>
+  </button>
+  <button type="button" class="tile tile-music" id="musicChoice">
+   <span class="tile-copy"><span class="tile-label">✦ NOVA TIER MUSICAL</span><h3>Álbuns <span>Taylor Swift</span></h3><p>18 álbuns e edições, da estreia ao Encore. Uma galeria para cada era!</p><span class="tile-action">Escolher quem vai julgar <span aria-hidden="true">→</span></span></span>
+   <span class="film-art" aria-hidden="true"><span>🎧</span></span>
   </button>
  </div>
 </section>
@@ -315,7 +320,8 @@ footer{margin-top:35px}
  const destinations={
    series:{label:'Séries (2026)',intro:'Você está entrando na tier de séries.',allan:'./series-2026.html',publico:'./series-2026-publico.html'},
    filmes:{label:'Filmes (2026)',intro:'Você está entrando na tier de filmes.',allan:'./filmes-2026.html',publico:'./filmes-2026-publico.html'},
-   tv:{label:'TV Allanzinho',intro:'Você está entrando na tier da TV Allanzinho.',allan:'./tv-allanzinho.html',publico:'./tv-allanzinho-publico.html'}
+   tv:{label:'TV Allanzinho',intro:'Você está entrando na tier da TV Allanzinho.',allan:'./tv-allanzinho.html',publico:'./tv-allanzinho-publico.html'},
+   albuns:{label:'Álbuns · Taylor Swift',intro:'Você está entrando na tier de álbuns da Taylor Swift.',allan:'./albuns-taylor.html',publico:'./albuns-taylor-publico.html'}
  };
  let selectedTier='series';
  function open(dialog){if(!dialog.open)dialog.showModal()}
@@ -328,6 +334,7 @@ footer{margin-top:35px}
  $('seriesChoice').onclick=()=>chooseTier('series');
  $('filmsChoice').onclick=()=>chooseTier('filmes');
  $('tvChoice').onclick=()=>chooseTier('tv');
+ $('musicChoice').onclick=()=>chooseTier('albuns');
  $('chooseAllan').onclick=()=>{
    role.close();$('allPassword').value='';$('passwordError').textContent='';
    open(login);$('allPassword').focus();
@@ -355,7 +362,7 @@ footer{margin-top:35px}
    }finally{button.disabled=false;button.textContent='Entrar como Allan →'}
  };
  const query=new URLSearchParams(location.search);
- if(query.get('acesso')==='allan')chooseTier(['series','filmes','tv'].includes(query.get('tier'))?query.get('tier'):'series');
+ if(query.get('acesso')==='allan')chooseTier(['series','filmes','tv','albuns'].includes(query.get('tier'))?query.get('tier'):'series');
 })();
 </script>
 </body>
