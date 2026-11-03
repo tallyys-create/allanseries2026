@@ -21,8 +21,13 @@ try{
   test(mode+": 18 capas renderizadas",covers===18,covers);
   const photo=await page.locator(".top .brand img").evaluate(img=>img.complete&&img.naturalWidth>0);
   test(mode+": foto do Allan",photo,true);
-  const banner=await page.locator(".court-allan").evaluate(img=>img.complete&&img.naturalWidth>0);
-  test(mode+": banner do tribunal",banner,true);
+  if(mode==="allan"){
+    const banner=await page.locator(".court-allan").evaluate(img=>img.complete&&img.naturalWidth>0);
+    test(mode+": banner oficial do Allan",banner,true);
+  }else{
+    const audience=await page.locator(".audience-art").count()===1;
+    test(mode+": banner próprio do público",audience,true);
+  }
   test(mode+": catálogo lateral",await page.locator("body").evaluate(el=>el.classList.contains("layout-sidebar")),true);
   const item=page.locator("#pool .album").first();
   await item.click();
