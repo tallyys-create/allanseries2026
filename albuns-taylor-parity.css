@@ -1,0 +1,46 @@
+/* Mesmo banner do Tribunal AllanWoodTV utilizado nas tiers de séries e filmes. */
+.hero-court{min-height:406px;padding:39px clamp(24px,3.9vw,58px) 35px;border-radius:26px;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:space-between;overflow:hidden;background:radial-gradient(ellipse 59% 110% at 89% 60%,#384017 0%,transparent 61%),linear-gradient(112deg,#193123 0%,#14261c 45%,#29321c 76%,#292418 100%);border:1px solid #ffffff25;box-shadow:0 15px 50px #050e0760}
+.hero-court::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(118deg,transparent 0 36px,#ffffff06 37px 38px);mask-image:linear-gradient(90deg,transparent 4%,#000 90%)}
+.hero-court::before{content:"";position:absolute;width:550px;height:550px;border-radius:50%;right:-130px;top:-140px;pointer-events:none;background:radial-gradient(circle,#ff99222a,transparent 70%);filter:blur(7px)}
+.court-decor{position:absolute;pointer-events:none;z-index:0;opacity:.55}.court-decor-one{width:30px;height:170px;background:#83de5f;top:-78px;right:34%;transform:rotate(42deg);border-radius:60px}.court-decor-two{width:20px;height:102px;background:#f8a33a;bottom:-49px;right:48%;transform:rotate(-37deg);border-radius:50px}
+.hero-court .hero-copy{position:relative;z-index:3;max-width:700px;width:61%;flex:0 1 700px;min-width:0}
+.court-identity{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:21px}
+.court-presenter{font-size:11px;letter-spacing:.17em;color:#a3efb1;font-weight:900;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+.presenter-star{font-size:16px;color:#ffab3b;line-height:1}
+.court-live{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:50px;background:#a5f08a17;border:1px solid #9ce7776e;color:#c5f8c8;font-size:10px;letter-spacing:.095em;font-weight:900;white-space:nowrap}
+.live-dot{width:7px;height:7px;background:#ff982b;border-radius:50%;box-shadow:0 0 0 4px #ff982b24}
+.hero-court h1{margin:0 0 14px;display:flex;flex-direction:column;align-items:flex-start;line-height:.92;letter-spacing:-.075em;font:900 clamp(43px,4.6vw,71px)/.94 'Outfit',sans-serif;text-transform:uppercase}
+.hero-court h1 .title-white{color:#fffaf0;display:block;white-space:nowrap}
+.hero-court h1 .title-color{display:block;white-space:nowrap;background:linear-gradient(105deg,#7be995 0%,#b8e881 39%,#ffd264 72%,#ffa73c 100%);background-clip:text;-webkit-background-clip:text;color:transparent;padding-bottom:6px}
+.hero-court h1 .title-mark{color:#ff9b2c;-webkit-text-fill-color:#ff9b2c}
+.hero-court p{color:#d4e5d5;font-size:14px;line-height:1.48;font-weight:500;max-width:500px;margin:6px 0 23px}
+.hero-court .hero-stats{display:flex;gap:9px;flex-wrap:wrap}
+.hero-court .stat{min-width:0;width:143px;position:relative;padding:11px 13px 10px;overflow:hidden;background:linear-gradient(150deg,#253e2bcb,#152419f2);border:1px solid #a1bca53c;border-radius:13px;box-shadow:0 5px 16px #0002}
+.hero-court .stat:nth-child(2){background:linear-gradient(150deg,#3a321fe0,#222819ee);border-color:#eeb35b45}
+.hero-court .stat strong{font:900 29px/.95 'Outfit',sans-serif;color:#fffef7;letter-spacing:-.04em;display:block}
+.hero-court .stat small{display:block;margin-top:6px;color:#c6dbc7;font-size:10px;font-weight:900;letter-spacing:.09em}
+.hero-court .stat:nth-child(2) small{color:#f8d4a6}
+.stat-symbol{position:absolute;top:9px;right:11px;color:#91d999;font-size:15px;opacity:.8;font-weight:900}
+.hero-court .stat:nth-child(2) .stat-symbol{color:#ffc16e}
+.court-signoff{display:flex;align-items:center;gap:9px;margin-top:20px;color:#a3d4a9;font-size:9px;letter-spacing:.125em;font-weight:900}
+.signoff-line{display:inline-block;width:22px;height:2px;background:#ff9c32;border-radius:5px}
+.court-visual{position:absolute;z-index:2;right:0;top:0;bottom:0;width:45%;pointer-events:none;isolation:isolate}
+.court-disc{position:absolute;width:390px;height:390px;right:38px;top:28px;border-radius:50%;background:radial-gradient(circle at 42% 42%,#ffbb56 0%,#ffa42d 43%,#f58c21 75%,#c16a14 100%);box-shadow:0 0 0 21px #83dd6b18,0 0 0 48px #d2ff8e08,0 10px 85px #ef871b2e;transform:rotate(-6deg)}
+.court-disc-inner{position:absolute;right:86px;top:74px;width:287px;height:287px;border:2px dashed #fff6ce80;border-radius:50%;z-index:0}
+.court-streak{position:absolute;border-radius:60px;filter:drop-shadow(0 4px 5px #0002);z-index:1}
+.court-streak-one{width:120px;height:29px;background:#70e16c;right:15px;top:58px;transform:rotate(-30deg)}
+.court-streak-two{width:95px;height:24px;background:#87ddff;left:23px;bottom:58px;transform:rotate(34deg)}
+.court-orbit{position:absolute;border:1px solid #ddffaf45;border-radius:50%;z-index:0;transform:rotate(-20deg)}
+.court-orbit-one{right:-47px;top:-100px;width:470px;height:470px}.court-orbit-two{right:-100px;top:-140px;width:610px;height:610px}
+.court-allan{position:absolute;display:block;z-index:2;bottom:-104px;right:-12px;width:min(510px,102%);height:auto;max-width:none;filter:drop-shadow(0 6px 15px #102a1855);user-select:none}
+.court-float-star{position:absolute;z-index:3;color:#b5fbb1;text-shadow:0 0 22px #fff5}
+.court-float-star.star-one{font-size:31px;top:99px;left:30px}.court-float-star.star-two{font-size:43px;top:11px;right:29px;color:#ffe2a9}
+.court-seal{position:absolute;z-index:4;top:49px;left:48px;display:grid;place-items:center;width:67px;height:67px;color:#24452a;background:#b4ed79;border:5px solid #162c1a;border-radius:20px;transform:rotate(-14deg);box-shadow:0 9px 25px #0006}
+.court-stamp{position:absolute;z-index:4;right:21px;bottom:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#193b24f0;color:#f8fbe7;border:2px solid #f6bc69;border-radius:13px;padding:8px 16px 7px;transform:rotate(-8deg);box-shadow:0 9px 23px #0007;line-height:1.02;text-align:center}
+.court-stamp>span:first-child{color:#ffd38c;font:900 11px 'Outfit',sans-serif;letter-spacing:.17em}.court-stamp strong{font:900 19px 'Outfit',sans-serif;letter-spacing:-.03em}.court-stamp .stamp-stars{color:#94eb91;font-size:11px;letter-spacing:.3em;margin-top:4px}
+@media(max-width:1150px){.hero-court .hero-copy{width:63%}.hero-court h1{font-size:clamp(42px,5.3vw,65px)}.court-visual{width:43%}.court-disc{right:-16px}.court-allan{width:480px;right:-54px;bottom:-105px}.court-seal{left:7px}}
+@media(max-width:870px){.hero-court{min-height:370px;padding:30px}.hero-court .hero-copy{width:69%}.hero-court h1{font-size:clamp(38px,6vw,56px)}.hero-court p{max-width:380px}.hero-court .stat{width:116px}.court-visual{width:40%;opacity:.75}.court-disc{width:330px;height:330px;right:-90px;top:40px}.court-allan{width:390px;right:-108px;bottom:-65px}.court-stamp{right:12px;bottom:15px}.court-seal{display:none}}
+@media(max-width:650px){.hero-court{min-height:0;padding:26px 21px 0;display:block;overflow:hidden}.hero-court .hero-copy{width:100%;max-width:none}.court-identity{margin-bottom:15px;gap:8px}.court-presenter{font-size:9px}.court-live{font-size:9px}.hero-court h1{font-size:clamp(37px,9.7vw,58px)}.hero-court p{font-size:12px;max-width:95%;margin:8px 0 17px}.hero-court .stat{flex:1;min-width:84px;padding:9px 10px}.hero-court .stat strong{font-size:24px}.hero-court .stat small{font-size:8px}.court-signoff{margin-top:14px;font-size:8px;letter-spacing:.06em}.court-visual{position:relative;height:210px;width:100%;right:auto;top:auto;bottom:auto;margin-top:8px;opacity:1}.court-disc{width:295px;height:295px;right:0;top:9px}.court-disc-inner{right:40px;top:42px;width:220px;height:220px}.court-allan{width:290px;bottom:-92px;right:1px}.court-seal{display:grid;left:calc(50% - 90px);top:35px;width:48px;height:48px;border-width:3px;border-radius:13px}.court-seal svg{width:25px;height:25px}.court-stamp{right:10px;bottom:16px;transform:rotate(-8deg) scale(.8);transform-origin:bottom right}.court-float-star.star-one{top:4px;left:15px}.court-float-star.star-two{right:3px}.court-streak-one{right:5px}.court-streak-two{left:10px}}
+@media(max-width:380px){.hero-court{padding-left:15px;padding-right:15px}.hero-court h1{font-size:36px}.hero-court .stat{min-width:70px}.hero-court .stat small{font-size:7px}.court-live{padding:5px 8px}}
+
+
