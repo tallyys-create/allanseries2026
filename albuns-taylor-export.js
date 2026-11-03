@@ -1,98 +1,211 @@
-/* Imagem do ranking preservando exatamente a ordem visual de cada veredito. */
+/* Exportação visual unificada com as tiers de séries e filmes.
+ * Mesma identidade, tipografia, proporções, bordas e rodapé do Tribunal.
+ * Diferença intencional: capas quadradas maiores e seis tiers musicais.
+ * Preserva exatamente a ordem gravada de cada nível. */
 (() => {
-const app=window.TAYLOR_APP,$=id=>document.getElementById(id);
+"use strict";
+const app=window.TAYLOR_APP, $=id=>document.getElementById(id);
 if(!app)return;
-const host=document.documentElement.dataset.mode==="allan";
+const isAllan=document.documentElement.dataset.mode==="allan";
 const ordered=tierId=>app.getOrdered(tierId);
-const viewer=()=>($("viewerNameInput")?.value||"").trim().slice(0,28)||"Fã da Taylor";
-const wrap=(ctx,str,width,max=3)=>{
- const words=String(str).split(/\s+/),lines=[];let line="";
- for(const word of words){const next=line?line+" "+word:word;
-  if(ctx.measureText(next).width<=width||!line){line=next;continue}
-  lines.push(line);line=word;
- }
- if(line)lines.push(line);
- return lines.slice(0,max);
-};
-function rgbText(color){
- const n=Number.parseInt(color.replace("#",""),16),r=(n>>16)&255,g=(n>>8)&255,b=n&255;
- return (.2126*r+.7152*g+.0722*b)>146?"#162116":"#fff7e4";
+const viewerName=()=>($("viewerNameInput")?.value||"").trim().slice(0,28)||"Fã da Taylor";
+const formatSlug=s=>String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,34)||"publico";
+
+function roundedPath(ctx,x,y,width,height,radius=16){
+ const r=Math.min(radius,width/2,height/2);
+ ctx.beginPath();
+ ctx.moveTo(x+r,y);
+ ctx.lineTo(x+width-r,y);
+ ctx.quadraticCurveTo(x+width,y,x+width,y+r);
+ ctx.lineTo(x+width,y+height-r);
+ ctx.quadraticCurveTo(x+width,y+height,x+width-r,y+height);
+ ctx.lineTo(x+r,y+height);
+ ctx.quadraticCurveTo(x,y+height,x,y+height-r);
+ ctx.lineTo(x,y+r);
+ ctx.quadraticCurveTo(x,y,x+r,y);
+ ctx.closePath();
 }
-const getImage=src=>new Promise(resolve=>{
- const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>resolve(null);image.src=src;
+function fillRounded(ctx,x,y,w,h,r,color){
+ ctx.fillStyle=color;
+ roundedPath(ctx,x,y,w,h,r);
+ ctx.fill();
+}
+function readableOn(color){
+ const hex=String(color||"#999999").replace("#","");
+ if(!/^[\da-f]{6}$/i.test(hex))return "#111c15";
+ const n=parseInt(hex,16);
+ const lum=.2126*((n>>16)&255)+.7152*((n>>8)&255)+.0722*(n&255);
+ return lum>=145?"#152119":"#fff7ef";
+}
+function wrapText(ctx,raw,maxWidth,maxLines=3){
+ const words=String(raw||"").trim().split(/\s+/),out=[];
+ let line="";
+ for(const word of words){
+  const combined=line?line+" "+word:word;
+  if(ctx.measureText(combined).width<=maxWidth){line=combined;continue}
+  if(line){out.push(line);line=word;}else{line=word;}
+  // Se uma palavra isolada for longa, abrevia mantendo o texto na capa.
+  while(ctx.measureText(line).width>maxWidth&&line.length>2){
+   line=line.slice(0,-2)+"…";
+  }
+ }
+ if(line)out.push(line);
+ if(out.length>maxLines){
+  out.length=maxLines;
+  let last=out[maxLines-1];
+  while(last.length>1&&ctx.measureText(last+"…").width>maxWidth)last=last.slice(0,-1);
+  out[maxLines-1]=last+"…";
+ }
+ return out;
+}
+function fitHeader(ctx,text,maxWidth,fontStart=69,fontMin=48){
+ let size=fontStart;
+ do{ctx.font="bold "+size+"px Arial";if(ctx.measureText(text).width<=maxWidth)break;size-=2;}while(size>=fontMin);
+ return size;
+}
+const imageFor=src=>new Promise(resolve=>{
+ const img=new Image();
+ img.onload=()=>resolve(img);
+ img.onerror=()=>resolve(null);
+ img.src=src;
+ if(img.complete&&img.naturalWidth>0)resolve(img);
 });
-const downloadBlob=(blob,name)=>{
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download=name;document.body.append(a);a.click();a.remove();
+function drawCover(ctx,album,image,x,y,side){
+ fillRounded(ctx,x,y,side,side,10,album.color||"#566858");
+ ctx.save();
+ roundedPath(ctx,x,y,side,side,10);ctx.clip();
+ if(image){
+  const iw=image.naturalWidth||image.width,ih=image.naturalHeight||image.height;
+  const ratio=Math.max(side/iw,side/ih),w=iw*ratio,h=ih*ratio;
+  ctx.drawImage(image,x+(side-w)/2,y+(side-h)/2,w,h);
+ }else{
+  ctx.fillStyle="#ffffff33";ctx.font="bold 16px Arial";ctx.textAlign="center";
+  ctx.fillText("TAYLOR SWIFT",x+side/2,y+side/2);
+  ctx.textAlign="left";
+ }
+ const shade=ctx.createLinearGradient(0,y+side*.35,0,y+side);
+ shade.addColorStop(0,"#00000000");
+ shade.addColorStop(.55,"#0000009c");
+ shade.addColorStop(1,"#000000f5");
+ ctx.fillStyle=shade;ctx.fillRect(x,y,side,side);
+ ctx.textAlign="center";
+ // Letras sobre a capa, como nos rankings de séries e filmes.
+ const long=album.title.length>27;
+ const size=long?13:14.5;
+ ctx.font="bold "+size+"px Arial";
+ const lines=wrapText(ctx,album.title,side-15,3);
+ ctx.fillStyle="#fff";ctx.shadowColor="#000b";ctx.shadowBlur=4;
+ const lineH=long?15:17;
+ lines.forEach((line,i)=>ctx.fillText(line,x+side/2,y+side-11-(lines.length-1-i)*lineH));
+ ctx.shadowBlur=0;ctx.textAlign="left";
+ ctx.restore();
+}
+const saveBlob=(blob,name)=>{
+ const link=document.createElement("a"),url=URL.createObjectURL(blob);
+ link.href=url;link.download=name;
+ document.body.append(link);link.click();link.remove();
  setTimeout(()=>URL.revokeObjectURL(url),1800);
 };
+function toBlob(canvas){
+ return new Promise(resolve=>canvas.toBlob(resolve,"image/png"));
+}
 async function exportPng(share=false){
- const state=app.getState(),rated=app.albums.filter(a=>state[a.id]);
- if(!rated.length){app.notice("Classifique pelo menos um álbum antes de salvar.");return;}
- const W=1450,left=46,top=205,right=46,labelW=263,gap=11;
- const card=95,cardGap=12,cardH=131,innerGap=23,bodyWidth=W-left-right-labelW-innerGap;
- const cols=Math.max(1,Math.floor((bodyWidth+cardGap)/(card+cardGap)));
- const sections=app.tiers.map(t=>{const items=ordered(t.id);
-  return {tier:t,items,lines:Math.max(1,Math.ceil(items.length/cols)),
-   height:Math.max(162,36+Math.max(1,Math.ceil(items.length/cols))*cardH+6)};
+ const placements=app.getState();
+ const rated=app.albums.filter(a=>placements[a.id]);
+ if(!rated.length){app.notice("Classifique ao menos um álbum antes de salvar.");return;}
+ app.notice("Preparando a imagem do seu ranking...");
+ // Mesma estrutura de exportação das tiers existentes.
+ const W=1600,margin=60,labelW=295,header=212,footer=93,gap=13;
+ const cover=170,cardGap=15,rowGap=12,cardStart=48;
+ const bodyW=W-2*margin-labelW-18;
+ const columns=Math.max(1,Math.floor((bodyW+cardGap)/(cover+cardGap)));
+ const sections=app.tiers.map((tier,i)=>{
+  const items=ordered(tier.id);
+  const lines=Math.max(1,Math.ceil(items.length/columns));
+  return {tier,i,items,lines,height:Math.max(234,cardStart+lines*(cover+rowGap)+9)};
  });
- const H=top+sections.reduce((sum,s)=>sum+s.height+gap,0)+79;
+ const H=header+sections.reduce((h,s)=>h+s.height+gap,0)-gap+footer;
  const canvas=document.createElement("canvas");canvas.width=W;canvas.height=H;
  const ctx=canvas.getContext("2d");
- if(!ctx){app.notice("Seu navegador não permite criar a imagem.");return;}
- const grad=ctx.createLinearGradient(0,0,W,H);
- grad.addColorStop(0,"#1c3525");grad.addColorStop(.6,"#0f1c14");grad.addColorStop(1,"#382a21");
- ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
- ctx.fillStyle="#a0e4a5";ctx.font="900 22px sans-serif";ctx.fillText("✦ ALLANWOODTV · TRIBUNAL MUSICAL",left,53);
- ctx.fillStyle="#fff9e9";ctx.font="900 57px sans-serif";ctx.fillText("TAYLOR SWIFT · ÁLBUNS",left,115);
- ctx.font="22px sans-serif";ctx.fillStyle="#d3e0d0";
- ctx.fillText(host?"O VEREDITO DO ALLAN":"O VEREDITO DE "+viewer().toUpperCase(),left,158);
- const covers=new Map(await Promise.all(rated.map(async a=>[
-  a.id,await getImage("./assets/albuns/taylor-swift/"+a.id+"/poster.webp")
+ if(!ctx){app.notice("O navegador não conseguiu gerar a imagem.");return;}
+ const background=ctx.createLinearGradient(0,0,W,H);
+ background.addColorStop(0,"#17281b");
+ background.addColorStop(.55,"#101b13");
+ background.addColorStop(1,"#312314");
+ ctx.fillStyle=background;ctx.fillRect(0,0,W,H);
+ // Identidade visual idêntica à do Tribunal.
+ ctx.textAlign="left";
+ ctx.fillStyle="#9de8a5";ctx.font="bold 22px Arial";
+ ctx.fillText("✦ ALLANWOODTV",margin,59);
+ const title=isAllan?"O TRIBUNAL DOS ÁLBUNS":"MINHA TIER DE ÁLBUNS";
+ const headerFont=fitHeader(ctx,title,W-2*margin);
+ ctx.fillStyle="#fff8eb";ctx.font="bold "+headerFont+"px Arial";
+ ctx.fillText(title,margin,134);
+ ctx.fillStyle="#c9d7c5";ctx.font="23px Arial";
+ const subtitle=isAllan?"Taylor Swift · O veredito do Allan":"O veredito de "+viewerName()+" · Taylor Swift";
+ ctx.fillText(subtitle,margin,177);
+ // As capas são do próprio repositório, evitando troca entre edições.
+ const images=new Map(await Promise.all(rated.map(async album=>[
+  album.id,await imageFor("./assets/albuns/taylor-swift/"+encodeURIComponent(album.id)+"/poster.webp")
  ])));
- let y=top;
- for(let i=0;i<sections.length;i++){
-  const {tier,items,height}=sections[i];
-  ctx.fillStyle="#203024";ctx.fillRect(left,y,W-left-right,height);
-  ctx.fillStyle=tier.color;ctx.fillRect(left,y,labelW,height);
-  ctx.fillStyle=rgbText(tier.color);ctx.font="900 14px sans-serif";
-  ctx.fillText("VEREDITO "+String(i+1).padStart(2,"0"),left+16,y+30);
-  ctx.font="900 21px sans-serif";
-  wrap(ctx,tier.name,labelW-30,3).forEach((line,k)=>ctx.fillText(line,left+16,y+64+k*24));
-  ctx.font="800 13px sans-serif";ctx.fillText(items.length+" "+(items.length===1?"álbum":"álbuns"),left+16,y+height-15);
-  for(let j=0;j<items.length;j++){
-   const a=items[j],col=j%cols,row=Math.floor(j/cols);
-   const x=left+labelW+innerGap+col*(card+cardGap), yy=y+17+row*cardH;
-   ctx.fillStyle=a.color;ctx.fillRect(x,yy,card,card);
-   const image=covers.get(a.id);if(image)ctx.drawImage(image,x,yy,card,card);
-   else{ctx.fillStyle="#fff";ctx.font="900 12px sans-serif";ctx.fillText(a.title.slice(0,13),x+5,yy+49)}
-   ctx.font="700 11px sans-serif";ctx.fillStyle="#f4f5e9";
-   wrap(ctx,a.title,card,2).forEach((line,k)=>ctx.fillText(line,x,yy+card+15+k*12));
+ let y=header;
+ for(const {tier,i,items,lines,height} of sections){
+  fillRounded(ctx,margin,y,W-2*margin,height,17,"#243327");
+  fillRounded(ctx,margin,y,labelW,height,17,tier.color);
+  const labelColor=readableOn(tier.color);
+  ctx.fillStyle=labelColor;ctx.font="bold 16px Arial";
+  ctx.fillText("VEREDITO "+String(i+1).padStart(2,"0"),margin+20,y+32);
+  ctx.font="bold 25px Arial";
+  wrapText(ctx,tier.name,labelW-36,4).forEach((line,k)=>{
+   ctx.fillText(line,margin+18,y+73+k*29);
+  });
+  ctx.font="bold 13px Arial";
+  ctx.fillText(items.length+" "+(items.length===1?"álbum":"álbuns"),margin+19,y+height-18);
+  // A descrição fica acima das capas, tal qual séries/filmes.
+  ctx.fillStyle="#e7f1e3";ctx.font="bold 19px Arial";
+  wrapText(ctx,tier.description||"",W-2*margin-labelW-50,2).forEach((line,k)=>{
+   ctx.fillText(line,margin+labelW+17,y+25+k*20);
+  });
+  for(let index=0;index<items.length;index++){
+   const album=items[index],col=index%columns,row=Math.floor(index/columns);
+   const x=margin+labelW+18+col*(cover+cardGap);
+   const yy=y+cardStart+row*(cover+rowGap);
+   drawCover(ctx,album,images.get(album.id),x,yy,cover);
   }
   y+=height+gap;
  }
- ctx.fillStyle="#b7d5b2";ctx.font="18px sans-serif";
- ctx.fillText("Classificados: "+rated.length+" / "+app.albums.length+" · Não classificados: "+(app.albums.length-rated.length),left,y+35);
- const blob=await new Promise(resolve=>canvas.toBlob(resolve,"image/png"));
- if(!blob){app.notice("Não foi possível gerar a imagem.");return;}
- const name="tier-taylor-swift-"+(host?"allan":"publico")+".png";
- if(share&&navigator.share){
+ // Rodapé igual ao modelo de séries e filmes.
+ const footY=H-76;
+ ctx.strokeStyle="#ffffff33";ctx.lineWidth=1;
+ ctx.beginPath();ctx.moveTo(margin,footY);ctx.lineTo(W-margin,footY);ctx.stroke();
+ ctx.font="bold 20px Arial";ctx.fillStyle="#cfdacb";
+ const count=String(rated.length);
+ ctx.fillText(isAllan?count+" álbuns julgados · AllanWoodTV":count+" álbuns avaliados por "+viewerName()+" · AllanWoodTV",margin,H-33);
+ ctx.textAlign="right";ctx.fillStyle="#ffb347";
+ ctx.fillText(isAllan?"AO VIVO ✦":"MINHA OPINIÃO ✦",W-margin,H-33);
+ ctx.textAlign="left";
+ let blob;
+ try{blob=await toBlob(canvas)}catch{}
+ if(!blob){app.notice("Não foi possível gerar o PNG.");return;}
+ const name=isAllan?"AllanWoodTV-tribunal-albuns-taylor-swift.png":"AllanWoodTV-minha-tier-albuns-taylor-swift-"+formatSlug(viewerName())+".png";
+ if(share&&navigator.share&&typeof File!=="undefined"){
   try{
    const file=new File([blob],name,{type:"image/png"});
    if(!navigator.canShare||navigator.canShare({files:[file]})){
-    await navigator.share({title:"Meu veredito · Taylor Swift · AllanWoodTV",files:[file]});
-    app.notice("Ranking pronto para compartilhar!");return;
+    await navigator.share({title:"Minha tier de álbuns · Taylor Swift",text:"Meu veredito no AllanWoodTV",files:[file]});
+    app.notice("Ranking pronto para compartilhar!");
+    return;
    }
-  }catch(e){if(e?.name==="AbortError")return}
+  }catch(error){if(error?.name==="AbortError")return;}
  }
- downloadBlob(blob,name);
- app.notice(share?"Ranking salvo para compartilhar!":"Imagem do ranking salva!");
+ saveBlob(blob,name);
+ app.notice(share?"Imagem salva para compartilhar!":"Ranking exportado em PNG!");
 }
 $("copyBtn").onclick=async()=>{
  const state=app.getState();
  const lines=["🎧 TIER TAYLOR SWIFT · ALLANWOODTV",
-   ...app.tiers.map(t=>t.name.toUpperCase()+": "+(ordered(t.id).map(a=>a.title).join(" • ")||"—")),
-   "Ainda não classificados: "+(app.albums.filter(a=>!state[a.id]).map(a=>a.title).join(" • ")||"nenhum")];
+  ...app.tiers.map(t=>t.name.toUpperCase()+": "+(ordered(t.id).map(a=>a.title).join(" • ")||"—")),
+  "Ainda não classificados: "+(app.albums.filter(a=>!state[a.id]).map(a=>a.title).join(" • ")||"nenhum")];
  try{await navigator.clipboard.writeText(lines.join("\n"));app.notice("Ranking copiado!")}
  catch{app.notice("Não foi possível copiar neste navegador.")}
 };
