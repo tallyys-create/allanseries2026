@@ -1,0 +1,228 @@
+{
+  "executedAt": "2026-11-03T02:41:28.491Z",
+  "type": "native-drag-parity",
+  "checks": [
+    {
+      "label": "albuns-allan | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "debut",
+        "count": 1
+      }
+    },
+    {
+      "label": "albuns-allan | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    },
+    {
+      "label": "albuns-allan | duas capas no mesmo tier",
+      "pass": true,
+      "detail": {
+        "order": [
+          "debut",
+          "fearless"
+        ]
+      }
+    },
+    {
+      "label": "albuns-allan | reorganizar dentro do tier",
+      "pass": true,
+      "detail": {
+        "order": [
+          "fearless",
+          "debut"
+        ],
+        "expected": [
+          "fearless",
+          "debut"
+        ]
+      }
+    },
+    {
+      "label": "albuns-allan | tier → outro tier",
+      "pass": false,
+      "detail": "repeat"
+    },
+    {
+      "label": "albuns-allan | tier → catálogo",
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+    },
+    {
+      "label": "albuns-allan | soltar fora cancela",
+      "pass": true,
+      "detail": {
+        "unchanged": true,
+        "previews": 0
+      }
+    },
+    {
+      "label": "albuns-allan | desfazer operacional",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "label": "albuns-publico | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "debut",
+        "count": 1
+      }
+    },
+    {
+      "label": "albuns-publico | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    },
+    {
+      "label": "albuns-publico | duas capas no mesmo tier",
+      "pass": true,
+      "detail": {
+        "order": [
+          "debut",
+          "fearless"
+        ]
+      }
+    },
+    {
+      "label": "albuns-publico | reorganizar dentro do tier",
+      "pass": true,
+      "detail": {
+        "order": [
+          "fearless",
+          "debut"
+        ],
+        "expected": [
+          "fearless",
+          "debut"
+        ]
+      }
+    },
+    {
+      "label": "albuns-publico | tier → outro tier",
+      "pass": false,
+      "detail": "repeat"
+    },
+    {
+      "label": "albuns-publico | tier → catálogo",
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+    },
+    {
+      "label": "albuns-publico | soltar fora cancela",
+      "pass": true,
+      "detail": {
+        "unchanged": true,
+        "previews": 0
+      }
+    },
+    {
+      "label": "albuns-publico | desfazer operacional",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "label": "series-allan | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "a-usurpadollra",
+        "count": 1
+      }
+    },
+    {
+      "label": "series-allan | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    },
+    {
+      "label": "filmes-allan | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "16-desejos",
+        "count": 1
+      }
+    },
+    {
+      "label": "filmes-allan | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    },
+    {
+      "label": "series-publico | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "a-usurpadollra",
+        "count": 1
+      }
+    },
+    {
+      "label": "series-publico | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    },
+    {
+      "label": "filmes-publico | catálogo → tier",
+      "pass": true,
+      "detail": {
+        "id": "16-desejos",
+        "count": 1
+      }
+    },
+    {
+      "label": "filmes-publico | prévia durante arrasto",
+      "pass": true,
+      "detail": {
+        "previewSeen": true,
+        "previewMoves": 1,
+        "dragStarted": 1
+      }
+    }
+  ],
+  "errors": [],
+  "total": 24,
+  "passed": 20,
+  "failed": [
+    {
+      "label": "albuns-allan | tier → outro tier",
+      "pass": false,
+      "detail": "repeat"
+    },
+    {
+      "label": "albuns-allan | tier → catálogo",
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+    },
+    {
+      "label": "albuns-publico | tier → outro tier",
+      "pass": false,
+      "detail": "repeat"
+    },
+    {
+      "label": "albuns-publico | tier → catálogo",
+      "pass": false,
+      "detail": "locator.dragTo: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#board .tier:nth-child(2) .album[data-id=\"debut\"]')\n"
+    }
+  ],
+  "success": false
+}
