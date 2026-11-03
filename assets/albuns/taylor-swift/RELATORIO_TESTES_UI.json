@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-11-03T01:57:51.865Z",
+  "executedAt": "2026-11-03T02:03:20.677Z",
   "type": "ui-regression",
   "browser": "chromium",
   "results": [
@@ -30,13 +30,8 @@
     },
     {
       "name": "publico: galeria abre",
-      "pass": true,
-      "detail": 4
-    },
-    {
-      "name": "publico: foto do clipe visível",
-      "pass": true,
-      "detail": true
+      "pass": false,
+      "detail": 0
     },
     {
       "name": "publico: tracklist",
@@ -90,13 +85,8 @@
     },
     {
       "name": "allan: galeria abre",
-      "pass": true,
-      "detail": 4
-    },
-    {
-      "name": "allan: foto do clipe visível",
-      "pass": true,
-      "detail": true
+      "pass": false,
+      "detail": 0
     },
     {
       "name": "allan: tracklist",
@@ -125,7 +115,7 @@
     }
   ],
   "errors": [],
-  "passed": 24,
-  "total": 24,
-  "success": true
+  "passed": 20,
+  "total": 22,
+  "success": false
 }
