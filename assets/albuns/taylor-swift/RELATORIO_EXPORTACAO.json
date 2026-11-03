@@ -1,0 +1,579 @@
+{
+  "executedAt": "2026-11-03T03:01:50.572Z",
+  "type": "exportacao-taylor-premium",
+  "checks": [
+    {
+      "name": "publico 1450px | 18 classificados",
+      "pass": true,
+      "detail": {
+        "total": 18,
+        "ranked": 18,
+        "first": "red",
+        "perTier": [
+          4,
+          3,
+          2,
+          5,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "name": "publico | apelido preservado",
+      "pass": true,
+      "detail": "Tallys"
+    },
+    {
+      "name": "publico | ordem persistida após reload",
+      "pass": true,
+      "detail": "red"
+    },
+    {
+      "name": "publico 1450px | PNG 1600 e compactado",
+      "pass": true,
+      "detail": {
+        "W": 1600,
+        "H": 1804,
+        "bytes": 1731671,
+        "name": "AllanWoodTV-minha-tier-albuns-taylor-swift-tallys.png"
+      }
+    },
+    {
+      "name": "publico | cabeçalho e rodapé coerentes",
+      "pass": true,
+      "detail": {
+        "title": true,
+        "subtitle": true,
+        "footer": true
+      }
+    },
+    {
+      "name": "publico | seis descrições impressas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "publico | todas as capas tituladas",
+      "pass": true,
+      "detail": "Títulos sobrepostos, não embaixo das capas"
+    },
+    {
+      "name": "publico | cores e proporções dos vereditos",
+      "pass": true,
+      "detail": [
+        {
+          "tier": "repeat",
+          "distance": 0,
+          "color": [
+            167,
+            225,
+            141
+          ]
+        },
+        {
+          "tier": "hinos",
+          "distance": 0,
+          "color": [
+            241,
+            196,
+            110
+          ]
+        },
+        {
+          "tier": "fone",
+          "distance": 0,
+          "color": [
+            233,
+            174,
+            117
+          ]
+        },
+        {
+          "tier": "momentos",
+          "distance": 0,
+          "color": [
+            200,
+            157,
+            203
+          ]
+        },
+        {
+          "tier": "pular",
+          "distance": 0,
+          "color": [
+            155,
+            173,
+            208
+          ]
+        },
+        {
+          "tier": "skip",
+          "distance": 0,
+          "color": [
+            177,
+            185,
+            184
+          ]
+        }
+      ]
+    },
+    {
+      "name": "publico | capa na posição correta",
+      "pass": true,
+      "detail": {
+        "labels": [
+          {
+            "tier": "repeat",
+            "distance": 0,
+            "color": [
+              167,
+              225,
+              141
+            ]
+          },
+          {
+            "tier": "hinos",
+            "distance": 0,
+            "color": [
+              241,
+              196,
+              110
+            ]
+          },
+          {
+            "tier": "fone",
+            "distance": 0,
+            "color": [
+              233,
+              174,
+              117
+            ]
+          },
+          {
+            "tier": "momentos",
+            "distance": 0,
+            "color": [
+              200,
+              157,
+              203
+            ]
+          },
+          {
+            "tier": "pular",
+            "distance": 0,
+            "color": [
+              155,
+              173,
+              208
+            ]
+          },
+          {
+            "tier": "skip",
+            "distance": 0,
+            "color": [
+              177,
+              185,
+              184
+            ]
+          }
+        ],
+        "allLabels": true,
+        "album": "red",
+        "imageDistance": 0,
+        "sourceRgb": [
+          23,
+          27,
+          54
+        ],
+        "outputRgb": [
+          23,
+          27,
+          54
+        ]
+      }
+    },
+    {
+      "name": "allan 1450px | 18 classificados",
+      "pass": true,
+      "detail": {
+        "total": 18,
+        "ranked": 18,
+        "first": "red",
+        "perTier": [
+          4,
+          3,
+          2,
+          5,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "name": "allan | ordem persistida após reload",
+      "pass": true,
+      "detail": "red"
+    },
+    {
+      "name": "allan 1450px | PNG 1600 e compactado",
+      "pass": true,
+      "detail": {
+        "W": 1600,
+        "H": 1804,
+        "bytes": 1734090,
+        "name": "AllanWoodTV-tribunal-albuns-taylor-swift.png"
+      }
+    },
+    {
+      "name": "allan | cabeçalho e rodapé coerentes",
+      "pass": true,
+      "detail": {
+        "title": true,
+        "subtitle": true,
+        "footer": true
+      }
+    },
+    {
+      "name": "allan | seis descrições impressas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "allan | todas as capas tituladas",
+      "pass": true,
+      "detail": "Títulos sobrepostos, não embaixo das capas"
+    },
+    {
+      "name": "allan | cores e proporções dos vereditos",
+      "pass": true,
+      "detail": [
+        {
+          "tier": "repeat",
+          "distance": 0,
+          "color": [
+            167,
+            225,
+            141
+          ]
+        },
+        {
+          "tier": "hinos",
+          "distance": 0,
+          "color": [
+            241,
+            196,
+            110
+          ]
+        },
+        {
+          "tier": "fone",
+          "distance": 0,
+          "color": [
+            233,
+            174,
+            117
+          ]
+        },
+        {
+          "tier": "momentos",
+          "distance": 0,
+          "color": [
+            200,
+            157,
+            203
+          ]
+        },
+        {
+          "tier": "pular",
+          "distance": 0,
+          "color": [
+            155,
+            173,
+            208
+          ]
+        },
+        {
+          "tier": "skip",
+          "distance": 0,
+          "color": [
+            177,
+            185,
+            184
+          ]
+        }
+      ]
+    },
+    {
+      "name": "allan | capa na posição correta",
+      "pass": true,
+      "detail": {
+        "labels": [
+          {
+            "tier": "repeat",
+            "distance": 0,
+            "color": [
+              167,
+              225,
+              141
+            ]
+          },
+          {
+            "tier": "hinos",
+            "distance": 0,
+            "color": [
+              241,
+              196,
+              110
+            ]
+          },
+          {
+            "tier": "fone",
+            "distance": 0,
+            "color": [
+              233,
+              174,
+              117
+            ]
+          },
+          {
+            "tier": "momentos",
+            "distance": 0,
+            "color": [
+              200,
+              157,
+              203
+            ]
+          },
+          {
+            "tier": "pular",
+            "distance": 0,
+            "color": [
+              155,
+              173,
+              208
+            ]
+          },
+          {
+            "tier": "skip",
+            "distance": 0,
+            "color": [
+              177,
+              185,
+              184
+            ]
+          }
+        ],
+        "allLabels": true,
+        "album": "red",
+        "imageDistance": 0,
+        "sourceRgb": [
+          23,
+          27,
+          54
+        ],
+        "outputRgb": [
+          23,
+          27,
+          54
+        ]
+      }
+    },
+    {
+      "name": "publico 390px | 18 classificados",
+      "pass": true,
+      "detail": {
+        "total": 18,
+        "ranked": 18,
+        "first": "red",
+        "perTier": [
+          4,
+          3,
+          2,
+          5,
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "name": "publico | apelido preservado",
+      "pass": true,
+      "detail": "Tallys"
+    },
+    {
+      "name": "publico | ordem persistida após reload",
+      "pass": true,
+      "detail": "red"
+    },
+    {
+      "name": "publico 390px | PNG 1600 e compactado",
+      "pass": true,
+      "detail": {
+        "W": 1600,
+        "H": 1804,
+        "bytes": 1731671,
+        "name": "AllanWoodTV-minha-tier-albuns-taylor-swift-tallys.png"
+      }
+    },
+    {
+      "name": "publico | cabeçalho e rodapé coerentes",
+      "pass": true,
+      "detail": {
+        "title": true,
+        "subtitle": true,
+        "footer": true
+      }
+    },
+    {
+      "name": "publico | seis descrições impressas",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "publico | todas as capas tituladas",
+      "pass": true,
+      "detail": "Títulos sobrepostos, não embaixo das capas"
+    },
+    {
+      "name": "publico | cores e proporções dos vereditos",
+      "pass": true,
+      "detail": [
+        {
+          "tier": "repeat",
+          "distance": 0,
+          "color": [
+            167,
+            225,
+            141
+          ]
+        },
+        {
+          "tier": "hinos",
+          "distance": 0,
+          "color": [
+            241,
+            196,
+            110
+          ]
+        },
+        {
+          "tier": "fone",
+          "distance": 0,
+          "color": [
+            233,
+            174,
+            117
+          ]
+        },
+        {
+          "tier": "momentos",
+          "distance": 0,
+          "color": [
+            200,
+            157,
+            203
+          ]
+        },
+        {
+          "tier": "pular",
+          "distance": 0,
+          "color": [
+            155,
+            173,
+            208
+          ]
+        },
+        {
+          "tier": "skip",
+          "distance": 0,
+          "color": [
+            177,
+            185,
+            184
+          ]
+        }
+      ]
+    },
+    {
+      "name": "publico | capa na posição correta",
+      "pass": true,
+      "detail": {
+        "labels": [
+          {
+            "tier": "repeat",
+            "distance": 0,
+            "color": [
+              167,
+              225,
+              141
+            ]
+          },
+          {
+            "tier": "hinos",
+            "distance": 0,
+            "color": [
+              241,
+              196,
+              110
+            ]
+          },
+          {
+            "tier": "fone",
+            "distance": 0,
+            "color": [
+              233,
+              174,
+              117
+            ]
+          },
+          {
+            "tier": "momentos",
+            "distance": 0,
+            "color": [
+              200,
+              157,
+              203
+            ]
+          },
+          {
+            "tier": "pular",
+            "distance": 0,
+            "color": [
+              155,
+              173,
+              208
+            ]
+          },
+          {
+            "tier": "skip",
+            "distance": 0,
+            "color": [
+              177,
+              185,
+              184
+            ]
+          }
+        ],
+        "allLabels": true,
+        "album": "red",
+        "imageDistance": 0,
+        "sourceRgb": [
+          23,
+          27,
+          54
+        ],
+        "outputRgb": [
+          23,
+          27,
+          54
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "total": 26,
+  "passed": 26,
+  "failed": [],
+  "success": true
+}
