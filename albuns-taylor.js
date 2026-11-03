@@ -1,12 +1,12 @@
 (() => {
 const albums=window.TAYLOR_ALBUMS, byId=Object.fromEntries(albums.map(a=>[a.id,a]));
 const tiers=[
-{id:"repeat",name:"Dono do Repeat",color:"#a7e18d"},
-{id:"hinos",name:"Hino atrás de Hino",color:"#f1c46e"},
-{id:"fone",name:"No Meu Fone",color:"#e9ae75"},
-{id:"momentos",name:"Tem Seus Momentos",color:"#c89dcb"},
-{id:"pular",name:"Dá pra Pular",color:"#9badd0"},
-{id:"skip",name:"Skip sem Dó",color:"#b1b9b8"}];
+{id:"repeat",name:"Dono do Repeat",color:"#a7e18d",description:"Obra-prima. Eu ouviria sem parar!"},
+{id:"hinos",name:"Hino atrás de Hino",color:"#f1c46e",description:"Quase tudo aqui é música favorita."},
+{id:"fone",name:"No Meu Fone",color:"#e9ae75",description:"Gostei, e sempre volto a ouvir."},
+{id:"momentos",name:"Tem Seus Momentos",color:"#c89dcb",description:"Algumas faixas salvam o álbum."},
+{id:"pular",name:"Dá pra Pular",color:"#9badd0",description:"Poucas músicas prendem minha atenção."},
+{id:"skip",name:"Skip sem Dó",color:"#b1b9b8",description:"Não funcionou para mim."}];
 const host=document.documentElement.dataset.mode==="allan";
 if(host&&sessionStorage.getItem("allanwoodtv-host-session-v1")!=="yes"){location.replace("./index.html?acesso=allan&tier=albuns");return;}
 const key="allanwoodtv-taylor-2026-"+(host?"allan":"publico");
@@ -39,7 +39,7 @@ img.draggable=false;img.onerror=()=>{img.remove();el.classList.add("cover-missin
 img.src="./assets/albuns/taylor-swift/"+encodeURIComponent(a.id)+"/poster.webp";
 el.querySelector(".album-art").prepend(img);return el;}
 function droppable(el,tier){el.ondragover=e=>{e.preventDefault();el.classList.add("over")};el.ondragleave=()=>el.classList.remove("over");el.ondrop=e=>{e.preventDefault();el.classList.remove("over");const id=e.dataTransfer.getData("text/plain")||dragging;const target=e.target.closest(".album");const beforeId=target&&target.dataset.id!==id?target.dataset.id:null;move(id,tier,beforeId)};}
-function render(){const board=$("board"),pool=$("pool");board.replaceChildren();pool.replaceChildren();for(const [i,t] of tiers.entries()){const row=document.createElement("div");row.className="tier";row.innerHTML='<div class="tier-label"><small></small><b></b></div><div class="tier-dock"></div>';row.querySelector(".tier-label").style.background=t.color;row.querySelector("small").textContent="TIER "+(i+1);row.querySelector("b").textContent=t.name;const dock=row.querySelector(".tier-dock");const items=albums.filter(a=>tierFor(a.id)===t.id).sort((a,b)=>{const pos=order[t.id]||[];const ai=pos.indexOf(a.id),bi=pos.indexOf(b.id);return (ai<0?999:ai)-(bi<0?999:bi)});if(!items.length){const hint=document.createElement("span");hint.className="hint";hint.textContent="Arraste álbuns para cá";dock.append(hint);}items.forEach(a=>dock.append(card(a)));droppable(row,t.id);board.append(row);}albums.filter(a=>!tierFor(a.id)).forEach(a=>pool.append(card(a)));droppable(pool,"");const done=albums.filter(a=>tierFor(a.id)).length;$("doneCount").textContent=done;$("leftCount").textContent=albums.length-done;$("poolCount").textContent=(albums.length-done)+" restantes";}
+function render(){const board=$("board"),pool=$("pool");board.replaceChildren();pool.replaceChildren();for(const [i,t] of tiers.entries()){const row=document.createElement("div");row.className="tier";row.innerHTML='<div class="tier-label"><small class="tier-number"></small><b class="tier-name"></b><span class="tier-count"></span></div><div class="tier-body"><p class="tier-description"></p><div class="tier-dock"></div></div>';row.querySelector(".tier-label").style.background=t.color;row.querySelector(".tier-number").textContent="VEREDITO "+String(i+1).padStart(2,"0");row.querySelector(".tier-name").textContent=t.name;row.querySelector(".tier-description").textContent=t.description;const dock=row.querySelector(".tier-dock");const items=albums.filter(a=>tierFor(a.id)===t.id).sort((a,b)=>{const pos=order[t.id]||[];const ai=pos.indexOf(a.id),bi=pos.indexOf(b.id);return (ai<0?999:ai)-(bi<0?999:bi)});row.querySelector(".tier-count").textContent=items.length+" "+(items.length===1?"álbum":"álbuns");if(!items.length){const hint=document.createElement("span");hint.className="hint";hint.textContent="Arraste álbuns para cá";dock.append(hint);}items.forEach(a=>dock.append(card(a)));droppable(row,t.id);board.append(row);}albums.filter(a=>!tierFor(a.id)).forEach(a=>pool.append(card(a)));droppable(pool,"");const done=albums.filter(a=>tierFor(a.id)).length;$("doneCount").textContent=done;$("leftCount").textContent=albums.length-done;$("poolCount").textContent=(albums.length-done)+" restantes";}
 window.TAYLOR_APP={albums,byId,tiers,getState:()=>state,move,render,notice:msg=>{const n=$("notice");n.textContent=msg;n.hidden=false;setTimeout(()=>n.hidden=true,2300)}};
 $("undoBtn").onclick=()=>{if(history.length){const last=history.pop();state=last.state;order=last.order;save();}else window.TAYLOR_APP.notice("Nada para desfazer.")};
 $("resetBtn").onclick=()=>{if(confirm("Zerar o ranking desta versão?")){history.push(snap());state={};order={};save()}};
